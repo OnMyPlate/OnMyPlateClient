@@ -3,7 +3,6 @@ app.config(function($routeProvider) {
 
   $routeProvider
   .when('/', {
-    templateUrl: 'templates/home.html',
-    controller: 'HomeCtrl'
+    templateUrl: 'templates/home.html'
   });
 });
