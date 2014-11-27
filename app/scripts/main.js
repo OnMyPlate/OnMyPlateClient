@@ -1,1 +1,1 @@
-var app = angular.module('OnMyPlate', function($scope) {});
+var app = angular.module('OnMyPlate', ['ngRoute']);
