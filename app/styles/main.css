@@ -1,3 +1,33 @@
 .btn-group {
-  margin-bottom: 15px;
+  margin: 15px 0px;
+}
+
+.sidebar {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background-color: #F8F8F8;
+  display: inline-block;
+  width: 180px;
+  float: left;
+}
+
+.sidebar ul li {
+  list-style: none;
+  padding-top: 10px;
+}
+
+.sidebar ul li a {
+  color: #777777;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar.navbar-default {
+  margin-bottom: 0px;
 }
