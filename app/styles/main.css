@@ -1,4 +1,4 @@
-  
+
 /*Navigation Bar*/
 .navbar.navbar-default {
   margin-bottom: 0px;
@@ -33,7 +33,7 @@
   
   .sidebar ul li {
     list-style: none;
-    padding-top: 10px;
+    margin-top: 10px;
   }
   
   .sidebar ul li a {
@@ -60,10 +60,16 @@
 
   .media-left {
     float: left;
-    /*width: 0%;*/
   }
 
   #media-container {
     padding-top: 20px;
+  }
+
+  .btn.btn-primary,
+  .btn.btn-danger {
+    position: relative;
+    left: 610px;
+    top: 30px;
   }
 }
