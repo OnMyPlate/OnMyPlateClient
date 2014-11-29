@@ -9,7 +9,7 @@
   /*Home Page*/
   /*=======================*/
 
-  /*Filtering Button*/
+    /*Filtering Button*/
 
   .btn-group {
     margin: 15px 0px;
@@ -51,11 +51,16 @@
   .media {
     float: right;
     width: 80%;
-    padding-left: 15px;
   }
 
   .media-body {
-    text-align: left;
+    float: right;
+    width: 80%;
+  }
+
+  .media-left {
+    float: left;
+    /*width: 0%;*/
   }
 
   #media-container {
