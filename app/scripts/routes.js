@@ -17,6 +17,9 @@ app.config(function($routeProvider) {
   .when('/add', {
     templateUrl: 'templates/add.html'
   })
+  .when('/favorites', {
+    templateUrl: 'templates/favorites.html'
+  })
   .otherwise({
     redirectTo: '/'
   });

@@ -74,7 +74,7 @@
     float: left;
   }
 
-  #media-container {
+  .container.media-container {
     padding-top: 20px;
   }
 
@@ -95,6 +95,12 @@
   .glyphicon.glyphicon-star-empty {
     height: 15px;
     width: 15px;
+  }
+
+  /*Favorites*/
+  #bookmarked {
+    position:relative;
+    left: 725px;
   }
 
 
