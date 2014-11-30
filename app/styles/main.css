@@ -72,4 +72,18 @@
     left: 610px;
     top: 30px;
   }
+
+  /*Add Post*/
+  #form-container {
+    float: right;
+    width: 80%;
+    padding-top: 20px;
+  }
+
+  .glyphicon.glyphicon-star-empty {
+    height: 15px;
+    width: 15px;
+  }
+
+
 }

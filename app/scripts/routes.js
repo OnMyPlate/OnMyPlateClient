@@ -14,6 +14,9 @@ app.config(function($routeProvider) {
   .when('/post', {
     templateUrl: 'templates/post.html'
   })
+  .when('/add', {
+    templateUrl: 'templates/add.html'
+  })
   .otherwise({
     redirectTo: '/'
   });

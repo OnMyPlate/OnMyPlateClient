@@ -1,0 +1,45 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+
+<div class="container" id="form-container">
+  <form role="form">
+
+    <div class="form-group">
+      <label for="post-image">Food Image</label>
+      <input type="file">
+      <p class="help-block">From your computer</p>
+    </div>
+
+    <div class="form-group">
+      <label for="post-name">Food Name</label>
+      <input type="text" class="form-control" placeholder="Enter Name">
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Rating: </label>
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="rest-name">Restaurant Name</label>
+      <input type="text" class="form-control" placeholder="Restaurant Name">
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" placeholder="Restaurant City">
+    </div>
+
+     <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" class="form-control" placeholder="Restaurant State">
+    </div>
+
+    <a href="#/profile"><button type="submit" class="btn btn-default">Submit</button></a>
+  </form>
+</div>
+
