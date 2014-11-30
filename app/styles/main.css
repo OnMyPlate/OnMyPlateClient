@@ -97,6 +97,13 @@
     width: 15px;
   }
 
+  .btn.btn-default.submit {
+    position: relative;
+    left: 450px;
+    width: 100px;
+    height: 40px;
+  }
+
   /*Favorites*/
   #bookmarked {
     position:relative;
@@ -107,6 +114,13 @@
   #user-form {
     position: relative;
     top: 100px;
+  }
+
+  .btn.btn-default.login {
+    position: relative;
+    left: 500px;
+    width: 100px;
+    height: 40px;
   }
 
 }
