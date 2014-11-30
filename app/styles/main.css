@@ -30,10 +30,15 @@
     width: 20%;
     float: left;
   }
+
+  .sidebar ul {
+    /*margin: 0px;*/
+    padding: 0px;
+  }
   
   .sidebar ul li {
     list-style: none;
-    margin-top: 10px;
+    padding: 10px 0px 10px 80px;
   }
   
   .sidebar ul li a {
@@ -41,9 +46,16 @@
     text-decoration: none;
   }
   
+  .sidebar ul li:hover {
+    background-color: #DFDFDF;
+  }
+
   .sidebar ul li a:hover {
-    text-decoration: none;
     cursor: pointer;
+  }
+
+  .sidebaractive {
+    background-color: #DFDFDF;
   }
 
   /*Food Posts*/
