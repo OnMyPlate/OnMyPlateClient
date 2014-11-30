@@ -103,5 +103,10 @@
     left: 725px;
   }
 
+  /*Login*/
+  #user-form {
+    position: relative;
+    top: 100px;
+  }
 
 }
