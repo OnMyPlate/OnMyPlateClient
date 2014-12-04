@@ -32,7 +32,6 @@
   }
 
   .sidebar ul {
-    /*margin: 0px;*/
     padding: 0px;
   }
   
@@ -100,6 +99,7 @@
   .btn.btn-default.submit {
     position: relative;
     left: 450px;
+    bottom: 5px;
     width: 100px;
     height: 40px;
   }

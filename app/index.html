@@ -5,36 +5,37 @@
     <title>OnMyPlateClient</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
+
+
+
+    <!-- bootsrap bower component -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+
+    <!-- main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+
   </head>
   <body ng-app="OnMyPlate">
 
 
     <ng-view></ng-view>
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
+
+    <!-- bower components -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-upload/angular-upload.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <!-- main files -->
         <script src="scripts/main.js"></script>
         <script src="scripts/routes.js"></script>
+
+        <!-- controllers -->
         <script src="scripts/controllers/navbar.controller.js"></script>
         <script src="scripts/controllers/sidebar.controller.js"></script>
-        <!-- endbuild -->
-</body>
+
+        <!-- factories & services -->
+        <script src="scripts/factories/UsersFactory.js"></script>
+
+  </body>
 </html>
