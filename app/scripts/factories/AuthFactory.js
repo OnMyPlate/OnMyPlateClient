@@ -25,4 +25,10 @@ app.factory('authFactory', function($http, $window, ServerUrl) {
     return !!$window.sessionStorage.setItem('OnMyPlate.user');
   };
 
+  return {
+    login: login,
+    logout: logout,
+    isAuthenticated: isAuthenticated
+  }
+
 });
