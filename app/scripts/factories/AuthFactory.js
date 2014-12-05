@@ -1,4 +1,4 @@
-app.factory('AuthFactory', function($http, $window, ServerUrl) {
+app.factory('authFactory', function($http, $window, ServerUrl) {
 
   'use strict';
 
@@ -14,7 +14,7 @@ app.factory('AuthFactory', function($http, $window, ServerUrl) {
 
   var logout = function() {
     return $http.get(ServerUrl + '/logout').sucess(function(response) {
-      // removes the session the session from web browser 
+      // removes the session from web browser 
       $window.sessionStorage.removeItem('OnMyPlate.user');
     });
   };
