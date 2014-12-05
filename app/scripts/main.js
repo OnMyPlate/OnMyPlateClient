@@ -1,6 +1,6 @@
+'use strict';
+
 var app = angular.module('OnMyPlate', ['ngRoute', 'lr.upload']);
-
-
 /*
 
 Run blocks are the closest thing in Angular to the main method. 
@@ -12,7 +12,9 @@ Run blocks typically contain code which is hard to unit-test,
 
 */
 
-app.run(function($rootScope, $location. $http, $window, authFactory, userFactory) {
+app.constant('ServerUrl', 'http://localhost:3000/');
+
+app.run(function($rootScope, $location, $http, $window, authFactory, userFactory) {
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
   $rootScope.$on('$rootChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
@@ -24,5 +26,3 @@ app.run(function($rootScope, $location. $http, $window, authFactory, userFactory
     }
   });
 });
-
-app.constant('ServerUrl', 'http://localhost:3000/');

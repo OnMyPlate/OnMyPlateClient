@@ -1,6 +1,6 @@
-app.factory('authFactory', function($http, $window, ServerUrl) {
+'use strict';
 
-  'use strict';
+app.factory('authFactory', function($http, $window, ServerUrl) {
 
   var login = function(params) {
     return $http.post(ServerUrl + 'login', params).success(function(response) {

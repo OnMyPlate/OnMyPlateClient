@@ -1,5 +1,6 @@
+'use strict';
+
 app.factory('userFactory', function($http, ServerUrl) {
-  'use strict';
 
   var users =[];
 
