@@ -116,11 +116,18 @@
     top: 100px;
   }
 
-  .btn.btn-default.login {
+  .btn.btn-default.login,
+  .btn.btn-default.register {
     position: relative;
     left: 500px;
     width: 100px;
     height: 40px;
+  }
+
+  /*Register*/
+
+  .register {
+    margin-top: 70px;
   }
 
 }
