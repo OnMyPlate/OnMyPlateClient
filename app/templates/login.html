@@ -2,25 +2,19 @@
 
 <div class="container" id="user-form">
 
-  <form role="form">
+  <form role="form" name="loginUser" novalidate>
   
     <div class="form-group">
       <label for="email">Email address</label>
-      <input type="email" class="form-control" placeholder="Enter Email">
+      <input type="email" class="form-control" placeholder="Enter Email" required>
     </div>
   
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" placeholder="Password">
+      <input type="password" class="form-control" placeholder="Password" required>
     </div>
   
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Remember me
-      </label>
-    </div>
-  
-    <button type="submit" class="btn btn-default login">Login</button>
+    <button type="submit" class="btn btn-default login" ng-disabled="loginUser.$invalid">Login</button>
   
   </form>
 </div>

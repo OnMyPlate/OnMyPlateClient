@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('UserCtrl', function($http, $scope, userFactory, ServerUrl) {
+app.controller('UserCtrl', function($http, $scope, userFactory, ServerUrl, $location) {
 
 
   // user can register
@@ -9,8 +9,7 @@ app.controller('UserCtrl', function($http, $scope, userFactory, ServerUrl) {
     var params = {user: user}
 
     $http.post(ServerUrl + 'users', params).success(function(response) {
-      debugger
-      console.log(response)
+      $location.path('/home');
     });
   }
 
