@@ -12,11 +12,11 @@ app.factory('userFactory', function($http, ServerUrl) {
       // - If a destination is provided, all of its elements (for array) or properties (for objects) are deleted and then all elements/properties from the source are copied to it.
       // - If source is not an object or array (inc. null and undefined), source is returned.
       // - If source is identical to 'destination' an exception will be thrown.
-      
+      // angular.copy(source ,[destination]);
       // It copies the response to users variabel which is an array. response -->> users
       angular.copy(response, users);
-    })
-  }
+    });
+  };
 
   return {
     users: users,

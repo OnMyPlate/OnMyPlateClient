@@ -6,4 +6,4 @@ app.controller('SidebarCtrl', function($scope, $location){
     return navLocation === $location.path();
   };
 
-})
+});
