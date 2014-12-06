@@ -18,6 +18,7 @@ app.run(function($rootScope, $location, $http, $window, authFactory, userFactory
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
   $rootScope.$on('$rootChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
+      debugger
       $http.defaults.headers.common.Authorization = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
       userFactory.fetch();
     } else {
