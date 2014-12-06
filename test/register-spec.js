@@ -1,9 +1,14 @@
 describe('OnMyPlate', function() {
 
+  beforeEach(function() {
+    var ptor;
+  });
+
   describe('registeration page', function() {
 
     beforeEach(function() {
-      browser.get('http://localhost:9000/#/register');
+      ptor = protractor.getInstance();
+      ptor.get('#/register');
     });
 
     it('should register the user wiht appropriate inputs', function() {
@@ -14,6 +19,28 @@ describe('OnMyPlate', function() {
       element(by.model('user.password_confirmation')).sendKeys('test123');
 
       element(by.css('.btn.btn-default.register')).click();
+
+    });
+
+
+  });
+
+  describe('login page', function() {
+
+    beforeEach(function() {
+      ptor = protractor.getInstance();
+      ptor.get('#/login');
+    });
+
+
+    it('should login wiht proper parameters', function() {
+
+      element(by.model('params.email')).sendKeys('realcritic@example.com');
+      element(by.model('params.password')).sendKeys('test123');
+
+      element(by.css('.btn.btn-default.login')).click();
     });
   });
+
+
 });
