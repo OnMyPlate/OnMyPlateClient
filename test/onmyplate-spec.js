@@ -25,22 +25,22 @@ describe('OnMyPlate', function() {
 
   });
 
-  describe('login page', function() {
+  // describe('login page', function() {
 
-    beforeEach(function() {
-      ptor = protractor.getInstance();
-      ptor.get('#/login');
-    });
+  //   beforeEach(function() {
+  //     ptor = protractor.getInstance();
+  //     ptor.get('#/login');
+  //   });
 
 
-    it('should login wiht proper parameters', function() {
+  //   it('should login wiht proper parameters', function() {
 
-      element(by.model('params.email')).sendKeys('realcritic@example.com');
-      element(by.model('params.password')).sendKeys('test123');
+  //     element(by.model('params.email')).sendKeys('realcritic@example.com');
+  //     element(by.model('params.password')).sendKeys('test123');
 
-      element(by.css('.btn.btn-default.login')).click();
-    });
-  });
+  //     element(by.css('.btn.btn-default.login')).click();
+  //   });
+  // });
 
 
 });

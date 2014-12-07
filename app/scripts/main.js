@@ -14,13 +14,13 @@ Run blocks typically contain code which is hard to unit-test,
 
 app.constant('ServerUrl', 'http://localhost:3000/');
 
-app.run(function($rootScope, $location, $http, $window, authFactory, userFactory) {
+app.run(function($rootScope, $location, $http, $window, authFactory) {
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
   $rootScope.$on('$rootChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
-      debugger
+
       $http.defaults.headers.common.Authorization = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
-      userFactory.fetch();
+
     } else {
       // Change path when called with parameter and return $location.
       $location.path('/login');
