@@ -16,14 +16,11 @@ app.constant('ServerUrl', 'http://localhost:3000/');
 
 app.run(function($rootScope, $location, $http, $window, authFactory) {
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
-  $rootScope.$on('$rootChangeStart', function(event, next) {
+  $rootScope.$on('$routeChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
+      
+      $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
 
-      $http.defaults.headers.common.Authorization = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
-
-    } else {
-      // Change path when called with parameter and return $location.
-      $location.path('/login');
     }
   });
 });
