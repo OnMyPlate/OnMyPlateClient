@@ -4,6 +4,20 @@
   margin-bottom: 0px;
 }
 
+/*Error*/
+
+.custom-error {
+  color: #CC0000;
+}
+
+.form-group .ng-dirty.ng-invalid {
+  border-color: red;
+}
+
+.form-group .ng-valid {
+  border-color: green;
+}
+
 @media only screen and (min-width : 992px) {
 
   /*Home Page*/
@@ -132,20 +146,6 @@
 
   .btn.btn-default.register {
     bottom: 40px;
-  }
-
-  /*Error*/
-
-  .custom-error {
-    color: #CC0000;
-  }
-
-  .form-group .ng-dirty.ng-invalid {
-    border-color: red;
-  }
-
-  .form-group .ng-valid {
-    border-color: green;
   }
 
 }
