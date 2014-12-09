@@ -130,4 +130,18 @@
     margin-top: 70px;
   }
 
+  /*Error*/
+
+  .custom-error {
+    color: #CC0000;
+  }
+
+  .form-group .ng-dirty.ng-invalid {
+    border-color: red;
+  }
+
+  .form-group .ng-valid {
+    border-color: green;
+  }
+
 }
