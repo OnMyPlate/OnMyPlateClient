@@ -2,22 +2,22 @@
 <ng-include src="'templates/partials/sidebar.html'"></ng-include>
 
 <div class="container" id="form-container" ng-controller="AddCtrl">
-  <form role="form">
+  <form role="form" name="addPostForm" ng-submit="addPost(post, restaurant)" novalidate>
 
     <div class="form-group">
       <label for="post-image">Food Image</label>
-      <input type="file">
+      <input type="file" ng-model="post.image" required>
       <p class="help-block">From your computer</p>
     </div>
 
     <div class="form-group">
       <label for="post-name">Food Name</label>
-      <input type="text" class="form-control" placeholder="Enter Name">
+      <input type="text" class="form-control" placeholder="Enter Name" ng-model="post.name" required>
     </div>
 
     <div class="form-group">
       <label for="rating">Rating: </label>
-      <select class="form-control">
+      <select class="form-control" ng-model="post.rating" required>
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -28,25 +28,25 @@
 
     <div class="form-group">
       <label for="restaurant">Restaurant Name</label>
-      <input type="text" class="form-control" placeholder="Restaurant Name">
+      <input type="text" class="form-control" placeholder="Restaurant Name" ng-model="restaurant.name" required>
     </div>
 
     <div class="form-group">
       <label for="city">City</label>
-      <input type="text" class="form-control" placeholder="Restaurant City">
+      <input type="text" class="form-control" placeholder="Restaurant City" ng-model="restaurant.city" required>
     </div>
 
     <div class="form-group">
       <label for="state">State</label>
-      <input type="text" class="form-control" placeholder="Restaurant State">
+      <input type="text" class="form-control" placeholder="Restaurant State" ng-model="restaurant.state" required>
     </div>
 
     <div class="form-group">
       <label for="review">Review</label>
-      <textarea class="form-control" rows="5"></textarea>
+      <textarea class="form-control" rows="5" ng-model="post.review" required></textarea>
     </div>
 
-    <a href="#/profile"><button type="submit" class="btn btn-default submit">Submit</button></a>
+    <a href="#/profile"><button type="submit" class="btn btn-default submit" ng-disabled="addPostForm.$invalid">Submit</button></a>
 
   </form>
 </div>
