@@ -130,6 +130,10 @@
     margin-top: 70px;
   }
 
+  .btn.btn-default.register {
+    bottom: 40px;
+  }
+
   /*Error*/
 
   .custom-error {
