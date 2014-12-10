@@ -2,11 +2,11 @@
 <ng-include src="'templates/partials/sidebar.html'"></ng-include>
 
 <div class="container" id="form-container" ng-controller="AddCtrl">
-  <form role="form" name="addPostForm" ng-submit="addPost(post, restaurant)" novalidate>
+  <form role="form" name="addPostForm" ng-submit="addPost(post)" novalidate>
 
     <div class="form-group">
       <label for="post-image">Food Image</label>
-      <input type="file" ng-model="post.image" required>
+      <input type="file" fileread="post.image" required>
       <p class="help-block">From your computer</p>
     </div>
 
@@ -17,12 +17,8 @@
 
     <div class="form-group">
       <label for="rating">Rating: </label>
-      <select class="form-control" ng-model="post.rating" required>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <select class="form-control" ng-model="post.rating" ng-options="rating for rating in ratingVals" required>
+        <option value="">Select One</option>
       </select>
     </div>
 
@@ -46,7 +42,7 @@
       <textarea class="form-control" rows="5" ng-model="post.review" required></textarea>
     </div>
 
-    <a href="#/profile"><button type="submit" class="btn btn-default submit" ng-disabled="addPostForm.$invalid">Submit</button></a>
+    <button type="submit" class="btn btn-default submit" ng-disabled="addPostForm.$invalid">Login</button>
 
   </form>
 </div>
