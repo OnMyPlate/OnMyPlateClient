@@ -12,10 +12,15 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q) {
 
     $http.post(ServerUrl + 'restaurants', restaurant_params).success(function(response) {
       console.log(response);
-    });
+    }, 2000);
+
+    $http.post(ServerUrl + 'foods', food_params).success(function(response) {
+      console.log(response);
+    }, 2000);
+
     $http.post(ServerUrl + 'posts', post_params).success(function(response) {
       console.log(response);
-    });
+    }, 2000);
 
 
   };
