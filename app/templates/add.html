@@ -2,24 +2,12 @@
 <ng-include src="'templates/partials/sidebar.html'"></ng-include>
 
 <div class="container" id="form-container" ng-controller="AddCtrl">
-  <form role="form" name="addPostForm" ng-submit="addPost(post)" novalidate>
+  <form role="form" name="addPostForm" ng-submit="addPost(post, restaurant, image, food)" novalidate>
 
     <div class="form-group">
       <label for="post-image">Food Image</label>
-      <input type="file" fileread="post.image" required>
+      <input type="file" fileread="image" required>
       <p class="help-block">From your computer</p>
-    </div>
-
-    <div class="form-group">
-      <label for="post-name">Food Name</label>
-      <input type="text" class="form-control" placeholder="Enter Name" ng-model="post.name" required>
-    </div>
-
-    <div class="form-group">
-      <label for="rating">Rating: </label>
-      <select class="form-control" ng-model="post.rating" ng-options="rating for rating in ratingVals" required>
-        <option value="">Select One</option>
-      </select>
     </div>
 
     <div class="form-group">
@@ -38,11 +26,23 @@
     </div>
 
     <div class="form-group">
+      <label for="post-name">Food Name</label>
+      <input type="text" class="form-control" placeholder="Enter Name" ng-model="food.name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Rating: </label>
+      <select class="form-control" ng-model="post.rating" ng-options="rating for rating in ratingVals" required>
+        <option value="">Select One</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="review">Review</label>
       <textarea class="form-control" rows="5" ng-model="post.review" required></textarea>
     </div>
 
-    <button type="submit" class="btn btn-default submit" ng-disabled="addPostForm.$invalid">Login</button>
+    <button type="submit" class="btn btn-default submit" ng-disabled="addPostForm.$invalid">Submit</button>
 
   </form>
 </div>

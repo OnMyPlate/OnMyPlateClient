@@ -1,3 +1,5 @@
+'use strict';
+
 app.directive('fileread', function() {
   return {
     scope: {
