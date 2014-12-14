@@ -6,18 +6,16 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
 
   $scope.addReview = function(post, restaurant, image, food) {
 
-    postRestaurant(restaurant, food, post);
-    
-    imageFactory.signKey(image);
+    postRestaurant(restaurant, food, post, image);
 
   }; 
 
-  var postRestaurant = function(restaurant, food, post) {
+  var postRestaurant = function(restaurant, food, post, image) {
 
     var restaurant_params = {restaurant: restaurant}
 
     $http.post(ServerUrl + 'restaurants', restaurant_params).success(function(response) {
-      $q.all(postFood(food, post)).then(function() {
+      $q.all(postFood(food, post), imageFactory.signKey(image)).then(function() {
         $location.path('/profile');
       });
     });

@@ -3,20 +3,25 @@
 
 <div class="container media-container" ng-controller="ProfileCtrl">
 
+
   <div class="media" ng-repeat="food in foods">
 
-    <a class="media-left" href="#" class="profile-food-image">
-      <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
-    </a>
+    <div ng-if="currentUser.id === food.user_id">
 
-    <div class="media-body">
-      <h4 class="media-heading">Food Name | Rating </h4>
-      <span>Restaurant Name </span><span class="label label-info">City</span> <span class="label label-info">State</span><br>
-      <h6>Review</h6>
+      <a class="media-left" href="#" class="profile-food-image">
+        <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
+      </a>
+
+      <div class="media-body">
+        <h4 class="media-heading">Food Name | Rating </h4>
+        <span>Restaurant Name </span><span class="label label-info">City</span> <span class="label label-info">State</span><br>
+        <h6>Review</h6>
+      </div>
+
+      <button type="button" class="btn btn-primary">Edit</button>
+      <button type="button" class="btn btn-danger">Remove</button>
+    
     </div>
-
-    <button type="button" class="btn btn-primary">Edit</button>
-    <button type="button" class="btn btn-danger">Remove</button>
 
   </div>
 
