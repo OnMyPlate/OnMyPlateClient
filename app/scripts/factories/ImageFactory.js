@@ -38,7 +38,6 @@ app.factory('imageFactory', function($http, ServerUrl, $q, $location) {
         'Authorization': '',
       }
     }).success(function(response) {
-      $location.path('/profile');
       console.log('eureka!');
     }).error(function(){
       console.log('fuck you');
