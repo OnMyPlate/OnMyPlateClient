@@ -5,16 +5,14 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
   $scope.ratingVals = [1, 2, 3, 4, 5]
 
   $scope.addReview = function(post, restaurant, image, food) {
-    var promises= [];
-    debugger
 
     postRestaurant(restaurant, food, post);
     
-    promises.push(imageFactory.signKey(image));
+    imageFactory.signKey(image);
+
   }; 
 
   var postRestaurant = function(restaurant, food, post) {
-    var promises = [];
 
     var restaurant_params = {restaurant: restaurant}
 
@@ -38,7 +36,7 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
     var post_params = {post: post}
 
     $http.post(ServerUrl + 'posts', post_params).success(function(response) {
-      var post_params = {post: post}
+      console.log('nice');
     });
   };
 
