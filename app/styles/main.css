@@ -98,6 +98,11 @@
     top: 30px;
   }
 
+  .img-rounded {
+    width: 150px;
+    height: 150px;
+  }
+
   /*Add Post*/
   #form-container {
     float: right;
