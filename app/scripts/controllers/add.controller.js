@@ -6,16 +6,18 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
 
   $scope.addReview = function(post, restaurant, image, food) {
 
-    postRestaurant(restaurant, food, post, image);
+    postRestaurant(restaurant, food, post);
+    
+    imageFactory.signKey(image);
 
   }; 
 
-  var postRestaurant = function(restaurant, food, post, image) {
+  var postRestaurant = function(restaurant, food, post) {
 
     var restaurant_params = {restaurant: restaurant}
 
     $http.post(ServerUrl + 'restaurants', restaurant_params).success(function(response) {
-      $q.all(postFood(food, post), imageFactory.signKey(image)).then(function() {
+      $q.all(postFood(food, post)).then(function() {
         $location.path('/profile');
       });
     });
@@ -26,7 +28,9 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
     var food_params = {food: food};
 
     $http.post(ServerUrl + 'foods', food_params).success(function(response) {
-      postPost(post)
+      $q.all(postPost(post)).then(function() {
+        console.log('post created!')
+      });
     });
   }; 
 
@@ -34,7 +38,7 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
     var post_params = {post: post}
 
     $http.post(ServerUrl + 'posts', post_params).success(function(response) {
-      console.log('nice');
+      console.log('nice!');
     });
   };
 

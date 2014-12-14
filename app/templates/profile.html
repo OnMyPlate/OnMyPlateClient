@@ -6,14 +6,14 @@
 
   <div class="media" ng-repeat="food in foods">
 
-    <div ng-if="currentUser.id === food.user_id">
+    <div ng-if="currentUser.id === food.user_id" id="logic">
 
       <a class="media-left" href="#" class="profile-food-image">
         <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
       </a>
 
       <div class="media-body">
-        <h4 class="media-heading">Food Name | Rating </h4>
+        <h4 class="media-heading">{{food.name}} | Rating </h4>
         <span>Restaurant Name </span><span class="label label-info">City</span> <span class="label label-info">State</span><br>
         <h6>Review</h6>
       </div>

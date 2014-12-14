@@ -103,6 +103,10 @@
     height: 150px;
   }
 
+  #logic {
+    margin: 0px;
+  }
+
   /*Add Post*/
   #form-container {
     float: right;
