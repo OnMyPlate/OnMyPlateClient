@@ -2,12 +2,19 @@
 <ng-include src="'templates/partials/sidebar.html'"></ng-include>
 
 <div class="container" id="form-container" ng-controller="AddCtrl">
-  <form role="form" name="addPostForm" ng-submit="addPost(post, restaurant, image, food)" novalidate>
+
+  <form role="form" name="addPostForm" ng-submit="addPost(post, restaurant, image, food)" enctype="multipart/form-data" novalidate>
 
     <div class="form-group">
       <label for="post-image">Food Image</label>
-      <input type="file" fileread="image" required>
       <p class="help-block">From your computer</p>
+      <input type="hidden" name="key" value="key" />
+      <input type="hidden" name="AWSAccessKeyId" value="access_key" />
+      <input type="hidden" name="acl" value="public-read" />
+      <input type="hidden" name="policy" value="policy" />
+      <input type="hidden" name="signature" value="signature" />
+      <input type="hidden" name="Content-Type" value="image/jpeg">
+      <input type="file" name="file" fileread="image" required>
     </div>
 
     <div class="form-group">
@@ -42,7 +49,7 @@
       <textarea class="form-control" rows="5" ng-model="post.review" required></textarea>
     </div>
 
-    <button type="submit" class="btn btn-default submit" ng-disabled="addPostForm.$invalid">Submit</button>
+    <button type="submit" class="btn btn-default submit" name="submit" ng-disabled="addPostForm.$invalid">Submit</button>
 
   </form>
 </div>

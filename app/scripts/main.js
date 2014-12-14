@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('OnMyPlate', ['ngRoute']);
+var app = angular.module('OnMyPlate', ['ngRoute', 'angularFileUpload']);
 /*
 
 Run blocks are the closest thing in Angular to the main method. 
