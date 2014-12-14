@@ -5,9 +5,7 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
   $scope.ratingVals = [1, 2, 3, 4, 5]
 
   $scope.addReview = function(post, restaurant, image, food) {
-
     postRestaurant(restaurant, food, post, image);
-
   }; 
 
   var postRestaurant = function(restaurant, food, post, image) {
