@@ -29,6 +29,12 @@
     margin: 15px 0px;
   }
 
+  .review {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
   /*Profile Page*/
   /*=======================*/ 
 
@@ -73,22 +79,23 @@
 
   /*Food Posts*/
   
-  .media {
+  .media.food {
     float: right;
     width: 80%;
   }
 
-  .media-body {
+  .media-body.food {
     float: right;
     width: 80%;
   }
 
-  .media-left {
+  .media-left.food {
     float: left;
   }
 
   .container.media-container {
     padding-top: 20px;
+    overflow: scroll;
   }
 
   .btn.btn-primary,

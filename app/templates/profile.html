@@ -4,15 +4,15 @@
 <div class="container media-container" ng-controller="ProfileCtrl">
 
 
-  <div class="media" ng-repeat="food in foods">
+  <div class="media food" ng-repeat="food in foods">
 
     <div ng-if="currentUser.id === food.user_id" id="logic">
 
-      <a class="media-left" href="#/food/{{food.id}}" class="profile-food-image">
+      <a class="media-left food" href="#/food/{{food.id}}" class="profile-food-image">
         <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
       </a>
 
-      <div class="media-body">
+      <div class="media-body food">
         <h4 class="media-heading">{{food.name}}</h4>
         <h5>Rating: </h5>
         <span>{{food.restaurant_name}} </span><span class="label label-info">{{food.city}}</span> <span class="label label-info">{{food.state}}</span><br>
