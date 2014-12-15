@@ -4,7 +4,7 @@ app.controller('AddCtrl', ['$scope', '$http', 'ServerUrl', '$location', '$q', 'i
 
   $scope.ratingVals = [1, 2, 3, 4, 5]
 
-  $scope.addReview = function(post, image, food) {
+  $scope.upsertReview = function(post, image, food) {
     postFood(food, post, image);
   };
 

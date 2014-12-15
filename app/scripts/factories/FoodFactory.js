@@ -16,6 +16,14 @@ app.factory('foodFactory',['$location', function($location) {
     }
   };
 
+  var searchDuplicate = function(arr, food) {
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i].name === food.name) {
+        return true;
+      }
+    }
+  };
+
   return {
     findCurrentFood: findCurrentFood
   };

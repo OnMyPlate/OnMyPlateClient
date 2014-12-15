@@ -11,7 +11,7 @@
 }
 
 .form-group .ng-dirty.ng-invalid {
-  border: 2px solid red;
+  border: 2px solid #CC0000;
 }
 
 .form-group .ng-valid {

@@ -3,7 +3,7 @@
 
 <div class="container" id="form-container" ng-controller="AddCtrl">
 
-  <form role="form" name="addPostForm" ng-submit="addReview(post, image, food)" enctype="multipart/form-data" autocomplete="on"novalidate>
+  <form role="form" name="addPostForm" ng-submit="upsertReview(post, image, food)" enctype="multipart/form-data" autocomplete="on"novalidate>
 
     <div class="form-group">
       <label for="post-image">Food Image</label>
@@ -18,10 +18,11 @@
     </div>
 
 
-    <div class="form-group">
-      <label for="restaurant">Restaurant Name</label>
-      <input type="text" name="restaurantname" class="form-control" placeholder="Restaurant Name" ng-model="food.restaurant_name" required>
-    </div>
+    <!-- <div class="form-group"> -->
+      <!-- <label for="restaurant">Restaurant Name</label> -->
+      <!-- <input type="text" name="restaurantname" class="form-control" placeholder="Restaurant Name" ng-model="food.restaurant_name" required> -->
+      <typeahead type="text" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name" form-name="addPostForm" error-message="Restaurant name is required"></typeahead>
+    <!-- </div> -->
 
     <div class="custom-error" ng-show="addPostForm.restaurantname.$dirty && addPostForm.restaurantname.$invalid">
       <span ng-show="addPostForm.restaurantname.$error.required">Invalid: Restaurant name is required.</span>

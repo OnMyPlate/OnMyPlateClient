@@ -8,7 +8,7 @@
     Filter by City <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Boston</a></li>
+      <li ng-repeat="food in foods"><a href="#">{{food.city}}</a></li>
     </ul>
   </div>
 
@@ -17,7 +17,7 @@
     Filter by State <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-      <li><a href="#">MA</a></li>
+      <li ng-repeat="food in foods"><a href="#">{{food.state}}</a></li>
     </ul>
   </div>
 
@@ -34,7 +34,7 @@
           <h4>{{food.restaurant_name}}</h4>
           <h5>Rating</h5>
           <p class="review">{{food.posts[0].review}}</p>
-          <p><a href="#/post" class="btn btn-default" role="button">Read More</a></p>
+          <p><a ng-href="#/food/{{food.id}}" class="btn btn-default" role="button">Read More</a></p>
         </div>
       </div>
     </div>
