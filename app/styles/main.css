@@ -41,10 +41,10 @@
   /*Sidebar*/
 
   .sidebar {
-    position: absolute;
+    position: fixed;
     margin: 0px;
     padding: 0px;
-    height: 100%;
+    height: 300px;
     background-color: #F8F8F8;
     display: inline-block;
     width: 20%;
@@ -96,6 +96,7 @@
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
+    white-space: nowrap;
   }
 
   .btn.btn-primary,
