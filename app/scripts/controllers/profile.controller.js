@@ -18,4 +18,13 @@ app.controller('ProfileCtrl', function($http, ServerUrl, $scope, userFactory, $q
     });
   });
 
+  $scope.checkRestaurant = function(food, restaurants) {
+    var restaurants = restaurants;
+    for(var i = 0; i < restaurants.length; i++) {
+      if(restaurants[i].id === food.restaurant_id) {
+        return restaurants[i].name;
+      }
+    }
+  };
+
 });
