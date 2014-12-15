@@ -2,12 +2,25 @@
 
 <div class="container" ng-controller="FoodCtrl">
   <div class="page-header">
-    <h1>Food Name <small>City, State</small><small> | Restaurant Name</small></h1>
+    <h1>{{currentFood.name}} <small>{{currentFood.restaurant_name}}</small><small> | {{currentFood.city}}, {{currentFood.state}}</small></h1>
   </div>
-  <img src="images/food.jpg" alt="Food Picture">
-  <img src="images/food.jpg" alt="Food Picture">
-  <img src="images/food.jpg" alt="Food Picture">
-  <img src="images/food.jpg" alt="Food Picture">
-  <h2>Rating</h2>
-  <h3>Review</h3>
+
+   <div class="media" ng-repeat="post in currentFood.posts">
+   
+         <a class="media-left" href="#" class="profile-food-image">
+           <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
+         </a>
+   
+         <div class="media-body">
+           <h4 class="media-heading">{{currentFood.name}}</h4>
+           <div>
+              <span><strong>Rating: </strong></span>
+              <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(post)" aria-hidden="true"></span>
+           </div>
+           <span>{{currentFood.restaurant_name}} </span><span class="label label-info">{{currentFood.city}}</span> <span class="label label-info">{{currentFood.state}}</span><br>
+           <h6>{{post.review}}</h6>
+         </div>
+       
+    
+      </div>
 </div>
