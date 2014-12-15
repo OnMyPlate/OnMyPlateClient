@@ -11,11 +11,11 @@
 }
 
 .form-group .ng-dirty.ng-invalid {
-  border-color: red;
+  border: 2px solid red;
 }
 
 .form-group .ng-valid {
-  border-color: green;
+  border: 2px solid green;
 }
 
 @media only screen and (min-width : 992px) {
@@ -126,6 +126,10 @@
     width: 100px;
     height: 40px;
   }
+
+.typeahead {
+  background-color: #F8F8F8;
+}
 
   /*Favorites*/
   #bookmarked {

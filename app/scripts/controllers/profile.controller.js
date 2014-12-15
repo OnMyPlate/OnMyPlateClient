@@ -1,20 +1,21 @@
 'use strict';
 
-app.controller('ProfileCtrl', function($http, ServerUrl, $scope, userFactory, $q, $window) {
+app.controller('ProfileCtrl', function($http, ServerUrl, $scope, userFactory, $q, $window, dataFactory) {
 
   var users = [];
 
-  $http.get(ServerUrl + 'foods.json').success(function(response) {
-    $scope.foods = response.foods;
+  dataFactory.fetchFoods().then(function(response) {
+    $scope.foods = response.data.foods;
   });
 
+  dataFactory.fetchRestaurants().then(function(response) {
+    $scope.restaurants = response.data.restaurants;
+  });
 
-  $http.get(ServerUrl + 'users.json').success(function(response) {
-    $q.all(userFactory.createUsersArray(response.users, users)).then(function() {
+  dataFactory.fetchUsers().then(function(response) {
+    $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
       $scope.currentUser = userFactory.defineCurrentUser(users);
     });
   });
-
-
 
 });
