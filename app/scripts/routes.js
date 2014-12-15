@@ -1,6 +1,6 @@
 'use strict';
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
 
   $routeProvider
   .when('/', {
@@ -12,8 +12,8 @@ app.config(function($routeProvider) {
   .when('/profile', {
     templateUrl: 'templates/profile.html'
   })
-  .when('/post', {
-    templateUrl: 'templates/post.html'
+  .when('/food/:id', {
+    templateUrl: 'templates/food.html'
   })
   .when('/add', {
     templateUrl: 'templates/add.html'
@@ -30,4 +30,4 @@ app.config(function($routeProvider) {
   .otherwise({
     redirectTo: '/'
   });
-});
+}]);

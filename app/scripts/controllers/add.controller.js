@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imageFactory) {
+app.controller('AddCtrl', ['$scope', '$http', 'ServerUrl', '$location', '$q', 'imageFactory', function($scope, $http, ServerUrl, $location, $q, imageFactory) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5]
 
@@ -29,4 +29,4 @@ app.controller('AddCtrl', function($scope, $http, ServerUrl, $location, $q, imag
     });
   };
 
-});
+}]);

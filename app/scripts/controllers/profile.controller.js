@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ProfileCtrl', function($http, ServerUrl, $scope, userFactory, $q, $window, dataFactory) {
+app.controller('ProfileCtrl',['$http', 'ServerUrl', '$scope', 'userFactory', '$q', '$window', 'dataFactory', function($http, ServerUrl, $scope, userFactory, $q, $window, dataFactory) {
 
   var users = [];
 
@@ -14,4 +14,4 @@ app.controller('ProfileCtrl', function($http, ServerUrl, $scope, userFactory, $q
     });
   });
 
-});
+}]);

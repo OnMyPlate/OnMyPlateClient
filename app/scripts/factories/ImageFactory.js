@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('imageFactory', function($http, ServerUrl, $q, $location) {
+app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($http, ServerUrl, $q, $location) {
 
   var signKeyResponse;
 
@@ -54,4 +54,4 @@ app.factory('imageFactory', function($http, ServerUrl, $q, $location) {
     signKey: signKey
   };  
 
-});
+}]);

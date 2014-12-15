@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('LoginCtrl', function($scope, $location, authFactory) {
+app.controller('LoginCtrl',['$scope', '$location', 'authFactory', function($scope, $location, authFactory) {
 
 
   $scope.login = function(params) {
@@ -8,4 +8,4 @@ app.controller('LoginCtrl', function($scope, $location, authFactory) {
       $location.path('/')
     });
   }
-});
+}]);

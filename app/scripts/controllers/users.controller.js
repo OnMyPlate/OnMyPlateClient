@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('UserCtrl', function($http, $scope, ServerUrl, $location, $window) {
+app.controller('UserCtrl',['$http', '$scope', 'ServerUrl', '$location', '$window', function($http, $scope, ServerUrl, $location, $window) {
 
 
   // user can register
@@ -18,4 +18,4 @@ app.controller('UserCtrl', function($http, $scope, ServerUrl, $location, $window
     });
   }
 
-});
+}]);

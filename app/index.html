@@ -7,11 +7,16 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- bootstrap bower component -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
 
     <!-- main stylesheet -->
+    <!-- build:css({.tmp,app}) styles/styles.css -->
     <link rel="stylesheet" href="styles/main.css">
-
+    <!-- endbuild -->
   </head>
   <body ng-app="OnMyPlate">
 
@@ -19,31 +24,36 @@
     <ng-view></ng-view>
 
     <!-- bower components -->
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
     <!-- main files -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/routes.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <script src="scripts/main.js"></script>
+      <script src="scripts/routes.js"></script>
 
     <!-- controllers -->
-    <script src="scripts/controllers/navbar.controller.js"></script>
-    <script src="scripts/controllers/sidebar.controller.js"></script>
-    <script src="scripts/controllers/users.controller.js"></script>
-    <script src="scripts/controllers/login.controller.js"></script>
-    <script src="scripts/controllers/add.controller.js"></script>
-    <script src="scripts/controllers/profile.controller.js"></script>
-    <script src="scripts/controllers/post.controller.js"></script>
+      <script src="scripts/controllers/navbar.controller.js"></script>
+      <script src="scripts/controllers/sidebar.controller.js"></script>
+      <script src="scripts/controllers/users.controller.js"></script>
+      <script src="scripts/controllers/login.controller.js"></script>
+      <script src="scripts/controllers/add.controller.js"></script>
+      <script src="scripts/controllers/profile.controller.js"></script>
+      <script src="scripts/controllers/food.controller.js"></script>
 
     <!-- factories & services -->
-    <script src="scripts/factories/AuthFactory.js"></script>
-    <script src="scripts/factories/UserFactory.js"></script>
-    <script src="scripts/factories/ImageFactory.js"></script>
-    <script src="scripts/factories/DataFactory.js"></script>
+      <script src="scripts/factories/AuthFactory.js"></script>
+      <script src="scripts/factories/UserFactory.js"></script>
+      <script src="scripts/factories/ImageFactory.js"></script>
+      <script src="scripts/factories/DataFactory.js"></script>
 
     <!-- directives -->
-    <script src="scripts/directives/imageUploadDirective.js"></script>
+      <script src="scripts/directives/imageUploadDirective.js"></script>
+    <!-- endbuild -->
   </body>
 </html>

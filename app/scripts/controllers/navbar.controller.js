@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NavbarCtrl', function($scope, $location, authFactory) {
+app.controller('NavbarCtrl',['$scope', '$location', 'authFactory', function($scope, $location, authFactory) {
 
   $scope.isActive = function(navLocation) {
     return navLocation === $location.path();
@@ -17,4 +17,4 @@ app.controller('NavbarCtrl', function($scope, $location, authFactory) {
   };
 
 
-});
+}]);
