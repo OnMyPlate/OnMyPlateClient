@@ -2,13 +2,6 @@
 
 app.factory('dataFactory', function($http, ServerUrl) {
 
-
-  var fetchRestaurants = function() {
-    return $http.get(ServerUrl + 'restaurants.json').success(function(response) {
-      return response.restaurants;
-    });
-  };
-
   var fetchFoods = function() {
     return $http.get(ServerUrl + 'foods.json').success(function(response) {
       return response.foods;
@@ -22,7 +15,6 @@ app.factory('dataFactory', function($http, ServerUrl) {
   };
 
   return {
-    fetchRestaurants: fetchRestaurants,
     fetchFoods: fetchFoods,
     fetchUsers: fetchUsers
   };

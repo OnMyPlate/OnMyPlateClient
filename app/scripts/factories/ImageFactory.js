@@ -8,13 +8,13 @@ app.factory('imageFactory', function($http, ServerUrl, $q, $location) {
     return $http.get(ServerUrl + 'amazon/sign_key').success(function(response) {
       signKeyResponse = response;
 
-      var image_params = {
+      var imageParams = {
         food_image: {
           image_url: 'https://ompimages.s3.amazonaws.com/'+ signKeyResponse.key
         }
       };
 
-      $q.all(postImageToAPI(image_params)).then(function() {
+      $q.all(postImageToAPI(imageParams)).then(function() {
         postImageToS3(imageFile, signKeyResponse);
       });
     });

@@ -3,7 +3,7 @@
 
 <div class="container" id="form-container" ng-controller="AddCtrl">
 
-  <form role="form" name="addPostForm" ng-submit="addReview(post, restaurant, image, food)" enctype="multipart/form-data" autocomplete="on"novalidate>
+  <form role="form" name="addPostForm" ng-submit="addReview(post, image, food)" enctype="multipart/form-data" autocomplete="on"novalidate>
 
     <div class="form-group">
       <label for="post-image">Food Image</label>
@@ -20,7 +20,7 @@
 
     <div class="form-group">
       <label for="restaurant">Restaurant Name</label>
-      <input type="text" name="restaurantname" class="form-control" placeholder="Restaurant Name" ng-model="restaurant.name" required>
+      <input type="text" name="restaurantname" class="form-control" placeholder="Restaurant Name" ng-model="food.restaurant_name" required>
     </div>
 
     <div class="custom-error" ng-show="addPostForm.restaurantname.$dirty && addPostForm.restaurantname.$invalid">
@@ -30,7 +30,7 @@
 
     <div class="form-group">
       <label for="city">City</label>
-      <input type="text" name="restaurantcity" class="form-control" placeholder="Restaurant City" ng-model="restaurant.city" required>
+      <input type="text" name="restaurantcity" class="form-control" placeholder="Restaurant City" ng-model="food.city" required>
     </div>
 
     <div class="custom-error" ng-show="addPostForm.restaurantcity.$dirty && addPostForm.restaurantcity.$invalid">
@@ -40,7 +40,7 @@
 
     <div class="form-group">
       <label for="state">State</label>
-      <input type="text" name="restaurantstate" class="form-control" placeholder="Restaurant State" ng-model="restaurant.state" required>
+      <input type="text" name="restaurantstate" class="form-control" placeholder="Restaurant State" ng-model="food.state" required>
     </div>
 
     <div class="custom-error" ng-show="addPostForm.restaurantstate.$dirty && addPostForm.restaurantstate.$invalid">
