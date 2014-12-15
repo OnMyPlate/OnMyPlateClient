@@ -17,7 +17,4 @@ app.controller('FoodCtrl',['$location', '$scope', 'dataFactory', 'foodFactory', 
       return repeat;
     };
 
-
-
-
 }]);
