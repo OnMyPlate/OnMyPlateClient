@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('typeahead',['$http', function($http) {
+app.directive('typeahead',['$http', '$timeout', function($http, $timeout) {
   return {
     restrict: 'EA',
     scope: {
@@ -13,11 +13,12 @@ app.directive('typeahead',['$http', function($http) {
     },
     templateUrl: 'templates/typeahead.html',
     link: function(scope, element, attrs) {
-      scope.selected = false;
+      scope.selected = true;
       scope.select = function(selectedModel) {
         scope.model = selectedModel;
         scope.selected = true;
-      }
+        scope.current = 0;
+      };
     } 
   };
 }]); 
