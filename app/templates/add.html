@@ -17,47 +17,41 @@
       <input type="file" name="file" fileread="image" required>
     </div>
 
-
-    <!-- <div class="form-group"> -->
-      <!-- <label for="restaurant">Restaurant Name</label> -->
-      <!-- <input type="text" name="restaurantname" class="form-control" placeholder="Restaurant Name" ng-model="food.restaurant_name" required> -->
-      <typeahead type="text" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name" form-name="addPostForm" error-message="Restaurant name is required"></typeahead>
-    <!-- </div> -->
+    <typeahead type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name" ></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.restaurantname.$dirty && addPostForm.restaurantname.$invalid">
       <span ng-show="addPostForm.restaurantname.$error.required">Invalid: Restaurant name is required.</span>
     </div>
     <br>
 
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" name="restaurantcity" class="form-control" placeholder="Restaurant City" ng-model="food.city" required>
-    </div>
+
+
+    <typeahead type="text" name="restaurantcity" model="food.city" prompt="Restaurant City"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.restaurantcity.$dirty && addPostForm.restaurantcity.$invalid">
       <span ng-show="addPostForm.restaurantcity.$error.required">Invalid: Restaurant city is required.</span>
     </div>
     <br>
 
-    <div class="form-group">
-      <label for="state">State</label>
-      <input type="text" name="restaurantstate" class="form-control" placeholder="Restaurant State" ng-model="food.state" required>
-    </div>
+
+
+    <typeahead type="text" name="restaurantstate" model="food.state" prompt="Restaurant State"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.restaurantstate.$dirty && addPostForm.restaurantstate.$invalid">
       <span ng-show="addPostForm.restaurantstate.$error.required">Invalid: Restaurant state is required.</span>
     </div>
     <br>
 
-    <div class="form-group">
-      <label for="post-name">Food Name</label>
-      <input type="text" name="foodname" class="form-control" placeholder="Enter Name" ng-model="food.name" required>
-    </div>
+
+
+    <typeahead type="text" name="foodname" model="food.name" prompt="Food Name"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.foodname.$dirty && addPostForm.foodname.$invalid">
       <span ng-show="addPostForm.foodname.$error.required">Invalid: Food name is required.</span>
     </div>
     <br>
+
+
 
     <div class="form-group">
       <label for="rating">Rating: </label>
@@ -70,6 +64,8 @@
       <span ng-show="addPostForm.rating.$error.required">Invalid: Rating is required.</span>
     </div>
     <br>
+
+
 
     <div class="form-group">
       <label for="review">Review</label>

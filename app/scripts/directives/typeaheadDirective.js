@@ -8,12 +8,16 @@ app.directive('typeahead',['$http', function($http) {
       model: '=',
       prompt: '@',
       name: '@',
-      formName: '@',
-      errorMessage: '@'
+      items: '=',
+      property: '@'
     },
     templateUrl: 'templates/typeahead.html',
     link: function(scope, element, attrs) {
-
-    }
+      scope.selected = false;
+      scope.select = function(selectedModel) {
+        scope.model = selectedModel;
+        scope.selected = true;
+      }
+    } 
   };
 }]); 

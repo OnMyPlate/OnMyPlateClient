@@ -1,8 +1,19 @@
 'use strict';
 
-app.controller('AddCtrl', ['$scope', '$http', 'ServerUrl', '$location', '$q', 'imageFactory', function($scope, $http, ServerUrl, $location, $q, imageFactory) {
+app.controller('AddCtrl', ['$scope', 
+                           '$http', 
+                           'ServerUrl', 
+                           '$location', 
+                           '$q', 
+                           'imageFactory', 
+                           'dataFactory', 
+                           function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5]
+
+  dataFactory.fetchFoods().then(function(response) {
+    $scope.foods = response.data.foods;
+  });
 
   $scope.upsertReview = function(post, image, food) {
     postFood(food, post, image);
