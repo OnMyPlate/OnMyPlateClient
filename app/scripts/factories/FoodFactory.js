@@ -16,15 +16,16 @@ app.factory('foodFactory',['$location', function($location) {
     }
   };
 
-  var searchDuplicate = function(arr, food) {
+  var searchDuplicate = function(arr, model) {
     for(var i = 0; i < arr.length; i++) {
-      if(arr[i].name === food.name) {
-        return true;
+      if(arr[i].name === model.name) {
+        return arr[i];
       }
     }
   };
 
   return {
-    findCurrentFood: findCurrentFood
+    findCurrentFood: findCurrentFood,
+    searchDuplicate: searchDuplicate
   };
 }]);  

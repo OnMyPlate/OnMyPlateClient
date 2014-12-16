@@ -6,7 +6,7 @@ app.controller('AddCtrl', ['$scope',
                            '$location', 
                            '$q', 
                            'imageFactory', 
-                           'dataFactory', 
+                           'dataFactory',
                            function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5]
@@ -16,24 +16,24 @@ app.controller('AddCtrl', ['$scope',
   });
 
   $scope.upsertReview = function(post, image, food) {
-    postFood(food, post, image);
+    upsertFood(food, post, image);
   };
 
-  var postFood = function(food, post, image) {
+  var upsertFood = function(food, post, image) {
     var foodParams = {food: food};
 
     $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
-      $q.all(postPost(post, image)).then(function() {
+      $q.all(upsertPost(post, image, food)).then(function() {
         $location.path('/profile');
         console.log('post created!')
       });
     });
   }; 
 
-  var postPost = function(post, image) {
+  var upsertPost = function(post, image, food) {
     var postParams = {post: post}
 
-    $http.post(ServerUrl + 'posts', postParams).success(function(response) {
+    $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
       $q.all(imageFactory.signKey(image)).then(function() {
         console.log('nice!');
       });

@@ -26,7 +26,7 @@
 
 
 
-    <typeahead type="text" name="restaurantcity" model="food.city" prompt="Restaurant City"></typeahead>
+    <typeahead type="text" items="foods" property="city" name="restaurantcity" model="food.city" prompt="Restaurant City"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.restaurantcity.$dirty && addPostForm.restaurantcity.$invalid">
       <span ng-show="addPostForm.restaurantcity.$error.required">Invalid: Restaurant city is required.</span>
@@ -35,7 +35,7 @@
 
 
 
-    <typeahead type="text" name="restaurantstate" model="food.state" prompt="Restaurant State"></typeahead>
+    <typeahead type="text" items="foods" property="state" name="restaurantstate" model="food.state" prompt="Restaurant State"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.restaurantstate.$dirty && addPostForm.restaurantstate.$invalid">
       <span ng-show="addPostForm.restaurantstate.$error.required">Invalid: Restaurant state is required.</span>
@@ -44,7 +44,7 @@
 
 
 
-    <typeahead type="text" name="foodname" model="food.name" prompt="Food Name"></typeahead>
+    <typeahead type="text" items="foods" property="name" name="foodname" model="food.name" prompt="Food Name"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.foodname.$dirty && addPostForm.foodname.$invalid">
       <span ng-show="addPostForm.foodname.$error.required">Invalid: Food name is required.</span>

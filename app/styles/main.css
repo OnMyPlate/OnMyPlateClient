@@ -89,6 +89,11 @@
     width: 80%;
   }
 
+  .media-body.food h6 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .media-left.food {
     float: left;
   }
@@ -113,6 +118,16 @@
 
   #logic {
     margin: 0px;
+  }
+
+  .glyphicon.glyphicon-remove {
+    float:right;
+    position: relative;
+    top: -25px;
+  }
+
+  .glyphicon.glyphicon-remove:hover {
+    cursor: pointer;
   }
 
   /*Add Post*/
@@ -144,7 +159,8 @@
     padding: 5px 10px;
     margin: 0px;
   }
-  .property:hover {
+  .property:hover,
+  .typeactive {
     cursor: pointer;
     background-color: #DFDFDF;
   }
