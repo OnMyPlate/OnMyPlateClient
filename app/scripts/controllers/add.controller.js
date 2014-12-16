@@ -16,14 +16,24 @@ app.controller('AddCtrl', ['$scope',
     $scope.foods = response.data.foods;
   });
 
+  // Checks if passed object contains any property, if it is than it sets the scope.foods wiht that params in the form so the user can update the food
+  (function() {
+    var params = foodFactory.params;
+    if(params.name) {
+      $scope.food = params;
+      $scope.post = params.posts[0];
+    }
+  })();
+  
+
   $scope.upsertReview = function(post, image, food) {
     upsertFood(food, post, image);
   };
 
   var upsertFood = function(food, post, image) {
     var foodParams = {food: food};
-    var paramsFromAnotherMother = foodFactory.params;
-    debugger
+
+    
     $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
       $q.all(upsertPost(post, image, food)).then(function() {
         $location.path('/profile');

@@ -9,7 +9,8 @@ app.directive('typeahead',['$http', '$timeout', function($http, $timeout) {
       prompt: '@',
       name: '@',
       items: '=',
-      property: '@'
+      property: '@',
+      value: '@'
     },
     templateUrl: 'templates/typeahead.html',
     link: function(scope, element, attrs) {

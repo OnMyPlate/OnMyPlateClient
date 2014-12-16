@@ -17,7 +17,7 @@
       <input type="file" name="file" fileread="image" required>
     </div>
 
-    <typeahead type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name" ></typeahead>
+    <typeahead type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name"></typeahead>
 
     <div class="custom-error" ng-show="addPostForm.restaurantname.$dirty && addPostForm.restaurantname.$invalid">
       <span ng-show="addPostForm.restaurantname.$error.required">Invalid: Restaurant name is required.</span>

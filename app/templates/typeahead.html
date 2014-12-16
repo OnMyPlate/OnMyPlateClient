@@ -1,6 +1,6 @@
 <div class="form-group">
   <label for="{{name}}">{{prompt}}</label>
-  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{prompt}}" ng-model="model" ng-keydown="checkKeys($event)"  ng-keypress="selected=false" required>
+  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{prompt}}" ng-model="model" ng-keydown="checkKeys($event)"  ng-keypress="selected=false" value="{{value}}" required>
 </div>
 
 <!-- <div class="type-ahead" ng-hide="!model.length || selected">
