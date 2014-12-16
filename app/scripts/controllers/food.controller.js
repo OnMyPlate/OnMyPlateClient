@@ -5,12 +5,16 @@ app.controller('FoodCtrl',['$location',
                            'dataFactory', 
                            'foodFactory',
                            'userFactory',
-                           '$q', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q) {
+                           '$q',
+                           '$http',
+                           'ServerUrl',
+                           'imageFactory', 
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory) {
 
 
     var users = [];
-    
+    $scope.ratingVals = [1, 2, 3, 4, 5];
+
     dataFactory.fetchFoods().then(function(response) {
       var foods = response.data.foods;
       var path = $location.path();
@@ -31,8 +35,26 @@ app.controller('FoodCtrl',['$location',
       return repeat;
     };
 
-    $scope.revealForm = function() {
+    $scope.slideToggleForm = function() {
       $('form').slideToggle(400);
+    };
+
+    $scope.hideForm = function() {
+      $('form').hide(400);
+    };
+
+    $scope.postNewPost = function(post, image, food) {
+
+      var postParams = {post: {
+        rating: post.rating,
+        review: post.review,
+        food_id: food.id 
+      }};
+
+      $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+        console.log('post updated!');
+        $q.all(imageFactory.signKey(image, postParams));
+      });
     };
 
 

@@ -10,7 +10,7 @@ app.controller('AddCtrl', ['$scope',
                            'foodFactory',
                            function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory, foodFactory) {
 
-  $scope.ratingVals = [1, 2, 3, 4, 5]
+  $scope.ratingVals = [1, 2, 3, 4, 5];
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
