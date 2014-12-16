@@ -7,7 +7,8 @@ app.controller('AddCtrl', ['$scope',
                            '$q', 
                            'imageFactory', 
                            'dataFactory',
-                           function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory) {
+                           'foodFactory',
+                           function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory, foodFactory) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5]
 
@@ -21,7 +22,8 @@ app.controller('AddCtrl', ['$scope',
 
   var upsertFood = function(food, post, image) {
     var foodParams = {food: food};
-
+    var paramsFromAnotherMother = foodFactory.params;
+    debugger
     $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
       $q.all(upsertPost(post, image, food)).then(function() {
         $location.path('/profile');

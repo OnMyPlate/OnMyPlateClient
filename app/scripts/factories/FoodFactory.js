@@ -2,6 +2,7 @@
 
 app.factory('foodFactory',['$location', function($location) {
 
+  var params = {};
 
   var getFoodId = function(path) {
     return parseInt(path.substr(path.length - 1));
@@ -24,8 +25,14 @@ app.factory('foodFactory',['$location', function($location) {
     }
   };
 
+  var storeFood = function(food) {
+    angular.copy(food, params);
+  };
+
   return {
     findCurrentFood: findCurrentFood,
-    searchDuplicate: searchDuplicate
+    searchDuplicate: searchDuplicate,
+    storeFood: storeFood,
+    params: params
   };
 }]);  

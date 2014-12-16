@@ -6,8 +6,10 @@ app.controller('ProfileCtrl',['$http',
                               'userFactory', 
                               '$q', 
                               '$window', 
-                              'dataFactory', 
-                              function($http, ServerUrl, $scope, userFactory, $q, $window, dataFactory) {
+                              'dataFactory',
+                              '$location',
+                              'foodFactory', 
+                              function($http, ServerUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory) {
 
   var users = [];
 
@@ -21,10 +23,16 @@ app.controller('ProfileCtrl',['$http',
     });
   });
 
+  $scope.goToEdit = function(food) {
+    foodFactory.storeFood(food);
+    $location.path('/add');
+  };  
+
   $scope.removeFood = function(food) {
     $http.delete(ServerUrl + '/foods/' + food.id).success(function(response) {
       console.log('food is deleted!')
-      $('#logic').fadeOut(400);
+      debugger
+      $('.' + food.id).fadeOut(400);
     });
   };
 
