@@ -21,4 +21,11 @@ app.controller('ProfileCtrl',['$http',
     });
   });
 
+  $scope.removeFood = function(food) {
+    $http.delete(ServerUrl + '/foods/' + food.id).success(function(response) {
+      console.log('food is deleted!')
+      $('#logic').fadeOut(400);
+    });
+  };
+
 }]);
