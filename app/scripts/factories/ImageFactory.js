@@ -47,7 +47,7 @@ app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($h
 
   var upsertImageToAPI = function(image_params, post) {
     var promises = [];
-    if(post.post.food_image.id) {
+    if(post.post.food_image) {
       promises.push($http.put(ServerUrl + 'food_images/' + post.post.food_image.id, image_params));
     } else {
       promises.push($http.post(ServerUrl + 'food_images', image_params));

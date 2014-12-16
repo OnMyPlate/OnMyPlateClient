@@ -15,6 +15,7 @@ app.controller('ProfileCtrl',['$http',
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
+
   });
 
   dataFactory.fetchUsers().then(function(response) {
@@ -31,7 +32,6 @@ app.controller('ProfileCtrl',['$http',
   $scope.removeFood = function(food) {
     $http.delete(ServerUrl + '/foods/' + food.id).success(function(response) {
       console.log('food is deleted!')
-      debugger
       $('.' + food.id).fadeOut(400);
     });
   };

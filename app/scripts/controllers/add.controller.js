@@ -36,14 +36,14 @@ app.controller('AddCtrl', ['$scope',
     if(food.id) {
       $http.put(ServerUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
         console.log('food updated!');
-        $q.all(upsertPost(post, image, food)).then(function() {
+        $q.all(upsertPost(post, image, response)).then(function() {
           $location.path('/profile');
         });
       });
     } else {
       $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
-        console.log('post created!');
-        $q.all(upsertPost(post, image, food)).then(function() {
+        console.log('food created!');
+        $q.all(upsertPost(post, image, response)).then(function(response) {
           $location.path('/profile');
         });
       });
@@ -51,8 +51,12 @@ app.controller('AddCtrl', ['$scope',
   }; 
 
   var upsertPost = function(post, image, food) {
-    var postParams = {post: post}
-
+    var postParams = {post: {
+      rating: post.rating,
+      review: post.review,
+      food_id: food.id 
+    }};
+    
     if(post.id) {
       $http.put(ServerUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
@@ -60,7 +64,7 @@ app.controller('AddCtrl', ['$scope',
       });
     } else {
       $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
-        console.log('post updated!');
+        console.log('post created!');
         $q.all(imageFactory.signKey(image, postParams));
       });
     }
