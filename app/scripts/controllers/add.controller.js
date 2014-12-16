@@ -33,13 +33,21 @@ app.controller('AddCtrl', ['$scope',
   var upsertFood = function(food, post, image) {
     var foodParams = {food: food};
 
-    
-    $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
-      $q.all(upsertPost(post, image, food)).then(function() {
-        $location.path('/profile');
-        console.log('post created!')
+    if(food.id) {
+      $http.put(ServerUrl + '/foods/' + food.id + '.json'),success(function(response) {
+        $q.all(upsertPost(post, image, food)).then(function() {
+          $location.path('/profile');
+          console.log('post created!');
+        });
       });
-    });
+    } else {
+      $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
+        $q.all(upsertPost(post, image, food)).then(function() {
+          $location.path('/profile');
+          console.log('post created!');
+        });
+      });
+    }
   }; 
 
   var upsertPost = function(post, image, food) {
