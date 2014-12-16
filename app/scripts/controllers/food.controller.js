@@ -8,8 +8,9 @@ app.controller('FoodCtrl',['$location',
                            '$q',
                            '$http',
                            'ServerUrl',
-                           'imageFactory', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory) {
+                           'imageFactory',
+                           '$timeout', 
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory, $timeout) {
 
 
     var users = [];
@@ -52,8 +53,9 @@ app.controller('FoodCtrl',['$location',
       }};
 
       $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+        $scope.currentFood.posts.push(response);
         $q.all(imageFactory.signKey(image, postParams)).then(function() {
-
+          console.log('post created!')
         });
       });
     };

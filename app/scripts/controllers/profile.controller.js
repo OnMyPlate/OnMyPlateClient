@@ -15,7 +15,6 @@ app.controller('ProfileCtrl',['$http',
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
-
   });
 
   dataFactory.fetchUsers().then(function(response) {
