@@ -34,17 +34,17 @@ app.controller('AddCtrl', ['$scope',
     var foodParams = {food: food};
 
     if(food.id) {
-      $http.put(ServerUrl + '/foods/' + food.id + '.json'),success(function(response) {
+      $http.put(ServerUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
+        console.log('food updated!');
         $q.all(upsertPost(post, image, food)).then(function() {
           $location.path('/profile');
-          console.log('post created!');
         });
       });
     } else {
       $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
+        console.log('post created!');
         $q.all(upsertPost(post, image, food)).then(function() {
           $location.path('/profile');
-          console.log('post created!');
         });
       });
     }
@@ -53,11 +53,17 @@ app.controller('AddCtrl', ['$scope',
   var upsertPost = function(post, image, food) {
     var postParams = {post: post}
 
-    $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
-      $q.all(imageFactory.signKey(image)).then(function() {
-        console.log('nice!');
+    if(post.id) {
+      $http.put(ServerUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
+        console.log('post updated!');
+        $q.all(imageFactory.signKey(image, postParams));
       });
-    });
+    } else {
+      $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+        console.log('post updated!');
+        $q.all(imageFactory.signKey(image, postParams));
+      });
+    }
   };
 
 }]);

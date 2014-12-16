@@ -4,7 +4,7 @@ app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($h
 
   var signKeyResponse;
 
-  var signKey = function(imageFile) {
+  var signKey = function(imageFile, post) {
     return $http.get(ServerUrl + 'amazon/sign_key').success(function(response) {
       signKeyResponse = response;
 
@@ -14,7 +14,7 @@ app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($h
         }
       };
 
-      $q.all(postImageToAPI(imageParams)).then(function() {
+      $q.all(upsertImageToAPI(imageParams, post)).then(function() {
         postImageToS3(imageFile, signKeyResponse);
       });
     });
@@ -45,9 +45,13 @@ app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($h
 
   };
 
-  var postImageToAPI = function(image_params) {
+  var upsertImageToAPI = function(image_params, post) {
     var promises = [];
-    promises.push($http.post(ServerUrl + 'food_images', image_params));
+    if(post.post.food_image.id) {
+      promises.push($http.put(ServerUrl + 'food_images/' + post.post.food_image.id, image_params));
+    } else {
+      promises.push($http.post(ServerUrl + 'food_images', image_params));
+    }
   };
 
   return {
