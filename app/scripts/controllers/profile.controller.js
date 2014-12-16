@@ -32,7 +32,7 @@ app.controller('ProfileCtrl',['$http',
   $scope.removeFood = function(food) {
     $http.delete(ServerUrl + '/foods/' + food.id).success(function(response) {
       console.log('food is deleted!')
-      $('.' + food.id).fadeOut(400);
+      $('#' + food.id).fadeOut(400);
     });
   };
 

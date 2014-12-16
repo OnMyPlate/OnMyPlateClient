@@ -52,10 +52,19 @@ app.controller('FoodCtrl',['$location',
       }};
 
       $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
-        console.log('post updated!');
-        $q.all(imageFactory.signKey(image, postParams));
+        $q.all(imageFactory.signKey(image, postParams)).then(function() {
+
+        });
       });
     };
+
+    $scope.removePost = function(post, food) {
+      $http.delete(ServerUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
+        console.log('post is deleted!')
+        $('#' + post.id).fadeOut(400);
+      });
+    };
+
 
 
 }]);

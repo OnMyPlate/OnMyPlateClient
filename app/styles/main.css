@@ -77,11 +77,12 @@
     background-color: #DFDFDF;
   }
 
-  /*Food Posts*/
+  /*Foods*/
   
   .media.food {
     float: right;
     width: 80%;
+    margin: 10px 0px;
   }
 
   .media-body.food {
@@ -126,6 +127,12 @@
   .glyphicon.glyphicon-edit:hover,
   .glyphicon.glyphicon-pencil:hover {
     cursor: pointer;
+  }
+
+  /*Posts*/
+
+  .media.post {
+    margin-bottom: 30px;
   }
 
   /*Add Post*/

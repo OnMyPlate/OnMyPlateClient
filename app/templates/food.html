@@ -47,7 +47,9 @@
 
     <button type="submit" class="btn btn-default submit" name="submit" ng-click="hideForm()" ng-disabled="addNewPostForm.$invalid">Post</button>
   </form>
-   <div class="media" ng-repeat="post in currentFood.posts">
+
+
+   <div class="media post" ng-repeat="post in currentFood.posts" id="{{post.id}}">
    
          <a class="media-left" href="#" class="profile-food-image">
            <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
@@ -55,6 +57,7 @@
    
          <div class="media-body food">
            <h4 class="media-heading">{{currentFood.name}}</h4>
+           <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-if="currentUser.id === post.user_id"></span>
            <div>
               <span><strong>Rating: </strong></span>
               <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(post)" aria-hidden="true"></span>
