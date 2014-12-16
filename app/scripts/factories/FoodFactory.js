@@ -5,7 +5,7 @@ app.factory('foodFactory',['$location', function($location) {
   var params = {};
 
   var getFoodId = function(path) {
-    return parseInt(path.substr(path.length - 1));
+    return parseInt(path.match(/\d+$/)[0]);
   };
 
   var findCurrentFood = function(arr, path) {
