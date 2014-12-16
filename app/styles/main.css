@@ -123,7 +123,8 @@
   }
 
   .glyphicon.glyphicon-remove:hover,
-  .glyphicon.glyphicon-edit:hover {
+  .glyphicon.glyphicon-edit:hover,
+  .glyphicon.glyphicon-pencil:hover {
     cursor: pointer;
   }
 

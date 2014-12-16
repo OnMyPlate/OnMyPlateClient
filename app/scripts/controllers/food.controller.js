@@ -17,4 +17,7 @@ app.controller('FoodCtrl',['$location', '$scope', 'dataFactory', 'foodFactory', 
       return repeat;
     };
 
+    $scope.revealForm = function() {
+      $('form').slideToggle(400);
+    };
 }]);

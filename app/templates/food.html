@@ -4,7 +4,47 @@
   <div class="page-header">
     <h1>{{currentFood.name}} <small>{{currentFood.restaurant_name}}</small><small> | {{currentFood.city}}, {{currentFood.state}}</small></h1>
   </div>
+  <span class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="revealForm()">Add Post</span>
+  <br><br>
 
+  <form name="addNewPostForm" enctype="multipart/form-data" autocomplete="on" hidden novalidate>
+  
+    <div class="form-group">
+      <label for="post-image">Food Image</label>
+      <p class="help-block">From your computer</p>
+      <input type="hidden" name="key" value="key" />
+      <input type="hidden" name="AWSAccessKeyId" value="access_key" />
+      <input type="hidden" name="acl" value="public-read" />
+      <input type="hidden" name="policy" value="policy" />
+      <input type="hidden" name="signature" value="signature" />
+      <input type="hidden" name="Content-Type" value="image/jpeg">
+      <input type="file" name="file" fileread="image" required>
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Rating: </label>
+      <select name="rating" class="form-control" ng-model="post.rating" ng-options="rating for rating in ratingVals" required>
+        <option value="">Select One</option>
+      </select>
+    </div>
+
+    <div class="custom-error" ng-show="addNewPostForm.rating.$dirty && addNewPostForm.rating.$invalid">
+      <span ng-show="addNewPostForm.rating.$error.required">Invalid: Rating is required.</span>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="review">Review</label>
+      <textarea name="review" class="form-control" rows="5" ng-model="post.review" required></textarea>
+    </div>
+
+    <div class="custom-error" ng-show="addNewPostForm.review.$dirty && addNewPostForm.review.$invalid">
+      <span ng-show="addNewPostForm.review.$error.required">Invalid: Review is required.</span>
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-default submit" name="submit" ng-disabled="addNewPostForm.$invalid">Post</button>
+  </form>
    <div class="media" ng-repeat="post in currentFood.posts">
    
          <a class="media-left" href="#" class="profile-food-image">
