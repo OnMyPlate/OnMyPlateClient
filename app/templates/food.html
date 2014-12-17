@@ -56,18 +56,16 @@
            <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
          </a>
    
-         <div class="media-body food">
-          <div ng-show="currentUser.id !== post.user_id">
-            <span class="glyphicon glyphicon-heart" aria-hidden="true">{{post.likes}}Likes</span> 
+        <div class="media-body food">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-show="currentUser.id === post.user_id"></span>
+          <span class="glyphicon glyphicon-heart" aria-hidden="true" ng-show="currentUser.id !== post.user_id">{{post.likes}}Likes</span> 
+          <div>
+            <span><strong>Rating: </strong></span>
+            <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(post)" aria-hidden="true"></span>
           </div>
-           <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-show="currentUser.id === post.user_id"></span>
-           <div>
-              <span><strong>Rating: </strong></span>
-              <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(post)" aria-hidden="true"></span>
-           </div>
-           <span>{{currentFood.restaurant_name}} </span><span class="label label-info">{{currentFood.city}}</span> <span class="label label-info">{{currentFood.state}}</span><br>
-           <h6>{{post.review}}</h6>
-         </div>
+          <span>{{currentFood.restaurant_name}} </span><span class="label label-info">{{currentFood.city}}</span> <span class="label label-info">{{currentFood.state}}</span><br>
+          <h6>{{post.review}}</h6>
+        </div>
        
     
       </div>

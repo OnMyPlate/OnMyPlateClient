@@ -10,7 +10,7 @@ app.controller('FoodCtrl',['$location',
                            'ServerUrl',
                            'imageFactory',
                            '$timeout', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory, $timeout) {
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory) {
 
 
     var users = [];
@@ -46,7 +46,6 @@ app.controller('FoodCtrl',['$location',
     };
 
     $scope.postNewPost = function(post, image, food) {
-
       var postParams = {post: {
         rating: post.rating,
         review: post.review,

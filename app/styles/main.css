@@ -120,7 +120,7 @@
   .glyphicon.glyphicon-remove {
     float:right;
     position: relative;
-    top: -20px;
+    top: 2px;
   }
 
   .glyphicon.glyphicon-remove:hover,
