@@ -59,15 +59,6 @@ app.controller('FoodCtrl',['$location',
       $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         $scope.currentFood.posts.push(response);
         $q.all(imageFactory.signKey(image, postParams)).then(function() {
-          // $http.get(ServerUrl + 'posts/' + response.id + '/food_images.json').success(function(response) {
-          //   var foodImages = response.food_images;
-          //   for(var i = 0; i < foodImages.length; i++) {
-
-          //     if(foodImages[i].post_id === currentPost.id) {
-          //       $scope.foodImage = foodImages[i];
-          //     }
-          //   }
-          // });
           console.log('post created!')
         });
       });
@@ -76,9 +67,19 @@ app.controller('FoodCtrl',['$location',
     $scope.removePost = function(post, food) {
       $http.delete(ServerUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
         console.log('post is deleted!')
-        $('#' + post.id).fadeOut(400);
+        $('#' + post.id + 'a5b6').fadeOut(400);
       });
     };
+
+    $scope.likePost = function(post, food) {
+      post.likes += 1;
+      // $('#' + post.id + 'a5b6').slideDown(500).fadeOut(300);
+      var postParams = {post: post};
+      $http.put(ServerUrl + 'foods/' + food.id + '/posts/' + post.id + '.json', postParams).success(function(response) {
+        console.log('liked the post bitch!!!!!');
+      });
+
+    }; 
 
 
 

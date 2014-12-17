@@ -8,9 +8,11 @@ app.controller('AddCtrl', ['$scope',
                            'imageFactory', 
                            'dataFactory',
                            'foodFactory',
-                           function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory, foodFactory) {
+                           'userFactory',
+                           function($scope, $http, ServerUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5];
+  var users = [];
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
@@ -44,7 +46,13 @@ app.controller('AddCtrl', ['$scope',
       $http.post(ServerUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
         $q.all(upsertPost(post, image, response)).then(function(response) {
-          $location.path('/profile');
+          dataFactory.fetchUsers().then(function(response) {
+            $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
+              $scope.currentUser = userFactory.defineCurrentUser(users);
+              $location.path('/profile/' + $scope.currentUser.id);
+            });
+          });
+          
         });
       });
     }

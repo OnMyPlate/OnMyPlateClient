@@ -33,7 +33,7 @@
           <h3>{{food.name}}</h3>
           <h4>{{food.restaurant_name}}</h4>
           <div>
-            <h5>Rating</h5>
+            <span><strong>Rating: </strong></span>
             <span class="glyphicon glyphicon-star" ng-repeat="i in getAvgRating(food)" aria-hidden="true"></span>
           </div>
           <p class="review">{{food.posts[food.posts.length-1].review}}</p>
