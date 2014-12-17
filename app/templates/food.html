@@ -3,7 +3,7 @@
 <div class="container" ng-controller="FoodCtrl">
   <div class="page-header">
     <h1>{{currentFood.name}} <small>{{currentFood.restaurant_name}}</small><small> | {{currentFood.city}}, {{currentFood.state}}</small></h1>
-    <!-- <span class="glyphicon glyphicon-star" ng-repeat="i in avgRating" aria-hidden="true"></span> -->
+    <span class="glyphicon glyphicon-star" ng-repeat="i in avgFoodRating" aria-hidden="true"></span>
   </div>
   <div ng-show="currentUser.id !== currentFood.user_id">
     <span class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="slideToggleForm()">Add Post</span>
@@ -50,7 +50,7 @@
   </form>
 
 
-   <div class="media post" ng-repeat="post in currentFood.posts" id="{{post.id}}">
+   <div class="media post" ng-repeat="post in posts" id="{{post.id}}">
    
          <a class="media-left" href="#" class="profile-food-image">
            <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
@@ -58,7 +58,7 @@
    
         <div class="media-body food">
           <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-show="currentUser.id === post.user_id"></span>
-          <span class="glyphicon glyphicon-heart" aria-hidden="true" ng-show="currentUser.id !== post.user_id">{{post.likes}}Likes</span> 
+          <span class="glyphicon glyphicon-heart" aria-hidden="true" ng-show="currentUser.id !== post.user_id"><span>{{post.likes}}</span></span>
           <div>
             <span><strong>Rating: </strong></span>
             <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(post)" aria-hidden="true"></span>

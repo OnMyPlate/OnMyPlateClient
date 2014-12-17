@@ -9,8 +9,8 @@ app.controller('FoodCtrl',['$location',
                            '$http',
                            'ServerUrl',
                            'imageFactory',
-                           '$timeout', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory) {
+                           '$route', 
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory, $route) {
 
 
     var users = [];
@@ -20,8 +20,12 @@ app.controller('FoodCtrl',['$location',
       var foods = response.data.foods;
       var path = $location.path();
       $scope.currentFood = foodFactory.findCurrentFood(foods, path);
-      // $scope.avgRating = new Array($scope.currentFood.avg_rating);
+      $scope.posts = $scope.currentFood.posts;
+      foodFactory.calcFoodRating($scope.posts);
+      $scope.avgFoodRating = foodFactory.ratingsArr;
     });
+
+    
 
     dataFactory.fetchUsers().then(function(response) {
       $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
@@ -55,6 +59,15 @@ app.controller('FoodCtrl',['$location',
       $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         $scope.currentFood.posts.push(response);
         $q.all(imageFactory.signKey(image, postParams)).then(function() {
+          // $http.get(ServerUrl + 'posts/' + response.id + '/food_images.json').success(function(response) {
+          //   var foodImages = response.food_images;
+          //   for(var i = 0; i < foodImages.length; i++) {
+
+          //     if(foodImages[i].post_id === currentPost.id) {
+          //       $scope.foodImage = foodImages[i];
+          //     }
+          //   }
+          // });
           console.log('post created!')
         });
       });

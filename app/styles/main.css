@@ -117,6 +117,12 @@
     height: 150px;
   }
 
+  #remove {
+    float:right;
+    position: relative;
+    top: -23px;
+  }
+
   .glyphicon.glyphicon-remove {
     float:right;
     position: relative;

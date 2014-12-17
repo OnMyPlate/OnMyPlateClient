@@ -4,7 +4,7 @@
 <div class="container media-container" ng-controller="ProfileCtrl">
 
 
-  <div class="media food" ng-repeat="food in foods" id="{{food.id}}">
+  <div class="media food" ng-repeat="food in foods" id="{{food.id}}" ng-show="currentUser.id === food.user_id">
 
       <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
         <img class="img-rounded" ng-src="{{food.posts[food.posts.length-1].food_image.image_url}}" alt="Food Picture">
@@ -12,7 +12,7 @@
 
       <div class="media-body food">
         <h4 class="media-heading">{{food.name}}</h4>
-        <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removeFood(food)"></span>
+        <span id="remove" class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removeFood(food)"></span>
         <span class="glyphicon glyphicon-edit" aria-hidden="true" ng-click="goToEdit(food)">Edit</span>
         <div>
           <span>Rating: </span>
