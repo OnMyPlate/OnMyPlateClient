@@ -4,7 +4,7 @@
 <div class="container media-container" ng-controller="ProfileCtrl">
 
 
-  <div class="media food" ng-repeat="food in foods" id="{{food.id}}" ng-if="currentUser.id === food.user_id">
+  <div class="media food" ng-repeat="food in foods" id="{{food.id}}">
 
       <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
         <img class="img-rounded" ng-src="{{food.posts[food.posts.length-1].food_image.image_url}}" alt="Food Picture">

@@ -17,12 +17,6 @@ app.controller('ProfileCtrl',['$http',
     $scope.foods = response.data.foods;
   });
 
-  dataFactory.fetchUsers().then(function(response) {
-    $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-      $scope.currentUser = userFactory.defineCurrentUser(users);
-    });
-  });
-
   $scope.getRating = function(post) {
     var repeat = [];
     for(var i = 0; i < post.rating; i++) {
