@@ -16,6 +16,7 @@
         <span class="glyphicon glyphicon-edit" aria-hidden="true" ng-click="goToEdit(food)">Edit</span>
         <div>
           <span>Rating: </span>
+          <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(food.posts[0])" aria-hidden="true"></span>
         </div>
         <span>{{food.restaurant_name}} </span><span class="label label-info">{{food.city}}</span> <span class="label label-info">{{food.state}}</span><br>
         <h6>{{food.posts[0].review}}</h6>

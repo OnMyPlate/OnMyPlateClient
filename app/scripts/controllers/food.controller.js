@@ -20,6 +20,7 @@ app.controller('FoodCtrl',['$location',
       var foods = response.data.foods;
       var path = $location.path();
       $scope.currentFood = foodFactory.findCurrentFood(foods, path);
+      // $scope.avgRating = new Array($scope.currentFood.avg_rating);
     });
 
     dataFactory.fetchUsers().then(function(response) {

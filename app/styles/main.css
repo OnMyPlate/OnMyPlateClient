@@ -125,7 +125,8 @@
 
   .glyphicon.glyphicon-remove:hover,
   .glyphicon.glyphicon-edit:hover,
-  .glyphicon.glyphicon-pencil:hover {
+  .glyphicon.glyphicon-pencil:hover,
+  .glyphicon.glyphicon-heart:hover {
     cursor: pointer;
   }
 

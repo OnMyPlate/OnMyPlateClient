@@ -23,6 +23,14 @@ app.controller('ProfileCtrl',['$http',
     });
   });
 
+  $scope.getRating = function(post) {
+    var repeat = [];
+    for(var i = 0; i < post.rating; i++) {
+      repeat.push(i);
+    }
+    return repeat;
+  };
+
   $scope.goToEdit = function(food) {
     foodFactory.storeFood(food);
     $location.path('/add');

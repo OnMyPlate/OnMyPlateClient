@@ -3,6 +3,7 @@
 <div class="container" ng-controller="FoodCtrl">
   <div class="page-header">
     <h1>{{currentFood.name}} <small>{{currentFood.restaurant_name}}</small><small> | {{currentFood.city}}, {{currentFood.state}}</small></h1>
+    <!-- <span class="glyphicon glyphicon-star" ng-repeat="i in avgRating" aria-hidden="true"></span> -->
   </div>
   <div ng-show="currentUser.id !== currentFood.user_id">
     <span class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="slideToggleForm()">Add Post</span>
@@ -56,7 +57,9 @@
          </a>
    
          <div class="media-body food">
-           <h4 class="media-heading">{{currentFood.name}}</h4>
+          <div>
+            <span class="glyphicon glyphicon-heart" ng-if="currentUser.id === post.user_id" aria-hidden="true">{{post.likes}}Likes</span> 
+          </div>
            <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-if="currentUser.id === post.user_id"></span>
            <div>
               <span><strong>Rating: </strong></span>
