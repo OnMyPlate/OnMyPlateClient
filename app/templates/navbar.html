@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li ng-class="{ active: isActive('/') }"><a ng-href="#/">Home</a></li>
         <li ng-if="isLoggedIn()" ng-class="{ active: isActive('/about') }"><a ng-href="#/about">About</a></li>
-        <li ng-if="isLoggedIn()" ng-class="{ active: isActive('/profile') }"><a ng-href="#/profile">Profile</a></li>
+        <li ng-if="isLoggedIn()" ng-class="{ active: isActive('/profile') }"><a ng-href="#/profile/{{currentUser.id}}">Profile</a></li>
       </ul>
       <ul ng-if="!isLoggedIn()" class="nav navbar-nav navbar-right">
         <li><a ng-href="#/login">Login</a></li>
@@ -24,6 +24,7 @@
       </ul>
 
       <ul ng-if="isLoggedIn()" class="nav navbar-nav navbar-right">
+        <li><a ng-href="#/profile/{{currentUser.id}}">{{currentUser.username}}</a></li>
         <li><a ng-href="#/login" ng-click="logout()">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

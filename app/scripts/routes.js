@@ -9,7 +9,7 @@ app.config(['$routeProvider', function($routeProvider) {
   .when('/about', {
     templateUrl: 'templates/about.html'
   })
-  .when('/profile', {
+  .when('/profile/:id', {
     templateUrl: 'templates/profile.html'
   })
   .when('/foods/:id', {
