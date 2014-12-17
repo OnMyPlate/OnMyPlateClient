@@ -8,9 +8,8 @@ app.controller('FoodCtrl',['$location',
                            '$q',
                            '$http',
                            'ServerUrl',
-                           'imageFactory',
-                           '$route', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory, $route) {
+                           'imageFactory', 
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory) {
 
 
     var users = [];
@@ -77,6 +76,7 @@ app.controller('FoodCtrl',['$location',
 
       $http.post(ServerUrl + 'likes.json', params).success(function(response) {
         console.log('you like the post bitch!!!');
+        $scope.posts.filter(function (element) {return element.id === response.post_id })[0].likes += 1;
       });
 
     };

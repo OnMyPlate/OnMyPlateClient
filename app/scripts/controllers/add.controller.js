@@ -18,7 +18,8 @@ app.controller('AddCtrl', ['$scope',
     $scope.foods = response.data.foods;
   });
 
-  // Checks if passed object contains any property, if it is than it sets the scope.foods wiht that params in the form so the user can update the food
+  // Checks if passed object contains any property, 
+  // if it is than it sets the scope.foods wiht that params in the form so the user can update the food
   (function() {
     var params = foodFactory.params;
     if(params.name) {
