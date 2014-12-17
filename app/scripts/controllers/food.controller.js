@@ -25,11 +25,10 @@ app.controller('FoodCtrl',['$location',
       $scope.avgFoodRating = foodFactory.ratingsArr;
     });
 
-    
-
     dataFactory.fetchUsers().then(function(response) {
       $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
         $scope.currentUser = userFactory.defineCurrentUser(users);
+        $scope.userLikes = $scope.currentUser.likes.length;
       });
     });
 
@@ -71,15 +70,16 @@ app.controller('FoodCtrl',['$location',
       });
     };
 
-    $scope.likePost = function(post, food) {
-      post.likes += 1;
-      // $('#' + post.id + 'a5b6').slideDown(500).fadeOut(300);
-      var postParams = {post: post};
-      $http.put(ServerUrl + 'foods/' + food.id + '/posts/' + post.id + '.json', postParams).success(function(response) {
-        console.log('liked the post bitch!!!!!');
+    $scope.likePost = function(post) {
+      var params = {like:{
+        post_id: post.id
+      }};
+
+      $http.post(ServerUrl + 'likes.json', params).success(function(response) {
+        console.log('you like the post bitch!!!');
       });
 
-    }; 
+    };
 
 
 

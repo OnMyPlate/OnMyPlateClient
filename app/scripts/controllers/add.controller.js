@@ -39,7 +39,12 @@ app.controller('AddCtrl', ['$scope',
       $http.put(ServerUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
         console.log('food updated!');
         $q.all(upsertPost(post, image, response)).then(function() {
-          $location.path('/profile');
+          dataFactory.fetchUsers().then(function(response) {
+            $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
+              $scope.currentUser = userFactory.defineCurrentUser(users);
+              $location.path('/profile/' + $scope.currentUser.id);
+            });
+          });
         });
       });
     } else {
