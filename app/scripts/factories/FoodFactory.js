@@ -11,11 +11,7 @@ app.factory('foodFactory',['$location', function($location) {
 
   var findCurrentFood = function(arr, path) {
     var foodId = getFoodId(path);
-    for(var i = 0; i < arr.length; i++) {
-      if(arr[i].id === foodId) {
-        return arr[i];
-      }
-    }
+    return (arr.filter(function(element) { return element.id === foodId})[0]);
   };
 
   var searchDuplicate = function(arr, model) {
