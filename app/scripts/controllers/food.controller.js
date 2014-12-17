@@ -73,11 +73,19 @@ app.controller('FoodCtrl',['$location',
       var params = {like:{
         post_id: post.id
       }};
+      var isLikedByCurrentUser = $scope.currentUser.likes.filter(function(element) {
+        return element.user_id === $scope.currentUser.id
+      }).filter(function(element) {return post.id === element.post_id});
 
-      $http.post(ServerUrl + 'likes.json', params).success(function(response) {
-        console.log('you like the post bitch!!!');
-        $scope.posts.filter(function (element) {return element.id === response.post_id })[0].likes += 1;
-      });
+      if(isLikedByCurrentUser.length !== 0) {
+        $scope.liked = true;
+      } else {
+        $http.post(ServerUrl + 'likes.json', params).success(function(response) {
+          console.log('you like the post bitch!!!');
+          $scope.posts.filter(function (element) {return element.id === response.post_id })[0].likes += 1;
+          $scope.liked = true;
+        });
+      }
 
     };
 

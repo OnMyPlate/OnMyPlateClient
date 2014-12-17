@@ -50,7 +50,7 @@
   </form>
 
 
-   <div class="media post" ng-repeat="post in posts" id="{{post.id}}">
+   <div class="media post" ng-repeat="post in posts" id="{{post.id}}" ng-init="liked = false">
    
          <a class="media-left" href="#" class="profile-food-image">
            <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
