@@ -35,14 +35,14 @@
     color: white;
     background-color: #5bc0de;
     position: relative;
-    left: 93px;
     margin-bottom: 12px;
+    left: 34%;
   }
 
   /* line 31, ../sass/justmain.sass */
-  .login {
+  .login,
+  .register {
     width: 100px;
-    left: 84px;
     position: relative;
     margin-top: 25px;
   }

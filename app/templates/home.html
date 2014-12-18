@@ -14,7 +14,7 @@
         <span class="glyphicon glyphicon-cutlery" aria-hidden="true" ng-click="bookmarkFood(food)" ng-show="isLoggedIn()"></span>
         <span class="label label-info">{{food.city}}</span>
         <span class="label label-info">{{food.state}}</span>
-        <span class="glyphicon glyphicon-bookmark home" ng-show="food.bookmarked" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-bookmark home" ng-show="isLoggedIn() && food.bookmarked" aria-hidden="true"></span>
         <a ng-href="#/foods/{{food.id}}"><img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Pictures"></a>
         <div class="caption">
           <h3>{{food.name}}</h3>
@@ -23,7 +23,7 @@
             <span class="rating-text"><strong>Rating: </strong></span>
             <span ng-repeat="i in getAvgRating(food)" aria-hidden="true"><img ng-src="images/glyphicons-49-star-empty.png" alt="star"></span>
           </div>
-          <p class="review">{{food.posts[food.posts.length-1].review}}</p>
+          <p class="review">{{food.posts[food.posts.length-1].review | ellipsis}}</p>
         </div>
           <a href="#/foods/{{food.id}}" class="btn btn-default" role="button">Read More</a>
       </div>
