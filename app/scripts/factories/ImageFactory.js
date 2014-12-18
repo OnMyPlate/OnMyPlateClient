@@ -3,6 +3,7 @@
 app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($http, ServerUrl, $q, $location) {
 
   var signKeyResponse;
+  var params = {};
 
   var signKey = function(imageFile, post) {
     return $http.get(ServerUrl + 'amazon/sign_key').success(function(response) {
@@ -55,7 +56,8 @@ app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', function($h
   };
 
   return {
-    signKey: signKey
+    signKey: signKey,
+    params: params
   };  
 
 }]);

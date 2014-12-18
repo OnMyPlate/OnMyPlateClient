@@ -55,17 +55,17 @@ app.controller('FoodCtrl',['$location',
       }};
 
       $http.post(ServerUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
-        $scope.currentFood.posts.push(response);
-        $q.all(imageFactory.signKey(image, postParams)).then(function() {
-          console.log('post created!')
+        $scope.posts.push(response);
+        $q.all(imageFactory.signKey(image, postParams)).then(function(response) {
+          console.log('post created!');
         });
       });
     };
 
     $scope.removePost = function(post, food) {
+      $scope.posts.splice($scope.posts.indexOf(post), 1);
       $http.delete(ServerUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
-        console.log('post is deleted!')
-        $('#' + post.id + 'a5b6').fadeOut(400);
+        console.log('post is deleted!');
       });
     };
 
