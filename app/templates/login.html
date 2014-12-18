@@ -4,7 +4,7 @@
 
   <form role="form" name="loginUser" ng-submit="login(params)" novalidate>
   
-    <div class="form-group">
+    <div class="form-group login-form">
       <label for="email">Email address</label>
       <input type="email" class="form-control" name="email" placeholder="Enter Email" ng-model="params.email" required>
     </div>
@@ -13,7 +13,7 @@
       <span ng-show="loginUser.email.$error.required">Invalid: Email is required.</span>
     </div>
       <br>
-    <div class="form-group">
+    <div class="form-group login-form">
       <label for="password">Password</label>
       <input type="password" class="form-control" name="password" placeholder="Password" ng-model="params.password" required>
     </div>
