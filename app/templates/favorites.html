@@ -9,7 +9,7 @@
       <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
     </a>
 
-    <span class="glyphicon glyphicon-bookmark" id="bookmarked" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-bookmark" aria-hidden="true" ng-click="bookmarkFood(food)" id="bookmarked"></span>
 
     <div class="media-body food">
       <h4 class="media-heading">{{food.name}}</h4>

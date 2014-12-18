@@ -131,7 +131,8 @@
   .glyphicon.glyphicon-edit:hover,
   .glyphicon.glyphicon-pencil:hover,
   .glyphicon.glyphicon-heart:hover,
-  .glyphicon.glyphicon-cutlery:hover {
+  .glyphicon.glyphicon-cutlery:hover,
+  #bookmarked:hover {
     cursor: pointer;
   }
 
@@ -174,7 +175,7 @@
   /*Favorites*/
   #bookmarked {
     position:relative;
-    left: 725px;
+    float: right;
   }
 
   /*Login*/
