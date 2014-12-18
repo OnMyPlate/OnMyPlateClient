@@ -1,0 +1,45 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  /* line 6, ../sass/justmain.sass */
+  .navbar-default {
+    background-color: white;
+  }
+
+  /* line 8, ../sass/justmain.sass */
+  input#search {
+    margin: 12px 0px 31px;
+  }
+
+  /* line 10, ../sass/justmain.sass */
+  .btn-default {
+    color: white;
+    background-color: #5bc0de;
+    position: relative;
+    left: 93px;
+    margin-bottom: 12px;
+  }
+
+  /* line 16, ../sass/justmain.sass */
+  span#rating-text {
+    font-size: 1.2em;
+  }
+
+  /* line 18, ../sass/justmain.sass */
+  h3.ng-binding {
+    margin: 19px 0px;
+  }
+
+  /* line 20, ../sass/justmain.sass */
+  h4.ng-binding {
+    margin: 20px 0px;
+  }
+
+  /* line 23, ../sass/justmain.sass */
+  img[alt="star"] {
+    margin: 10px 2px;
+    background: palegoldenrod;
+  }
+  /* line 26, ../sass/justmain.sass */
+  img[alt="Food Picture"] {
+    margin-top: 16px;
+  }
+}
