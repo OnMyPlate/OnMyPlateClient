@@ -4,8 +4,9 @@ app.controller('HomeCtrl', ['dataFactory',
                             '$scope', 
                             'foodFactory',
                             '$http',
-                            'ServerUrl', 
-                            function(dataFactory, $scope, foodFactory, $http, ServerUrl) {
+                            'ServerUrl',
+                            'authFactory',
+                            function(dataFactory, $scope, foodFactory, $http, ServerUrl, authFactory) {
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
@@ -31,6 +32,10 @@ app.controller('HomeCtrl', ['dataFactory',
     $http.put(ServerUrl + 'foods/' + food.id + '.json', params).success(function(response) {
       console.log('food bookmarked!');
     });
+  };
+
+  $scope.isLoggedIn = function() {
+    return authFactory.isAuthenticated();
   };
 
 

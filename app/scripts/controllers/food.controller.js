@@ -8,8 +8,9 @@ app.controller('FoodCtrl',['$location',
                            '$q',
                            '$http',
                            'ServerUrl',
-                           'imageFactory', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory) {
+                           'imageFactory',
+                           'authFactory', 
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, ServerUrl, imageFactory, authFactory) {
 
 
     var users = [];
@@ -20,11 +21,6 @@ app.controller('FoodCtrl',['$location',
       var path = $location.path();
       $scope.currentFood = foodFactory.findCurrentFood(foods, path);
       $scope.posts = $scope.currentFood.posts;
-
-
-      // For each post, is it liked by this user? 
-      // If so, set $scope.posts[n].liked = 'glyphicons-13-heart.png'
-
       foodFactory.calcFoodRating($scope.posts);
       $scope.avgFoodRating = foodFactory.ratingsArr;
     });
@@ -119,5 +115,9 @@ app.controller('FoodCtrl',['$location',
       }
 
     };
+
+  $scope.isLoggedIn = function() {
+    return authFactory.isAuthenticated();
+  };
 
 }]);

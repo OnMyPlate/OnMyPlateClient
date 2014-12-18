@@ -11,7 +11,7 @@
 
     <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="food in foods | search:letter">
       <div class="thumbnail">
-        <span class="glyphicon glyphicon-cutlery" aria-hidden="true" ng-click="bookmarkFood(food)"></span>
+        <span class="glyphicon glyphicon-cutlery" aria-hidden="true" ng-click="bookmarkFood(food)" ng-show="isLoggedIn()"></span>
         <span class="label label-info">{{food.city}}</span>
         <span class="label label-info">{{food.state}}</span>
         <span class="glyphicon glyphicon-bookmark" ng-show="food.bookmarked" aria-hidden="true"></span>
