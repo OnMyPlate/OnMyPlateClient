@@ -15,17 +15,22 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   /* line 18, ../sass/justmain.sass */
+  #username {
+    display: none;
+  }
+
+  /* line 20, ../sass/justmain.sass */
   .navbar-default {
     background-color: white;
     margin: 0px;
   }
 
-  /* line 21, ../sass/justmain.sass */
+  /* line 23, ../sass/justmain.sass */
   input#search {
     margin: 12px 0px 31px;
   }
 
-  /* line 23, ../sass/justmain.sass */
+  /* line 25, ../sass/justmain.sass */
   .btn-default {
     color: white;
     background-color: #5bc0de;
@@ -34,7 +39,7 @@
     margin-bottom: 12px;
   }
 
-  /* line 29, ../sass/justmain.sass */
+  /* line 31, ../sass/justmain.sass */
   .login {
     width: 100px;
     left: 84px;
@@ -42,74 +47,106 @@
     margin-top: 25px;
   }
 
-  /* line 34, ../sass/justmain.sass */
+  /* line 36, ../sass/justmain.sass */
   .rating-text {
     font-size: 1.2em;
   }
 
-  /* line 36, ../sass/justmain.sass */
+  /* line 38, ../sass/justmain.sass */
   h3.ng-binding {
     margin: 19px 0px;
   }
 
-  /* line 38, ../sass/justmain.sass */
+  /* line 40, ../sass/justmain.sass */
   h4.ng-binding {
     margin: 20px 0px;
   }
 
-  /* line 41, ../sass/justmain.sass */
+  /* line 43, ../sass/justmain.sass */
   img[alt="star"] {
     margin: 10px 2px;
     background: palegoldenrod;
   }
-  /* line 44, ../sass/justmain.sass */
+  /* line 46, ../sass/justmain.sass */
   img[alt="Food Pictures"] {
     margin-top: 16px;
+    margin-bottom: 10px;
   }
-  /* line 46, ../sass/justmain.sass */
+  /* line 49, ../sass/justmain.sass */
   img[alt="Food Picture"] {
     margin-bottom: 26px;
   }
 
-  /* line 48, ../sass/justmain.sass */
+  /* line 51, ../sass/justmain.sass */
+  .glyphicon.glyphicon-cutlery {
+    font-size: 1.34em;
+  }
+
+  /* line 53, ../sass/justmain.sass */
+  .label.label-info {
+    font-size: 0.9em;
+    margin-left: 2%;
+  }
+
+  /* line 56, ../sass/justmain.sass */
   .glyphicon.glyphicon-star {
     font-size: 1.34em;
     position: relative;
     top: 4px;
   }
 
-  /* line 52, ../sass/justmain.sass */
+  /* line 60, ../sass/justmain.sass */
+  .glyphicon.glyphicon-bookmark.home,
+  #bookmarked {
+    float: right;
+    font-size: 1.3em;
+  }
+
+  /* line 64, ../sass/justmain.sass */
   .form-group.login-form {
     margin: 19px 0px 12px 0px;
   }
 
-  /* line 54, ../sass/justmain.sass */
+  /* line 66, ../sass/justmain.sass */
   .register-form {
     margin: 12px 0px;
   }
 
-  /* line 57, ../sass/justmain.sass */
+  /* line 69, ../sass/justmain.sass */
   .sidebar {
     border: 1px solid #a5a5a5;
     margin-bottom: 20px;
   }
-  /* line 60, ../sass/justmain.sass */
+  /* line 72, ../sass/justmain.sass */
   .sidebar ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 64, ../sass/justmain.sass */
+  /* line 76, ../sass/justmain.sass */
   .sidebar ul li {
     padding: 14px 0px 14px 35%;
     position: relative;
   }
-  /* line 67, ../sass/justmain.sass */
+  /* line 79, ../sass/justmain.sass */
   .sidebar ul li a {
     color: black;
   }
-  /* line 70, ../sass/justmain.sass */
+  /* line 82, ../sass/justmain.sass */
   .sidebar .sidebaractive {
     background-color: #F1F1F1;
+  }
+
+  /* line 86, ../sass/justmain.sass */
+  .glyphicon.glyphicon-edit,
+  .glyphicon.glyphicon-remove {
+    display: none;
+  }
+
+  /* line 89, ../sass/justmain.sass */
+  .media {
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    padding: 16px;
   }
 }

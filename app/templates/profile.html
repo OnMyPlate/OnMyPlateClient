@@ -15,14 +15,15 @@
         <span id="remove" class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removeFood(food)"></span>
         <span class="glyphicon glyphicon-edit" aria-hidden="true" ng-click="goToEdit(food)">Edit</span>
         <div>
-          <span>Rating: </span>
-          <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(food.posts[0])" aria-hidden="true"></span>
+          <span class="rating-text">Rating: </span>
+          <span ng-repeat="i in getRating(food.posts[0])" aria-hidden="true"><img ng-src="images/glyphicons-49-star-empty.png" alt="star"></span>
         </div>
         <span>{{food.restaurant_name}} </span><span class="label label-info">{{food.city}}</span> <span class="label label-info">{{food.state}}</span><br>
         <h6>{{food.posts[0].review}}</h6>
       </div>
   
-
+      <button type="button" class="btn btn-default" ng-click="goToEdit(food)">Edit</button>
+      <button type="button" class="btn btn-default" ng-click="removeFood(food)">Delete</button>
   </div>
 
 </div>

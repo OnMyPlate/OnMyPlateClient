@@ -14,7 +14,7 @@
         <span class="glyphicon glyphicon-cutlery" aria-hidden="true" ng-click="bookmarkFood(food)" ng-show="isLoggedIn()"></span>
         <span class="label label-info">{{food.city}}</span>
         <span class="label label-info">{{food.state}}</span>
-        <span class="glyphicon glyphicon-bookmark" ng-show="food.bookmarked" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-bookmark home" ng-show="food.bookmarked" aria-hidden="true"></span>
         <a ng-href="#/foods/{{food.id}}"><img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Pictures"></a>
         <div class="caption">
           <h3>{{food.name}}</h3>
