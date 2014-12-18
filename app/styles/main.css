@@ -11,11 +11,11 @@
 }
 
 .form-group .ng-dirty.ng-invalid {
-  border: 2px solid #CC0000;
+  border: 1px solid #CC0000;
 }
 
 .form-group .ng-valid {
-  border: 2px solid green;
+  border: 1px solid green;
 }
 
 @media only screen and (min-width : 992px) {
@@ -130,7 +130,8 @@
   .glyphicon.glyphicon-remove:hover,
   .glyphicon.glyphicon-edit:hover,
   .glyphicon.glyphicon-pencil:hover,
-  .glyphicon.glyphicon-heart:hover,
+  #unliked:hover,
+  #liked:hover,
   .glyphicon.glyphicon-cutlery:hover,
   #bookmarked:hover {
     cursor: pointer;

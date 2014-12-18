@@ -50,7 +50,7 @@
   </form>
 
 
-   <div class="media post" ng-repeat="post in posts" id="{{post.id}}" ng-init="liked = false">
+   <div class="media post" ng-repeat="post in posts" id="{{post.id}}">
    
          <a class="media-left" href="#" class="profile-food-image">
            <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
@@ -58,7 +58,9 @@
    
         <div class="media-body food">
           <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-show="currentUser.id === post.user_id"></span>
-          <span id="{{updateId(post.id)}}" class="glyphicon glyphicon-heart" aria-hidden="true" ng-show="(currentUser.id !== post.user_id)" ng-click="likePost(post)"></span><span>{{post.likes}} Likes</span>
+            <img ng-src="images/{{post.liked}}" id="unliked" alt="unliked" ng-click="likePost(post)" ng-show="currentUser.id !== post.user_id"> <span>{{post.likes}} Likes</span>
+          
+         <!--  <span id="{{updateId(post.id)}}" class="glyphicon glyphicon-heart" aria-hidden="true" ng-show="(currentUser.id !== post.user_id)" ng-click="likePost(post)"></span> -->
           <div>
             <span><strong>Rating: </strong></span>
             <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(post)" aria-hidden="true"></span>

@@ -14,8 +14,15 @@ app.factory('dataFactory',['$http', 'ServerUrl', function($http, ServerUrl) {
     });
   };
 
+  var fetchImages = function() {
+    return $http.get(ServerUrl + 'food_images.json').success(function(response) {
+      return response.food_images;
+    });
+  };
+
   return {
     fetchFoods: fetchFoods,
-    fetchUsers: fetchUsers
+    fetchUsers: fetchUsers,
+    fetchImages: fetchImages
   };
 }]);

@@ -11,6 +11,13 @@ app.controller('HomeCtrl', ['dataFactory',
     $scope.foods = response.data.foods;
   });
 
+  // $scope.searchOptions = ['Name', 'City', 'State'];
+  // $scope.selection = $scope.searchOptions[0];
+
+  // $scope.selectSearch = function(option) {
+  //   $scope.selection = option;
+  // };
+
   $scope.getAvgRating = function(food) {
     var posts = food.posts;
 
