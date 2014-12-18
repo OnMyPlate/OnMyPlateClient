@@ -23,16 +23,14 @@
   /*Home Page*/
   /*=======================*/
 
-    /*Filtering Button*/
-
-  .btn-group {
-    margin: 15px 0px;
-  }
-
   .review {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+  }
+
+  .thumbnail {
+    margin-top: 30px;
   }
 
   /*Profile Page*/
