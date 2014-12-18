@@ -1,20 +1,24 @@
 <ng-include src="'templates/navbar.html'"></ng-include>
 <ng-include src="'templates/sidebar.html'"></ng-include>
 
-<div class="container media-container" ng-controller="ProfileCtrl">
+<div class="container media-container" ng-controller="FavoriteCtrl">
 
-  <div class="media food">
+  <div class="media food" ng-repeat="food in foods">
 
-    <a class="media-left food" href="#" class="profile-food-image">
-      <img class="img-rounded" src="images/food.jpg" alt="Food Picture">
+    <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
+      <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
     </a>
 
     <span class="glyphicon glyphicon-bookmark" id="bookmarked" aria-hidden="true"></span>
 
     <div class="media-body food">
-      <h4 class="media-heading">Food Name | Rating </h4>
-      <span>Restaurant Name </span><span class="label label-info">City</span> <span class="label label-info">State</span><br>
-      <h6>Review</h6>
+      <h4 class="media-heading">{{food.name}}</h4>
+       <div>
+          <span>Rating: </span>
+          <span class="glyphicon glyphicon-star" ng-repeat="i in getRating(food.posts[0])" aria-hidden="true"></span>
+      </div>
+      <span>{{food.restaurant_name}}</span><span class="label label-info">{{food.city}}</span> <span class="label label-info">food.state</span><br>
+      <h6>{{food.posts[0].review}}</h6>
     </div>
 
   </div>
