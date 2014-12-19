@@ -1,20 +1,22 @@
 @import variables
 
-@media #{$tablet-landscape}
-  .media-body.food
-    float: right
-    width: 80%
-    padding-left: 2%
-
-  .btn.btn-default.submit
-    position: relative
-    left: 45%
+@media #{$laptop-desktop}
   
-
-@media #{$tablet}
   #edit-button,
   #remove-button
     display: none
+
+  #remove
+    float: right
+    top: -24px
+    &:hover
+      cursor: pointer
+
+  .glyphicon.glyphicon-edit:hover,
+  .glyphicon.glyphicon-cutlery:hover,
+  #bookmarked:hover,
+  #unliked:hover
+    cursor: pointer
 
   .sidebar
     position: fixed
@@ -30,9 +32,13 @@
       li
         list-style: none
         padding: 13px 0px 6px 28%
+        &:hover
+          background-color: #DFDFDF
         a
           color: #777777
           text-decoration: none
+          &:hover
+            cursor: pointer
 
   .container.media-container
     padding-top: 20px
@@ -48,26 +54,29 @@
       .media-body.food
         float: right
         width: 80%
-        padding-left: 9%
+        padding-left: 3%
         h6
           overflow: hidden
           text-overflow: ellipsis
-  #remove
-    position: relative
-    float: right
-    top: -24px
-    font-size: 1.2em
 
   #form-container
     float: right
     width: 80%
     padding-top: 20px
 
-  #food-post-remove
-    float: right
-
+     
   #media-body-post
     float: right
-    width: 82%
+    width: 85%
   #media-left-post
     float: left
+
+  .btn.btn-default.submit
+    position: relative
+    left: 45%
+    width: 100px
+
+  .glyphicon.glyphicon-remove
+    float: right
+    &:hover
+      cursor: pointer
