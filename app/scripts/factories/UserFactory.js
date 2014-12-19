@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('userFactory',['$window', '$http', 'ServerUrl', function($window, $http, ServerUrl) {
+app.factory('userFactory',['$window', function($window) {
 
   var createUsersArray = function(response, users) {
     for(var i = 0; i < response.length; i++) {

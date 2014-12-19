@@ -12,7 +12,8 @@ Run blocks typically contain code which is hard to unit-test,
 
 */
 
-app.constant('ServerUrl', 'http://localhost:3000/');
+app.constant('ServerUrl', 'http://localhost:3000/')
+    .constant('herokuUrl', 'http://onmyplate.herokuapp.com/');
 
 app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function($rootScope, $location, $http, $window, authFactory) {
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope

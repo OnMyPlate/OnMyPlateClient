@@ -69,6 +69,13 @@
     border-radius: 3px;
     padding: 16px;
   }
+
+  /* line 54, ../sass/partials/_smartphones.sass */
+  #navbar {
+    width: 100%;
+    border: 1px solid black;
+    height: 40px;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* line 4, ../sass/partials/_tablets.sass */

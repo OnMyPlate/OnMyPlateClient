@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('ProfileCtrl',['$http', 
-                              'ServerUrl', 
+                              'herokuUrl', 
                               '$scope', 
                               'userFactory', 
                               '$q', 
@@ -9,7 +9,7 @@ app.controller('ProfileCtrl',['$http',
                               'dataFactory',
                               '$location',
                               'foodFactory', 
-                              function($http, ServerUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory) {
+                              function($http, herokuUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory) {
 
   var users = [];
 
@@ -37,7 +37,7 @@ app.controller('ProfileCtrl',['$http',
   };  
 
   $scope.removeFood = function(food) {
-    $http.delete(ServerUrl + '/foods/' + food.id).success(function(response) {
+    $http.delete(herokuUrl + '/foods/' + food.id).success(function(response) {
       console.log('food is deleted!')
       $('#' + food.id).fadeOut(400);
     });
