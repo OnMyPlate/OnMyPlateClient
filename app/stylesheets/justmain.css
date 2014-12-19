@@ -1,11 +1,17 @@
-/* line 4, ../sass/justmain.sass */
+/* line 3, ../sass/justmain.sass */
+.navbar-default {
+  background-color: white;
+  margin: 0px;
+}
+
+/* line 7, ../sass/justmain.sass */
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 8, ../sass/justmain.sass */
+/* line 12, ../sass/justmain.sass */
 .btn-default {
   color: white;
   background-color: #5bc0de;
@@ -14,7 +20,7 @@
   left: 34%;
 }
 
-/* line 14, ../sass/justmain.sass */
+/* line 19, ../sass/justmain.sass */
 .login,
 .register {
   width: 100px;
@@ -22,131 +28,201 @@
   margin-top: 25px;
 }
 
-/* line 19, ../sass/justmain.sass */
+/* line 25, ../sass/justmain.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 22, ../sass/justmain.sass */
+/* line 29, ../sass/justmain.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 25, ../sass/justmain.sass */
+/* line 32, ../sass/justmain.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 28, ../sass/justmain.sass */
+/* line 35, ../sass/justmain.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 34, ../sass/justmain.sass */
+/* line 38, ../sass/justmain.sass */
+.sidebaractive {
+  background-color: #F1F1F1;
+}
+
+/* line 41, ../sass/justmain.sass */
+.img-rounded {
+  height: 150px;
+  width: 150px;
+}
+
+/* line 47, ../sass/justmain.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 37, ../sass/justmain.sass */
+/* line 50, ../sass/justmain.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 40, ../sass/justmain.sass */
+/* line 53, ../sass/justmain.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  /* line 46, ../sass/justmain.sass */
+  /* line 59, ../sass/justmain.sass */
   #username {
     display: none;
   }
 
-  /* line 48, ../sass/justmain.sass */
-  .navbar-default {
-    background-color: white;
-    margin: 0px;
-  }
-
-  /* line 51, ../sass/justmain.sass */
+  /* line 62, ../sass/justmain.sass */
   input#search {
     margin: 12px 0px 31px;
   }
 
-  /* line 53, ../sass/justmain.sass */
+  /* line 65, ../sass/justmain.sass */
   h3.ng-binding {
     margin: 19px 0px;
   }
 
-  /* line 55, ../sass/justmain.sass */
+  /* line 68, ../sass/justmain.sass */
   h4.ng-binding {
     margin: 20px 0px;
   }
 
-  /* line 57, ../sass/justmain.sass */
+  /* line 71, ../sass/justmain.sass */
   .glyphicon.glyphicon-cutlery {
     font-size: 1.34em;
   }
 
-  /* line 59, ../sass/justmain.sass */
+  /* line 74, ../sass/justmain.sass */
   .label.label-info {
     font-size: 0.9em;
     margin-left: 2%;
   }
 
-  /* line 62, ../sass/justmain.sass */
+  /* line 78, ../sass/justmain.sass */
   .glyphicon.glyphicon-star {
     font-size: 1.34em;
     position: relative;
     top: 4px;
   }
 
-  /* line 66, ../sass/justmain.sass */
+  /* line 83, ../sass/justmain.sass */
   .form-group.login-form {
     margin: 19px 0px 12px 0px;
   }
 
-  /* line 68, ../sass/justmain.sass */
+  /* line 86, ../sass/justmain.sass */
   .register-form {
     margin: 12px 0px;
   }
 
-  /* line 71, ../sass/justmain.sass */
+  /* line 90, ../sass/justmain.sass */
   .sidebar {
     border: 1px solid #a5a5a5;
     margin-bottom: 20px;
   }
-  /* line 74, ../sass/justmain.sass */
+  /* line 93, ../sass/justmain.sass */
   .sidebar ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 78, ../sass/justmain.sass */
+  /* line 97, ../sass/justmain.sass */
   .sidebar ul li {
     padding: 14px 0px 14px 35%;
     position: relative;
   }
-  /* line 81, ../sass/justmain.sass */
+  /* line 100, ../sass/justmain.sass */
   .sidebar ul li a {
     color: black;
   }
-  /* line 84, ../sass/justmain.sass */
-  .sidebar .sidebaractive {
-    background-color: #F1F1F1;
-  }
 
-  /* line 88, ../sass/justmain.sass */
+  /* line 105, ../sass/justmain.sass */
   .glyphicon.glyphicon-edit,
   .glyphicon.glyphicon-remove {
     display: none;
   }
 
-  /* line 91, ../sass/justmain.sass */
+  /* line 108, ../sass/justmain.sass */
   .media {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* line 114, ../sass/justmain.sass */
+  #edit-button,
+  #remove-button {
+    display: none;
+  }
+
+  /* line 118, ../sass/justmain.sass */
+  .sidebar {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    height: 300px;
+    background-color: #F8F8F8;
+    display: inline-block;
+    width: 20%;
+    float: left;
+  }
+  /* line 127, ../sass/justmain.sass */
+  .sidebar ul {
+    padding: 0px;
+  }
+  /* line 129, ../sass/justmain.sass */
+  .sidebar ul li {
+    list-style: none;
+    padding: 13px 0px 6px 28%;
+  }
+  /* line 132, ../sass/justmain.sass */
+  .sidebar ul li a {
+    color: #777777;
+    text-decoration: none;
+  }
+
+  /* line 136, ../sass/justmain.sass */
+  .container.media-container {
+    padding-top: 20px;
+    overflow: scroll;
+    white-space: nowrap;
+  }
+  /* line 140, ../sass/justmain.sass */
+  .container.media-container .media.food {
+    float: right;
+    width: 80%;
+    margin: 10px 0px;
+  }
+  /* line 144, ../sass/justmain.sass */
+  .container.media-container .media.food .media-left.food {
+    float: left;
+  }
+  /* line 146, ../sass/justmain.sass */
+  .container.media-container .media.food .media-body.food {
+    float: right;
+    width: 80%;
+    padding-left: 20px;
+  }
+  /* line 150, ../sass/justmain.sass */
+  .container.media-container .media.food .media-body.food h6 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* line 153, ../sass/justmain.sass */
+  #remove {
+    position: relative;
+    float: right;
+    top: -24px;
+    font-size: 1.2em;
   }
 }

@@ -1,23 +1,30 @@
 @import partials/variables
 
+.navbar-default
+  background-color: white
+  margin: 0px
 
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked
   float: right
   font-size: 1.3em
+
 .btn-default 
   color: white
   background-color: #5bc0de
   position: relative
   margin-bottom: 12px
   left: 34%
+
 .login,
 .register
   width: 100px
   position: relative
   margin-top: 25px
+
 .rating-text 
   font-size: 1.2em
+
 img
   &[alt="star"]
     margin: 10px 2px
@@ -28,6 +35,12 @@ img
   &[alt="Food Picture"]
     margin-bottom: 26px
 
+.sidebaractive
+  background-color: #F1F1F1
+
+.img-rounded
+  height: 150px
+  width: 150px
 
 //Errors
 
@@ -45,28 +58,34 @@ img
   // Home Page
   #username
     display: none
-  .navbar-default
-    background-color: white
-    margin: 0px
+
   input#search
     margin: 12px 0px 31px
+
   h3.ng-binding
     margin: 19px 0px
+
   h4.ng-binding
     margin: 20px 0px
+
   .glyphicon.glyphicon-cutlery
     font-size: 1.34em
+
   .label.label-info
     font-size: 0.9em
     margin-left: 2%
+
   .glyphicon.glyphicon-star
     font-size: 1.34em
     position: relative
     top: 4px
+
   .form-group.login-form
     margin: 19px 0px 12px 0px
+
   .register-form
     margin: 12px 0px
+
   //Sidebar
   .sidebar
     border: 1px solid rgb(165, 165, 165)
@@ -81,8 +100,6 @@ img
         a
           color: black
 
-    .sidebaractive
-      background-color: #F1F1F1
   // Profile Page
 
   .glyphicon.glyphicon-edit,
@@ -94,4 +111,47 @@ img
     padding: 16px
 
 @media #{$tablet}
+  #edit-button,
+  #remove-button
+    display: none
 
+  .sidebar
+    position: fixed
+    margin: 0px
+    padding: 0px
+    height: 300px
+    background-color: #F8F8F8
+    display: inline-block
+    width: 20%
+    float: left
+    ul
+      padding: 0px
+      li
+        list-style: none
+        padding: 13px 0px 6px 28%
+        a
+          color: #777777
+          text-decoration: none
+
+  .container.media-container
+    padding-top: 20px
+    overflow: scroll
+    white-space: nowrap
+    .media.food
+      float: right
+      width: 80%
+      margin: 10px 0px
+      .media-left.food
+        float: left
+      .media-body.food
+        float: right
+        width: 80%
+        padding-left: 20px
+        h6
+          overflow: hidden
+          text-overflow: ellipsis
+  #remove
+    position: relative
+    float: right
+    top: -24px
+    font-size: 1.2em
