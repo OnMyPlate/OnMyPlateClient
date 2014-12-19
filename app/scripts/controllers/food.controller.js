@@ -79,10 +79,17 @@ app.controller('FoodCtrl',['$location',
     };
 
     $scope.removePost = function(post, food) {
-      $scope.posts.splice($scope.posts.indexOf(post), 1);
-      $http.delete(ServerUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
-        console.log('post is deleted!');
-      });
+      if(food.posts.length === 1) {
+        $http.delete(ServerUrl + '/foods/' + food.id + '.json').success(function(response) {
+          $http.delete(ServerUrl + '/foods/' + food.id + '/posts/' + post.id);
+          $location.path('/');
+        });
+      } else {
+        $http.delete(ServerUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
+          $scope.posts.splice($scope.posts.indexOf(post), 1);
+          console.log('post is deleted!');
+        });
+      } 
     };
 
     $scope.likePost = function(post) {
