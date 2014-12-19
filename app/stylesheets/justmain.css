@@ -20,61 +20,56 @@
   }
 
   /* line 18, ../sass/partials/_smartphone.sass */
-  .glyphicon.glyphicon-cutlery {
-    font-size: 1.34em;
-  }
-
-  /* line 21, ../sass/partials/_smartphone.sass */
   .label.label-info {
     font-size: 0.9em;
     margin-left: 2%;
   }
 
-  /* line 25, ../sass/partials/_smartphone.sass */
+  /* line 22, ../sass/partials/_smartphone.sass */
   .glyphicon.glyphicon-star {
     font-size: 1.34em;
     position: relative;
     top: 4px;
   }
 
-  /* line 30, ../sass/partials/_smartphone.sass */
+  /* line 27, ../sass/partials/_smartphone.sass */
   .form-group.login-form {
     margin: 19px 0px 12px 0px;
   }
 
-  /* line 33, ../sass/partials/_smartphone.sass */
+  /* line 30, ../sass/partials/_smartphone.sass */
   .register-form {
     margin: 12px 0px;
   }
 
-  /* line 37, ../sass/partials/_smartphone.sass */
+  /* line 34, ../sass/partials/_smartphone.sass */
   .sidebar {
     border: 1px solid #a5a5a5;
     margin-bottom: 20px;
   }
-  /* line 40, ../sass/partials/_smartphone.sass */
+  /* line 37, ../sass/partials/_smartphone.sass */
   .sidebar ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 44, ../sass/partials/_smartphone.sass */
+  /* line 41, ../sass/partials/_smartphone.sass */
   .sidebar ul li {
     padding: 14px 0px 14px 35%;
     position: relative;
   }
-  /* line 47, ../sass/partials/_smartphone.sass */
+  /* line 44, ../sass/partials/_smartphone.sass */
   .sidebar ul li a {
     color: black;
   }
 
-  /* line 52, ../sass/partials/_smartphone.sass */
+  /* line 49, ../sass/partials/_smartphone.sass */
   .glyphicon.glyphicon-edit,
   .glyphicon.glyphicon-remove {
     display: none;
   }
 
-  /* line 55, ../sass/partials/_smartphone.sass */
+  /* line 52, ../sass/partials/_smartphone.sass */
   .media {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
@@ -88,15 +83,26 @@
     width: 80%;
     padding-left: 2%;
   }
+
+  /* line 9, ../sass/partials/_tablets.sass */
+  input#search {
+    margin: 30px 0px;
+  }
+
+  /* line 12, ../sass/partials/_tablets.sass */
+  .label.label-info {
+    font-size: 0.9em;
+    margin-left: 2%;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* line 11, ../sass/partials/_tablets.sass */
+  /* line 18, ../sass/partials/_tablets.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 15, ../sass/partials/_tablets.sass */
+  /* line 22, ../sass/partials/_tablets.sass */
   .sidebar {
     position: fixed;
     margin: 0px;
@@ -107,51 +113,51 @@
     width: 20%;
     float: left;
   }
-  /* line 24, ../sass/partials/_tablets.sass */
+  /* line 31, ../sass/partials/_tablets.sass */
   .sidebar ul {
     padding: 0px;
   }
-  /* line 26, ../sass/partials/_tablets.sass */
+  /* line 33, ../sass/partials/_tablets.sass */
   .sidebar ul li {
     list-style: none;
     padding: 13px 0px 6px 28%;
   }
-  /* line 29, ../sass/partials/_tablets.sass */
+  /* line 36, ../sass/partials/_tablets.sass */
   .sidebar ul li a {
     color: #777777;
     text-decoration: none;
   }
 
-  /* line 33, ../sass/partials/_tablets.sass */
+  /* line 40, ../sass/partials/_tablets.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 37, ../sass/partials/_tablets.sass */
+  /* line 44, ../sass/partials/_tablets.sass */
   .container.media-container .media.food {
     float: right;
     width: 80%;
     margin: 10px 0px;
   }
-  /* line 41, ../sass/partials/_tablets.sass */
+  /* line 48, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 44, ../sass/partials/_tablets.sass */
+  /* line 51, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 80%;
     padding-left: 9%;
   }
-  /* line 48, ../sass/partials/_tablets.sass */
+  /* line 55, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 51, ../sass/partials/_tablets.sass */
+  /* line 58, ../sass/partials/_tablets.sass */
   #remove {
     position: relative;
     float: right;
@@ -159,11 +165,22 @@
     font-size: 1.2em;
   }
 
-  /* line 56, ../sass/partials/_tablets.sass */
+  /* line 64, ../sass/partials/_tablets.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
+  }
+
+  /* line 69, ../sass/partials/_tablets.sass */
+  input#search {
+    margin: 30px 0px;
+  }
+
+  /* line 72, ../sass/partials/_tablets.sass */
+  .label.label-info {
+    font-size: 0.9em;
+    margin-left: 2%;
   }
 }
 /* line 4, ../sass/justmain.sass */
@@ -180,6 +197,11 @@
 }
 
 /* line 13, ../sass/justmain.sass */
+.glyphicon.glyphicon-cutlery {
+  font-size: 1.34em;
+}
+
+/* line 16, ../sass/justmain.sass */
 .btn-default {
   color: white;
   background-color: #5bc0de;
@@ -188,7 +210,7 @@
   left: 34%;
 }
 
-/* line 20, ../sass/justmain.sass */
+/* line 23, ../sass/justmain.sass */
 .login,
 .register {
   width: 100px;
@@ -196,48 +218,48 @@
   margin-top: 25px;
 }
 
-/* line 26, ../sass/justmain.sass */
+/* line 29, ../sass/justmain.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 30, ../sass/justmain.sass */
+/* line 33, ../sass/justmain.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 33, ../sass/justmain.sass */
+/* line 36, ../sass/justmain.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 36, ../sass/justmain.sass */
+/* line 39, ../sass/justmain.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 39, ../sass/justmain.sass */
+/* line 42, ../sass/justmain.sass */
 .sidebaractive {
   background-color: #F1F1F1;
 }
 
-/* line 42, ../sass/justmain.sass */
+/* line 45, ../sass/justmain.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 48, ../sass/justmain.sass */
+/* line 51, ../sass/justmain.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 51, ../sass/justmain.sass */
+/* line 54, ../sass/justmain.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 54, ../sass/justmain.sass */
+/* line 57, ../sass/justmain.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }

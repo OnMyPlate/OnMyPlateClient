@@ -4,7 +4,8 @@ app.controller('FavoriteCtrl', ['dataFactory',
                                 '$scope', 
                                 '$http', 
                                 'ServerUrl',
-                                function(dataFactory, $scope, $http, ServerUrl) {
+                                'foodFactory',
+                                function(dataFactory, $scope, $http, ServerUrl ,foodFactory) {
 
 
   dataFactory.fetchFoods().then(function(response) {
@@ -23,4 +24,12 @@ app.controller('FavoriteCtrl', ['dataFactory',
       });
     });
   }; 
+
+  $scope.getAvgRating = function(food) {
+    var posts = food.posts;
+
+    foodFactory.calcFoodRating(posts);
+    return foodFactory.ratingsArr;
+  };
+
 }]);
