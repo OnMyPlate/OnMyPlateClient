@@ -1,112 +1,117 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  /* line 6, ../sass/partials/_smartphones.sass */
-  #username {
+  /* line 5, ../sass/partials/_smartphones.sass */
+  .navbar.navbar-default {
     display: none;
   }
 
   /* line 9, ../sass/partials/_smartphones.sass */
+  #username {
+    display: none;
+  }
+
+  /* line 12, ../sass/partials/_smartphones.sass */
   input#search {
     margin: 12px 0px 31px;
   }
 
-  /* line 12, ../sass/partials/_smartphones.sass */
+  /* line 15, ../sass/partials/_smartphones.sass */
   h3.ng-binding {
     margin: 19px 0px;
   }
 
-  /* line 15, ../sass/partials/_smartphones.sass */
+  /* line 18, ../sass/partials/_smartphones.sass */
   h4.ng-binding {
     margin: 20px 0px;
   }
 
-  /* line 19, ../sass/partials/_smartphones.sass */
+  /* line 22, ../sass/partials/_smartphones.sass */
   .glyphicon.glyphicon-star {
     font-size: 1.34em;
     position: relative;
     top: 4px;
   }
 
-  /* line 24, ../sass/partials/_smartphones.sass */
+  /* line 27, ../sass/partials/_smartphones.sass */
   .form-group.login-form {
     margin: 19px 0px 12px 0px;
   }
 
-  /* line 27, ../sass/partials/_smartphones.sass */
+  /* line 30, ../sass/partials/_smartphones.sass */
   .register-form {
     margin: 12px 0px;
   }
 
-  /* line 31, ../sass/partials/_smartphones.sass */
+  /* line 34, ../sass/partials/_smartphones.sass */
   .sidebar {
     border: 1px solid #C2C2C2;
     margin-bottom: 20px;
   }
-  /* line 34, ../sass/partials/_smartphones.sass */
+  /* line 37, ../sass/partials/_smartphones.sass */
   .sidebar ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 38, ../sass/partials/_smartphones.sass */
+  /* line 41, ../sass/partials/_smartphones.sass */
   .sidebar ul li {
     text-align: center;
     padding: 14px;
   }
-  /* line 41, ../sass/partials/_smartphones.sass */
+  /* line 44, ../sass/partials/_smartphones.sass */
   .sidebar ul li a {
     color: black;
   }
 
-  /* line 46, ../sass/partials/_smartphones.sass */
+  /* line 49, ../sass/partials/_smartphones.sass */
   .glyphicon.glyphicon-edit,
   .glyphicon.glyphicon-remove {
     display: none;
   }
 
-  /* line 49, ../sass/partials/_smartphones.sass */
+  /* line 52, ../sass/partials/_smartphones.sass */
   .media {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
 
-  /* line 54, ../sass/partials/_smartphones.sass */
+  /* line 57, ../sass/partials/_smartphones.sass */
   #navbar {
     width: 100%;
     height: 40px;
   }
-  /* line 57, ../sass/partials/_smartphones.sass */
+  /* line 60, ../sass/partials/_smartphones.sass */
   #navbar #menu {
     display: none;
   }
 
-  /* line 60, ../sass/partials/_smartphones.sass */
+  /* line 63, ../sass/partials/_smartphones.sass */
   #collapse {
     border: 1px solid #F1F1F1;
   }
-  /* line 62, ../sass/partials/_smartphones.sass */
+  /* line 65, ../sass/partials/_smartphones.sass */
   #collapse ul {
     list-style: none;
     padding: 0px;
   }
-  /* line 65, ../sass/partials/_smartphones.sass */
+  /* line 68, ../sass/partials/_smartphones.sass */
   #collapse ul li {
     text-align: center;
     margin: 27px 0px;
   }
-  /* line 68, ../sass/partials/_smartphones.sass */
+  /* line 71, ../sass/partials/_smartphones.sass */
   #collapse ul li a {
     text-decoration: none;
     color: black;
   }
 
-  /* line 72, ../sass/partials/_smartphones.sass */
+  /* line 75, ../sass/partials/_smartphones.sass */
   #hamburger {
     float: right;
     margin-right: 15px;
     margin-top: 5px;
   }
-  /* line 76, ../sass/partials/_smartphones.sass */
+  /* line 79, ../sass/partials/_smartphones.sass */
   #hamburger .line {
     width: 31px;
     height: 5px;
@@ -117,27 +122,32 @@
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  /* line 4, ../sass/partials/_tablets.sass */
+  /* line 5, ../sass/partials/_tablets.sass */
+  #navbar {
+    display: none;
+  }
+
+  /* line 8, ../sass/partials/_tablets.sass */
   .media-body.food {
     float: right;
     width: 80%;
     padding-left: 2%;
   }
 
-  /* line 9, ../sass/partials/_tablets.sass */
+  /* line 13, ../sass/partials/_tablets.sass */
   .btn.btn-default.submit {
     position: relative;
     left: 45%;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* line 15, ../sass/partials/_tablets.sass */
+  /* line 19, ../sass/partials/_tablets.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 19, ../sass/partials/_tablets.sass */
+  /* line 23, ../sass/partials/_tablets.sass */
   .sidebar {
     position: fixed;
     margin: 0px;
@@ -148,51 +158,51 @@
     width: 20%;
     float: left;
   }
-  /* line 28, ../sass/partials/_tablets.sass */
+  /* line 32, ../sass/partials/_tablets.sass */
   .sidebar ul {
     padding: 0px;
   }
-  /* line 30, ../sass/partials/_tablets.sass */
+  /* line 34, ../sass/partials/_tablets.sass */
   .sidebar ul li {
     list-style: none;
     padding: 13px 0px 6px 28%;
   }
-  /* line 33, ../sass/partials/_tablets.sass */
+  /* line 37, ../sass/partials/_tablets.sass */
   .sidebar ul li a {
     color: #777777;
     text-decoration: none;
   }
 
-  /* line 37, ../sass/partials/_tablets.sass */
+  /* line 41, ../sass/partials/_tablets.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 41, ../sass/partials/_tablets.sass */
+  /* line 45, ../sass/partials/_tablets.sass */
   .container.media-container .media.food {
     float: right;
     width: 80%;
     margin: 10px 0px;
   }
-  /* line 45, ../sass/partials/_tablets.sass */
+  /* line 49, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 48, ../sass/partials/_tablets.sass */
+  /* line 52, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 80%;
     padding-left: 9%;
   }
-  /* line 52, ../sass/partials/_tablets.sass */
+  /* line 56, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 55, ../sass/partials/_tablets.sass */
+  /* line 59, ../sass/partials/_tablets.sass */
   #remove {
     position: relative;
     float: right;
@@ -200,82 +210,87 @@
     font-size: 1.2em;
   }
 
-  /* line 61, ../sass/partials/_tablets.sass */
+  /* line 65, ../sass/partials/_tablets.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 66, ../sass/partials/_tablets.sass */
+  /* line 70, ../sass/partials/_tablets.sass */
   #food-post-remove {
     float: right;
   }
 
-  /* line 69, ../sass/partials/_tablets.sass */
+  /* line 73, ../sass/partials/_tablets.sass */
   #media-body-post {
     float: right;
     width: 82%;
   }
 
-  /* line 72, ../sass/partials/_tablets.sass */
+  /* line 76, ../sass/partials/_tablets.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 75, ../sass/partials/_tablets.sass */
+  /* line 79, ../sass/partials/_tablets.sass */
   #hamburger,
   #collapse {
     display: none;
   }
 
-  /* line 80, ../sass/partials/_tablets.sass */
+  /* line 84, ../sass/partials/_tablets.sass */
   #menu ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 84, ../sass/partials/_tablets.sass */
+  /* line 88, ../sass/partials/_tablets.sass */
   #menu ul li {
     display: inline-block;
     padding: 14px 0px;
     margin-right: 10px;
   }
-  /* line 88, ../sass/partials/_tablets.sass */
+  /* line 92, ../sass/partials/_tablets.sass */
   #menu ul li a {
     text-decoration: none;
     color: black;
     margin-left: 75px;
   }
 
-  /* line 92, ../sass/partials/_tablets.sass */
+  /* line 96, ../sass/partials/_tablets.sass */
   #header {
     float: left;
   }
 
-  /* line 94, ../sass/partials/_tablets.sass */
+  /* line 98, ../sass/partials/_tablets.sass */
   #nav-right {
     float: right;
   }
 }
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1024px) {
   /* line 5, ../sass/partials/_laptops.sass */
+  #navbar {
+    display: none;
+  }
+
+  /* line 8, ../sass/partials/_laptops.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 9, ../sass/partials/_laptops.sass */
+  /* line 12, ../sass/partials/_laptops.sass */
   #remove {
     float: right;
     top: -24px;
   }
-  /* line 12, ../sass/partials/_laptops.sass */
+  /* line 15, ../sass/partials/_laptops.sass */
   #remove:hover {
     cursor: pointer;
   }
 
-  /* line 15, ../sass/partials/_laptops.sass */
+  /* line 18, ../sass/partials/_laptops.sass */
   .glyphicon.glyphicon-edit:hover,
   .glyphicon.glyphicon-cutlery:hover,
   #bookmarked:hover,
@@ -283,7 +298,7 @@
     cursor: pointer;
   }
 
-  /* line 21, ../sass/partials/_laptops.sass */
+  /* line 24, ../sass/partials/_laptops.sass */
   .sidebar {
     position: fixed;
     margin: 0px;
@@ -294,132 +309,151 @@
     width: 20%;
     float: left;
   }
-  /* line 30, ../sass/partials/_laptops.sass */
+  /* line 33, ../sass/partials/_laptops.sass */
   .sidebar ul {
     padding: 0px;
   }
-  /* line 32, ../sass/partials/_laptops.sass */
+  /* line 35, ../sass/partials/_laptops.sass */
   .sidebar ul li {
     list-style: none;
     padding: 13px 0px 6px 28%;
   }
-  /* line 35, ../sass/partials/_laptops.sass */
+  /* line 38, ../sass/partials/_laptops.sass */
   .sidebar ul li:hover {
     background-color: #DFDFDF;
   }
-  /* line 37, ../sass/partials/_laptops.sass */
+  /* line 40, ../sass/partials/_laptops.sass */
   .sidebar ul li a {
     color: #777777;
     text-decoration: none;
   }
-  /* line 40, ../sass/partials/_laptops.sass */
+  /* line 43, ../sass/partials/_laptops.sass */
   .sidebar ul li a:hover {
     cursor: pointer;
   }
 
-  /* line 43, ../sass/partials/_laptops.sass */
+  /* line 46, ../sass/partials/_laptops.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 47, ../sass/partials/_laptops.sass */
+  /* line 50, ../sass/partials/_laptops.sass */
   .container.media-container .media.food {
     float: right;
     width: 80%;
     margin: 10px 0px;
   }
-  /* line 51, ../sass/partials/_laptops.sass */
+  /* line 54, ../sass/partials/_laptops.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 54, ../sass/partials/_laptops.sass */
+  /* line 57, ../sass/partials/_laptops.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 80%;
     padding-left: 3%;
   }
-  /* line 58, ../sass/partials/_laptops.sass */
+  /* line 61, ../sass/partials/_laptops.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 62, ../sass/partials/_laptops.sass */
+  /* line 65, ../sass/partials/_laptops.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 68, ../sass/partials/_laptops.sass */
+  /* line 71, ../sass/partials/_laptops.sass */
   #media-body-post {
     float: right;
     width: 85%;
   }
 
-  /* line 71, ../sass/partials/_laptops.sass */
+  /* line 74, ../sass/partials/_laptops.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 74, ../sass/partials/_laptops.sass */
+  /* line 77, ../sass/partials/_laptops.sass */
   .btn.btn-default.submit {
     position: relative;
     left: 45%;
     width: 100px;
   }
 
-  /* line 79, ../sass/partials/_laptops.sass */
+  /* line 82, ../sass/partials/_laptops.sass */
   .glyphicon.glyphicon-remove {
     float: right;
   }
-  /* line 81, ../sass/partials/_laptops.sass */
+  /* line 84, ../sass/partials/_laptops.sass */
   .glyphicon.glyphicon-remove:hover {
     cursor: pointer;
   }
+
+  /* line 87, ../sass/partials/_laptops.sass */
+  #hamburger,
+  #collapse {
+    display: none;
+  }
+
+  /* line 91, ../sass/partials/_laptops.sass */
+  #menu-bar {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  /* line 95, ../sass/partials/_laptops.sass */
+  #menu-bar li {
+    display: inline-block;
+    padding: 14px 0px;
+  }
+  /* line 98, ../sass/partials/_laptops.sass */
+  #menu-bar li a {
+    text-decoration: none;
+    color: black;
+    margin-left: 79%;
+  }
 }
 /* line 5, ../sass/justmain.sass */
-#container {
-  z-index: 1000;
-}
-
-/* line 8, ../sass/justmain.sass */
 input#search {
   margin: 30px 0px;
 }
 
-/* line 11, ../sass/justmain.sass */
+/* line 8, ../sass/justmain.sass */
 hr {
   margin: 0px;
 }
 
-/* line 14, ../sass/justmain.sass */
+/* line 11, ../sass/justmain.sass */
 .navbar-default {
   background-color: white;
   margin: 0px;
 }
 
-/* line 18, ../sass/justmain.sass */
+/* line 15, ../sass/justmain.sass */
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 23, ../sass/justmain.sass */
+/* line 20, ../sass/justmain.sass */
 .glyphicon.glyphicon-cutlery {
   font-size: 1.34em;
 }
 
-/* line 26, ../sass/justmain.sass */
+/* line 23, ../sass/justmain.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 30, ../sass/justmain.sass */
+/* line 27, ../sass/justmain.sass */
 .btn-default {
   background-color: #E1E9E9;
   position: relative;
@@ -427,7 +461,7 @@ hr {
   left: 34%;
 }
 
-/* line 36, ../sass/justmain.sass */
+/* line 33, ../sass/justmain.sass */
 .login,
 .register {
   width: 100px;
@@ -435,48 +469,48 @@ hr {
   margin-top: 25px;
 }
 
-/* line 42, ../sass/justmain.sass */
+/* line 39, ../sass/justmain.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 46, ../sass/justmain.sass */
+/* line 43, ../sass/justmain.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 49, ../sass/justmain.sass */
+/* line 46, ../sass/justmain.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 52, ../sass/justmain.sass */
+/* line 49, ../sass/justmain.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 55, ../sass/justmain.sass */
+/* line 52, ../sass/justmain.sass */
 .sidebaractive {
   background-color: #F1F1F1;
 }
 
-/* line 58, ../sass/justmain.sass */
+/* line 55, ../sass/justmain.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 64, ../sass/justmain.sass */
+/* line 61, ../sass/justmain.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 67, ../sass/justmain.sass */
+/* line 64, ../sass/justmain.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 70, ../sass/justmain.sass */
+/* line 67, ../sass/justmain.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
