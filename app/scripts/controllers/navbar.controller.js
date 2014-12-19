@@ -31,5 +31,9 @@ app.controller('NavbarCtrl',['$scope',
     return authFactory.isAuthenticated();
   };
 
+  $scope.toggleNavbar = function() {
+    $('#collapse').slideToggle(300);
+  };
+
 
 }]);

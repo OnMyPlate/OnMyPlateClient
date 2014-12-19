@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarCtrl">
+<!-- <nav class="navbar navbar-default" role="navigation" ng-controller="NavbarCtrl">
   <div class="container-fluid">
 
     <div class="navbar-header">
@@ -29,14 +29,38 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
+<div id="container" ng-controller="NavbarCtrl">
+  <div id="navbar">
 
-<!-- <div id="navbar" ng-controller="NavbarCtrl">
-  <div id="navbar-header">
-    
-  </div>
+    <div id="hamburger" ng-click="toggleNavbar()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
 
-  <div id="navigation">
+    <!-- <div id="navbar-header">
+      <a href="#" title="brand">OnMyPlate</a>
+    </div> -->
+
     
+  
+    <div id="menu">
+      <ul>
+        <li><a ng-href="#/" title="home">Home</a></li>
+        <li><a ng-href="#/about" title="about">About</a></li>
+        <li><a ng-href="#/profile/{{currentUser.id}}" title="profile">Profile</a></li>
+      </ul>
+    </div>
   </div>
-</div> -->
+  <div id="collapse" hidden>
+    <ul>
+      <li><a ng-href="#/" title="home"ng-click="toggleNavbar()">Home</a></li>
+      <li><a ng-href="#/about" title="about"ng-click="toggleNavbar()">About</a></li>
+      <li><a ng-href="#/profile/{{currentUser.id}}" title="profile" ng-if="isLoggedIn()"ng-click="toggleNavbar()">Profile</a></li>
+      <li><a ng-href="#/login" title="login" ng-if="!isLoggedIn()"ng-click="toggleNavbar()">Login</a></li>
+      <li><a ng-href="#/register" ng-if="!isLoggedIn()"ng-click="toggleNavbar()">Register</a></li>
+      <li><a ng-href="#/login" ng-click="logout()" ng-if="isLoggedIn()"ng-click="toggleNavbar()">Logout</a></li>
+    </ul>
+  </div>
+</div>
