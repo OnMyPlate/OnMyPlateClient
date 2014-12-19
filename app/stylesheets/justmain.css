@@ -222,6 +222,41 @@
   #media-left-post {
     float: left;
   }
+
+  /* line 75, ../sass/partials/_tablets.sass */
+  #hamburger,
+  #collapse {
+    display: none;
+  }
+
+  /* line 80, ../sass/partials/_tablets.sass */
+  #menu ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  /* line 84, ../sass/partials/_tablets.sass */
+  #menu ul li {
+    display: inline-block;
+    padding: 14px 0px;
+    margin-right: 10px;
+  }
+  /* line 88, ../sass/partials/_tablets.sass */
+  #menu ul li a {
+    text-decoration: none;
+    color: black;
+    margin-left: 75px;
+  }
+
+  /* line 92, ../sass/partials/_tablets.sass */
+  #header {
+    float: left;
+  }
+
+  /* line 94, ../sass/partials/_tablets.sass */
+  #nav-right {
+    float: right;
+  }
 }
 @media only screen and (min-width: 1224px) {
   /* line 5, ../sass/partials/_laptops.sass */

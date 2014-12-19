@@ -46,14 +46,23 @@
     
   
     <div id="menu">
-      <ul>
+      <ul id="header">
+        <li><a href="#" title="header">OnMyPlate</a></li>
+      </ul>
+      <ul id="menu-bar">
         <li><a ng-href="#/" title="home">Home</a></li>
         <li><a ng-href="#/about" title="about">About</a></li>
-        <li><a ng-href="#/profile/{{currentUser.id}}" title="profile">Profile</a></li>
+        <li><a ng-href="#/profile/{{currentUser.id}}" title="profile" ng-if="isLoggedIn()">Profile</a></li>
+        <ul id="nav-right">
+          <li><a ng-href="#/register" ng-if="!isLoggedIn()">Register</a></li>
+          <li><a ng-href="#/login" ng-click="logout()" ng-if="isLoggedIn()">Logout</a></li>
+          <li><a ng-href="#/login" title="login" ng-if="!isLoggedIn()">Login</a></li>
+        </ul>
       </ul>
     </div>
   </div>
   <hr>
+
   <div id="collapse" hidden>
     <ul>
       <li><a ng-href="#/" title="home"ng-click="toggleNavbar()">Home</a></li>
@@ -64,4 +73,5 @@
       <li><a ng-href="#/login" ng-click="logout()" ng-if="isLoggedIn()"ng-click="toggleNavbar()">Logout</a></li>
     </ul>
   </div>
+
 </div>
