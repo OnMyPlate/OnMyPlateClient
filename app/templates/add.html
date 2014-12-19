@@ -69,11 +69,12 @@
 
     <div class="form-group">
       <label for="review">Review</label>
-      <textarea name="review" class="form-control" rows="5" ng-model="post.review" required></textarea>
+      <textarea name="review" class="form-control" rows="5" ng-model="post.review" ng-minlength="100" required></textarea>
     </div>
 
     <div class="custom-error" ng-show="upsertFoodForm.review.$dirty && upsertFoodForm.review.$invalid">
       <span ng-show="upsertFoodForm.review.$error.required">Invalid: Review is required.</span>
+      <p ng-show="upsertFoodForm.review.$error.minlength">Review is too short.</p>
     </div>
     <br>
 
