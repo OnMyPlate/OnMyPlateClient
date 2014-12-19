@@ -1,0 +1,59 @@
+@import variables
+
+@media #{$tablet-landscape}
+  .media-body.food
+    float: right
+    width: 80%
+    padding-left: 2%
+  
+
+@media #{$tablet}
+  #edit-button,
+  #remove-button
+    display: none
+
+  .sidebar
+    position: fixed
+    margin: 0px
+    padding: 0px
+    height: 300px
+    background-color: #F8F8F8
+    display: inline-block
+    width: 20%
+    float: left
+    ul
+      padding: 0px
+      li
+        list-style: none
+        padding: 13px 0px 6px 28%
+        a
+          color: #777777
+          text-decoration: none
+
+  .container.media-container
+    padding-top: 20px
+    overflow: scroll
+    white-space: nowrap
+    .media.food
+      float: right
+      width: 80%
+      margin: 10px 0px
+      .media-left.food
+        float: left
+        width: 20%
+      .media-body.food
+        float: right
+        width: 80%
+        padding-left: 9%
+        h6
+          overflow: hidden
+          text-overflow: ellipsis
+  #remove
+    position: relative
+    float: right
+    top: -24px
+    font-size: 1.2em
+  #form-container
+    float: right
+    width: 80%
+    padding-top: 20px
