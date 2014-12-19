@@ -38,7 +38,7 @@
 
   /* line 31, ../sass/partials/_smartphones.sass */
   .sidebar {
-    border: 1px solid #a5a5a5;
+    border: 1px solid #C2C2C2;
     margin-bottom: 20px;
   }
   /* line 34, ../sass/partials/_smartphones.sass */
@@ -73,46 +73,47 @@
   /* line 54, ../sass/partials/_smartphones.sass */
   #navbar {
     width: 100%;
-    border: 1px solid black;
     height: 40px;
   }
-  /* line 58, ../sass/partials/_smartphones.sass */
+  /* line 57, ../sass/partials/_smartphones.sass */
   #navbar #menu {
     display: none;
   }
 
-  /* line 61, ../sass/partials/_smartphones.sass */
+  /* line 60, ../sass/partials/_smartphones.sass */
   #collapse {
-    border: 1px solid black;
+    border: 1px solid #F1F1F1;
   }
-  /* line 63, ../sass/partials/_smartphones.sass */
+  /* line 62, ../sass/partials/_smartphones.sass */
   #collapse ul {
     list-style: none;
     padding: 0px;
   }
-  /* line 66, ../sass/partials/_smartphones.sass */
+  /* line 65, ../sass/partials/_smartphones.sass */
   #collapse ul li {
     text-align: center;
     margin: 27px 0px;
   }
-  /* line 69, ../sass/partials/_smartphones.sass */
+  /* line 68, ../sass/partials/_smartphones.sass */
   #collapse ul li a {
     text-decoration: none;
     color: black;
   }
 
-  /* line 73, ../sass/partials/_smartphones.sass */
+  /* line 72, ../sass/partials/_smartphones.sass */
   #hamburger {
     float: right;
-    margin-right: 7px;
+    margin-right: 15px;
+    margin-top: 5px;
   }
   /* line 76, ../sass/partials/_smartphones.sass */
   #hamburger .line {
     width: 31px;
     height: 5px;
-    border: 1px solid black;
-    background-color: black;
+    border: 1px solid #C2C2C2;
+    background-color: #C2C2C2;
     margin: 4px 0px;
+    border-radius: 2px;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
@@ -355,30 +356,35 @@ input#search {
 }
 
 /* line 11, ../sass/justmain.sass */
+hr {
+  margin: 0px;
+}
+
+/* line 14, ../sass/justmain.sass */
 .navbar-default {
   background-color: white;
   margin: 0px;
 }
 
-/* line 15, ../sass/justmain.sass */
+/* line 18, ../sass/justmain.sass */
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 20, ../sass/justmain.sass */
+/* line 23, ../sass/justmain.sass */
 .glyphicon.glyphicon-cutlery {
   font-size: 1.34em;
 }
 
-/* line 23, ../sass/justmain.sass */
+/* line 26, ../sass/justmain.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 27, ../sass/justmain.sass */
+/* line 30, ../sass/justmain.sass */
 .btn-default {
   background-color: #E1E9E9;
   position: relative;
@@ -386,7 +392,7 @@ input#search {
   left: 34%;
 }
 
-/* line 33, ../sass/justmain.sass */
+/* line 36, ../sass/justmain.sass */
 .login,
 .register {
   width: 100px;
@@ -394,48 +400,48 @@ input#search {
   margin-top: 25px;
 }
 
-/* line 39, ../sass/justmain.sass */
+/* line 42, ../sass/justmain.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 43, ../sass/justmain.sass */
+/* line 46, ../sass/justmain.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 46, ../sass/justmain.sass */
+/* line 49, ../sass/justmain.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 49, ../sass/justmain.sass */
+/* line 52, ../sass/justmain.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 52, ../sass/justmain.sass */
+/* line 55, ../sass/justmain.sass */
 .sidebaractive {
   background-color: #F1F1F1;
 }
 
-/* line 55, ../sass/justmain.sass */
+/* line 58, ../sass/justmain.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 61, ../sass/justmain.sass */
+/* line 64, ../sass/justmain.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 64, ../sass/justmain.sass */
+/* line 67, ../sass/justmain.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 67, ../sass/justmain.sass */
+/* line 70, ../sass/justmain.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
