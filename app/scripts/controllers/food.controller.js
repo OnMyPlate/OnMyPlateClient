@@ -86,7 +86,7 @@ app.controller('FoodCtrl',['$location',
         });
       } else {
         $http.delete(HerokuUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
-          $('#' + post.id).fadeOut(400, function() {
+          $('#' + post.id).fadeOut(300, function() {
             $scope.posts.splice($scope.posts.indexOf(post), 1);
           });          
           console.log('post is deleted!');

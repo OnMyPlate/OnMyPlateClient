@@ -5,7 +5,7 @@ app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3',
   var signKeyResponse;
 
   var signKey = function(imageFile, post) {
-    return $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
+    $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
       signKeyResponse = response;
 
       var imageParams = {
