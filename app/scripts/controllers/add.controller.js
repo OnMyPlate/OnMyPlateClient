@@ -2,14 +2,14 @@
 
 app.controller('AddCtrl', ['$scope', 
                            '$http', 
-                           'herokuUrl', 
+                           'HerokuUrl', 
                            '$location', 
                            '$q', 
                            'imageFactory', 
                            'dataFactory',
                            'foodFactory',
                            'userFactory',
-                           function($scope, $http, herokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory) {
+                           function($scope, $http, HerokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5];
   var users = [];
@@ -37,7 +37,7 @@ app.controller('AddCtrl', ['$scope',
     var foodParams = {food: food};
 
     if(food.id) {
-      $http.put(herokuUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
+      $http.put(HerokuUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
         console.log('food updated!');
         $q.all(upsertPost(post, image, response)).then(function() {
           dataFactory.fetchUsers().then(function(response) {
@@ -49,7 +49,7 @@ app.controller('AddCtrl', ['$scope',
         });
       });
     } else {
-      $http.post(herokuUrl + 'foods', foodParams).success(function(response) {
+      $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
         $q.all(upsertPost(post, image, response)).then(function(response) {
           dataFactory.fetchUsers().then(function(response) {
@@ -72,14 +72,18 @@ app.controller('AddCtrl', ['$scope',
     }};
     
     if(post.id) {
-      $http.put(herokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
+      $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
         $q.all(imageFactory.signKey(image, postParams));
       });
     } else {
-      $http.post(herokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+      $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         console.log('post created!');
-        $q.all(imageFactory.signKey(image, postParams));
+        $scope.addedPostId = response.id;
+        $q.all(imageFactory.signKey(image, postParams)).then(function(response) {
+          debugger
+          $q.defer().resolve(response);
+        });
       });
     }
   };

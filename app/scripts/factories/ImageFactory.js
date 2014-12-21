@@ -1,21 +1,21 @@
 'use strict';
 
-app.factory('imageFactory',['$http', 'herokuUrl', '$q', '$location', function($http, herokuUrl, $q, $location) {
+app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3', function($http, HerokuUrl, $q, $location, AmazonS3) {
 
   var signKeyResponse;
 
   var signKey = function(imageFile, post) {
-    $http.get(herokuUrl + 'amazon/sign_key').success(function(response) {
+    return $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
       signKeyResponse = response;
 
       var imageParams = {
         food_image: {
-          image_url: 'https://ompimages.s3.amazonaws.com/'+ signKeyResponse.key
+          image_url: AmazonS3 + signKeyResponse.key
         }
       };
 
-      $q.all(upsertImageToAPI(imageParams, post)).then(function(response) {
-        postImageToS3(imageFile, signKeyResponse);
+      $q.all(postImageToS3(imageFile, signKeyResponse)).then(function(response) {
+        upsertImageToAPI(imageParams, post);
       });
     });
   };
@@ -31,7 +31,7 @@ app.factory('imageFactory',['$http', 'herokuUrl', '$q', '$location', function($h
     imageData.append('Content-Type', 'image/jpeg');
     imageData.append('file', imageFile);
 
-    $http.post('https://ompimages.s3.amazonaws.com/', imageData, {
+    $http.post(AmazonS3, imageData, {
       transformRequest: angular.identity,
       headers: {
         'Content-Type': undefined,
@@ -47,9 +47,9 @@ app.factory('imageFactory',['$http', 'herokuUrl', '$q', '$location', function($h
   var upsertImageToAPI = function(image_params, post) {
     var promises = [];
     if(post.post.food_image) {
-      promises.push($http.put(herokuUrl + 'food_images/' + post.post.food_image.id, image_params));
+      promises.push($http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params));
     } else {
-      promises.push($http.post(herokuUrl + 'food_images', image_params));
+      promises.push($http.post(HerokuUrl + 'food_images', image_params));
     }
   };
 

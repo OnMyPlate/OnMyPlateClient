@@ -418,42 +418,64 @@
     color: black;
     margin-left: 79%;
   }
+
+  /* line 104, ../sass/partials/_laptops.sass */
+  form[name="loginUser"] {
+    margin-top: 93px;
+  }
+  /* line 106, ../sass/partials/_laptops.sass */
+  form[name="loginUser"] button.btn.btn-default.login {
+    left: 44%;
+  }
+  /* line 108, ../sass/partials/_laptops.sass */
+  form[name="registerUserForm"] {
+    margin-top: 93px;
+  }
+  /* line 110, ../sass/partials/_laptops.sass */
+  form[name="registerUserForm"] button.btn.btn-default.register {
+    left: 44%;
+  }
 }
 /* line 5, ../sass/justmain.sass */
+* {
+  box-size: border-box;
+}
+
+/* line 8, ../sass/justmain.sass */
 input#search {
   margin: 30px 0px;
 }
 
-/* line 8, ../sass/justmain.sass */
+/* line 11, ../sass/justmain.sass */
 hr {
   margin: 0px;
 }
 
-/* line 11, ../sass/justmain.sass */
+/* line 14, ../sass/justmain.sass */
 .navbar-default {
   background-color: white;
   margin: 0px;
 }
 
-/* line 15, ../sass/justmain.sass */
+/* line 18, ../sass/justmain.sass */
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 20, ../sass/justmain.sass */
+/* line 23, ../sass/justmain.sass */
 .glyphicon.glyphicon-cutlery {
   font-size: 1.34em;
 }
 
-/* line 23, ../sass/justmain.sass */
+/* line 26, ../sass/justmain.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 27, ../sass/justmain.sass */
+/* line 30, ../sass/justmain.sass */
 .btn-default {
   background-color: #E1E9E9;
   position: relative;
@@ -461,7 +483,7 @@ hr {
   left: 34%;
 }
 
-/* line 33, ../sass/justmain.sass */
+/* line 36, ../sass/justmain.sass */
 .login,
 .register {
   width: 100px;
@@ -469,48 +491,48 @@ hr {
   margin-top: 25px;
 }
 
-/* line 39, ../sass/justmain.sass */
+/* line 42, ../sass/justmain.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 43, ../sass/justmain.sass */
+/* line 46, ../sass/justmain.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 46, ../sass/justmain.sass */
+/* line 49, ../sass/justmain.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 49, ../sass/justmain.sass */
+/* line 52, ../sass/justmain.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 52, ../sass/justmain.sass */
+/* line 55, ../sass/justmain.sass */
 .sidebaractive {
   background-color: #F1F1F1;
 }
 
-/* line 55, ../sass/justmain.sass */
+/* line 58, ../sass/justmain.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 61, ../sass/justmain.sass */
+/* line 64, ../sass/justmain.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 64, ../sass/justmain.sass */
+/* line 67, ../sass/justmain.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 67, ../sass/justmain.sass */
+/* line 70, ../sass/justmain.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }

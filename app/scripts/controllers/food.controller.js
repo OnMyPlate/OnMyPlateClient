@@ -7,10 +7,10 @@ app.controller('FoodCtrl',['$location',
                            'userFactory',
                            '$q',
                            '$http',
-                           'herokuUrl',
+                           'HerokuUrl',
                            'imageFactory',
                            'authFactory', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, herokuUrl, imageFactory, authFactory) {
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, HerokuUrl, imageFactory, authFactory) {
 
 
     var users = [];
@@ -70,7 +70,7 @@ app.controller('FoodCtrl',['$location',
         food_id: food.id 
       }};
 
-      $http.post(herokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+      $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         $scope.posts.push(response);
         $q.all(imageFactory.signKey(image, postParams)).then(function(response) {
           console.log('post created!');
@@ -80,12 +80,12 @@ app.controller('FoodCtrl',['$location',
 
     $scope.removePost = function(post, food) {
       if(food.posts.length === 1) {
-        $http.delete(herokuUrl + '/foods/' + food.id + '.json').success(function(response) {
-          $http.delete(herokuUrl + '/foods/' + food.id + '/posts/' + post.id);
+        $http.delete(HerokuUrl + '/foods/' + food.id + '.json').success(function(response) {
+          $http.delete(HerokuUrl + '/foods/' + food.id + '/posts/' + post.id);
           $location.path('/');
         });
       } else {
-        $http.delete(herokuUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
+        $http.delete(HerokuUrl + '/foods/' + food.id + '/posts/' + post.id).success(function(response) {
           $scope.posts.splice($scope.posts.indexOf(post), 1);
           console.log('post is deleted!');
         });
@@ -103,16 +103,16 @@ app.controller('FoodCtrl',['$location',
 
 
       if(likedByUser.length === 0 || (post.liked === '4e59b096.glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
-        $http.post(herokuUrl + 'likes.json', params).success(function(response) {
+        $http.post(HerokuUrl + 'likes.json', params).success(function(response) {
           console.log('you like the post bitch!!!');
           $scope.currentUser.likes.push(response);
-          $scope.posts.filter(function (element) {return element.id === response.post_id })[0].likes += 1;
+          $scope.posts.filter(function(element) {return element.id === response.post_id })[0].likes += 1;
           $scope.posts.filter(function(post) {return response.post_id === post.id})[0].liked = '196baacd.glyphicons-13-heart.png';
         });
       } else if(post.liked === '196baacd.glyphicons-13-heart.png') {
         var likeId = $scope.currentUser.likes.filter(function(element) {return element.post_id === post.id})[0].id;
         var deletedLike = $scope.currentUser.likes.filter(function(element) {return element.post_id === post.id})[0];
-        $http.delete(herokuUrl + 'likes/' + likeId + '.json').success(function(response) {
+        $http.delete(HerokuUrl + 'likes/' + likeId + '.json').success(function(response) {
           console.log('unliked the post bitch!!!');
           $scope.currentUser.likes.splice($scope.currentUser.likes.length-1, 1);
           $scope.posts.filter(function(element) {return element.id === deletedLike.post_id })[0].likes -= 1;

@@ -1,9 +1,9 @@
 'use strict';
 
-app.factory('authFactory',['$http', '$window', 'herokuUrl', '$location', function($http, $window, herokuUrl, $location) {
+app.factory('authFactory',['$http', '$window', 'HerokuUrl', '$location', function($http, $window, HerokuUrl, $location) {
 
   var login = function(params) {
-    return $http.post(herokuUrl + 'login', params).success(function(response) {
+    return $http.post(HerokuUrl + 'login', params).success(function(response) {
       // sessionStorage.setItem('key', 'value'), sets session in the browser
       $window.sessionStorage.setItem('OnMyPlate.user', response.token);
       // Sets the headers for the request, and token for the authorization
@@ -14,7 +14,7 @@ app.factory('authFactory',['$http', '$window', 'herokuUrl', '$location', functio
   };
 
   var logout = function() {
-    return $http.get(herokuUrl + 'logout').success(function(response) {
+    return $http.get(HerokuUrl + 'logout').success(function(response) {
       // removes the OnMyPlate.user from the $window.sessionStorage object 
       $window.sessionStorage.removeItem('OnMyPlate.user');
     });

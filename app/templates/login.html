@@ -1,11 +1,11 @@
 <ng-include src="'templates/navbar.html'"></ng-include>
 
-<div class="container" id="user-form" ng-controller="LoginCtrl">
+<div class="container" ng-controller="LoginCtrl">
 
   <form role="form" name="loginUser" ng-submit="login(params)" novalidate>
   
     <div class="form-group login-form">
-      <label for="email">Email address</label>
+      <label for="email">Email Address</label>
       <input type="email" class="form-control" name="email" placeholder="Enter Email" ng-model="params.email" required>
     </div>
 

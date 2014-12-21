@@ -3,9 +3,9 @@
 app.controller('FavoriteCtrl', ['dataFactory', 
                                 '$scope', 
                                 '$http', 
-                                'herokuUrl',
+                                'HerokuUrl',
                                 'foodFactory',
-                                function(dataFactory, $scope, $http, herokuUrl ,foodFactory) {
+                                function(dataFactory, $scope, $http, HerokuUrl ,foodFactory) {
 
 
   dataFactory.fetchFoods().then(function(response) {
@@ -17,7 +17,7 @@ app.controller('FavoriteCtrl', ['dataFactory',
   $scope.bookmarkFood = function(food) {
     food.bookmarked = !food.bookmarked
     var params = {food: food};
-    $http.put(herokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
+    $http.put(HerokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
       console.log('food bookmarked!');
       $scope.foods = $scope.foods.filter(function(element) {
         return element.bookmarked === true; 
