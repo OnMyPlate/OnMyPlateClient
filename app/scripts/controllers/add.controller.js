@@ -80,10 +80,7 @@ app.controller('AddCtrl', ['$scope',
       $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         console.log('post created!');
         $scope.addedPostId = response.id;
-        $q.all(imageFactory.signKey(image, postParams)).then(function(response) {
-          debugger
-          $q.defer().resolve(response);
-        });
+        $q.all(imageFactory.signKey(image, postParams));
       });
     }
   };
