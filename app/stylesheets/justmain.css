@@ -38,14 +38,6 @@ hr {
   background-color: #CB7519;
 }
 
-/* line 27, ../sass/partials/_base.sass */
-.btn-default {
-  background-color: #E1E9E9;
-  position: relative;
-  margin-bottom: 12px;
-  left: 34%;
-}
-
 /* line 33, ../sass/partials/_base.sass */
 .login,
 .register {
