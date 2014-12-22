@@ -7,6 +7,136 @@ h6,
 .review
   line-height: 1.5em
 
+#navbar
+  width: 100%
+  height: 40px
+  border-bottom: 1px solid rgb(204, 204, 204)
+  #menu
+    display: none
+
+#collapse
+  border: 1px solid #F1F1F1
+  ul
+    list-style: none
+    padding: 0px
+    li
+      text-align: center
+      margin: 27px 0px
+      a 
+        text-decoration: none
+        color: black
+
+div#header
+  display: inline-block
+  position: relative
+  top: 10px
+  left: 47.5%
+
+#hamburger
+  float: right
+  position: relative
+  right: 30px
+  bottom: -3px
+  .line
+    width: 31px
+    height: 5px
+    border: 1px solid #C2C2C2
+    background-color: #C2C2C2
+    margin: 4px 0px
+    border-radius: 2px
+
+// .sidebar
+//   position: fixed
+//   margin: 0px
+//   padding: 0px
+//   height: 300px
+//   background-color: #F8F8F8
+//   display: inline-block
+//   width: 20%
+//   float: left
+//   ul
+//     padding: 0px
+//     li
+//       list-style: none
+//       padding: 13px 0px 6px 28%
+//       &:hover
+//         background-color: #DFDFDF
+//       a
+//         color: #777777
+//         text-decoration: none
+//         &:hover
+//           cursor: pointer
+
+// #edit-button,
+// #remove-button
+//   display: none
+
+// #remove
+//   float: right
+//   top: -24px
+//   &:hover
+//     cursor: pointer
+
+// .glyphicon.glyphicon-edit:hover,
+// .glyphicon.glyphicon-cutlery:hover,
+// #bookmarked:hover,
+// #unliked:hover
+//   cursor: pointer
+
+// .container.media-container
+//   padding-top: 20px
+//   overflow: scroll
+//   white-space: nowrap
+//   .media.food
+//     float: right
+//     width: 80%
+//     margin: 10px 0px
+//     .media-left.food
+//       float: left
+//       width: 20%
+//     .media-body.food
+//       float: right
+//       width: 80%
+//       padding-left: 3%
+//       h6
+//         overflow: hidden
+//         text-overflow: ellipsis
+
+// #form-container
+//   float: right
+//   width: 80%
+//   padding-top: 20px
+
+     
+// #media-body-post
+//   float: right
+//   width: 85%
+// #media-left-post
+//   float: left
+
+// .btn.btn-default.submit
+//   position: relative
+//   left: 45%
+//   width: 100px
+
+// .glyphicon.glyphicon-remove
+//   float: right
+//   &:hover
+//     cursor: pointer
+
+.sidebar
+  border: 1px solid #C2C2C2
+  margin-bottom: 20px
+  ul
+    list-style: none
+    padding: 0px
+    margin: 0px
+    li
+      text-align: center
+      padding: 14px
+      a
+        color: black
+
 input#search
   margin: 30px 0px
 
@@ -71,3 +201,21 @@ img
 
 .form-group .ng-valid
   border: 1px solid green
+
+//Forms
+form
+  &[name="loginUser"]
+    margin-top: 93px
+    button.btn.btn-default.login
+      left: 44%
+  &[name="registerUserForm"]
+    margin-top: 93px
+    button.btn.btn-default.register
+      left: 44%
+
+//Filter Button
+.btn.btn-default.filter-button
+  background-color: #E1E9E9
+  position: relative
+  left: 0%
+  margin: 30px 0px

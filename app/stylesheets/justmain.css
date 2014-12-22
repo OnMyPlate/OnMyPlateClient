@@ -12,40 +12,117 @@ h6,
 }
 
 /* line 10, ../sass/partials/_base.sass */
+#navbar {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #cccccc;
+}
+/* line 14, ../sass/partials/_base.sass */
+#navbar #menu {
+  display: none;
+}
+
+/* line 17, ../sass/partials/_base.sass */
+#collapse {
+  border: 1px solid #F1F1F1;
+}
+/* line 19, ../sass/partials/_base.sass */
+#collapse ul {
+  list-style: none;
+  padding: 0px;
+}
+/* line 22, ../sass/partials/_base.sass */
+#collapse ul li {
+  text-align: center;
+  margin: 27px 0px;
+}
+/* line 25, ../sass/partials/_base.sass */
+#collapse ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 29, ../sass/partials/_base.sass */
+div#header {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left: 47.5%;
+}
+
+/* line 35, ../sass/partials/_base.sass */
+#hamburger {
+  float: right;
+  position: relative;
+  right: 30px;
+  bottom: -3px;
+}
+/* line 40, ../sass/partials/_base.sass */
+#hamburger .line {
+  width: 31px;
+  height: 5px;
+  border: 1px solid #C2C2C2;
+  background-color: #C2C2C2;
+  margin: 4px 0px;
+  border-radius: 2px;
+}
+
+/* line 127, ../sass/partials/_base.sass */
+.sidebar {
+  border: 1px solid #C2C2C2;
+  margin-bottom: 20px;
+}
+/* line 130, ../sass/partials/_base.sass */
+.sidebar ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 134, ../sass/partials/_base.sass */
+.sidebar ul li {
+  text-align: center;
+  padding: 14px;
+}
+/* line 137, ../sass/partials/_base.sass */
+.sidebar ul li a {
+  color: black;
+}
+
+/* line 140, ../sass/partials/_base.sass */
 input#search {
   margin: 30px 0px;
 }
 
-/* line 13, ../sass/partials/_base.sass */
+/* line 143, ../sass/partials/_base.sass */
 hr {
   margin: 0px;
 }
 
-/* line 16, ../sass/partials/_base.sass */
+/* line 146, ../sass/partials/_base.sass */
 .navbar-default {
   background-color: white;
   margin: 0px;
 }
 
-/* line 20, ../sass/partials/_base.sass */
+/* line 150, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 25, ../sass/partials/_base.sass */
+/* line 155, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery {
   font-size: 1.34em;
 }
 
-/* line 28, ../sass/partials/_base.sass */
+/* line 158, ../sass/partials/_base.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 32, ../sass/partials/_base.sass */
+/* line 162, ../sass/partials/_base.sass */
 .btn-default {
   background-color: #E1E9E9;
   position: relative;
@@ -53,7 +130,7 @@ hr {
   left: 34%;
 }
 
-/* line 38, ../sass/partials/_base.sass */
+/* line 168, ../sass/partials/_base.sass */
 .login,
 .register {
   width: 100px;
@@ -61,182 +138,161 @@ hr {
   margin-top: 25px;
 }
 
-/* line 44, ../sass/partials/_base.sass */
+/* line 174, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 48, ../sass/partials/_base.sass */
+/* line 178, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 51, ../sass/partials/_base.sass */
+/* line 181, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 54, ../sass/partials/_base.sass */
+/* line 184, ../sass/partials/_base.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 57, ../sass/partials/_base.sass */
+/* line 187, ../sass/partials/_base.sass */
 .sidebaractive {
   background-color: #F1F1F1;
 }
 
-/* line 60, ../sass/partials/_base.sass */
+/* line 190, ../sass/partials/_base.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 66, ../sass/partials/_base.sass */
+/* line 196, ../sass/partials/_base.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 69, ../sass/partials/_base.sass */
+/* line 199, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 72, ../sass/partials/_base.sass */
+/* line 202, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
+/* line 207, ../sass/partials/_base.sass */
+form[name="loginUser"] {
+  margin-top: 93px;
+}
+/* line 209, ../sass/partials/_base.sass */
+form[name="loginUser"] button.btn.btn-default.login {
+  left: 44%;
+}
+/* line 211, ../sass/partials/_base.sass */
+form[name="registerUserForm"] {
+  margin-top: 93px;
+}
+/* line 213, ../sass/partials/_base.sass */
+form[name="registerUserForm"] button.btn.btn-default.register {
+  left: 44%;
+}
+
+/* line 217, ../sass/partials/_base.sass */
+.btn.btn-default.filter-button {
+  background-color: #E1E9E9;
+  position: relative;
+  left: 0%;
+  margin: 30px 0px;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  /* line 5, ../sass/partials/_smartphones.sass */
+  /* line 3, ../sass/partials/_smartphones.sass */
   p,
   h6 {
     font-size: 1.2em;
   }
 
-  /* line 9, ../sass/partials/_smartphones.sass */
-  .navbar.navbar-default {
-    display: none;
+  /* line 7, ../sass/partials/_smartphones.sass */
+  div#header {
+    left: 4%;
   }
 
-  /* line 13, ../sass/partials/_smartphones.sass */
+  /* line 11, ../sass/partials/_smartphones.sass */
   #username {
     display: none;
   }
 
-  /* line 16, ../sass/partials/_smartphones.sass */
+  /* line 14, ../sass/partials/_smartphones.sass */
   input#search {
     margin: 12px 0px 31px;
   }
 
-  /* line 19, ../sass/partials/_smartphones.sass */
+  /* line 17, ../sass/partials/_smartphones.sass */
   h3.ng-binding {
     margin: 19px 0px;
   }
 
-  /* line 22, ../sass/partials/_smartphones.sass */
+  /* line 20, ../sass/partials/_smartphones.sass */
   h4.ng-binding {
     margin: 20px 0px;
   }
 
-  /* line 26, ../sass/partials/_smartphones.sass */
+  /* line 24, ../sass/partials/_smartphones.sass */
   .glyphicon.glyphicon-star {
     font-size: 1.34em;
     position: relative;
     top: 4px;
   }
 
-  /* line 31, ../sass/partials/_smartphones.sass */
+  /* line 29, ../sass/partials/_smartphones.sass */
   .form-group.login-form {
     margin: 19px 0px 12px 0px;
   }
 
-  /* line 34, ../sass/partials/_smartphones.sass */
+  /* line 32, ../sass/partials/_smartphones.sass */
   .register-form {
     margin: 12px 0px;
   }
 
-  /* line 38, ../sass/partials/_smartphones.sass */
+  /* line 36, ../sass/partials/_smartphones.sass */
   .sidebar {
     border: 1px solid #C2C2C2;
     margin-bottom: 20px;
   }
-  /* line 41, ../sass/partials/_smartphones.sass */
+  /* line 39, ../sass/partials/_smartphones.sass */
   .sidebar ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 45, ../sass/partials/_smartphones.sass */
+  /* line 43, ../sass/partials/_smartphones.sass */
   .sidebar ul li {
     text-align: center;
     padding: 14px;
   }
-  /* line 48, ../sass/partials/_smartphones.sass */
+  /* line 46, ../sass/partials/_smartphones.sass */
   .sidebar ul li a {
     color: black;
   }
 
-  /* line 53, ../sass/partials/_smartphones.sass */
+  /* line 51, ../sass/partials/_smartphones.sass */
   .glyphicon.glyphicon-edit,
   .glyphicon.glyphicon-remove {
     display: none;
   }
 
-  /* line 56, ../sass/partials/_smartphones.sass */
+  /* line 54, ../sass/partials/_smartphones.sass */
   .media {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
 
-  /* line 61, ../sass/partials/_smartphones.sass */
-  #navbar {
-    width: 100%;
-    height: 40px;
-  }
-  /* line 64, ../sass/partials/_smartphones.sass */
-  #navbar #menu {
-    display: none;
-  }
-
-  /* line 67, ../sass/partials/_smartphones.sass */
-  #collapse {
-    border: 1px solid #F1F1F1;
-  }
-  /* line 69, ../sass/partials/_smartphones.sass */
-  #collapse ul {
-    list-style: none;
-    padding: 0px;
-  }
-  /* line 72, ../sass/partials/_smartphones.sass */
-  #collapse ul li {
-    text-align: center;
-    margin: 27px 0px;
-  }
-  /* line 75, ../sass/partials/_smartphones.sass */
-  #collapse ul li a {
-    text-decoration: none;
-    color: black;
-  }
-
-  /* line 79, ../sass/partials/_smartphones.sass */
-  #hamburger {
-    float: right;
-    margin-right: 15px;
-    margin-top: 5px;
-  }
-  /* line 83, ../sass/partials/_smartphones.sass */
-  #hamburger .line {
-    width: 31px;
-    height: 5px;
-    border: 1px solid #C2C2C2;
-    background-color: #C2C2C2;
-    margin: 4px 0px;
-    border-radius: 2px;
-  }
-
-  /* line 91, ../sass/partials/_smartphones.sass */
+  /* line 59, ../sass/partials/_smartphones.sass */
   .btn.btn-default.filter-button {
     background-color: #E1E9E9;
     position: relative;
@@ -244,96 +300,63 @@ img[alt="Food Picture"] {
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  /* line 5, ../sass/partials/_tablets.sass */
+  /* line 3, ../sass/partials/_tablets.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 9, ../sass/partials/_tablets.sass */
-  #navbar {
-    display: none;
-  }
-
-  /* line 12, ../sass/partials/_tablets.sass */
+  /* line 10, ../sass/partials/_tablets.sass */
   .media-body.food {
     float: right;
     width: 80%;
     padding-left: 2%;
   }
 
-  /* line 17, ../sass/partials/_tablets.sass */
+  /* line 15, ../sass/partials/_tablets.sass */
   .btn.btn-default.submit {
     position: relative;
     left: 45%;
   }
 
-  /* line 21, ../sass/partials/_tablets.sass */
+  /* line 19, ../sass/partials/_tablets.sass */
   #media-body-post {
     float: right;
     width: 82%;
   }
 
-  /* line 25, ../sass/partials/_tablets.sass */
+  /* line 23, ../sass/partials/_tablets.sass */
   span#food-post-remove {
     float: right;
   }
 
-  /* line 28, ../sass/partials/_tablets.sass */
-  .sidebar {
-    position: fixed;
-    margin: 0px;
-    padding: 0px;
-    height: 300px;
-    background-color: #F8F8F8;
-    display: inline-block;
-    width: 20%;
-    float: left;
-  }
-  /* line 37, ../sass/partials/_tablets.sass */
-  .sidebar ul {
-    padding: 0px;
-  }
-  /* line 39, ../sass/partials/_tablets.sass */
-  .sidebar ul li {
-    list-style: none;
-    padding: 13px 0px 6px 28%;
-  }
-  /* line 42, ../sass/partials/_tablets.sass */
-  .sidebar ul li a {
-    color: #777777;
-    text-decoration: none;
-  }
-
-  /* line 46, ../sass/partials/_tablets.sass */
+  /* line 26, ../sass/partials/_tablets.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 50, ../sass/partials/_tablets.sass */
+  /* line 30, ../sass/partials/_tablets.sass */
   .container.media-container .media.food {
-    float: right;
-    width: 80%;
     margin: 10px 0px;
   }
-  /* line 54, ../sass/partials/_tablets.sass */
+  /* line 32, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 57, ../sass/partials/_tablets.sass */
+  /* line 35, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 77%;
   }
-  /* line 60, ../sass/partials/_tablets.sass */
+  /* line 38, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 64, ../sass/partials/_tablets.sass */
+  /* line 42, ../sass/partials/_tablets.sass */
   #remove {
     position: relative;
     float: right;
@@ -341,107 +364,62 @@ img[alt="Food Picture"] {
     font-size: 1.2em;
   }
 
-  /* line 70, ../sass/partials/_tablets.sass */
+  /* line 48, ../sass/partials/_tablets.sass */
   span.glyphicon.glyphicon-edit {
     font-size: 1.2em;
     margin: 10px 0px;
   }
 
-  /* line 74, ../sass/partials/_tablets.sass */
+  /* line 52, ../sass/partials/_tablets.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 79, ../sass/partials/_tablets.sass */
+  /* line 57, ../sass/partials/_tablets.sass */
   .btn.btn-default.filter-button {
     background-color: #E1E9E9;
     position: relative;
     left: 0%;
     margin: 30px 0px;
   }
-
-  /* line 86, ../sass/partials/_tablets.sass */
-  form[name="loginUser"] {
-    margin-top: 93px;
-  }
-  /* line 88, ../sass/partials/_tablets.sass */
-  form[name="loginUser"] button.btn.btn-default.login {
-    left: 44%;
-  }
-  /* line 90, ../sass/partials/_tablets.sass */
-  form[name="registerUserForm"] {
-    margin-top: 93px;
-  }
-  /* line 92, ../sass/partials/_tablets.sass */
-  form[name="registerUserForm"] button.btn.btn-default.register {
-    left: 44%;
-  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* line 97, ../sass/partials/_tablets.sass */
+  /* line 65, ../sass/partials/_tablets.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 101, ../sass/partials/_tablets.sass */
-  .sidebar {
-    position: fixed;
-    margin: 0px;
-    padding: 0px;
-    height: 300px;
-    background-color: #F8F8F8;
-    display: inline-block;
-    width: 20%;
-    float: left;
-  }
-  /* line 110, ../sass/partials/_tablets.sass */
-  .sidebar ul {
-    padding: 0px;
-  }
-  /* line 112, ../sass/partials/_tablets.sass */
-  .sidebar ul li {
-    list-style: none;
-    padding: 13px 0px 6px 28%;
-  }
-  /* line 115, ../sass/partials/_tablets.sass */
-  .sidebar ul li a {
-    color: #777777;
-    text-decoration: none;
-  }
-
-  /* line 119, ../sass/partials/_tablets.sass */
+  /* line 69, ../sass/partials/_tablets.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 123, ../sass/partials/_tablets.sass */
+  /* line 73, ../sass/partials/_tablets.sass */
   .container.media-container .media.food {
-    float: right;
-    width: 80%;
     margin: 10px 0px;
   }
-  /* line 127, ../sass/partials/_tablets.sass */
+  /* line 75, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 130, ../sass/partials/_tablets.sass */
+  /* line 78, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 80%;
     padding-left: 9%;
   }
-  /* line 134, ../sass/partials/_tablets.sass */
+  /* line 82, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 138, ../sass/partials/_tablets.sass */
+  /* line 86, ../sass/partials/_tablets.sass */
   #remove {
     position: relative;
     float: right;
@@ -449,384 +427,65 @@ img[alt="Food Picture"] {
     font-size: 1.2em;
   }
 
-  /* line 144, ../sass/partials/_tablets.sass */
+  /* line 92, ../sass/partials/_tablets.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 149, ../sass/partials/_tablets.sass */
+  /* line 97, ../sass/partials/_tablets.sass */
   #food-post-remove {
     float: right;
   }
 
-  /* line 152, ../sass/partials/_tablets.sass */
+  /* line 100, ../sass/partials/_tablets.sass */
   #media-body-post {
     float: right;
     width: 76%;
   }
 
-  /* line 156, ../sass/partials/_tablets.sass */
+  /* line 104, ../sass/partials/_tablets.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 159, ../sass/partials/_tablets.sass */
-  #hamburger,
-  #collapse {
-    display: none;
-  }
-
-  /* line 164, ../sass/partials/_tablets.sass */
-  #menu ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-  }
-  /* line 168, ../sass/partials/_tablets.sass */
-  #menu ul li {
-    display: inline-block;
-    padding: 14px 0px;
-    margin-right: 10px;
-  }
-  /* line 172, ../sass/partials/_tablets.sass */
-  #menu ul li a {
-    text-decoration: none;
-    color: black;
-    margin-left: 75px;
-  }
-
-  /* line 176, ../sass/partials/_tablets.sass */
+  /* line 107, ../sass/partials/_tablets.sass */
   #header {
     float: left;
   }
 
-  /* line 178, ../sass/partials/_tablets.sass */
+  /* line 109, ../sass/partials/_tablets.sass */
   #nav-right {
     float: right;
   }
 
-  /* line 181, ../sass/partials/_tablets.sass */
+  /* line 112, ../sass/partials/_tablets.sass */
   .btn.btn-default.filter-button {
     background-color: #E1E9E9;
     position: relative;
     left: 0%;
     margin-bottom: 52px;
   }
-
-  /* line 188, ../sass/partials/_tablets.sass */
-  form[name="loginUser"] {
-    margin-top: 93px;
-  }
-  /* line 190, ../sass/partials/_tablets.sass */
-  form[name="loginUser"] button.btn.btn-default.login {
-    left: 44%;
-  }
-  /* line 192, ../sass/partials/_tablets.sass */
-  form[name="registerUserForm"] {
-    margin-top: 93px;
-  }
-  /* line 194, ../sass/partials/_tablets.sass */
-  form[name="registerUserForm"] button.btn.btn-default.register {
-    left: 44%;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 3, ../sass/partials/_laptop-window.sass */
-  p,
-  h6 {
-    font-size: 1.2em;
-  }
-
-  /* line 7, ../sass/partials/_laptop-window.sass */
-  .navbar.navbar-default {
-    display: none;
-  }
-
-  /* line 11, ../sass/partials/_laptop-window.sass */
-  #username {
-    display: none;
-  }
-
-  /* line 14, ../sass/partials/_laptop-window.sass */
-  input#search {
-    margin: 12px 0px 31px;
-  }
-
-  /* line 17, ../sass/partials/_laptop-window.sass */
-  h3.ng-binding {
-    margin: 19px 0px;
-  }
-
-  /* line 20, ../sass/partials/_laptop-window.sass */
-  h4.ng-binding {
-    margin: 20px 0px;
-  }
-
-  /* line 24, ../sass/partials/_laptop-window.sass */
-  .glyphicon.glyphicon-star {
-    font-size: 1.34em;
-    position: relative;
-    top: 4px;
-  }
-
-  /* line 29, ../sass/partials/_laptop-window.sass */
-  .form-group.login-form {
-    margin: 19px 0px 12px 0px;
-  }
-
-  /* line 32, ../sass/partials/_laptop-window.sass */
-  .register-form {
-    margin: 12px 0px;
-  }
-
-  /* line 36, ../sass/partials/_laptop-window.sass */
-  .sidebar {
-    border: 1px solid #C2C2C2;
-    margin-bottom: 20px;
-  }
-  /* line 39, ../sass/partials/_laptop-window.sass */
-  .sidebar ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-  }
-  /* line 43, ../sass/partials/_laptop-window.sass */
-  .sidebar ul li {
-    text-align: center;
-    padding: 14px;
-  }
-  /* line 46, ../sass/partials/_laptop-window.sass */
-  .sidebar ul li a {
-    color: black;
-  }
-
-  /* line 51, ../sass/partials/_laptop-window.sass */
-  .glyphicon.glyphicon-edit,
-  .glyphicon.glyphicon-remove {
-    display: none;
-  }
-
-  /* line 54, ../sass/partials/_laptop-window.sass */
-  .media {
-    border: 1px solid #E5E5E5;
-    border-radius: 3px;
-    padding: 16px;
-  }
-
-  /* line 59, ../sass/partials/_laptop-window.sass */
-  #navbar {
-    width: 100%;
-    height: 40px;
-  }
-  /* line 62, ../sass/partials/_laptop-window.sass */
-  #navbar #menu {
-    display: none;
-  }
-
-  /* line 65, ../sass/partials/_laptop-window.sass */
-  #collapse {
-    border: 1px solid #F1F1F1;
-  }
-  /* line 67, ../sass/partials/_laptop-window.sass */
-  #collapse ul {
-    list-style: none;
-    padding: 0px;
-  }
-  /* line 70, ../sass/partials/_laptop-window.sass */
-  #collapse ul li {
-    text-align: center;
-    margin: 27px 0px;
-  }
-  /* line 73, ../sass/partials/_laptop-window.sass */
-  #collapse ul li a {
-    text-decoration: none;
-    color: black;
-  }
-
-  /* line 77, ../sass/partials/_laptop-window.sass */
-  #hamburger {
-    float: right;
-    margin-right: 15px;
-    margin-top: 5px;
-  }
-  /* line 81, ../sass/partials/_laptop-window.sass */
-  #hamburger .line {
-    width: 31px;
-    height: 5px;
-    border: 1px solid #C2C2C2;
-    background-color: #C2C2C2;
-    margin: 4px 0px;
-    border-radius: 2px;
-  }
-
-  /* line 89, ../sass/partials/_laptop-window.sass */
-  .btn.btn-default.filter-button {
-    background-color: #E1E9E9;
-    position: relative;
-    left: 0%;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1224px) {
-  /* line 3, ../sass/partials/_laptop-window-2.sass */
-  #edit-button,
-  #remove-button {
-    display: none;
-  }
-
-  /* line 7, ../sass/partials/_laptop-window-2.sass */
-  #navbar {
-    display: none;
-  }
-
-  /* line 10, ../sass/partials/_laptop-window-2.sass */
-  .media-body.food {
-    float: right;
-    width: 80%;
-    padding-left: 2%;
-  }
-
-  /* line 15, ../sass/partials/_laptop-window-2.sass */
-  .btn.btn-default.submit {
-    position: relative;
-    left: 45%;
-  }
-
-  /* line 19, ../sass/partials/_laptop-window-2.sass */
-  #media-body-post {
-    float: right;
-    width: 82%;
-  }
-
-  /* line 23, ../sass/partials/_laptop-window-2.sass */
-  span#food-post-remove {
-    float: right;
-  }
-
-  /* line 26, ../sass/partials/_laptop-window-2.sass */
-  .sidebar {
-    position: fixed;
-    margin: 0px;
-    padding: 0px;
-    height: 300px;
-    background-color: #F8F8F8;
-    display: inline-block;
-    width: 20%;
-    float: left;
-  }
-  /* line 35, ../sass/partials/_laptop-window-2.sass */
-  .sidebar ul {
-    padding: 0px;
-  }
-  /* line 37, ../sass/partials/_laptop-window-2.sass */
-  .sidebar ul li {
-    list-style: none;
-    padding: 13px 0px 6px 28%;
-  }
-  /* line 40, ../sass/partials/_laptop-window-2.sass */
-  .sidebar ul li a {
-    color: #777777;
-    text-decoration: none;
-  }
-
-  /* line 44, ../sass/partials/_laptop-window-2.sass */
-  .container.media-container {
-    padding-top: 20px;
-    overflow: scroll;
-    white-space: nowrap;
-  }
-  /* line 48, ../sass/partials/_laptop-window-2.sass */
-  .container.media-container .media.food {
-    float: right;
-    width: 80%;
-    margin: 10px 0px;
-  }
-  /* line 52, ../sass/partials/_laptop-window-2.sass */
-  .container.media-container .media.food .media-left.food {
-    float: left;
-    width: 20%;
-  }
-  /* line 55, ../sass/partials/_laptop-window-2.sass */
-  .container.media-container .media.food .media-body.food {
-    float: right;
-    width: 72%;
-  }
-  /* line 58, ../sass/partials/_laptop-window-2.sass */
-  .container.media-container .media.food .media-body.food h6 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* line 62, ../sass/partials/_laptop-window-2.sass */
-  #remove {
-    position: relative;
-    float: right;
-    top: -24px;
-    font-size: 1.2em;
-  }
-
-  /* line 68, ../sass/partials/_laptop-window-2.sass */
-  span.glyphicon.glyphicon-edit {
-    font-size: 1.2em;
-    margin: 10px 0px;
-  }
-
-  /* line 72, ../sass/partials/_laptop-window-2.sass */
-  #form-container {
-    float: right;
-    width: 80%;
-    padding-top: 20px;
-  }
-
-  /* line 77, ../sass/partials/_laptop-window-2.sass */
-  .btn.btn-default.filter-button {
-    background-color: #E1E9E9;
-    position: relative;
-    left: 0%;
-    margin: 30px 0px;
-  }
-
-  /* line 84, ../sass/partials/_laptop-window-2.sass */
-  form[name="loginUser"] {
-    margin-top: 93px;
-  }
-  /* line 86, ../sass/partials/_laptop-window-2.sass */
-  form[name="loginUser"] button.btn.btn-default.login {
-    left: 44%;
-  }
-  /* line 88, ../sass/partials/_laptop-window-2.sass */
-  form[name="registerUserForm"] {
-    margin-top: 93px;
-  }
-  /* line 90, ../sass/partials/_laptop-window-2.sass */
-  form[name="registerUserForm"] button.btn.btn-default.register {
-    left: 44%;
-  }
 }
 @media only screen and (min-width: 1224px) {
-  /* line 5, ../sass/partials/_laptops.sass */
-  #navbar {
-    display: none;
-  }
-
-  /* line 8, ../sass/partials/_laptops.sass */
+  /* line 3, ../sass/partials/_laptops.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 12, ../sass/partials/_laptops.sass */
+  /* line 7, ../sass/partials/_laptops.sass */
   #remove {
     float: right;
     top: -24px;
   }
-  /* line 15, ../sass/partials/_laptops.sass */
+  /* line 10, ../sass/partials/_laptops.sass */
   #remove:hover {
     cursor: pointer;
   }
 
-  /* line 18, ../sass/partials/_laptops.sass */
+  /* line 13, ../sass/partials/_laptops.sass */
   .glyphicon.glyphicon-edit:hover,
   .glyphicon.glyphicon-cutlery:hover,
   #bookmarked:hover,
@@ -834,145 +493,105 @@ img[alt="Food Picture"] {
     cursor: pointer;
   }
 
-  /* line 24, ../sass/partials/_laptops.sass */
-  .sidebar {
-    position: fixed;
-    margin: 0px;
-    padding: 0px;
-    height: 300px;
-    background-color: #F8F8F8;
-    display: inline-block;
-    width: 20%;
-    float: left;
-  }
-  /* line 33, ../sass/partials/_laptops.sass */
-  .sidebar ul {
-    padding: 0px;
-  }
-  /* line 35, ../sass/partials/_laptops.sass */
-  .sidebar ul li {
-    list-style: none;
-    padding: 13px 0px 6px 28%;
-  }
-  /* line 38, ../sass/partials/_laptops.sass */
-  .sidebar ul li:hover {
-    background-color: #DFDFDF;
-  }
-  /* line 40, ../sass/partials/_laptops.sass */
-  .sidebar ul li a {
-    color: #777777;
-    text-decoration: none;
-  }
-  /* line 43, ../sass/partials/_laptops.sass */
-  .sidebar ul li a:hover {
-    cursor: pointer;
-  }
-
-  /* line 46, ../sass/partials/_laptops.sass */
+  /* line 19, ../sass/partials/_laptops.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 50, ../sass/partials/_laptops.sass */
+  /* line 23, ../sass/partials/_laptops.sass */
   .container.media-container .media.food {
     float: right;
     width: 80%;
     margin: 10px 0px;
   }
-  /* line 54, ../sass/partials/_laptops.sass */
+  /* line 27, ../sass/partials/_laptops.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 57, ../sass/partials/_laptops.sass */
+  /* line 30, ../sass/partials/_laptops.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 80%;
     padding-left: 3%;
   }
-  /* line 61, ../sass/partials/_laptops.sass */
+  /* line 34, ../sass/partials/_laptops.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 65, ../sass/partials/_laptops.sass */
+  /* line 38, ../sass/partials/_laptops.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 71, ../sass/partials/_laptops.sass */
+  /* line 44, ../sass/partials/_laptops.sass */
   #media-body-post {
     float: right;
     width: 85%;
   }
 
-  /* line 74, ../sass/partials/_laptops.sass */
+  /* line 47, ../sass/partials/_laptops.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 77, ../sass/partials/_laptops.sass */
+  /* line 50, ../sass/partials/_laptops.sass */
   .btn.btn-default.submit {
     position: relative;
     left: 45%;
     width: 100px;
   }
 
-  /* line 82, ../sass/partials/_laptops.sass */
+  /* line 55, ../sass/partials/_laptops.sass */
   .glyphicon.glyphicon-remove {
     float: right;
   }
-  /* line 84, ../sass/partials/_laptops.sass */
+  /* line 57, ../sass/partials/_laptops.sass */
   .glyphicon.glyphicon-remove:hover {
     cursor: pointer;
   }
 
-  /* line 87, ../sass/partials/_laptops.sass */
-  #hamburger,
-  #collapse {
-    display: none;
-  }
-
-  /* line 91, ../sass/partials/_laptops.sass */
+  /* line 64, ../sass/partials/_laptops.sass */
   #menu-bar {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 95, ../sass/partials/_laptops.sass */
+  /* line 68, ../sass/partials/_laptops.sass */
   #menu-bar li {
     display: inline-block;
     padding: 14px 0px;
   }
-  /* line 98, ../sass/partials/_laptops.sass */
+  /* line 71, ../sass/partials/_laptops.sass */
   #menu-bar li a {
     text-decoration: none;
     color: black;
     margin-left: 79%;
   }
 
-  /* line 104, ../sass/partials/_laptops.sass */
+  /* line 77, ../sass/partials/_laptops.sass */
   form[name="loginUser"] {
     margin-top: 93px;
   }
-  /* line 106, ../sass/partials/_laptops.sass */
+  /* line 79, ../sass/partials/_laptops.sass */
   form[name="loginUser"] button.btn.btn-default.login {
     left: 44%;
   }
-  /* line 108, ../sass/partials/_laptops.sass */
+  /* line 81, ../sass/partials/_laptops.sass */
   form[name="registerUserForm"] {
     margin-top: 93px;
   }
-  /* line 110, ../sass/partials/_laptops.sass */
+  /* line 83, ../sass/partials/_laptops.sass */
   form[name="registerUserForm"] button.btn.btn-default.register {
     left: 44%;
   }
 
-  /* line 113, ../sass/partials/_laptops.sass */
+  /* line 86, ../sass/partials/_laptops.sass */
   .btn.btn-default.filter-button {
     background-color: #E1E9E9;
     position: relative;
