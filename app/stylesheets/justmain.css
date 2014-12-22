@@ -5,40 +5,47 @@
 }
 
 /* line 5, ../sass/partials/_base.sass */
+p,
+h6,
+.review {
+  line-height: 1.5em;
+}
+
+/* line 10, ../sass/partials/_base.sass */
 input#search {
   margin: 30px 0px;
 }
 
-/* line 8, ../sass/partials/_base.sass */
+/* line 13, ../sass/partials/_base.sass */
 hr {
   margin: 0px;
 }
 
-/* line 11, ../sass/partials/_base.sass */
+/* line 16, ../sass/partials/_base.sass */
 .navbar-default {
   background-color: white;
   margin: 0px;
 }
 
-/* line 15, ../sass/partials/_base.sass */
+/* line 20, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-bookmark.home,
 #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 20, ../sass/partials/_base.sass */
+/* line 25, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery {
   font-size: 1.34em;
 }
 
-/* line 23, ../sass/partials/_base.sass */
+/* line 28, ../sass/partials/_base.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 27, ../sass/partials/_base.sass */
+/* line 32, ../sass/partials/_base.sass */
 .btn-default {
   background-color: #E1E9E9;
   position: relative;
@@ -46,7 +53,7 @@ hr {
   left: 34%;
 }
 
-/* line 33, ../sass/partials/_base.sass */
+/* line 38, ../sass/partials/_base.sass */
 .login,
 .register {
   width: 100px;
@@ -54,48 +61,48 @@ hr {
   margin-top: 25px;
 }
 
-/* line 39, ../sass/partials/_base.sass */
+/* line 44, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 43, ../sass/partials/_base.sass */
+/* line 48, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 46, ../sass/partials/_base.sass */
+/* line 51, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 49, ../sass/partials/_base.sass */
+/* line 54, ../sass/partials/_base.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 52, ../sass/partials/_base.sass */
+/* line 57, ../sass/partials/_base.sass */
 .sidebaractive {
   background-color: #F1F1F1;
 }
 
-/* line 55, ../sass/partials/_base.sass */
+/* line 60, ../sass/partials/_base.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 61, ../sass/partials/_base.sass */
+/* line 66, ../sass/partials/_base.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 64, ../sass/partials/_base.sass */
+/* line 69, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 67, ../sass/partials/_base.sass */
+/* line 72, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
@@ -238,31 +245,41 @@ img[alt="Food Picture"] {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* line 5, ../sass/partials/_tablets.sass */
+  #edit-button,
+  #remove-button {
+    display: none;
+  }
+
+  /* line 9, ../sass/partials/_tablets.sass */
   #navbar {
     display: none;
   }
 
-  /* line 8, ../sass/partials/_tablets.sass */
+  /* line 12, ../sass/partials/_tablets.sass */
   .media-body.food {
     float: right;
     width: 80%;
     padding-left: 2%;
   }
 
-  /* line 13, ../sass/partials/_tablets.sass */
+  /* line 17, ../sass/partials/_tablets.sass */
   .btn.btn-default.submit {
     position: relative;
     left: 45%;
   }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* line 19, ../sass/partials/_tablets.sass */
-  #edit-button,
-  #remove-button {
-    display: none;
+
+  /* line 21, ../sass/partials/_tablets.sass */
+  #media-body-post {
+    float: right;
+    width: 82%;
   }
 
-  /* line 23, ../sass/partials/_tablets.sass */
+  /* line 25, ../sass/partials/_tablets.sass */
+  span#food-post-remove {
+    float: right;
+  }
+
+  /* line 28, ../sass/partials/_tablets.sass */
   .sidebar {
     position: fixed;
     margin: 0px;
@@ -273,51 +290,50 @@ img[alt="Food Picture"] {
     width: 20%;
     float: left;
   }
-  /* line 32, ../sass/partials/_tablets.sass */
+  /* line 37, ../sass/partials/_tablets.sass */
   .sidebar ul {
     padding: 0px;
   }
-  /* line 34, ../sass/partials/_tablets.sass */
+  /* line 39, ../sass/partials/_tablets.sass */
   .sidebar ul li {
     list-style: none;
     padding: 13px 0px 6px 28%;
   }
-  /* line 37, ../sass/partials/_tablets.sass */
+  /* line 42, ../sass/partials/_tablets.sass */
   .sidebar ul li a {
     color: #777777;
     text-decoration: none;
   }
 
-  /* line 41, ../sass/partials/_tablets.sass */
+  /* line 46, ../sass/partials/_tablets.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 45, ../sass/partials/_tablets.sass */
+  /* line 50, ../sass/partials/_tablets.sass */
   .container.media-container .media.food {
     float: right;
     width: 80%;
     margin: 10px 0px;
   }
-  /* line 49, ../sass/partials/_tablets.sass */
+  /* line 54, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 52, ../sass/partials/_tablets.sass */
+  /* line 57, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
-    width: 80%;
-    padding-left: 9%;
+    width: 77%;
   }
-  /* line 56, ../sass/partials/_tablets.sass */
+  /* line 60, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 59, ../sass/partials/_tablets.sass */
+  /* line 64, ../sass/partials/_tablets.sass */
   #remove {
     position: relative;
     float: right;
@@ -325,65 +341,164 @@ img[alt="Food Picture"] {
     font-size: 1.2em;
   }
 
-  /* line 65, ../sass/partials/_tablets.sass */
+  /* line 70, ../sass/partials/_tablets.sass */
+  span.glyphicon.glyphicon-edit {
+    font-size: 1.2em;
+    margin: 10px 0px;
+  }
+
+  /* line 74, ../sass/partials/_tablets.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 70, ../sass/partials/_tablets.sass */
+  /* line 79, ../sass/partials/_tablets.sass */
+  .btn.btn-default.filter-button {
+    background-color: #E1E9E9;
+    position: relative;
+    left: 0%;
+    margin: 30px 0px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* line 87, ../sass/partials/_tablets.sass */
+  #edit-button,
+  #remove-button {
+    display: none;
+  }
+
+  /* line 91, ../sass/partials/_tablets.sass */
+  .sidebar {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    height: 300px;
+    background-color: #F8F8F8;
+    display: inline-block;
+    width: 20%;
+    float: left;
+  }
+  /* line 100, ../sass/partials/_tablets.sass */
+  .sidebar ul {
+    padding: 0px;
+  }
+  /* line 102, ../sass/partials/_tablets.sass */
+  .sidebar ul li {
+    list-style: none;
+    padding: 13px 0px 6px 28%;
+  }
+  /* line 105, ../sass/partials/_tablets.sass */
+  .sidebar ul li a {
+    color: #777777;
+    text-decoration: none;
+  }
+
+  /* line 109, ../sass/partials/_tablets.sass */
+  .container.media-container {
+    padding-top: 20px;
+    overflow: scroll;
+    white-space: nowrap;
+  }
+  /* line 113, ../sass/partials/_tablets.sass */
+  .container.media-container .media.food {
+    float: right;
+    width: 80%;
+    margin: 10px 0px;
+  }
+  /* line 117, ../sass/partials/_tablets.sass */
+  .container.media-container .media.food .media-left.food {
+    float: left;
+    width: 20%;
+  }
+  /* line 120, ../sass/partials/_tablets.sass */
+  .container.media-container .media.food .media-body.food {
+    float: right;
+    width: 80%;
+    padding-left: 9%;
+  }
+  /* line 124, ../sass/partials/_tablets.sass */
+  .container.media-container .media.food .media-body.food h6 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* line 128, ../sass/partials/_tablets.sass */
+  #remove {
+    position: relative;
+    float: right;
+    top: -24px;
+    font-size: 1.2em;
+  }
+
+  /* line 134, ../sass/partials/_tablets.sass */
+  #form-container {
+    float: right;
+    width: 80%;
+    padding-top: 20px;
+  }
+
+  /* line 139, ../sass/partials/_tablets.sass */
   #food-post-remove {
     float: right;
   }
 
-  /* line 73, ../sass/partials/_tablets.sass */
+  /* line 142, ../sass/partials/_tablets.sass */
   #media-body-post {
     float: right;
-    width: 82%;
+    width: 76%;
   }
 
-  /* line 76, ../sass/partials/_tablets.sass */
+  /* line 146, ../sass/partials/_tablets.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 79, ../sass/partials/_tablets.sass */
+  /* line 149, ../sass/partials/_tablets.sass */
   #hamburger,
   #collapse {
     display: none;
   }
 
-  /* line 84, ../sass/partials/_tablets.sass */
+  /* line 154, ../sass/partials/_tablets.sass */
   #menu ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 88, ../sass/partials/_tablets.sass */
+  /* line 158, ../sass/partials/_tablets.sass */
   #menu ul li {
     display: inline-block;
     padding: 14px 0px;
     margin-right: 10px;
   }
-  /* line 92, ../sass/partials/_tablets.sass */
+  /* line 162, ../sass/partials/_tablets.sass */
   #menu ul li a {
     text-decoration: none;
     color: black;
     margin-left: 75px;
   }
 
-  /* line 96, ../sass/partials/_tablets.sass */
+  /* line 166, ../sass/partials/_tablets.sass */
   #header {
     float: left;
   }
 
-  /* line 98, ../sass/partials/_tablets.sass */
+  /* line 168, ../sass/partials/_tablets.sass */
   #nav-right {
     float: right;
   }
+
+  /* line 171, ../sass/partials/_tablets.sass */
+  .btn.btn-default.filter-button {
+    background-color: #E1E9E9;
+    position: relative;
+    left: 0%;
+    margin-bottom: 52px;
+  }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1224px) {
   /* line 5, ../sass/partials/_laptops.sass */
   #navbar {
     display: none;
