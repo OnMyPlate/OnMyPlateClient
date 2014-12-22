@@ -15,7 +15,7 @@ app.controller('HomeCtrl', ['dataFactory',
   $scope.search = {name: '', city: '', state: ''};
   $scope.filter = 'name';
   $scope.placeholder = 'Name';
-
+  
   $scope.selectSearch = function(type) {
     $scope.filter = type;
     $scope.placeholder = type.charAt(0).toUpperCase() + type.slice(1);
