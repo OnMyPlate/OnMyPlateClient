@@ -1,7 +1,5 @@
 *
   box-size: border-box
-  font-family: 'Open Sans', sans-serif
-
 
 .glyphicon.glyphicon-edit:hover,
 .glyphicon.glyphicon-cutlery:hover,
@@ -14,6 +12,12 @@
 .page-header
   text-align: center
 
+#about
+  margin-top: 122px
+  text-align: center
+  p.about
+    font-size: 2.0em
+
 p,
 h6,
 .review
@@ -24,18 +28,23 @@ h6,
 #navbar
   width: 100%
   height: 66px
-  border-bottom: 1px solid rgb(204, 204, 204)
+  border-bottom: 1px solid #D59046
+  background-color: #D59046
   #menu
     display: none
 
 #collapse
-  border: 1px solid #F1F1F1
+  border: 1px solid #D59046
+  background-color: #D59046
   ul
     list-style: none
     padding: 0px
     li
       text-align: center
       margin: 27px 0px
+      font-size: 1.3em
+      &:hover
+        background-color: #CC8D4A
       a 
         text-decoration: none
         color: black
@@ -59,8 +68,8 @@ div#header
   .line
     width: 31px
     height: 5px
-    border: 1px solid #C2C2C2
-    background-color: #C2C2C2
+    border: 1px solid #E1E9E9
+    background-color: black
     margin: 4px 0px
     border-radius: 2px
 
@@ -82,7 +91,7 @@ div#header
           text-decoration: none
 
 .sidebaractive
-  background-color: #F1F1F1
+  background-color: #E1E9E9
 
 hr
   margin: 0px
@@ -103,6 +112,9 @@ hr
   background-color: #E1E9E9
   position: relative
   margin-bottom: 12px
+
+.btn.btn-default.read
+  left: 35%
 
 .login,
 .register
