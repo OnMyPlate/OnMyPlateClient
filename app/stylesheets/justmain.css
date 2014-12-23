@@ -129,7 +129,7 @@ h6,
   height: 66px;
   border-bottom: 1px solid #f5c08f;
   background-color: #f5c08f;
-  box-shadow: 3px 2px 10px 0px rgba(211, 139, 62, 0.53);
+  box-shadow: inset 3px 2px 10px 0px rgba(211, 139, 62, 0.53);
 }
 /* line 35, ../sass/partials/_base.sass */
 #navbar #menu {
