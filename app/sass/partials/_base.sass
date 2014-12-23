@@ -15,6 +15,7 @@
 #about
   margin-top: 122px
   text-align: center
+  line-height: 1.7em
   p.about
     font-size: 2.0em
 
@@ -97,13 +98,22 @@ div#header
 hr
   margin: 0px
 
-.glyphicon.glyphicon-bookmark.home,
-#bookmarked
+.glyphicon.glyphicon-bookmark.home
   float: right
   font-size: 1.3em
 
+#bookmarked
+  +transition(font-size, 0.2s, ease)
+  @extend .glyphicon.glyphicon-bookmark.home
+  &:hover
+    font-size: 1.6em
+
 .glyphicon.glyphicon-cutlery
+  +transition(font-size, 0.2s, ease)
   font-size: 1.34em
+  &:hover
+    font-size: 1.6em
+
 
 .label.label-info
   font-size: 0.9em
@@ -111,11 +121,15 @@ hr
 
 .btn-default 
   background-color: #E1E9E9
+  +transition(background-color, 0.2s, linear)
   position: relative
   margin-bottom: 12px
+  &:hover
+    background-color: #D59046 
 
 .btn.btn-default.read
   left: 35%
+
 
 .login,
 .register
