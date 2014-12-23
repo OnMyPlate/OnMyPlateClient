@@ -135,10 +135,9 @@ hr {
   background-color: #E1E9E9;
   position: relative;
   margin-bottom: 12px;
-  left: 34%;
 }
 
-/* line 100, ../sass/partials/_base.sass */
+/* line 99, ../sass/partials/_base.sass */
 .login,
 .register {
   width: 100px;
@@ -146,45 +145,59 @@ hr {
   margin-top: 25px;
 }
 
-/* line 106, ../sass/partials/_base.sass */
+/* line 105, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 112, ../sass/partials/_base.sass */
+/* line 111, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 115, ../sass/partials/_base.sass */
+/* line 114, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 118, ../sass/partials/_base.sass */
+/* line 117, ../sass/partials/_base.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 121, ../sass/partials/_base.sass */
+/* line 120, ../sass/partials/_base.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 127, ../sass/partials/_base.sass */
+/* line 126, ../sass/partials/_base.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 130, ../sass/partials/_base.sass */
+/* line 129, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 133, ../sass/partials/_base.sass */
+/* line 132, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
+}
+
+/* line 135, ../sass/partials/_base.sass */
+#login-error {
+  background-color: rgba(201, 35, 35, 0.79);
+  margin-top: 29px;
+  color: white;
+  height: 50px;
+}
+/* line 140, ../sass/partials/_base.sass */
+#login-error p {
+  text-align: center;
+  position: relative;
+  top: 15px;
 }
 
 /* line 2, ../sass/partials/_forms.sass */
@@ -192,19 +205,11 @@ form[name="loginUser"] {
   margin-top: 93px;
 }
 /* line 4, ../sass/partials/_forms.sass */
-form[name="loginUser"] button.btn.btn-default.login {
-  left: 44%;
-}
-/* line 6, ../sass/partials/_forms.sass */
 form[name="registerUserForm"] {
   margin-top: 93px;
 }
-/* line 8, ../sass/partials/_forms.sass */
-form[name="registerUserForm"] button.btn.btn-default.register {
-  left: 44%;
-}
 
-/* line 11, ../sass/partials/_forms.sass */
+/* line 7, ../sass/partials/_forms.sass */
 .btn.btn-default.filter-button {
   background-color: #E1E9E9;
   position: relative;
@@ -212,11 +217,32 @@ form[name="registerUserForm"] button.btn.btn-default.register {
   margin: 30px 0px;
 }
 
-/* line 17, ../sass/partials/_forms.sass */
+/* line 13, ../sass/partials/_forms.sass */
 input#search {
   margin: 30px 0px;
 }
 
+@media only screen and (min-width: 1204px) {
+  /* line 18, ../sass/partials/_forms.sass */
+  button.btn.btn-default.login,
+  button.btn.btn-default.register {
+    left: 44%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1204px) {
+  /* line 24, ../sass/partials/_forms.sass */
+  button.btn.btn-default.login,
+  button.btn.btn-default.register {
+    left: 44%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* line 30, ../sass/partials/_forms.sass */
+  button.btn.btn-default.login,
+  button.btn.btn-default.register {
+    left: 44%;
+  }
+}
 @media only screen and (min-width: 1204px) {
   /* line 3, ../sass/partials/_media.sass */
   #edit-button,
@@ -452,64 +478,70 @@ input#search {
     margin: 12px 0px;
   }
 
-  /* line 36, ../sass/partials/_smartphones.sass */
+  /* line 35, ../sass/partials/_smartphones.sass */
+  button.btn.btn-default.login,
+  button.btn.btn-default.register {
+    left: 31%;
+  }
+
+  /* line 40, ../sass/partials/_smartphones.sass */
   .sidebar {
     border: 1px solid #C2C2C2;
     margin-bottom: 20px;
   }
-  /* line 39, ../sass/partials/_smartphones.sass */
+  /* line 43, ../sass/partials/_smartphones.sass */
   .sidebar ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
   }
-  /* line 43, ../sass/partials/_smartphones.sass */
+  /* line 47, ../sass/partials/_smartphones.sass */
   .sidebar ul li {
     text-align: center;
     padding: 14px;
   }
-  /* line 46, ../sass/partials/_smartphones.sass */
+  /* line 50, ../sass/partials/_smartphones.sass */
   .sidebar ul li a {
     color: black;
   }
 
-  /* line 51, ../sass/partials/_smartphones.sass */
+  /* line 55, ../sass/partials/_smartphones.sass */
   .glyphicon.glyphicon-edit,
   .glyphicon.glyphicon-remove {
     display: none;
   }
 
-  /* line 54, ../sass/partials/_smartphones.sass */
+  /* line 58, ../sass/partials/_smartphones.sass */
   .media {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
 
-  /* line 59, ../sass/partials/_smartphones.sass */
+  /* line 63, ../sass/partials/_smartphones.sass */
   .btn.btn-default.filter-button {
     background-color: #E1E9E9;
     position: relative;
     left: 0%;
   }
 
-  /* line 64, ../sass/partials/_smartphones.sass */
+  /* line 68, ../sass/partials/_smartphones.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 68, ../sass/partials/_smartphones.sass */
+  /* line 72, ../sass/partials/_smartphones.sass */
   .container.media-container .media.food {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
-  /* line 72, ../sass/partials/_smartphones.sass */
+  /* line 76, ../sass/partials/_smartphones.sass */
   .container.media-container .media.food .media-left.food {
     width: 20%;
   }
-  /* line 74, ../sass/partials/_smartphones.sass */
+  /* line 78, ../sass/partials/_smartphones.sass */
   .container.media-container .media.food .media-left.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -594,42 +626,48 @@ input#search {
     left: 0%;
     margin: 30px 0px;
   }
+
+  /* line 59, ../sass/partials/_tablets.sass */
+  button.btn.btn-default.login,
+  button.btn.btn-default.register {
+    left: 44%;
+  }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* line 61, ../sass/partials/_tablets.sass */
+  /* line 65, ../sass/partials/_tablets.sass */
   #edit-button,
   #remove-button {
     display: none;
   }
 
-  /* line 65, ../sass/partials/_tablets.sass */
+  /* line 69, ../sass/partials/_tablets.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 69, ../sass/partials/_tablets.sass */
+  /* line 73, ../sass/partials/_tablets.sass */
   .container.media-container .media.food {
     margin: 10px 0px;
   }
-  /* line 71, ../sass/partials/_tablets.sass */
+  /* line 75, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 74, ../sass/partials/_tablets.sass */
+  /* line 78, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food {
     float: right;
     width: 80%;
     padding-left: 9%;
   }
-  /* line 78, ../sass/partials/_tablets.sass */
+  /* line 82, ../sass/partials/_tablets.sass */
   .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 82, ../sass/partials/_tablets.sass */
+  /* line 86, ../sass/partials/_tablets.sass */
   #remove {
     position: relative;
     float: right;
@@ -637,44 +675,50 @@ input#search {
     font-size: 1.2em;
   }
 
-  /* line 88, ../sass/partials/_tablets.sass */
+  /* line 92, ../sass/partials/_tablets.sass */
   #form-container {
     float: right;
     width: 80%;
     padding-top: 20px;
   }
 
-  /* line 93, ../sass/partials/_tablets.sass */
+  /* line 97, ../sass/partials/_tablets.sass */
   #food-post-remove {
     float: right;
   }
 
-  /* line 96, ../sass/partials/_tablets.sass */
+  /* line 100, ../sass/partials/_tablets.sass */
   #media-body-post {
     float: right;
     width: 76%;
   }
 
-  /* line 100, ../sass/partials/_tablets.sass */
+  /* line 104, ../sass/partials/_tablets.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 103, ../sass/partials/_tablets.sass */
+  /* line 107, ../sass/partials/_tablets.sass */
   #header {
     float: left;
   }
 
-  /* line 105, ../sass/partials/_tablets.sass */
+  /* line 109, ../sass/partials/_tablets.sass */
   #nav-right {
     float: right;
   }
 
-  /* line 108, ../sass/partials/_tablets.sass */
+  /* line 112, ../sass/partials/_tablets.sass */
   .btn.btn-default.filter-button {
     background-color: #E1E9E9;
     position: relative;
     left: 0%;
     margin-bottom: 52px;
+  }
+
+  /* line 118, ../sass/partials/_tablets.sass */
+  button.btn.btn-default.login,
+  button.btn.btn-default.register {
+    left: 44%;
   }
 }

@@ -2,6 +2,10 @@
 
 <div class="container" ng-controller="LoginCtrl">
 
+  <div id="login-error" ng-hide="isLoginSuccessful">
+    <p>Email or Password is invalid.</p>
+  </div>
+
   <form role="form" name="loginUser" ng-submit="login(params)" novalidate>
   
     <div class="form-group login-form">
