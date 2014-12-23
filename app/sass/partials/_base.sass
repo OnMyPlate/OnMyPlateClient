@@ -2,10 +2,21 @@
   box-size: border-box
   font-family: 'Open Sans', sans-serif
 
+
+.glyphicon.glyphicon-edit:hover,
+.glyphicon.glyphicon-cutlery:hover,
+.glyphicon.glyphicon-remove:hover,
+.glyphicon.glyphicon-pencil:hover,
+#bookmarked:hover,
+#unliked:hover
+  cursor: pointer
+
 p,
 h6,
 .review
   line-height: 1.5em
+
+// Navigation Bar
 
 #navbar
   width: 100%
@@ -37,6 +48,8 @@ div#header
   position: relative
   right: 30px
   bottom: -3px
+  &:hover
+    cursor: pointer
   .line
     width: 31px
     height: 5px
@@ -45,84 +58,7 @@ div#header
     margin: 4px 0px
     border-radius: 2px
 
-// .sidebar
-//   position: fixed
-//   margin: 0px
-//   padding: 0px
-//   height: 300px
-//   background-color: #F8F8F8
-//   display: inline-block
-//   width: 20%
-//   float: left
-//   ul
-//     padding: 0px
-//     li
-//       list-style: none
-//       padding: 13px 0px 6px 28%
-//       &:hover
-//         background-color: #DFDFDF
-//       a
-//         color: #777777
-//         text-decoration: none
-//         &:hover
-//           cursor: pointer
-
-// #edit-button,
-// #remove-button
-//   display: none
-
-// #remove
-//   float: right
-//   top: -24px
-//   &:hover
-//     cursor: pointer
-
-// .glyphicon.glyphicon-edit:hover,
-// .glyphicon.glyphicon-cutlery:hover,
-// #bookmarked:hover,
-// #unliked:hover
-//   cursor: pointer
-
-// .container.media-container
-//   padding-top: 20px
-//   overflow: scroll
-//   white-space: nowrap
-//   .media.food
-//     float: right
-//     width: 80%
-//     margin: 10px 0px
-//     .media-left.food
-//       float: left
-//       width: 20%
-//     .media-body.food
-//       float: right
-//       width: 80%
-//       padding-left: 3%
-//       h6
-//         overflow: hidden
-//         text-overflow: ellipsis
-
-// #form-container
-//   float: right
-//   width: 80%
-//   padding-top: 20px
-
-     
-// #media-body-post
-//   float: right
-//   width: 85%
-// #media-left-post
-//   float: left
-
-// .btn.btn-default.submit
-//   position: relative
-//   left: 45%
-//   width: 100px
-
-// .glyphicon.glyphicon-remove
-//   float: right
-//   &:hover
-//     cursor: pointer
+// Sidebar
 
 .sidebar
   border: 1px solid #C2C2C2
@@ -137,14 +73,10 @@ div#header
       a
         color: black
 
-input#search
-  margin: 30px 0px
+.sidebaractive
+  background-color: #F1F1F1
 
 hr
-  margin: 0px
-
-.navbar-default
-  background-color: white
   margin: 0px
 
 .glyphicon.glyphicon-bookmark.home,
@@ -174,6 +106,8 @@ hr
 .rating-text 
   font-size: 1.2em
 
+// Images on the posts and foods
+
 img
   &[alt="star"]
     margin: 10px 2px
@@ -183,9 +117,6 @@ img
     margin-bottom: 10px
   &[alt="Food Picture"]
     margin-bottom: 26px
-
-.sidebaractive
-  background-color: #F1F1F1
 
 .img-rounded
   height: 150px
@@ -201,21 +132,3 @@ img
 
 .form-group .ng-valid
   border: 1px solid green
-
-//Forms
-form
-  &[name="loginUser"]
-    margin-top: 93px
-    button.btn.btn-default.login
-      left: 44%
-  &[name="registerUserForm"]
-    margin-top: 93px
-    button.btn.btn-default.register
-      left: 44%
-
-//Filter Button
-.btn.btn-default.filter-button
-  background-color: #E1E9E9
-  position: relative
-  left: 0%
-  margin: 30px 0px

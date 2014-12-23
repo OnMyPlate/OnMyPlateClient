@@ -53,9 +53,9 @@
   </form>
 
   <div class="container post-container">
-    <div class="media" ng-repeat="post in posts" id="{{post.id}}" id="media-post">
+    <div class="media post" ng-repeat="post in posts" id="{{post.id}}" id="media-post">
    
-      <a class="media-left" href="#" class="profile-food-image" id="media-left-post">
+      <a class="media-left post" href="#" class="profile-food-image" id="media-left-post">
         <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
       </a>
    
@@ -70,8 +70,10 @@
         <span class="restaurant-name">{{currentFood.restaurant_name}} </span><span class="label label-info">{{currentFood.city}}</span> <span class="label label-info">{{currentFood.state}}</span><br>
         <h6>{{post.review}}</h6>
       </div>
+
+      <button type="button" class="btn btn-default edit-button" ng-click="goToEdit(food)">Edit</button>
+      <button type="button" class="btn btn-default remove-button" ng-click="removeFood(food)">Delete</button>
        
-    
     </div>
   
   </div>
