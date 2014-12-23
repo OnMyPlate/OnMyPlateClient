@@ -16,6 +16,9 @@ app.controller('FavoriteCtrl', ['dataFactory',
 
   $scope.bookmarkFood = function(food) {
     food.bookmarked = !food.bookmarked
+    if(!food.bookmarked) {
+      $('.media.food').css("display", "none");
+    }
     var params = {food: food};
     $http.put(HerokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
       console.log('food bookmarked!');
