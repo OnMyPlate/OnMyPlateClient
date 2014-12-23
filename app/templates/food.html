@@ -72,7 +72,7 @@
       </div>
 
       <button type="button" class="btn btn-default edit-button" ng-click="goToEdit(food)" ng-show="currentUser.id === post.user_id">Edit</button> <!-- fix it -->
-      <button type="button" class="btn btn-default remove-button" ng-click="removeFood(food)" ng-show="currentUser.id === post.user_id">Delete</button>
+      <button type="button" class="btn btn-default remove-button" ng-click="removePost(post, currentFood)" ng-show="currentUser.id === post.user_id">Delete</button>
        
     </div>
   
