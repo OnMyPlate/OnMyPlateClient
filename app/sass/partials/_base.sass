@@ -56,11 +56,18 @@ div#header
   display: inline-block
   position: relative
   top: 9px
+  +transition(font-size, 0.2s, ease)
   font-size: 2.2em
   left: 43.5%
+  &:hover
+    font-size: 2.3em
   strong
     text-align: center
-    color: rgba(0, 0, 0, 0.59)
+    a
+      color: rgba(0, 0, 0, 0.64)
+      text-decoration: none
+      &:hover
+        text-decoration: none
 
 #hamburger
   float: right
@@ -72,7 +79,7 @@ div#header
   .line
     width: 31px
     height: 5px
-    background-color: rgba(0, 0, 0, 0.59)
+    background-color: rgba(0, 0, 0, 0.64)
     margin: 4px 0px
     border-radius: 2px
 
