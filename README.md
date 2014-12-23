@@ -17,4 +17,6 @@ OnMyPlate is a food review web app that users can post a review of specific plat
   * [Yeoman](http://yeoman.io/)
 
 
-##[API](https://github.com/cyurtbil/OnMyPlateAPI)
+##API
+
+For API, you can go to [OnMYPlateAPI](https://github.com/cyurtbil/OnMyPlateAPI)
