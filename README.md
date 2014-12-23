@@ -15,6 +15,7 @@ OnMyPlate is a food review web app that users can post a review of specific plat
   * [Grunt](http://gruntjs.com/)
   * [Bower](http://bower.io/)
   * [Yeoman](http://yeoman.io/)
+  * [Amazon S3](http://aws.amazon.com/s3/) for images
 
 
 ##API
