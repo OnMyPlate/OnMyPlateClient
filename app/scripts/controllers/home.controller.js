@@ -13,18 +13,14 @@ app.controller('HomeCtrl', ['dataFactory',
 
   var users = [];
 
-  dataFactory.fetchFoods().then(function(response) {
-    $scope.foods = response.data.foods;
-  });
-
   dataFactory.fetchUsers().then(function(response) {
     $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
       $scope.currentUser = userFactory.defineCurrentUser(users);
+      $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
+        $scope.bookmarks = response[1].data.bookmarks;
+        $scope.foods = response[0].data.foods;
+      });
     });
-  });
-
-  dataFactory.fetchBookmarks().then(function(response) {
-    $scope.bookmarks = response.data.bookmarks;
   });
 
   $scope.search = {name: '', city: '', state: ''};
@@ -49,10 +45,9 @@ app.controller('HomeCtrl', ['dataFactory',
       user_id: user.id,
       food_id: food.id
     }};
-    if(bookmarks !== undefined) {
-      var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
-                              .filter(function(bookmark) { return bookmark.food_id === food.id});
-    }
+
+    var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
+                            .filter(function(bookmark) { return bookmark.food_id === food.id});
     if(bookmark[0] !== undefined) {
       $http.delete(HerokuUrl + 'bookmarks/' + bookmark[0].id + '.json').success(function(response) {
         console.log('food unbookmarked!');
@@ -67,7 +62,6 @@ app.controller('HomeCtrl', ['dataFactory',
   };
 
   $scope.isBookmarked = function(food, user, bookmarks) {
-    if(bookmarks !== undefined) {
       var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
                                      .filter(function(bookmark) { return bookmark.food_id === food.id})
                                      .filter(function(bookmark) { return bookmark.bookmarked === true});
@@ -76,10 +70,6 @@ app.controller('HomeCtrl', ['dataFactory',
       } else {
         return false;
       }
-    } else {
-      return false;
-    }
-
   };
 
   $scope.isLoggedIn = function() {
