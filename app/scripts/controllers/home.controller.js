@@ -23,6 +23,10 @@ app.controller('HomeCtrl', ['dataFactory',
     });
   });
 
+  dataFactory.fetchBookmarks().then(function(response) {
+    $scope.bookmarks = response.data.bookmarks;
+  });
+
   $scope.search = {name: '', city: '', state: ''};
   $scope.filter = 'name';
   $scope.placeholder = 'Name';
@@ -39,13 +43,37 @@ app.controller('HomeCtrl', ['dataFactory',
     return foodFactory.ratingsArr;
   };
 
-  $scope.bookmarkFood = function(food, user) {
-    food.bookmarked = !food.bookmarked;
-    food.user_bookmarked = user.id;
-    var params = {food: food};
-    $http.put(HerokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
-      console.log('food bookmarked!');
-    });
+  $scope.bookmarkFood = function(food, user, bookmarks) {
+    var params = {bookmark: {
+      user_id: user.id,
+      food_id: food.id
+    }};
+    if(bookmarks !== undefined) {
+      var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
+                              .filter(function(bookmark) { return bookmark.food_id === food.id});
+    }
+    if(bookmark[0] !== undefined) {
+      $http.delete(HerokuUrl + 'bookmarks/' + bookmark[0].id + '.json').success(function(response) {
+        console.log('food unbookmarked!');
+        $scope.bookmarks.splice($scope.bookmarks.indexOf(bookmark), 1);
+      });
+    } else {
+      $http.post(HerokuUrl + 'bookmarks.json', params).success(function(response) {
+        console.log('food bookmarked!');
+        $scope.bookmarks.push(response);
+      });
+    }
+  };
+
+  $scope.isBookmarked = function(food, user, bookmarks) {
+    if(bookmarks !== undefined) {
+      var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
+                                     .filter(function(bookmark) { return bookmark.food_id === food.id});
+      return true;
+    } else {
+      return false;
+    }
+
   };
 
   $scope.isLoggedIn = function() {

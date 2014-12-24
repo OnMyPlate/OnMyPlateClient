@@ -20,9 +20,16 @@ app.factory('dataFactory',['$http', 'HerokuUrl', function($http, HerokuUrl) {
     });
   };
 
+  var fetchBookmarks = function() {
+    return $http.get(HerokuUrl + 'bookmarks.json').success(function(response) {
+      return response.bookmarks;
+    });
+  };
+
   return {
     fetchFoods: fetchFoods,
     fetchUsers: fetchUsers,
-    fetchImages: fetchImages
+    fetchImages: fetchImages,
+    fetchBookmarks: fetchBookmarks
   };
 }]);

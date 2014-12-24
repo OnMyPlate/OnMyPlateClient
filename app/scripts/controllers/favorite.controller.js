@@ -25,11 +25,9 @@ app.controller('FavoriteCtrl', ['dataFactory',
     .filter(function(food) {return food.user_bookmarked === $scope.currentUser.id});
   });
 
-  $scope.unBookmarkFood = function(food) {
-    food.bookmarked = !food.bookmarked;
-    food.user_bookmarked = null;
-    var params = {food: food};
-    $http.put(HerokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
+  $scope.unBookmarkFood = function(food, user) {
+    debugger
+    $http.delete(HerokuUrl + 'bookmarks/' + bookmark.id + '.json', params).success(function(response) {
       console.log('food unbookmarked!');
       $scope.foods = $scope.foods.filter(function(food) {
         return food.bookmarked === true; 
