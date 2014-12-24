@@ -23,20 +23,24 @@ app.controller('FavoriteCtrl', ['dataFactory',
   });
 
   $scope.unBookmarkFood = function(food, user, bookmarks) {
-    debugger
-    $http.delete(HerokuUrl + 'bookmarks/' + bookmark.id + '.json').success(function(response) {
+    var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
+                            .filter(function(bookmark) { return bookmark.food_id === food.id});
+    $http.delete(HerokuUrl + 'bookmarks/' + bookmark[0].id + '.json').success(function(response) {
       console.log('food unbookmarked!');
-      $scope.foods = $scope.foods.filter(function(food) {
-        return food.bookmarked === true; 
-      });
+      $scope.bookmarks.splice($scope.bookmarks.indexOf(bookmark), 1);
     });
   }; 
 
   $scope.isBookmarked = function(food, user, bookmarks) {
+
     var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
                             .filter(function(bookmark) { return bookmark.food_id === food.id})
                             .filter(function(bookmark) { return bookmark.bookmarked === true});
-    return bookmark[0].bookmarked;
+    if(bookmark[0] !== undefined) {
+      return bookmark[0].bookmarked;
+    } else {
+      return false;
+    }
   };
 
   $scope.getAvgRating = function(food) {
