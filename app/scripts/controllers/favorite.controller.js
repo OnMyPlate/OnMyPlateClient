@@ -12,18 +12,6 @@ app.controller('FavoriteCtrl', ['dataFactory',
 
   var users = [];
 
-  // dataFactory.fetchUsers().then(function(response) {
-  //   $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-  //     $scope.currentUser = userFactory.defineCurrentUser(users);
-  //     $q.all(dataFactory.fetchFoods().then(function(response) {
-  //       $scope.foods = response.data.foods;
-  //       $q.all(dataFactory.fetchBookmarks().then(function(response) {
-  //         $scope.bookmarks = response.data.bookmarks;
-  //       }));
-  //     }));
-  //   });
-  // });
-
   dataFactory.fetchUsers().then(function(response) {
     $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
       $scope.currentUser = userFactory.defineCurrentUser(users);
@@ -33,20 +21,6 @@ app.controller('FavoriteCtrl', ['dataFactory',
       });
     });
   });
-
-  // dataFactory.fetchFoods().then(function(response) {
-  //   $scope.foods = response.data.foods;
-  //   console.log('2');
-  // });
-
-  // dataFactory.fetchBookmarks().then(function(response) {
-  //   $scope.bookmarks = response.data.bookmarks;
-  //   console.log('3');
-  // });
-
-  
-
-
 
   $scope.unBookmarkFood = function(food, user, bookmarks) {
     debugger
@@ -59,7 +33,10 @@ app.controller('FavoriteCtrl', ['dataFactory',
   }; 
 
   $scope.isBookmarked = function(food, user, bookmarks) {
-    console.log(bookmarks);
+    var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
+                            .filter(function(bookmark) { return bookmark.food_id === food.id})
+                            .filter(function(bookmark) { return bookmark.bookmarked === true});
+    return bookmark[0].bookmarked;
   };
 
   $scope.getAvgRating = function(food) {
