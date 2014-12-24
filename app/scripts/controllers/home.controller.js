@@ -45,6 +45,7 @@ app.controller('HomeCtrl', ['dataFactory',
 
   $scope.bookmarkFood = function(food, user, bookmarks) {
     var params = {bookmark: {
+      bookmarked: true,
       user_id: user.id,
       food_id: food.id
     }};
@@ -68,8 +69,13 @@ app.controller('HomeCtrl', ['dataFactory',
   $scope.isBookmarked = function(food, user, bookmarks) {
     if(bookmarks !== undefined) {
       var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
-                                     .filter(function(bookmark) { return bookmark.food_id === food.id});
-      return true;
+                                     .filter(function(bookmark) { return bookmark.food_id === food.id})
+                                     .filter(function(bookmark) { return bookmark.bookmarked === true});
+      if(bookmark[0] !== undefined) {
+        return bookmark[0].bookmarked;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
