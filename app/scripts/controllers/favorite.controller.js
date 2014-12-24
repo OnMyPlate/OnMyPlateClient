@@ -12,20 +12,41 @@ app.controller('FavoriteCtrl', ['dataFactory',
 
   var users = [];
 
+  // dataFactory.fetchUsers().then(function(response) {
+  //   $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
+  //     $scope.currentUser = userFactory.defineCurrentUser(users);
+  //     $q.all(dataFactory.fetchFoods().then(function(response) {
+  //       $scope.foods = response.data.foods;
+  //       $q.all(dataFactory.fetchBookmarks().then(function(response) {
+  //         $scope.bookmarks = response.data.bookmarks;
+  //       }));
+  //     }));
+  //   });
+  // });
+
   dataFactory.fetchUsers().then(function(response) {
     $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
       $scope.currentUser = userFactory.defineCurrentUser(users);
-      console.log($scope.currentUser);
-      $q.all(dataFactory.fetchFoods().then(function(response) {
-        $scope.foods = response.data.foods;
-        console.log($scope.foods);
-        $q.all(dataFactory.fetchBookmarks().then(function(response) {
-          $scope.bookmarks = response.data.bookmarks;
-          console.log($scope.bookmarks);
-        }));
-      }));
+      $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
+        $scope.bookmarks = response[1].data.bookmarks;
+        $scope.foods = response[0].data.foods;
+      });
     });
   });
+
+  // dataFactory.fetchFoods().then(function(response) {
+  //   $scope.foods = response.data.foods;
+  //   console.log('2');
+  // });
+
+  // dataFactory.fetchBookmarks().then(function(response) {
+  //   $scope.bookmarks = response.data.bookmarks;
+  //   console.log('3');
+  // });
+
+  
+
+
 
   $scope.unBookmarkFood = function(food, user, bookmarks) {
     debugger
@@ -38,7 +59,7 @@ app.controller('FavoriteCtrl', ['dataFactory',
   }; 
 
   $scope.isBookmarked = function(food, user, bookmarks) {
-    // console.log(bookmarks);
+    console.log(bookmarks);
   };
 
   $scope.getAvgRating = function(food) {
