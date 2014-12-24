@@ -3,13 +3,13 @@
 
 <div class="container media-container" ng-controller="FavoriteCtrl">
 
-  <div class="media food" ng-repeat="food in foods">
+  <div class="media food" ng-repeat="food in foods" ng-show="isBookmarked(food, currentUser, bookmarks)">
 
     <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
       <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
     </a>
 
-    <span class="glyphicon glyphicon-bookmark" aria-hidden="true" ng-click="unBookmarkFood(food, currentUser)" id="bookmarked"></span>
+    <span class="glyphicon glyphicon-bookmark" aria-hidden="true" ng-click="unBookmarkFood(food, currentUser, bookmarks)" id="bookmarked"></span>
 
     <div class="media-body food">
       <h4 class="media-heading">{{food.name}}</h4>
