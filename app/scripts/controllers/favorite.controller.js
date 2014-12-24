@@ -5,22 +5,34 @@ app.controller('FavoriteCtrl', ['dataFactory',
                                 '$http', 
                                 'HerokuUrl',
                                 'foodFactory',
-                                function(dataFactory, $scope, $http, HerokuUrl ,foodFactory) {
+                                '$q',
+                                'userFactory',
+                                function(dataFactory, $scope, $http, HerokuUrl ,foodFactory, $q, userFactory) {
 
 
-  dataFactory.fetchFoods().then(function(response) {
-    $scope.foods = response.data.foods.filter(function(element) {
-      return element.bookmarked === true;
+  var users = [];
+
+  dataFactory.fetchUsers().then(function(response) {
+    $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
+      $scope.currentUser = userFactory.defineCurrentUser(users);
     });
   });
 
-  $scope.bookmarkFood = function(food) {
-    food.bookmarked = !food.bookmarked
+  dataFactory.fetchFoods().then(function(response) {
+    $scope.foods = response.data.foods.filter(function(food) {
+      return food.bookmarked === true;
+    })
+    .filter(function(food) {return food.user_bookmarked === $scope.currentUser.id});
+  });
+
+  $scope.unBookmarkFood = function(food) {
+    food.bookmarked = !food.bookmarked;
+    food.user_bookmarked = null;
     var params = {food: food};
     $http.put(HerokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
-      console.log('food bookmarked!');
-      $scope.foods = $scope.foods.filter(function(element) {
-        return element.bookmarked === true; 
+      console.log('food unbookmarked!');
+      $scope.foods = $scope.foods.filter(function(food) {
+        return food.bookmarked === true; 
       });
     });
   }; 

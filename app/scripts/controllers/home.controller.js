@@ -6,10 +6,21 @@ app.controller('HomeCtrl', ['dataFactory',
                             '$http',
                             'HerokuUrl',
                             'authFactory',
-                            function(dataFactory, $scope, foodFactory, $http, HerokuUrl, authFactory) {
+                            '$q',
+                            'userFactory',
+                            function(dataFactory, $scope, foodFactory, $http, HerokuUrl, authFactory, $q, userFactory) {
+
+
+  var users = [];
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
+  });
+
+  dataFactory.fetchUsers().then(function(response) {
+    $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
+      $scope.currentUser = userFactory.defineCurrentUser(users);
+    });
   });
 
   $scope.search = {name: '', city: '', state: ''};
@@ -28,8 +39,9 @@ app.controller('HomeCtrl', ['dataFactory',
     return foodFactory.ratingsArr;
   };
 
-  $scope.bookmarkFood = function(food) {
-    food.bookmarked = !food.bookmarked
+  $scope.bookmarkFood = function(food, user) {
+    food.bookmarked = !food.bookmarked;
+    food.user_bookmarked = user.id;
     var params = {food: food};
     $http.put(HerokuUrl + 'foods/' + food.id + '.json', params).success(function(response) {
       console.log('food bookmarked!');
