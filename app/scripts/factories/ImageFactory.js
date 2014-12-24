@@ -13,7 +13,6 @@ app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3',
           image_url: AmazonS3 + signKeyResponse.key
         }
       };
-
       $q.all(postImageToS3(imageFile, signKeyResponse)).then(function(response) {
         upsertImageToAPI(imageParams, post);
       });
@@ -45,11 +44,10 @@ app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3',
   };
 
   var upsertImageToAPI = function(image_params, post) {
-    var promises = [];
     if(post.post.food_image) {
-      promises.push($http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params));
+      return $http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params);
     } else {
-      promises.push($http.post(HerokuUrl + 'food_images', image_params));
+      return $http.post(HerokuUrl + 'food_images', image_params);
     }
   };
 
