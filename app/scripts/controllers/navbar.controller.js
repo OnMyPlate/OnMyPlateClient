@@ -17,18 +17,7 @@ app.controller('NavbarCtrl',['$scope',
     });
   });
 
-  $(document).ready(function() {
-    $('#hamburger').on('click', function() {
-      $('#hamburger .line:eq(0)').toggleClass('line1');
-      $('#hamburger .line:eq(1)').toggleClass('line2');
-      $('#hamburger .line:eq(2)').toggleClass('line3');
-    });
-  });
-
-  $scope.isActive = function(navLocation) {
-    return navLocation === $location.path();
-  };
-
+  
   $scope.logout = function() {
     authFactory.logout().success(function(response) {
       $location.path('/login')
