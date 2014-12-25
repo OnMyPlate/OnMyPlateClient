@@ -91,6 +91,29 @@
 }
 
 /* line 4, ../sass/partials/_base.sass */
+.line1 {
+  -webkit-transform: rotateX(0) rotateY(0) rotateZ(45deg);
+  -moz-transform: rotateX(0) rotateY(0) rotateZ(45deg);
+  transform: rotateX(0) rotateY(0) rotateZ(45deg);
+  position: relative;
+  top: 4px;
+}
+
+/* line 8, ../sass/partials/_base.sass */
+.line2 {
+  display: none;
+}
+
+/* line 10, ../sass/partials/_base.sass */
+.line3 {
+  -webkit-transform: rotateX(0) rotateY(0) rotateZ(-45deg);
+  -moz-transform: rotateX(0) rotateY(0) rotateZ(-45deg);
+  transform: rotateX(0) rotateY(0) rotateZ(-45deg);
+  position: relative;
+  bottom: 4px;
+}
+
+/* line 15, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-edit:hover,
 .glyphicon.glyphicon-cutlery:hover,
 .glyphicon.glyphicon-remove:hover,
@@ -100,53 +123,52 @@
   cursor: pointer;
 }
 
-/* line 12, ../sass/partials/_base.sass */
+/* line 23, ../sass/partials/_base.sass */
 .page-header {
   text-align: center;
 }
 
-/* line 15, ../sass/partials/_base.sass */
+/* line 26, ../sass/partials/_base.sass */
 #about {
   margin-top: 122px;
   text-align: center;
   line-height: 1.7em;
 }
-/* line 19, ../sass/partials/_base.sass */
+/* line 30, ../sass/partials/_base.sass */
 #about p.about {
   font-size: 2em;
 }
 
-/* line 22, ../sass/partials/_base.sass */
+/* line 33, ../sass/partials/_base.sass */
 p,
 h6,
 .review {
   line-height: 1.5em;
 }
 
-/* line 29, ../sass/partials/_base.sass */
+/* line 40, ../sass/partials/_base.sass */
 #navbar {
   width: 100%;
   height: 66px;
-  border-bottom: 1px solid rgba(245, 192, 143, 0.9);
-  background-color: rgba(245, 192, 143, 0.9);
-  box-shadow: inset 3px 2px 10px 0px rgba(211, 139, 62, 0.53);
+  border-bottom: 1px solid rgba(156, 57, 57, 0.91);
+  background-color: rgba(156, 57, 57, 0.91);
 }
-/* line 35, ../sass/partials/_base.sass */
+/* line 46, ../sass/partials/_base.sass */
 #navbar #menu {
   display: none;
 }
 
-/* line 38, ../sass/partials/_base.sass */
+/* line 49, ../sass/partials/_base.sass */
 #collapse {
-  border: 1px solid rgba(245, 192, 143, 0.9);
-  background-color: rgba(245, 192, 143, 0.9);
+  border: 1px solid rgba(156, 57, 57, 0.91);
+  background-color: rgba(156, 57, 57, 0.91);
 }
-/* line 41, ../sass/partials/_base.sass */
+/* line 52, ../sass/partials/_base.sass */
 #collapse ul {
   list-style: none;
   padding: 0px;
 }
-/* line 44, ../sass/partials/_base.sass */
+/* line 55, ../sass/partials/_base.sass */
 #collapse ul li {
   text-align: center;
   margin: 27px 0px;
@@ -155,17 +177,17 @@ h6,
   transition: font-size 0.2s ease;
   font-size: 1.3em;
 }
-/* line 49, ../sass/partials/_base.sass */
+/* line 60, ../sass/partials/_base.sass */
 #collapse ul li:hover {
   font-size: 1.7em;
 }
-/* line 51, ../sass/partials/_base.sass */
+/* line 62, ../sass/partials/_base.sass */
 #collapse ul li a {
   text-decoration: none;
-  color: black;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 55, ../sass/partials/_base.sass */
+/* line 66, ../sass/partials/_base.sass */
 div#header {
   display: inline-block;
   position: relative;
@@ -176,115 +198,115 @@ div#header {
   font-size: 2.2em;
   left: 43.5%;
 }
-/* line 62, ../sass/partials/_base.sass */
+/* line 73, ../sass/partials/_base.sass */
 div#header:hover {
   font-size: 2.3em;
 }
-/* line 64, ../sass/partials/_base.sass */
+/* line 75, ../sass/partials/_base.sass */
 div#header strong {
   text-align: center;
 }
-/* line 66, ../sass/partials/_base.sass */
+/* line 77, ../sass/partials/_base.sass */
 div#header strong a {
-  color: rgba(0, 0, 0, 0.64);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
 }
-/* line 69, ../sass/partials/_base.sass */
+/* line 80, ../sass/partials/_base.sass */
 div#header strong a:hover {
   text-decoration: none;
 }
 
-/* line 72, ../sass/partials/_base.sass */
+/* line 83, ../sass/partials/_base.sass */
 #hamburger {
   float: right;
   position: relative;
   right: 30px;
   top: 14px;
 }
-/* line 77, ../sass/partials/_base.sass */
+/* line 88, ../sass/partials/_base.sass */
 #hamburger:hover {
   cursor: pointer;
 }
-/* line 79, ../sass/partials/_base.sass */
+/* line 90, ../sass/partials/_base.sass */
 #hamburger .line {
   width: 31px;
   height: 5px;
-  background-color: rgba(0, 0, 0, 0.64);
+  background-color: rgba(255, 255, 255, 0.88);
   margin: 4px 0px;
   border-radius: 2px;
 }
 
-/* line 88, ../sass/partials/_base.sass */
+/* line 99, ../sass/partials/_base.sass */
 .sidebar {
   border: 1px solid #C2C2C2;
   margin-bottom: 20px;
 }
-/* line 91, ../sass/partials/_base.sass */
+/* line 102, ../sass/partials/_base.sass */
 .sidebar ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 95, ../sass/partials/_base.sass */
+/* line 106, ../sass/partials/_base.sass */
 .sidebar ul li {
   text-align: center;
   padding: 14px;
 }
-/* line 98, ../sass/partials/_base.sass */
+/* line 109, ../sass/partials/_base.sass */
 .sidebar ul li a {
   color: black;
 }
-/* line 100, ../sass/partials/_base.sass */
+/* line 111, ../sass/partials/_base.sass */
 .sidebar ul li a:hover {
   text-decoration: none;
 }
 
-/* line 103, ../sass/partials/_base.sass */
+/* line 114, ../sass/partials/_base.sass */
 .sidebaractive {
-  background-color: #F3DECA;
+  background-color: rgba(190, 119, 124, 0.26);
 }
 
-/* line 106, ../sass/partials/_base.sass */
+/* line 117, ../sass/partials/_base.sass */
 hr {
   margin: 0px;
 }
 
-/* line 109, ../sass/partials/_base.sass */
+/* line 120, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-bookmark.home, #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 113, ../sass/partials/_base.sass */
+/* line 124, ../sass/partials/_base.sass */
 #bookmarked {
   -webkit-transition: font-size 0.2s ease;
   -moz-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
 }
-/* line 116, ../sass/partials/_base.sass */
+/* line 127, ../sass/partials/_base.sass */
 #bookmarked:hover {
   font-size: 1.6em;
 }
 
-/* line 119, ../sass/partials/_base.sass */
+/* line 130, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery {
   -webkit-transition: font-size 0.2s ease;
   -moz-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
   font-size: 1.34em;
 }
-/* line 122, ../sass/partials/_base.sass */
+/* line 133, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery:hover {
   font-size: 1.6em;
 }
 
-/* line 126, ../sass/partials/_base.sass */
+/* line 137, ../sass/partials/_base.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 130, ../sass/partials/_base.sass */
+/* line 141, ../sass/partials/_base.sass */
 .btn-default {
   background-color: #E1E9E9;
   -webkit-transition: background-color 0.2s linear;
@@ -293,17 +315,18 @@ hr {
   position: relative;
   margin-bottom: 12px;
 }
-/* line 135, ../sass/partials/_base.sass */
+/* line 146, ../sass/partials/_base.sass */
 .btn-default:hover {
-  background-color: #D59046;
+  background-color: rgba(156, 57, 57, 0.91);
+  color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 138, ../sass/partials/_base.sass */
+/* line 150, ../sass/partials/_base.sass */
 .btn.btn-default.read {
   left: 35%;
 }
 
-/* line 142, ../sass/partials/_base.sass */
+/* line 154, ../sass/partials/_base.sass */
 .login,
 .register {
   width: 100px;
@@ -311,55 +334,55 @@ hr {
   margin-top: 25px;
 }
 
-/* line 148, ../sass/partials/_base.sass */
+/* line 160, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 154, ../sass/partials/_base.sass */
+/* line 166, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 157, ../sass/partials/_base.sass */
+/* line 169, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 160, ../sass/partials/_base.sass */
+/* line 172, ../sass/partials/_base.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 163, ../sass/partials/_base.sass */
+/* line 175, ../sass/partials/_base.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 169, ../sass/partials/_base.sass */
+/* line 181, ../sass/partials/_base.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 172, ../sass/partials/_base.sass */
+/* line 184, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 175, ../sass/partials/_base.sass */
+/* line 187, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 178, ../sass/partials/_base.sass */
+/* line 190, ../sass/partials/_base.sass */
 #login-error {
   background-color: rgba(201, 35, 35, 0.79);
   margin-top: 29px;
   color: white;
   height: 50px;
 }
-/* line 183, ../sass/partials/_base.sass */
+/* line 195, ../sass/partials/_base.sass */
 #login-error p {
   text-align: center;
   position: relative;

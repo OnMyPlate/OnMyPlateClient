@@ -17,6 +17,14 @@ app.controller('NavbarCtrl',['$scope',
     });
   });
 
+  $(document).ready(function() {
+    $('#hamburger').on('click', function() {
+      $('#hamburger .line:eq(0)').toggleClass('line1', 500);
+      $('#hamburger .line:eq(1)').toggleClass('line2');
+      $('#hamburger .line:eq(2)').toggleClass('line3', 500);
+    });
+  });
+
   $scope.isActive = function(navLocation) {
     return navLocation === $location.path();
   };
@@ -32,7 +40,7 @@ app.controller('NavbarCtrl',['$scope',
   };
 
   $scope.toggleNavbar = function() {
-    $('#collapse').slideToggle(300);
+    $('#collapse').stop(true, true).slideToggle(300);
   };
 
 
