@@ -16,18 +16,19 @@ app.controller('FoodCtrl',['$location',
     var users = [];
     $scope.ratingVals = [1, 2, 3, 4, 5];
 
+    dataFactory.fetchFoods().then(function(response) {
+      var foods = response.data.foods;
+      var path = $location.path();
+      $scope.currentFood = foodFactory.findCurrentFood(foods, path);
+      $scope.posts = $scope.currentFood.posts;
+      foodFactory.calcFoodRating($scope.posts);
+      $scope.avgFoodRating = foodFactory.ratingsArr;
+    });
+
     dataFactory.fetchUsers().then(function(response) {
       $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
         $scope.currentUser = userFactory.defineCurrentUser(users);
         isLikedByCurrentUser($scope.posts, $scope.currentUser);
-        $q.all(dataFactory.fetchFoods().then(function(response) {
-          var foods = response.data.foods;
-          var path = $location.path();
-          $scope.currentFood = foodFactory.findCurrentFood(foods, path);
-          $scope.posts = $scope.currentFood.posts;
-          foodFactory.calcFoodRating($scope.posts);
-          $scope.avgFoodRating = foodFactory.ratingsArr;
-        }));
       });
     });
 
