@@ -11,12 +11,12 @@
 
     <div id="collapse" hidden>
         <ul>
-          <li><a ng-href="#/" title="home" ng-click="toggleNavbar()">Home</a></li>
-          <li><a ng-href="#/about" title="about" ng-click="toggleNavbar()">About</a></li>
-          <li><a ng-href="#/profile/{{currentUser.id}}" title="profile" ng-if="isLoggedIn()" ng-click="toggleNavbar()">Profile</a></li>
-          <li><a ng-href="#/login" title="login" ng-if="!isLoggedIn()" ng-click="toggleNavbar()">Login</a></li>
-          <li><a ng-href="#/register" ng-if="!isLoggedIn()" ng-click="toggleNavbar()">Register</a></li>
-          <li><a ng-href="#/login" ng-click="logout()" ng-if="isLoggedIn()" ng-click="toggleNavbar()">Logout</a></li>
+          <li><a ng-href="#/" title="home" ng-click="toggleNavbar(); changeHamburger()">Home</a></li>
+          <li><a ng-href="#/about" title="about" ng-click="toggleNavbar(); changeHamburger()">About</a></li>
+          <li><a ng-href="#/profile/{{currentUser.id}}" title="profile" ng-if="isLoggedIn()" ng-click="toggleNavbar(); changeHamburger()">Profile</a></li>
+          <li><a ng-href="#/login" title="login" ng-if="!isLoggedIn()" ng-click="toggleNavbar(); changeHamburger()">Login</a></li>
+          <li><a ng-href="#/register" ng-if="!isLoggedIn()" ng-click="toggleNavbar(); changeHamburger()">Register</a></li>
+          <li><a ng-href="#/login" ng-click="logout()" ng-if="isLoggedIn()" ng-click="toggleNavbar(); changeHamburger()">Logout</a></li>
         </ul>
     </div>
 </div>
