@@ -76,6 +76,4 @@ app.controller('HomeCtrl', ['dataFactory',
     return authFactory.isAuthenticated();
   };
 
-
-
 }]);
