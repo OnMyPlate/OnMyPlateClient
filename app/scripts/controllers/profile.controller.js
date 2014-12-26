@@ -13,10 +13,11 @@ app.controller('ProfileCtrl',['$http',
 
   var users = [];
 
-  dataFactory.fetchUsers().then(function(response) {
-    $q.all([userFactory.createUsersArray(response.data.users, users), dataFactory.fetchFoods()]).then(function(response) {
+  dataFactory.fetchFoods().then(function(response) {
+    $scope.foods = response.data.foods;
+    dataFactory.fetchUsers().then(function(response) {
+      userFactory.createUsersArray(response.data.users, users)
       $scope.currentUser = userFactory.defineCurrentUser(users);
-      $scope.foods = response[1].data.foods;
     });
   });
 

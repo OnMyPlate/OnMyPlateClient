@@ -115,7 +115,7 @@
   bottom: 4px;
 }
 
-/* line 17, ../sass/partials/_base.sass */
+/* line 20, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-edit:hover,
 .glyphicon.glyphicon-cutlery:hover,
 .glyphicon.glyphicon-remove:hover,
@@ -125,52 +125,52 @@
   cursor: pointer;
 }
 
-/* line 25, ../sass/partials/_base.sass */
+/* line 28, ../sass/partials/_base.sass */
 .page-header {
   text-align: center;
 }
 
-/* line 28, ../sass/partials/_base.sass */
+/* line 31, ../sass/partials/_base.sass */
 #about {
   margin-top: 122px;
   text-align: center;
   line-height: 1.7em;
 }
-/* line 32, ../sass/partials/_base.sass */
+/* line 35, ../sass/partials/_base.sass */
 #about p.about {
   font-size: 2em;
 }
 
-/* line 35, ../sass/partials/_base.sass */
+/* line 38, ../sass/partials/_base.sass */
 p,
 h6,
 .review {
   line-height: 1.5em;
 }
 
-/* line 42, ../sass/partials/_base.sass */
+/* line 45, ../sass/partials/_base.sass */
 #navbar {
   width: 100%;
   height: 66px;
   border-bottom: 1px solid rgba(156, 57, 57, 0.91);
   background-color: rgba(156, 57, 57, 0.91);
 }
-/* line 48, ../sass/partials/_base.sass */
+/* line 51, ../sass/partials/_base.sass */
 #navbar #menu {
   display: none;
 }
 
-/* line 51, ../sass/partials/_base.sass */
+/* line 54, ../sass/partials/_base.sass */
 #collapse {
   border: 1px solid rgba(156, 57, 57, 0.91);
   background-color: rgba(156, 57, 57, 0.91);
 }
-/* line 54, ../sass/partials/_base.sass */
+/* line 57, ../sass/partials/_base.sass */
 #collapse ul {
   list-style: none;
   padding: 0px;
 }
-/* line 57, ../sass/partials/_base.sass */
+/* line 60, ../sass/partials/_base.sass */
 #collapse ul li {
   text-align: center;
   margin: 27px 0px;
@@ -179,17 +179,17 @@ h6,
   transition: font-size 0.2s ease;
   font-size: 1.3em;
 }
-/* line 62, ../sass/partials/_base.sass */
+/* line 65, ../sass/partials/_base.sass */
 #collapse ul li:hover {
   font-size: 1.7em;
 }
-/* line 64, ../sass/partials/_base.sass */
+/* line 67, ../sass/partials/_base.sass */
 #collapse ul li a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 68, ../sass/partials/_base.sass */
+/* line 71, ../sass/partials/_base.sass */
 div#header {
   display: inline-block;
   position: relative;
@@ -200,36 +200,36 @@ div#header {
   font-size: 2.2em;
   left: 43.5%;
 }
-/* line 75, ../sass/partials/_base.sass */
+/* line 78, ../sass/partials/_base.sass */
 div#header:hover {
   font-size: 2.3em;
 }
-/* line 77, ../sass/partials/_base.sass */
+/* line 80, ../sass/partials/_base.sass */
 div#header strong {
   text-align: center;
 }
-/* line 79, ../sass/partials/_base.sass */
+/* line 82, ../sass/partials/_base.sass */
 div#header strong a {
   color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
 }
-/* line 82, ../sass/partials/_base.sass */
+/* line 85, ../sass/partials/_base.sass */
 div#header strong a:hover {
   text-decoration: none;
 }
 
-/* line 85, ../sass/partials/_base.sass */
+/* line 88, ../sass/partials/_base.sass */
 #hamburger {
   float: right;
   position: relative;
   right: 30px;
   top: 14px;
 }
-/* line 90, ../sass/partials/_base.sass */
+/* line 93, ../sass/partials/_base.sass */
 #hamburger:hover {
   cursor: pointer;
 }
-/* line 92, ../sass/partials/_base.sass */
+/* line 95, ../sass/partials/_base.sass */
 #hamburger .line {
   width: 31px;
   height: 5px;
@@ -238,77 +238,77 @@ div#header strong a:hover {
   border-radius: 2px;
 }
 
-/* line 101, ../sass/partials/_base.sass */
+/* line 104, ../sass/partials/_base.sass */
 .sidebar {
   border: 1px solid #C2C2C2;
   margin-bottom: 20px;
 }
-/* line 104, ../sass/partials/_base.sass */
+/* line 107, ../sass/partials/_base.sass */
 .sidebar ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 108, ../sass/partials/_base.sass */
+/* line 111, ../sass/partials/_base.sass */
 .sidebar ul li {
   text-align: center;
   padding: 14px;
 }
-/* line 111, ../sass/partials/_base.sass */
+/* line 114, ../sass/partials/_base.sass */
 .sidebar ul li a {
   color: black;
 }
-/* line 113, ../sass/partials/_base.sass */
+/* line 116, ../sass/partials/_base.sass */
 .sidebar ul li a:hover {
   text-decoration: none;
 }
 
-/* line 116, ../sass/partials/_base.sass */
+/* line 119, ../sass/partials/_base.sass */
 .sidebaractive {
   background-color: rgba(190, 119, 124, 0.26);
 }
 
-/* line 119, ../sass/partials/_base.sass */
+/* line 122, ../sass/partials/_base.sass */
 hr {
   margin: 0px;
 }
 
-/* line 122, ../sass/partials/_base.sass */
+/* line 125, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-bookmark.home, #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 126, ../sass/partials/_base.sass */
+/* line 129, ../sass/partials/_base.sass */
 #bookmarked {
   -webkit-transition: font-size 0.2s ease;
   -moz-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
 }
-/* line 129, ../sass/partials/_base.sass */
+/* line 132, ../sass/partials/_base.sass */
 #bookmarked:hover {
   font-size: 1.6em;
 }
 
-/* line 132, ../sass/partials/_base.sass */
+/* line 135, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery {
   -webkit-transition: font-size 0.2s ease;
   -moz-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
   font-size: 1.34em;
 }
-/* line 135, ../sass/partials/_base.sass */
+/* line 138, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery:hover {
   font-size: 1.6em;
 }
 
-/* line 139, ../sass/partials/_base.sass */
+/* line 142, ../sass/partials/_base.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 143, ../sass/partials/_base.sass */
+/* line 146, ../sass/partials/_base.sass */
 .btn-default {
   background-color: #E1E9E9;
   -webkit-transition: background-color 0.2s linear;
@@ -317,18 +317,18 @@ hr {
   position: relative;
   margin-bottom: 12px;
 }
-/* line 148, ../sass/partials/_base.sass */
+/* line 151, ../sass/partials/_base.sass */
 .btn-default:hover {
   background-color: rgba(156, 57, 57, 0.91);
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 152, ../sass/partials/_base.sass */
+/* line 155, ../sass/partials/_base.sass */
 .btn.btn-default.read {
   left: 35%;
 }
 
-/* line 156, ../sass/partials/_base.sass */
+/* line 159, ../sass/partials/_base.sass */
 .login,
 .register {
   width: 100px;
@@ -336,55 +336,55 @@ hr {
   margin-top: 25px;
 }
 
-/* line 162, ../sass/partials/_base.sass */
+/* line 165, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 168, ../sass/partials/_base.sass */
+/* line 171, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 171, ../sass/partials/_base.sass */
+/* line 174, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
 }
-/* line 174, ../sass/partials/_base.sass */
+/* line 177, ../sass/partials/_base.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 177, ../sass/partials/_base.sass */
+/* line 180, ../sass/partials/_base.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 183, ../sass/partials/_base.sass */
+/* line 186, ../sass/partials/_base.sass */
 .custom-error {
   color: #CC0000;
 }
 
-/* line 186, ../sass/partials/_base.sass */
+/* line 189, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 189, ../sass/partials/_base.sass */
+/* line 192, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 192, ../sass/partials/_base.sass */
+/* line 195, ../sass/partials/_base.sass */
 #login-error {
   background-color: rgba(201, 35, 35, 0.79);
   margin-top: 29px;
   color: white;
   height: 50px;
 }
-/* line 197, ../sass/partials/_base.sass */
+/* line 200, ../sass/partials/_base.sass */
 #login-error p {
   text-align: center;
   position: relative;
@@ -470,96 +470,99 @@ input#search {
   }
 
   /* line 22, ../sass/partials/_media.sass */
-  .media-body.food {
-    float: right;
-    width: 77%;
-  }
-
-  /* line 26, ../sass/partials/_media.sass */
   #media-body-post {
     float: right;
     width: 77%;
   }
 
-  /* line 30, ../sass/partials/_media.sass */
+  /* line 26, ../sass/partials/_media.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 33, ../sass/partials/_media.sass */
+  /* line 29, ../sass/partials/_media.sass */
   .btn.btn-default.submit {
     position: relative;
     left: 45%;
     width: 100px;
   }
 
-  /* line 38, ../sass/partials/_media.sass */
+  /* line 34, ../sass/partials/_media.sass */
   .container.media-container {
     padding-top: 20px;
-    overflow: scroll;
+    text-overflow: hidden;
     white-space: nowrap;
   }
-  /* line 42, ../sass/partials/_media.sass */
+  /* line 38, ../sass/partials/_media.sass */
   .container.media-container .media.food {
     margin: 10px 0px;
+    padding: 10px;
     border: 1px solid #cccccc;
     border-radius: 3px;
-    padding: 10px;
   }
-  /* line 47, ../sass/partials/_media.sass */
+  /* line 43, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-left.food {
-    float: left;
     width: 20%;
+    float: left;
   }
-  /* line 50, ../sass/partials/_media.sass */
-  .container.media-container .media.food h6 {
+  /* line 46, ../sass/partials/_media.sass */
+  .container.media-container .media.food .media-body.food {
+    display: block;
+    width: 77%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* line 51, ../sass/partials/_media.sass */
+  .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 54, ../sass/partials/_media.sass */
+  /* line 55, ../sass/partials/_media.sass */
   .edit-button,
   .remove-button {
     display: none;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1204px) {
-  /* line 61, ../sass/partials/_media.sass */
+  /* line 62, ../sass/partials/_media.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 65, ../sass/partials/_media.sass */
+  /* line 66, ../sass/partials/_media.sass */
   .container.media-container .media.food {
     margin: 10px 0px;
     border: 1px solid #cccccc;
     border-radius: 3px;
     padding: 10px;
   }
-  /* line 70, ../sass/partials/_media.sass */
-  .container.media-container .media.food .media-body.food {
-    float: right;
-    width: 73%;
-  }
-  /* line 73, ../sass/partials/_media.sass */
+  /* line 71, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 76, ../sass/partials/_media.sass */
-  .container.media-container .media.food h6 {
+  /* line 74, ../sass/partials/_media.sass */
+  .container.media-container .media.food .media-body.food {
+    display: block;
+    width: 73%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* line 79, ../sass/partials/_media.sass */
+  .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 80, ../sass/partials/_media.sass */
+  /* line 83, ../sass/partials/_media.sass */
   span.glyphicon.glyphicon-edit {
     font-size: 1.2em;
     margin: 10px 0px;
   }
 
-  /* line 84, ../sass/partials/_media.sass */
+  /* line 87, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove {
     float: right;
     position: relative;
@@ -568,71 +571,84 @@ input#search {
     transition: font-size 0.2s ease;
     font-size: 1em;
   }
-  /* line 89, ../sass/partials/_media.sass */
+  /* line 92, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove:hover {
     cursor: pointer;
     font-size: 1.4em;
   }
 
-  /* line 93, ../sass/partials/_media.sass */
+  /* line 96, ../sass/partials/_media.sass */
   #media-body-post {
     float: right;
     width: 75%;
   }
 
-  /* line 97, ../sass/partials/_media.sass */
+  /* line 100, ../sass/partials/_media.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 100, ../sass/partials/_media.sass */
+  /* line 103, ../sass/partials/_media.sass */
   .edit-button,
   .remove-button {
     display: none;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 106, ../sass/partials/_media.sass */
+  /* line 109, ../sass/partials/_media.sass */
   .container.media-container {
     padding-top: 20px;
     overflow: scroll;
     white-space: nowrap;
   }
-  /* line 110, ../sass/partials/_media.sass */
+  /* line 113, ../sass/partials/_media.sass */
   .container.media-container .media.food {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
-  /* line 114, ../sass/partials/_media.sass */
+  /* line 117, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-left.food {
     width: 20%;
   }
-  /* line 116, ../sass/partials/_media.sass */
-  .container.media-container h6 {
+  /* line 119, ../sass/partials/_media.sass */
+  .container.media-container .media.food .media-body.food {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* line 123, ../sass/partials/_media.sass */
+  .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 120, ../sass/partials/_media.sass */
+  /* line 127, ../sass/partials/_media.sass */
   .container.post-container {
     padding-top: 20px;
   }
-  /* line 122, ../sass/partials/_media.sass */
+  /* line 129, ../sass/partials/_media.sass */
   .container.post-container .media.post {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
-  /* line 126, ../sass/partials/_media.sass */
+  /* line 133, ../sass/partials/_media.sass */
   .container.post-container .media.post .media-left.post {
     width: 20%;
   }
 
-  /* line 129, ../sass/partials/_media.sass */
+  /* line 136, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove,
   .glyphicon.glyphicon-edit {
     display: none;
+  }
+
+  /* line 140, ../sass/partials/_media.sass */
+  .edit-button,
+  .remove-button {
+    position: relative;
+    left: 40%;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
@@ -749,7 +765,12 @@ input#search {
     width: 20%;
   }
   /* line 79, ../sass/partials/_smartphones.sass */
-  .container.media-container .media.food .media-left.food h6 {
+  .container.media-container .media.food .media-body.food {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* line 82, ../sass/partials/_smartphones.sass */
+  .container.media-container .media.food .media-body.food h6 {
     overflow: hidden;
     text-overflow: ellipsis;
   }
