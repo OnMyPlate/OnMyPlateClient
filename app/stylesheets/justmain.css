@@ -636,17 +636,21 @@ input#search {
     padding: 16px;
   }
   /* line 135, ../sass/partials/_media.sass */
-  .container.post-container .media.post .media-left.post {
+  .container.post-container .media.post #media-left-post {
     width: 20%;
   }
+  /* line 137, ../sass/partials/_media.sass */
+  .container.post-container .media.post #media-body-post {
+    display: block;
+  }
 
-  /* line 138, ../sass/partials/_media.sass */
+  /* line 140, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove,
   .glyphicon.glyphicon-edit {
     display: none;
   }
 
-  /* line 142, ../sass/partials/_media.sass */
+  /* line 144, ../sass/partials/_media.sass */
   .edit-button,
   .remove-button {
     position: relative;
