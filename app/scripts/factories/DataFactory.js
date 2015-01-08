@@ -2,6 +2,8 @@
 
 app.factory('dataFactory',['$http', 'ServerUrl', function($http, ServerUrl) {
 
+  var params = {};
+
   var fetchFoods = function() {
     return $http.get(ServerUrl + 'foods.json').success(function(response) {
       return response.foods;
@@ -26,10 +28,17 @@ app.factory('dataFactory',['$http', 'ServerUrl', function($http, ServerUrl) {
     });
   };
 
+  var getConfirm = function() {
+    return $http.get(ServerUrl + 'get_confirm').success(function(response) {
+      return response;
+    });
+  }
+
   return {
     fetchFoods: fetchFoods,
     fetchUsers: fetchUsers,
     fetchImages: fetchImages,
-    fetchBookmarks: fetchBookmarks
+    fetchBookmarks: fetchBookmarks,
+    getConfirm: getConfirm
   };
 }]);

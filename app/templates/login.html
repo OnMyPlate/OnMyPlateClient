@@ -6,6 +6,11 @@
     <p>Email or Password is invalid.</p>
   </div>
 
+  <div id="confirmation-error" ng-hide="isLoginSuccessful">
+    <p>Confirm your email address.</p>
+  </div>
+
+
   <form role="form" name="loginUser" ng-submit="login(params)" novalidate>
   
     <div class="form-group login-form">
