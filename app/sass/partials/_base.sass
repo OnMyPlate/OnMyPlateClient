@@ -192,7 +192,10 @@ img
 .form-group .ng-valid
   border: 1px solid green
 
-#login-error
+#login-error,
+#confirmation-error,
+#password-error,
+#existing-error
   background-color: rgba(201, 35, 35, 0.79)
   margin-top: 29px
   color: white
@@ -202,8 +205,3 @@ img
     position: relative
     top: 15px
 
-#confirmation-error
-  @extend #login-error
-  
-#existing-error
-  @extend #login-error

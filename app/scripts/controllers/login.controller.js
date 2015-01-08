@@ -16,6 +16,7 @@ app.controller('LoginCtrl',['$scope',
     $scope.existingUserEmail = dataFactory.params.email;
     $scope.doesExist = false;
     $('#existing-error').slideDown(200);
+    $('#existing-error').delay(3000).slideUp(200);
   };
 
   $scope.login = function(params) {
@@ -30,11 +31,13 @@ app.controller('LoginCtrl',['$scope',
           $location.path('/login');
           $scope.isLoginSuccessful = false;
           $('#login-error').slideDown(200);
+          $('#login-error').delay(3000).slideUp(200);
         });
       } else {
         $location.path('/login');
         $scope.isConfirmed = false;
         $('#confirmation-error').slideDown(200);
+        $('#confirmation-error').delay(3000).slideUp(200);
       }
     });
   }

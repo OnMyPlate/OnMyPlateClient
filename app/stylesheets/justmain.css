@@ -378,14 +378,20 @@ img[alt="Food Picture"] {
 }
 
 /* line 195, ../sass/partials/_base.sass */
-#login-error, #confirmation-error, #existing-error {
+#login-error,
+#confirmation-error,
+#password-error,
+#existing-error {
   background-color: rgba(201, 35, 35, 0.79);
   margin-top: 29px;
   color: white;
   height: 50px;
 }
-/* line 200, ../sass/partials/_base.sass */
-#login-error p, #confirmation-error p, #existing-error p {
+/* line 203, ../sass/partials/_base.sass */
+#login-error p,
+#confirmation-error p,
+#password-error p,
+#existing-error p {
   text-align: center;
   position: relative;
   top: 15px;

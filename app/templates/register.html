@@ -1,6 +1,10 @@
 <ng-include src="'templates/navbar.html'"></ng-include>
 
 <div class="container" ng-controller="UserCtrl">
+
+  <div id="password-error" ng-hide="doesPasswordsMatch">
+    <p>Passwords does not match.</p>
+  </div>
   
   <form role="form" name="registerUserForm" ng-submit="registerUser(user)" novalidate>
   
