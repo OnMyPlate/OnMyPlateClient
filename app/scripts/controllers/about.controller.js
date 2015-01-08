@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('AboutCtrl', ['$http','HerokuUrl','$scope', function($http, HerokuUrl, $scope) {
+app.controller('AboutCtrl', ['$http','$scope', function($http, $scope) {
 
   var svg = d3.select('#about').append('svg')
               .attr("width", 50)

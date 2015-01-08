@@ -23,6 +23,14 @@ app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function(
       
       $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
 
+    } else if($location.path() ===  '/') {
+      $location.path('/');
+    } else if($location.path() === '/register') {
+      $location.path('/register');
+    } else if($location.path() === '/about') {
+      $location.path('/about');
+    } else {
+      $location.path('/login');
     }
   });
 }]);
