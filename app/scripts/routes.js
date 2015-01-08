@@ -15,10 +15,10 @@ app.config(['$routeProvider', function($routeProvider) {
   .when('/foods/:id', {
     templateUrl: 'templates/food.html'
   })
-  .when('/add', {
+  .when('/profile/:id/add', {
     templateUrl: 'templates/add.html'
   })
-  .when('/favorites', {
+  .when('/profile/:id/favorites', {
     templateUrl: 'templates/favorites.html'
   })
   .when('/login', {

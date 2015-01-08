@@ -29,7 +29,7 @@ app.controller('LoginCtrl',['$scope',
           $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
           $location.path('/');
         }).error(function(response) {
-          $location.path('/login');
+          $scope.params = {};
           $scope.isLoginSuccessful = false;
           $('#login-error').slideDown(200);
           $('#login-error').delay(3000).slideUp(200);
