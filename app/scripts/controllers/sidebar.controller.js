@@ -10,9 +10,7 @@ app.controller('SidebarCtrl',['$scope',
   var users = [];
 
   dataFactory.fetchUsers().then(function(response) {
-    $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-      $scope.currentUser = userFactory.defineCurrentUser(users);
-    });
+    $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
   });
 
   $scope.isActive = function(navLocation) {

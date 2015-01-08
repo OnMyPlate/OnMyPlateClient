@@ -2,22 +2,10 @@
 
 app.factory('userFactory',['$window', function($window) {
 
-  var createUsersArray = function(response, users) {
-    for(var i = 0; i < response.length; i++) {
-        users.push(response[i]);
-    };
-    return users;
-  };
-
   var defineCurrentUser = function(users) {
 
     var token = getToken();
-
-    for(var i = 0; i < users.length; i++) {
-      if(users[i].token === token) {
-        return users[i];
-      }
-    }
+    return users.filter(function(user) { return user.token === token})[0];
   };
 
 
@@ -26,7 +14,6 @@ app.factory('userFactory',['$window', function($window) {
   };
 
   return {
-    createUsersArray: createUsersArray,
     defineCurrentUser: defineCurrentUser
   };
 

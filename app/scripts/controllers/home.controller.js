@@ -14,12 +14,10 @@ app.controller('HomeCtrl', ['dataFactory',
   var users = [];
 
   dataFactory.fetchUsers().then(function(response) {
-    $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-      $scope.currentUser = userFactory.defineCurrentUser(users);
-      $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
-        $scope.bookmarks = response[1].data.bookmarks;
-        $scope.foods = response[0].data.foods;
-      });
+    $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+    $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
+      $scope.bookmarks = response[1].data.bookmarks;
+      $scope.foods = response[0].data.foods;
     });
   });
 

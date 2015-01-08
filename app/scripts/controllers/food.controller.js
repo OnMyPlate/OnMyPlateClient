@@ -26,10 +26,8 @@ app.controller('FoodCtrl',['$location',
     });
 
     dataFactory.fetchUsers().then(function(response) {
-      $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-        $scope.currentUser = userFactory.defineCurrentUser(users);
-        isLikedByCurrentUser($scope.posts, $scope.currentUser);
-      });
+      $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+      isLikedByCurrentUser($scope.posts, $scope.currentUser);
     });
 
     var isLikedByCurrentUser = function(posts, user) {

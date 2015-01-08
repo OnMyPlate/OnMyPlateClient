@@ -41,10 +41,8 @@ app.controller('AddCtrl', ['$scope',
         console.log('food updated!');
         $q.all(upsertPost(post, image, response)).then(function() {
           dataFactory.fetchUsers().then(function(response) {
-            $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-              $scope.currentUser = userFactory.defineCurrentUser(users);
-              $location.path('/profile/' + $scope.currentUser.id);
-            });
+            $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+            $location.path('/profile/' + $scope.currentUser.id);
           });
         });
       });
@@ -53,10 +51,8 @@ app.controller('AddCtrl', ['$scope',
         console.log('food created!');
         $q.all(upsertPost(post, image, response)).then(function(response) {
           dataFactory.fetchUsers().then(function(response) {
-            $q.all(userFactory.createUsersArray(response.data.users, users)).then(function() {
-              $scope.currentUser = userFactory.defineCurrentUser(users);
-              $location.path('/profile/' + $scope.currentUser.id);
-            });
+            $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+            $location.path('/profile/' + $scope.currentUser.id);
           });
           
         });
