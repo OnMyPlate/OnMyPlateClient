@@ -22,6 +22,7 @@ app.controller('AddCtrl', ['$scope',
   // if it is than it sets the scope.foods wiht that params in the form so the user can update the food
   (function() {
     var params = foodFactory.params;
+    debugger
     if(params.name) {
       $scope.food = params;
       $scope.post = params.posts[0];

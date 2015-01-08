@@ -27,6 +27,9 @@ app.config(['$routeProvider', function($routeProvider) {
   .when('/register', {
     templateUrl: 'templates/register.html'
   })
+  .when('/confirm', {
+    templateUrl: 'templates/confirm.html'
+  })
   .otherwise({
     redirectTo: '/'
   });
