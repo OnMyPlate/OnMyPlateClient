@@ -17,8 +17,9 @@ app.controller('UserCtrl',['$http',
     var email_params = {username: user.username, email: user.email};
     if(user.password === user.password_confirmation) {
       dataFactory.fetchUsers().then(function(response) {
+        debugger
         var existingUser = response.data.users.filter(function(element) {return element.email === user.email});
-        if(!existingUser) {
+        if(!!existingUser) {
           $http.post(ServerUrl + 'email/confirm', email_params).success(function(response) {
             if(response.sent) {
               $http.post(ServerUrl + 'users.json', params).success(function(response) {

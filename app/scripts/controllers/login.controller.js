@@ -21,7 +21,8 @@ app.controller('LoginCtrl',['$scope',
 
   $scope.login = function(params) {
     dataFactory.getConfirm().then(function(response) {
-      if(response.data.confirmed) {
+      if(response.data.confirmed || !!$scope.emailConfirmedByUserOnce) {
+        $scope.emailConfirmedByUserOnce = true;
         authFactory.login(params).success(function(response) {
           $window.sessionStorage.setItem('OnMyPlate.user', response.token);
           // Sets the headers for the request, and token for the authorization
