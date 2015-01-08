@@ -1,6 +1,6 @@
 <div class="sidebar" ng-controller="SidebarCtrl">
   <ul>
-    <li ng-class="{ sidebaractive: isActive('/add')}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><a href="#/profile/{{currentUser.id}}/add"> Add Food</a></li>
-    <li ng-class="{ sidebaractive: isActive('/favorites')}"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a href="#/profile/{{currentUser.id}}/favorites"> Bookmarks</a></li>
+    <li ng-class="{ sidebaractive: isActive('/add')}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><a href="#/profile/{{currentUser.id}}/add" title="add"> Add Food</a></li>
+    <li ng-class="{ sidebaractive: isActive('/favorites')}"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a href="#/profile/{{currentUser.id}}/favorites" title="favorites"> Bookmarks</a></li>
   </ul>
 </div>
