@@ -10,6 +10,13 @@ app.controller('LoginCtrl',['$scope',
 
   $scope.isLoginSuccessful = true;
   $scope.isConfirmed = true;
+  $scope.doesExist = true;
+
+  if(dataFactory.params.exist) {
+    $scope.existingUserEmail = dataFactory.params.email;
+    $scope.doesExist = false;
+    $('#existing-error').slideDown(200);
+  };
 
   $scope.login = function(params) {
     dataFactory.getConfirm().then(function(response) {

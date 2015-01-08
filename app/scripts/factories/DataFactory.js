@@ -34,11 +34,17 @@ app.factory('dataFactory',['$http', 'ServerUrl', function($http, ServerUrl) {
     });
   }
 
+  var storeData = function(datam) {
+    angular.copy(datam, params);
+  };
+
   return {
     fetchFoods: fetchFoods,
     fetchUsers: fetchUsers,
     fetchImages: fetchImages,
     fetchBookmarks: fetchBookmarks,
-    getConfirm: getConfirm
+    getConfirm: getConfirm,
+    storeData: storeData,
+    params: params
   };
 }]);

@@ -10,6 +10,10 @@
     <p>Confirm your email address.</p>
   </div>
 
+  <div id="existing-error" ng-hide="doesExist">
+    <p>There is already an account with {{existingUserEmail}}</p>
+  </div>
+
 
   <form role="form" name="loginUser" ng-submit="login(params)" novalidate>
   
