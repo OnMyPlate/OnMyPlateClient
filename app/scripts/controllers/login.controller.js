@@ -3,6 +3,8 @@
 app.controller('LoginCtrl',['$scope', '$location', 'authFactory', 'dataFactory', function($scope, $location, authFactory, dataFactory) {
 
   $scope.isLoginSuccessful = true;
+  $scope.isConfirmed = true;
+
   $scope.login = function(params) {
     dataFactory.getConfirm().then(function(response) {
       if(response.data.confirmed) {
@@ -15,7 +17,7 @@ app.controller('LoginCtrl',['$scope', '$location', 'authFactory', 'dataFactory',
         });
       } else {
         $location.path('/login');
-        $scope.isLoginSuccessful = false;
+        $scope.isConfirmed = false;
         $('#confirmation-error').slideDown(200);
       }
     });
