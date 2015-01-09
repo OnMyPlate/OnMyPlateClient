@@ -18,8 +18,8 @@ app.controller('UserCtrl',['$http',
     var email_params = {username: user.username, email: user.email};
     if(user.password === user.password_confirmation) {
       dataFactory.fetchUsers().then(function(response) {
-        var existingUser = response.data.users.filter(function(element) {return element.email === user.email});
-        if(!!existingUser) {
+        var existingUser = response.data.users.filter(function(element) {return element.email === user.email})[0];
+        if(!existingUser) {
           $http.post(HerokuUrl + 'email/confirm', email_params).success(function(response) {
             if(response.sent) {
               $http.post(HerokuUrl + 'users.json', params).success(function(response) {
