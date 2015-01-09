@@ -1,35 +1,35 @@
 'use strict';
 
-app.factory('dataFactory',['$http', 'ServerUrl', function($http, ServerUrl) {
+app.factory('dataFactory',['$http', 'HerokuUrl', function($http, HerokuUrl) {
 
   var params = {};
 
   var fetchFoods = function() {
-    return $http.get(ServerUrl + 'foods.json').success(function(response) {
+    return $http.get(HerokuUrl + 'foods.json').success(function(response) {
       return response.foods;
     });
   };
 
   var fetchUsers = function() {
-    return $http.get(ServerUrl + 'users.json').success(function(response) {
+    return $http.get(HerokuUrl + 'users.json').success(function(response) {
       return response.users;
     });
   };
 
   var fetchImages = function() {
-    return $http.get(ServerUrl + 'food_images.json').success(function(response) {
+    return $http.get(HerokuUrl + 'food_images.json').success(function(response) {
       return response.food_images;
     });
   };
 
   var fetchBookmarks = function() {
-    return $http.get(ServerUrl + 'bookmarks.json').success(function(response) {
+    return $http.get(HerokuUrl + 'bookmarks.json').success(function(response) {
       return response.bookmarks;
     });
   };
 
   var getConfirm = function(user_params) {
-    return $http.post(ServerUrl + 'get_confirm', user_params).success(function(response) {
+    return $http.post(HerokuUrl + 'get_confirm', user_params).success(function(response) {
       return response;
     });
   }

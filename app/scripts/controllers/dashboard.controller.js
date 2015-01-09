@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('DashboardCtrl', ['$http', 'ServerUrl', '$scope', 'dataFactory', function($http, ServerUrl, $scope ,dataFactory) {
+app.controller('DashboardCtrl', ['$http', 'HerokuUrl', '$scope', 'dataFactory', function($http, HerokuUrl, $scope ,dataFactory) {
 
 
   dataFactory.fetchUsers().then(function(response) {
@@ -8,21 +8,21 @@ app.controller('DashboardCtrl', ['$http', 'ServerUrl', '$scope', 'dataFactory', 
   });
 
   $scope.deleteUser = function(user) {
-    $http.delete(ServerUrl + 'users/' + user.id).success(function() {
+    $http.delete(HerokuUrl + 'users/' + user.id).success(function() {
       console.log('user deleted');
       $scope.users = $scope.users.filter(function(element) {return element.id !== user.id});
     });
   };
 
   $scope.deleteUserFood = function(food) {
-    $http.delete(ServerUrl + 'foods/' + food.id).success(function() {
+    $http.delete(HerokuUrl + 'foods/' + food.id).success(function() {
       $http.delete()
       console.log('food deleted');
     });
   };
 
   $scope.deleteUserPost = function(post) {
-    $http.delete(ServerUrl + 'posts/' + post.id).success(function() {
+    $http.delete(HerokuUrl + 'posts/' + post.id).success(function() {
       console.log('post deleted');
     });
   };

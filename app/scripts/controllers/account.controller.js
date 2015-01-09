@@ -4,10 +4,10 @@ app.controller('AccountCtrl', ['dataFactory',
                                'userFactory',
                                '$scope',
                                '$http',
-                               'ServerUrl',
+                               'HerokuUrl',
                                '$location',
                                '$window',
-                               function(dataFactory, userFactory, $scope, $http, ServerUrl, $location, $window) {
+                               function(dataFactory, userFactory, $scope, $http, HerokuUrl, $location, $window) {
 
 
   dataFactory.fetchUsers().then(function(response) {
@@ -15,7 +15,7 @@ app.controller('AccountCtrl', ['dataFactory',
   });
 
   $scope.deleteAccount = function(user) {
-    $http.delete(ServerUrl + 'users/' + user.id + '.json').success(function(response) {
+    $http.delete(HerokuUrl + 'users/' + user.id + '.json').success(function(response) {
       console.log('user account deleted');
       $window.sessionStorage.removeItem('OnMyPlate.user');
       $location.path('/register');

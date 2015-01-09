@@ -1,11 +1,11 @@
 'use strict';
 
-app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', 'AmazonS3', function($http, ServerUrl, $q, $location, AmazonS3) {
+app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3', function($http, HerokuUrl, $q, $location, AmazonS3) {
 
   var signKeyResponse;
 
   var signKey = function(imageFile, post) {
-    $http.get(ServerUrl + 'amazon/sign_key').success(function(response) {
+    $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
       signKeyResponse = response;
 
       var imageParams = {
@@ -45,9 +45,9 @@ app.factory('imageFactory',['$http', 'ServerUrl', '$q', '$location', 'AmazonS3',
 
   var upsertImageToAPI = function(image_params, post) {
     if(post.post.food_image) {
-      return $http.put(ServerUrl + 'food_images/' + post.post.food_image.id, image_params);
+      return $http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params);
     } else {
-      return $http.post(ServerUrl + 'food_images', image_params);
+      return $http.post(HerokuUrl + 'food_images', image_params);
     }
   };
 
