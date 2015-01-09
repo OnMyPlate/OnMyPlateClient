@@ -14,6 +14,7 @@
                   <li><strong>Food Name: </strong>{{food.name}}</li>
                   <li><strong>Restaurant: </strong>{{food.restaurant_name}}</li>
                   <li><strong>City, State: </strong>{{food.city}}, {{food.state}}</li>
+                  <button type="submit" ng-click="deleteUserFood(food)">Delete Food</button>
                 </ul>
               </li>
               <li><strong>Posts: </strong>
@@ -21,12 +22,14 @@
                       <hr>
                       <li><strong>Rating: </strong>{{post.rating}}</li>
                       <li><strong>Review: </strong>{{post.review}}</li>
+                      <button type="submit" ng-click="deleteUserPost(post)">Delete Post</button>
                 </ul>
               </li>
               <li><strong>Likes: </strong>{{user.likes.length}}</li>
               <li><strong>Bookmarks: </strong>{{user.bookmarks.length}}</li>
             </ul>
           </li>
+          <button type="submit" ng-click="deleteUser(user)">Delete User</button>
         </ol>
     </div>    
   </div>
