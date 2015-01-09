@@ -28,8 +28,8 @@ app.factory('dataFactory',['$http', 'ServerUrl', function($http, ServerUrl) {
     });
   };
 
-  var getConfirm = function() {
-    return $http.get(ServerUrl + 'get_confirm').success(function(response) {
+  var getConfirm = function(user_params) {
+    return $http.post(ServerUrl + 'get_confirm', user_params).success(function(response) {
       return response;
     });
   }

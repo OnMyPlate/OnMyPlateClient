@@ -30,7 +30,7 @@ app.controller('LoginCtrl',['$scope',
     dataFactory.fetchUsers().then(function(response) {
       var doesUserExist = response.data.users.filter(function(user) {return user.email === params.email})[0];
       if(!!doesUserExist) {
-        dataFactory.getConfirm().then(function(response) {
+        dataFactory.getConfirm(params).then(function(response) {
           debugger
           if(response.data.confirmed) {
             authFactory.login(params).success(function(response) {
