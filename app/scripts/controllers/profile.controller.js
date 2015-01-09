@@ -30,7 +30,7 @@ app.controller('ProfileCtrl',['$http',
 
   $scope.goToEdit = function(food) {
     foodFactory.storeFood(food);
-    $location.path('/add');
+    $location.path('/profile/food.user_id/add');
   };  
 
   $scope.removeFood = function(food) {
