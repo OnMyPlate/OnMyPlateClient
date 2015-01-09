@@ -5,9 +5,7 @@ app.factory('authFactory',['$http', '$window', 'HerokuUrl', '$location', functio
   var login = function(params) {
     return $http.post(HerokuUrl + 'login', params).success(function(response) {
       // sessionStorage.setItem('key', 'value'), sets session in the browser
-      $window.sessionStorage.setItem('OnMyPlate.user', response.token);
       // Sets the headers for the request, and token for the authorization
-      $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
     }).error(function(response) {
       $location.path('/login');
     }); 
