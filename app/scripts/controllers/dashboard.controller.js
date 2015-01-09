@@ -5,7 +5,7 @@ app.controller('DashboardCtrl', ['$http',
                                  '$scope',
                                  'dataFactory',
                                  'userFactory',
-                                 'authFactory'
+                                 'authFactory',
                                  function($http, HerokuUrl, $scope ,dataFactory, userFactory, authFactory) {
 
 
