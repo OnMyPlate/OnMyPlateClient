@@ -26,11 +26,16 @@ app.factory('authFactory',['$http', '$window', 'HerokuUrl', '$location', functio
     return !!$window.sessionStorage.getItem('OnMyPlate.user');
   };
 
+  var isAdmin = function(user) {
+    return $http.post(HerokuUrl + 'admin', user);
+  };
+
 
   return {
     login: login,
     logout: logout,
-    isAuthenticated: isAuthenticated
+    isAuthenticated: isAuthenticated,
+    isAdmin: isAdmin
   };
 
 }]);

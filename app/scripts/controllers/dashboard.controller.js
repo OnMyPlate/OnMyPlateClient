@@ -1,10 +1,22 @@
 'use strict';
 
-app.controller('DashboardCtrl', ['$http', 'HerokuUrl', '$scope', 'dataFactory', function($http, HerokuUrl, $scope ,dataFactory) {
+app.controller('DashboardCtrl', ['$http', 
+                                 'HerokuUrl',
+                                 '$scope',
+                                 'dataFactory',
+                                 'userFactory',
+                                 'authFactory'
+                                 function($http, HerokuUrl, $scope ,dataFactory, userFactory, authFactory) {
 
 
   dataFactory.fetchUsers().then(function(response) {
     $scope.users = response.data.users;
+    $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+    authFactory.isAdmin($scope.currentUser).then(function(response) {
+      if(!response.admin) {
+        $location.path('/');
+      }
+    });
   });
 
   $scope.deleteUser = function(user) {
