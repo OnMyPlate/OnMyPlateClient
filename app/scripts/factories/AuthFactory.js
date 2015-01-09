@@ -17,6 +17,9 @@ app.factory('authFactory',['$http', '$window', 'HerokuUrl', '$location', functio
     return $http.get(HerokuUrl + 'logout').success(function(response) {
       // removes the OnMyPlate.user from the $window.sessionStorage object 
       $window.sessionStorage.removeItem('OnMyPlate.user');
+      if(!!$window.sessionStorage.getItem('OnMyPlate.admin')) {
+        $window.sessionStorage.removeItem('OnMyPlate.admin');
+      }
     });
   };
 
