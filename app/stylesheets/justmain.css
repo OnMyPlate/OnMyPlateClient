@@ -436,6 +436,11 @@ img[alt="Food Picture"] {
   margin: 26px 0px;
 }
 
+/* line 234, ../sass/partials/_base.sass */
+#dashboard h1 {
+  text-align: center;
+}
+
 /* line 2, ../sass/partials/_forms.sass */
 form[name="loginUser"] {
   margin-top: 93px;

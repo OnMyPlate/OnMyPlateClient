@@ -24,8 +24,8 @@
 
   <div class="row">
 
-    <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="food in foods | filter:search" id="{{food.id}}">
-      <div class="thumbnail">
+    <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="food in foods | filter:search">
+      <div class="thumbnail" id="{{food.id}}">
         <span class="glyphicon glyphicon-cutlery" aria-hidden="true" ng-click="bookmarkFood(food, currentUser, bookmarks)" ng-show="isLoggedIn()"></span>
         <span class="label label-info">{{food.city}}</span>
         <span class="label label-info">{{food.state}}</span>
