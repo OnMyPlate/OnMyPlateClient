@@ -51,9 +51,9 @@ app.controller('LoginCtrl',['$scope',
           } else if(response.data.admin) {
             authFactory.login(params).success(function(response) {
               $scope.isActed = false;
-              $window.sessionStorage.setItem('OnMyPlate.admin', response.token);
+              $window.sessionStorage.setItem('OnMyPlate.user', response.token);
               // Sets the headers for the request, and token for the authorization
-              $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.admin');
+              $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
               $location.path('/dashboard');
             }).error(function(response) {
               $scope.isActed = false;
