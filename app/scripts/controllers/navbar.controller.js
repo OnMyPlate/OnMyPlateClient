@@ -8,9 +8,6 @@ app.controller('NavbarCtrl',['$scope',
                              'userFactory', 
                              function($scope, $location, authFactory, dataFactory, $q, userFactory) {
 
-
-  var users = [];
-
   dataFactory.fetchUsers().then(function(response) {
       $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
   });
