@@ -386,7 +386,7 @@ img[alt="Food Picture"] {
 }
 
 /* line 198, ../sass/partials/_base.sass */
-#login-error,
+#login-error, #confirm-email,
 #confirmation-error,
 #password-error,
 #existing-error,
@@ -397,7 +397,7 @@ img[alt="Food Picture"] {
   height: 50px;
 }
 /* line 207, ../sass/partials/_base.sass */
-#login-error p,
+#login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
 #existing-error p,
@@ -407,26 +407,31 @@ img[alt="Food Picture"] {
   top: 15px;
 }
 
-/* line 214, ../sass/partials/_base.sass */
+/* line 212, ../sass/partials/_base.sass */
+#confirm-email {
+  background-color: green;
+}
+
+/* line 217, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 217, ../sass/partials/_base.sass */
+/* line 220, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 222, ../sass/partials/_base.sass */
+/* line 225, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 226, ../sass/partials/_base.sass */
+/* line 229, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }

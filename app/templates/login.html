@@ -14,6 +14,10 @@
     <p>There is already an account with {{existingUserEmail}}</p>
   </div>
 
+  <div id="confirm-email" ng-show="registered">
+    <p>Email is sent. Please confirm your email address.</p>
+  </div>
+
 
   <form role="form" name="loginUser" ng-submit="login(params)" novalidate>
   

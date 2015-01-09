@@ -23,6 +23,7 @@ app.controller('UserCtrl',['$http',
           $http.post(ServerUrl + 'email/confirm', email_params).success(function(response) {
             if(response.sent) {
               $http.post(ServerUrl + 'users.json', params).success(function(response) {
+                dataFactory.storeData({registered: true});
                 $location.path('/login')
               }).error(function(respose) {
                 $location.path('/register');

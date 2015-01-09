@@ -11,6 +11,7 @@ app.controller('LoginCtrl',['$scope',
   $scope.isLoginSuccessful = true;
   $scope.isConfirmed = true;
   $scope.doesExist = true;
+  $scope.registered = false;
 
   if(dataFactory.params.exist) {
     $scope.existingUserEmail = dataFactory.params.email;
@@ -19,13 +20,19 @@ app.controller('LoginCtrl',['$scope',
     $('#existing-error').delay(3000).slideUp(200);
   };
 
+  if(dataFactory.params.registered) {
+    $scope.registered = true;
+    $('#registered').slideDown(200);
+    $('#registered').delay(3000).slideUp(200);
+  };
+
   $scope.login = function(params) {
     dataFactory.fetchUsers().then(function(response) {
       var doesUserExist = response.data.users.filter(function(user) {return user.email === params.email})[0];
       if(!!doesUserExist) {
         dataFactory.getConfirm().then(function(response) {
-          if(response.data.confirmed || !!$scope.emailConfirmedByUserOnce) {
-            $scope.emailConfirmedByUserOnce = true;
+          debugger
+          if(response.data.confirmed) {
             authFactory.login(params).success(function(response) {
               $window.sessionStorage.setItem('OnMyPlate.user', response.token);
               // Sets the headers for the request, and token for the authorization
