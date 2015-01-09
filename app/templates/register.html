@@ -5,6 +5,10 @@
   <div id="password-error" ng-hide="doesPasswordsMatch">
     <p>Passwords does not match.</p>
   </div>
+
+  <div id="non-exist-error" ng-hide="nonExist">
+    <p>There is no account with this email.</p>
+  </div>
   
   <form role="form" name="registerUserForm" ng-submit="registerUser(user)" novalidate>
   

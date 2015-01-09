@@ -11,13 +11,13 @@ app.controller('UserCtrl',['$http',
 
 
   $scope.doesPasswordsMatch = true;
+  $scope.nonExist = true;
 
   $scope.registerUser = function(user) {
     var params = {user: user}
     var email_params = {username: user.username, email: user.email};
     if(user.password === user.password_confirmation) {
       dataFactory.fetchUsers().then(function(response) {
-        debugger
         var existingUser = response.data.users.filter(function(element) {return element.email === user.email});
         if(!!existingUser) {
           $http.post(ServerUrl + 'email/confirm', email_params).success(function(response) {
