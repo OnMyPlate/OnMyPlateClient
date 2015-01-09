@@ -441,6 +441,21 @@ img[alt="Food Picture"] {
   text-align: center;
 }
 
+/* line 238, ../sass/partials/_base.sass */
+#loader {
+  position: relative;
+  height: 20px;
+  width: 0px;
+  -webkit-transition: width 0.4s ease;
+  -moz-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  float: left;
+  background-color: #AEC9D4;
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.51);
+}
+
 /* line 2, ../sass/partials/_forms.sass */
 form[name="loginUser"] {
   margin-top: 93px;
