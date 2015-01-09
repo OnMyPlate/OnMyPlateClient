@@ -6,14 +6,18 @@ app.controller('DashboardCtrl', ['$http',
                                  'dataFactory',
                                  'userFactory',
                                  'authFactory',
-                                 function($http, HerokuUrl, $scope ,dataFactory, userFactory, authFactory) {
+                                 '$location',
+                                 function($http, HerokuUrl, $scope ,dataFactory, userFactory, authFactory, $location) {
 
-
+  $scope.isUserAdmin = false;
+  
   dataFactory.fetchUsers().then(function(response) {
     $scope.users = response.data.users;
     $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
     authFactory.isAdmin($scope.currentUser).then(function(response) {
-      if(!response.admin) {
+      if(response.data.admin) {
+        $scope.isUserAdmin = true;
+      } else {
         $location.path('/');
       }
     });
