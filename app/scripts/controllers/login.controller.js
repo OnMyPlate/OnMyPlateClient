@@ -54,7 +54,7 @@ app.controller('LoginCtrl',['$scope',
               $window.sessionStorage.setItem('OnMyPlate.user', response.token);
               // Sets the headers for the request, and token for the authorization
               $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
-              $location.path('/dashboard');
+              $location.path('/');
             }).error(function(response) {
               $scope.isActed = false;
               $scope.params = {};
