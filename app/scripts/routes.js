@@ -30,9 +30,6 @@ app.config(['$routeProvider', function($routeProvider) {
   .when('/profile/:id/account', {
     templateUrl: 'templates/account.html'
   })
-  .when('/dashboard', {
-    templateUrl: 'templates/dashboard.html'
-  })
   .otherwise({
     redirectTo: '/'
   });
