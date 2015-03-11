@@ -15,10 +15,11 @@ app.controller('HomeCtrl', ['dataFactory',
 
   dataFactory.fetchUsers().then(function(response) {
     $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
-    $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
-      $scope.bookmarks = response[1].data.bookmarks;
-      $scope.foods = response[0].data.foods;
-    });
+  });
+
+  $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
+    $scope.bookmarks = response[1].data.bookmarks;
+    $scope.foods = response[0].data.foods;
   });
 
   $scope.search = {name: '', city: '', state: ''};
