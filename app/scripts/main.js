@@ -12,9 +12,9 @@ Run blocks typically contain code which is hard to unit-test,
 
 */
 
-app.constant('HerokuUrl', 'http://localhost:3000/')
-    // .constant('HerokuUrl', 'http://onmyplate.herokuapp.com/')
-    .constant('AmazonS3', 'https://ompimages.s3.amazonaws.com/');
+// app.constant('HerokuUrl', 'http://localhost:3000/')
+app.constant('HerokuUrl', 'http://onmyplate.herokuapp.com/')
+   .constant('AmazonS3', 'https://ompimages.s3.amazonaws.com/');
 
 app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function($rootScope, $location, $http, $window, authFactory) {
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
