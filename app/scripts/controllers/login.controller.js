@@ -5,9 +5,9 @@ app.controller('LoginCtrl',['$scope',
                             'authFactory', 
                             'dataFactory', 
                             '$window',
+                            'userFactory',
                             '$http',
-                            'HerokuUrl',
-                             function($scope, $location, authFactory, dataFactory, $window, $http, HerokuUrl) {
+                             function($scope, $location, authFactory, dataFactory, $window, userFactory, $http) {
 
   $scope.isLoginSuccessful = true;
   $scope.isConfirmed = true;
@@ -29,14 +29,12 @@ app.controller('LoginCtrl',['$scope',
   };
 
   $scope.login = function(params) {
-    $http.post(HerokuUrl + 'does_exist', params).success(function(response) {
-      console.log(response);
-    });
+    
 
     $scope.isActed = true;
     $('#loader').css('width', '100%');
-    dataFactory.fetchUsers().then(function(response) {
-      var doesUserExist = response.data.users.filter(function(user) {return user.email === params.email})[0];
+    userFactory.doesExist(params).then(function(response) {
+      var doesUserExist = response.data.exist;
       if(!!doesUserExist) {
         dataFactory.getConfirm(params).then(function(response) {
           if(response.data.confirmed) {
