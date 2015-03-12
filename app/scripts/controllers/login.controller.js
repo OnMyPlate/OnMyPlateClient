@@ -6,7 +6,8 @@ app.controller('LoginCtrl',['$scope',
                             'dataFactory', 
                             '$window',
                             '$http',
-                             function($scope, $location, authFactory, dataFactory, $window, $http) {
+                            'HerokuUrl',
+                             function($scope, $location, authFactory, dataFactory, $window, $http, HerokuUrl) {
 
   $scope.isLoginSuccessful = true;
   $scope.isConfirmed = true;
@@ -28,6 +29,10 @@ app.controller('LoginCtrl',['$scope',
   };
 
   $scope.login = function(params) {
+    $http.post(HerokuUrl + 'does_exist', params).success(function(response) {
+      console.log(response);
+    });
+
     $scope.isActed = true;
     $('#loader').css('width', '100%');
     dataFactory.fetchUsers().then(function(response) {

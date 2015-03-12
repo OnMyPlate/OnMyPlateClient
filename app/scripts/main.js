@@ -12,8 +12,8 @@ Run blocks typically contain code which is hard to unit-test,
 
 */
 
-// app.constant('HerokuUrl', 'http://localhost:3000/')
-app.constant('HerokuUrl', 'http://onmyplate.herokuapp.com/')
+app.constant('HerokuUrl', 'http://localhost:3000/')
+// app.constant('HerokuUrl', 'http://onmyplate.herokuapp.com/')
    .constant('AmazonS3', 'https://ompimages.s3.amazonaws.com/');
 
 app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function($rootScope, $location, $http, $window, authFactory) {
