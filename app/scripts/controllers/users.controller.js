@@ -7,7 +7,8 @@ app.controller('UserCtrl',['$http',
                            '$window',
                            'dataFactory',
                            '$route',
-                           function($http, $scope, HerokuUrl, $location, $window, dataFactory, $route) {
+                           'userFactory',
+                           function($http, $scope, HerokuUrl, $location, $window, dataFactory, $route, userFactory) {
 
 
   $scope.doesPasswordsMatch = true;
@@ -20,8 +21,10 @@ app.controller('UserCtrl',['$http',
     var params = {user: user}
     var email_params = {username: user.username, email: user.email};
     if(user.password === user.password_confirmation) {
-      dataFactory.fetchUsers().then(function(response) {
-        var existingUser = response.data.users.filter(function(element) {return element.email === user.email})[0];
+      // dataFactory.fetchUsers().then(function(response) {
+      userFactory.doesExist(params).success(function(response) {
+        // var existingUser = response.data.users.filter(function(element) {return element.email === user.email})[0];
+        var existingUser = response.exist;
         if(!existingUser) {
           $http.post(HerokuUrl + 'email/confirm', email_params).success(function(response) {
             if(response.sent) {
