@@ -1,6 +1,12 @@
 'use strict';
 
-app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3', function($http, HerokuUrl, $q, $location, AmazonS3) {
+app.factory('imageFactory',['$http', 
+                            'HerokuUrl',
+                            '$q',
+                            '$location',
+                            'AmazonS3',
+                            '$rootScope',
+                            function($http, HerokuUrl, $q, $location, AmazonS3, $rootScope) {
 
   var signKeyResponse;
 
@@ -21,16 +27,7 @@ app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3',
 
   var postImageToS3 = function(imageFile, signKeyResponse) {
 
-    var imageData = new FormData();
-    imageData.append('key', signKeyResponse.key);
-    imageData.append('AWSAccessKeyId', signKeyResponse.access_key);
-    imageData.append('policy', signKeyResponse.policy);
-    imageData.append('acl', 'public-read');
-    imageData.append('signature', signKeyResponse.signature);
-    imageData.append('Content-Type', 'image/jpeg');
-    imageData.append('file', imageFile);
-
-    $http.post(AmazonS3, imageData, {
+    $http.post(AmazonS3, formImageData(imageFile, signKeyResponse), {
       transformRequest: angular.identity,
       headers: {
         'Content-Type': undefined,
@@ -49,6 +46,18 @@ app.factory('imageFactory',['$http', 'HerokuUrl', '$q', '$location', 'AmazonS3',
     } else {
       return $http.post(HerokuUrl + 'food_images', image_params);
     }
+  };
+
+  var formImageData = function(imageFile, signKeyResponse) {
+    var imageData = new FormData();
+    imageData.append('key', signKeyResponse.key);
+    imageData.append('AWSAccessKeyId', signKeyResponse.access_key);
+    imageData.append('policy', signKeyResponse.policy);
+    imageData.append('acl', 'public-read');
+    imageData.append('signature', signKeyResponse.signature);
+    imageData.append('Content-Type', 'image/jpeg');
+    imageData.append('file', imageFile);
+    return imageData;
   };
 
   return {
