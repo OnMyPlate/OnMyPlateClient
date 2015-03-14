@@ -39,7 +39,7 @@ app.controller('AddCtrl', ['$scope',
     if(food.id) {
       $http.put(HerokuUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
         console.log('food updated!');
-        $q.all(upsertPost(post, image, response)).then(function() {
+        upsertPost(post, image, response).then(function() {
           dataFactory.fetchUsers().then(function(response) {
             $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
             $location.path('/profile/' + $scope.currentUser.id);
@@ -49,7 +49,7 @@ app.controller('AddCtrl', ['$scope',
     } else {
       $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
-        $q.all(upsertPost(post, image, response)).then(function(response) {
+        upsertPost(post, image, response).then(function(response) {
           dataFactory.fetchUsers().then(function(response) {
             $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
             $location.path('/profile/' + $scope.currentUser.id);
@@ -68,15 +68,15 @@ app.controller('AddCtrl', ['$scope',
     }};
     
     if(post.id) {
-      $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
+      return $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
-        $q.all(imageFactory.signKey(image, postParams));
+        imageFactory.signKey(image, postParams);
       });
     } else {
-      $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+      return $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         console.log('post created!');
         $scope.addedPostId = response.id;
-        $q.all(imageFactory.signKey(image, postParams));
+        imageFactory.signKey(image, postParams);
       });
     }
   };

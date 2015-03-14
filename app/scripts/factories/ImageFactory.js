@@ -19,7 +19,7 @@ app.factory('imageFactory',['$http',
           image_url: AmazonS3 + signKeyResponse.key
         }
       };
-      $q.all(postImageToS3(imageFile, signKeyResponse)).then(function(response) {
+      postImageToS3(imageFile, signKeyResponse).then(function(response) {
         upsertImageToAPI(imageParams, post);
       });
     });
@@ -27,7 +27,7 @@ app.factory('imageFactory',['$http',
 
   var postImageToS3 = function(imageFile, signKeyResponse) {
 
-    $http.post(AmazonS3, formImageData(imageFile, signKeyResponse), {
+    return $http.post(AmazonS3, formImageData(imageFile, signKeyResponse), {
       transformRequest: angular.identity,
       headers: {
         'Content-Type': undefined,
@@ -36,7 +36,7 @@ app.factory('imageFactory',['$http',
     }).success(function(response) {
       console.log('eureka!');
     }).error(function(){
-      console.log('fuck you');
+      console.log('Image upload Unsuccessful!!');
     });
   };
 
