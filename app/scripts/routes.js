@@ -18,8 +18,8 @@ app.config(['$routeProvider', function($routeProvider) {
   .when('/profile/:id/add', {
     templateUrl: 'templates/add.html'
   })
-  .when('/profile/:id/favorites', {
-    templateUrl: 'templates/favorites.html'
+  .when('/profile/:id/bookmark', {
+    templateUrl: 'templates/bookmark.html'
   })
   .when('/login', {
     templateUrl: 'templates/login.html'

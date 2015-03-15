@@ -9,7 +9,8 @@ app.controller('AddCtrl', ['$scope',
                            'dataFactory',
                            'foodFactory',
                            'userFactory',
-                           function($scope, $http, HerokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory) {
+                           '$rootScope',
+                           function($scope, $http, HerokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory, $rootScope) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5];
   var users = [];
@@ -19,7 +20,7 @@ app.controller('AddCtrl', ['$scope',
   });
 
   // Checks if passed object contains any property, 
-  // if it is than it sets the scope.foods wiht that params in the form so the user can update the food
+  // if it is than it sets the scope.foods with that params in the form so the user can update the food
   (function() {
     var params = foodFactory.params;
     if(params.name) {
@@ -61,12 +62,9 @@ app.controller('AddCtrl', ['$scope',
   }; 
 
   var upsertPost = function(post, image, food) {
-    var postParams = {post: {
-      rating: post.rating,
-      review: post.review,
-      food_id: food.id 
-    }};
-    
+    var postParams = {post: post};
+    postParams.post.food_id = food.id;
+
     if(post.id) {
       return $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');

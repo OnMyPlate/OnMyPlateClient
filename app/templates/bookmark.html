@@ -1,7 +1,7 @@
 <ng-include src="'templates/navbar.html'"></ng-include>
 <ng-include src="'templates/sidebar.html'"></ng-include>
 
-<div class="container media-container" ng-controller="FavoriteCtrl">
+<div class="container media-container" ng-controller="BookmarkCtrl">
 
   <div class="media food" ng-repeat="food in foods" ng-show="isBookmarked(food, currentUser, bookmarks)">
 

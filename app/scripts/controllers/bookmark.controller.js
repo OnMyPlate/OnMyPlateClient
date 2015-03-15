@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('FavoriteCtrl', ['dataFactory', 
+app.controller('BookmarkCtrl', ['dataFactory', 
                                 '$scope', 
                                 '$http', 
                                 'HerokuUrl',

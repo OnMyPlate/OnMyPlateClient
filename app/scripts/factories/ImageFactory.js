@@ -8,11 +8,9 @@ app.factory('imageFactory',['$http',
                             '$rootScope',
                             function($http, HerokuUrl, $q, $location, AmazonS3, $rootScope) {
 
-  var signKeyResponse;
-
   var signKey = function(imageFile, post) {
     $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
-      signKeyResponse = response;
+      var signKeyResponse = response;
 
       var imageParams = {
         food_image: {
@@ -20,7 +18,9 @@ app.factory('imageFactory',['$http',
         }
       };
       postImageToS3(imageFile, signKeyResponse).then(function(response) {
-        upsertImageToAPI(imageParams, post);
+        upsertImageToAPI(imageParams, post).then(function(response) {
+          // response is the image added by the user.
+        });
       });
     });
   };
@@ -33,10 +33,6 @@ app.factory('imageFactory',['$http',
         'Content-Type': undefined,
         'Authorization': '',
       }
-    }).success(function(response) {
-      console.log('eureka!');
-    }).error(function(){
-      console.log('Image upload Unsuccessful!!');
     });
   };
 
