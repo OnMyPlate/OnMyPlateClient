@@ -38,7 +38,7 @@ app.controller('AddCtrl', ['$scope',
     var foodParams = {food: food};
 
     if(food.id) {
-      $http.put(HerokuUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
+      $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
         console.log('food updated!');
         upsertPost(post, image, response).then(function() {
           dataFactory.fetchUsers().then(function(response) {
