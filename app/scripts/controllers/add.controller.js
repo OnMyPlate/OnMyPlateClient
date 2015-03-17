@@ -68,13 +68,29 @@ app.controller('AddCtrl', ['$scope',
     if(post.id) {
       return $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
-        imageFactory.signKey(image, postParams);
+        imageFactory.getSignKey().success(function(response) {
+          var signKeyResponse = response;
+          var imageParams = imageFactory.formImageParams(signKeyResponse);
+          imageFactory.postImageToS3(image, signKeyResponse).success(function() {
+            imageFactory.upsertImageToAPI(image, postParams, imageParams).success(function(response) {
+              debugger
+            });
+          });
+        });
       });
     } else {
       return $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
         console.log('post created!');
         $scope.addedPostId = response.id;
-        imageFactory.signKey(image, postParams);
+        imageFactory.getSignKey().success(function(response) {
+          var signKeyResponse = response;
+          var imageParams = imageFactory.formImageParams(signKeyResponse);
+          imageFactory.postImageToS3(image, signKeyResponse).success(function() {
+            imageFactory.upsertImageToAPI(image, postParams, imageParams).success(function(response) {
+              debugger
+            });
+          });
+        });
       });
     }
   };
