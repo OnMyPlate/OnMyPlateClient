@@ -9,7 +9,11 @@ app.factory('imageFactory',['$http',
                             function($http, HerokuUrl, $q, $location, AmazonS3, $rootScope) {
 
   var getSignKey = function() {
-    return $http.get(HerokuUrl + 'amazon/sign_key');
+    return $q(function(resolve, reject) {
+      $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
+        resolve(response);
+      });
+    }); 
   };
 
   var formImageParams = function(signKeyResponse) {

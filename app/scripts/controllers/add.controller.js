@@ -68,7 +68,7 @@ app.controller('AddCtrl', ['$scope',
     if(post.id) {
       return $http.put(HerokuUrl + 'posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
-        imageFactory.getSignKey().success(function(response) {
+        imageFactory.getSignKey().then(function(response) {
           var signKeyResponse = response;
           var imageParams = imageFactory.formImageParams(signKeyResponse);
           $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]);
@@ -78,10 +78,12 @@ app.controller('AddCtrl', ['$scope',
       return $http.post(HerokuUrl + 'posts', postParams).success(function(response) {
         console.log('post created!');
         $scope.addedPostId = response.id;
-        imageFactory.getSignKey().success(function(response) {
+        imageFactory.getSignKey().then(function(response) {
           var signKeyResponse = response;
           var imageParams = imageFactory.formImageParams(signKeyResponse);
-          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]);
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]).then(function(response) {
+            $rootScope.imageResponse = response[1].data;
+          });
         });
       });
     }
