@@ -17,7 +17,9 @@ app.controller('ProfileCtrl',['$http',
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
     $rootScope.$watch('imageResponse', function(newVal, oldVal) {
-      $scope.foods[$scope.foods.length-1].posts[0].food_image = newVal;
+      if(!!newVal) {
+        $scope.foods[$scope.foods.length-1].posts[0].food_image = newVal;
+      }
     });
     dataFactory.fetchUsers().then(function(response) {
       $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
