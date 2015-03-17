@@ -71,11 +71,7 @@ app.controller('AddCtrl', ['$scope',
         imageFactory.getSignKey().success(function(response) {
           var signKeyResponse = response;
           var imageParams = imageFactory.formImageParams(signKeyResponse);
-          imageFactory.postImageToS3(image, signKeyResponse).success(function() {
-            imageFactory.upsertImageToAPI(image, postParams, imageParams).success(function(response) {
-              debugger
-            });
-          });
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]);
         });
       });
     } else {
@@ -85,11 +81,7 @@ app.controller('AddCtrl', ['$scope',
         imageFactory.getSignKey().success(function(response) {
           var signKeyResponse = response;
           var imageParams = imageFactory.formImageParams(signKeyResponse);
-          imageFactory.postImageToS3(image, signKeyResponse).success(function() {
-            imageFactory.upsertImageToAPI(image, postParams, imageParams).success(function(response) {
-              $rootScope.imageResponse = response;
-            });
-          });
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]);
         });
       });
     }
