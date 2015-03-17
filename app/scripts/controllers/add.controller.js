@@ -82,7 +82,7 @@ app.controller('AddCtrl', ['$scope',
           var signKeyResponse = response;
           var imageParams = imageFactory.formImageParams(signKeyResponse);
           $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]).then(function(response) {
-            $rootScope.imageResponse = response[1].data;
+            $rootScope.imageResponse = response[1];
           });
         });
       });

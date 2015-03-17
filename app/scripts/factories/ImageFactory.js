@@ -13,7 +13,7 @@ app.factory('imageFactory',['$http',
       $http.get(HerokuUrl + 'amazon/sign_key').success(function(response) {
         resolve(response);
       });
-    }); 
+    });
   };
 
   var formImageParams = function(signKeyResponse) {
@@ -36,9 +36,21 @@ app.factory('imageFactory',['$http',
 
   var upsertImageToAPI = function(imageFile, post, imageParams) {
     if(post.post.food_image) {
-      return $http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params);
+      return $q(function(resolve, reject) {
+        $http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params).success(function(response) {
+          resolve(response);
+        }).error(function(data) {
+          reject(data);
+        });
+      });
     } else {
-      return $http.post(HerokuUrl + 'food_images', imageParams);
+      return $q(function(resolve, reject) {
+        $http.post(HerokuUrl + 'food_images', imageParams).success(function(response) {
+          resolve(response);
+        }).error(function(data) {
+          reject(data);
+        });
+      });
     }
   };
 
