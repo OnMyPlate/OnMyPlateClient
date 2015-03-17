@@ -9,7 +9,8 @@ app.controller('AddCtrl', ['$scope',
                            'dataFactory',
                            'foodFactory',
                            'userFactory',
-                           function($scope, $http, HerokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory) {
+                           '$rootScope',
+                           function($scope, $http, HerokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory, $rootScope) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5];
   var users = [];
@@ -19,7 +20,7 @@ app.controller('AddCtrl', ['$scope',
   });
 
   // Checks if passed object contains any property, 
-  // if it is than it sets the scope.foods wiht that params in the form so the user can update the food
+  // if it is than it sets the scope.foods with that params in the form so the user can update the food
   (function() {
     var params = foodFactory.params;
     if(params.name) {
@@ -37,9 +38,9 @@ app.controller('AddCtrl', ['$scope',
     var foodParams = {food: food};
 
     if(food.id) {
-      $http.put(HerokuUrl + 'foods/' + food.id + '.json', foodParams).success(function(response) {
+      $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
         console.log('food updated!');
-        $q.all(upsertPost(post, image, response)).then(function() {
+        upsertPost(post, image, response).then(function() {
           dataFactory.fetchUsers().then(function(response) {
             $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
             $location.path('/profile/' + $scope.currentUser.id);
@@ -49,7 +50,7 @@ app.controller('AddCtrl', ['$scope',
     } else {
       $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
-        $q.all(upsertPost(post, image, response)).then(function(response) {
+        upsertPost(post, image, response).then(function(response) {
           dataFactory.fetchUsers().then(function(response) {
             $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
             $location.path('/profile/' + $scope.currentUser.id);
@@ -61,22 +62,29 @@ app.controller('AddCtrl', ['$scope',
   }; 
 
   var upsertPost = function(post, image, food) {
-    var postParams = {post: {
-      rating: post.rating,
-      review: post.review,
-      food_id: food.id 
-    }};
-    
+    var postParams = {post: post};
+    postParams.post.food_id = food.id;
+
     if(post.id) {
-      $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
+      return $http.put(HerokuUrl + 'posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
-        $q.all(imageFactory.signKey(image, postParams));
+        imageFactory.getSignKey().then(function(response) {
+          var signKeyResponse = response;
+          var imageParams = imageFactory.formImageParams(signKeyResponse);
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]);
+        });
       });
     } else {
-      $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+      return $http.post(HerokuUrl + 'posts', postParams).success(function(response) {
         console.log('post created!');
         $scope.addedPostId = response.id;
-        $q.all(imageFactory.signKey(image, postParams));
+        imageFactory.getSignKey().then(function(response) {
+          var signKeyResponse = response;
+          var imageParams = imageFactory.formImageParams(signKeyResponse);
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]).then(function(response) {
+            $rootScope.imageResponse = response[1];
+          });
+        });
       });
     }
   };

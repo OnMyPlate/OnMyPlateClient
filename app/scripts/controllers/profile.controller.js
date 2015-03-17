@@ -8,13 +8,19 @@ app.controller('ProfileCtrl',['$http',
                               '$window', 
                               'dataFactory',
                               '$location',
-                              'foodFactory', 
-                              function($http, HerokuUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory) {
+                              'foodFactory',
+                              '$rootScope',
+                              function($http, HerokuUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory, $rootScope) {
 
   var users = [];
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
+    $rootScope.$watch('imageResponse', function(newVal, oldVal) {
+      if(!!newVal) {
+        $scope.foods[$scope.foods.length-1].posts[0].food_image = newVal;
+      }
+    });
     dataFactory.fetchUsers().then(function(response) {
       $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
     });
