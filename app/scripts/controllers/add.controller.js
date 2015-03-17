@@ -66,7 +66,7 @@ app.controller('AddCtrl', ['$scope',
     postParams.post.food_id = food.id;
 
     if(post.id) {
-      return $http.put(HerokuUrl + 'foods/' + food.id + '/posts/' + post.id, postParams).success(function(response) {
+      return $http.put(HerokuUrl + 'posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
         imageFactory.getSignKey().success(function(response) {
           var signKeyResponse = response;
@@ -79,7 +79,7 @@ app.controller('AddCtrl', ['$scope',
         });
       });
     } else {
-      return $http.post(HerokuUrl + 'foods/' + food.id + '/posts', postParams).success(function(response) {
+      return $http.post(HerokuUrl + 'posts', postParams).success(function(response) {
         console.log('post created!');
         $scope.addedPostId = response.id;
         imageFactory.getSignKey().success(function(response) {
@@ -87,7 +87,7 @@ app.controller('AddCtrl', ['$scope',
           var imageParams = imageFactory.formImageParams(signKeyResponse);
           imageFactory.postImageToS3(image, signKeyResponse).success(function() {
             imageFactory.upsertImageToAPI(image, postParams, imageParams).success(function(response) {
-              debugger
+              $rootScope.imageResponse = response;
             });
           });
         });

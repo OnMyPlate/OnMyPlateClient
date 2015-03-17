@@ -9,7 +9,8 @@ app.controller('ProfileCtrl',['$http',
                               'dataFactory',
                               '$location',
                               'foodFactory',
-                              function($http, HerokuUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory) {
+                              '$rootScope',
+                              function($http, HerokuUrl, $scope, userFactory, $q, $window, dataFactory, $location, foodFactory, $rootScope) {
 
   var users = [];
 
