@@ -30,7 +30,8 @@ app.controller('AddCtrl', ['$scope',
   })();
   
 
-  $scope.upsertReview = function(post, image, food) {
+  $scope.upsertReview = function(post, food) {
+    var image = $('input[type=file]')[0].files[0];
     upsertFood(food, post, image);
   };
 
