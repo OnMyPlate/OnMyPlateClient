@@ -41,7 +41,7 @@ app.controller('AddCtrl', ['$scope',
     if(food.id) {
       $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
         console.log('food updated!');
-        upsertPost(post, image, response).then(function() {
+        upsertPost(post, image, response).then(function(response) {
           dataFactory.fetchUsers().then(function(response) {
             $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
             $location.path('/profile/' + $scope.currentUser.id);
@@ -65,14 +65,15 @@ app.controller('AddCtrl', ['$scope',
   var upsertPost = function(post, image, food) {
     var postParams = {post: post};
     postParams.post.food_id = food.id;
-
     if(post.id) {
       return $http.put(HerokuUrl + 'posts/' + post.id, postParams).success(function(response) {
         console.log('post updated!');
         imageFactory.getSignKey().then(function(response) {
           var signKeyResponse = response;
           var imageParams = imageFactory.formImageParams(signKeyResponse);
-          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]);
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]).then(function(response) {
+            $rootScope.imageResponse = response[1];
+          });
         });
       });
     } else {

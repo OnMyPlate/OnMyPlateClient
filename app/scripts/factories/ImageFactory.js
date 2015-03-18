@@ -37,7 +37,7 @@ app.factory('imageFactory',['$http',
   var upsertImageToAPI = function(imageFile, post, imageParams) {
     if(post.post.food_image) {
       return $q(function(resolve, reject) {
-        $http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, image_params).success(function(response) {
+        $http.put(HerokuUrl + 'food_images/' + post.post.food_image.id, imageParams).success(function(response) {
           resolve(response);
         }).error(function(data) {
           reject(data);
