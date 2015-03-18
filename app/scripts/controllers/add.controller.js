@@ -28,11 +28,11 @@ app.controller('AddCtrl', ['$scope',
       $scope.post = params.posts[0];
     }
   })();
-  
 
   $scope.upsertReview = function(post, food) {
     var image = $('input[type=file]')[0].files[0];
     upsertFood(food, post, image);
+    clearForm();
   };
 
   var upsertFood = function(food, post, image) {
@@ -90,5 +90,10 @@ app.controller('AddCtrl', ['$scope',
       });
     }
   };
+
+  var clearForm = function() {
+    $scope.food = {};
+    $scope.post = {};
+  }
 
 }]);
