@@ -383,20 +383,26 @@ img[alt="Food Picture"] {
 
 /* line 196, ../sass/partials/_base.sass */
 .custom-error {
-  color: #CC0000;
+  color: rgba(7, 7, 7, 0.74);
+  background-color: #c94a4a;
+  height: 34px;
+  position: relative;
+  text-align: center;
+  top: -15px;
+  border-radius: 3px;
 }
 
-/* line 199, ../sass/partials/_base.sass */
+/* line 205, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 202, ../sass/partials/_base.sass */
+/* line 208, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 205, ../sass/partials/_base.sass */
+/* line 211, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -407,7 +413,7 @@ img[alt="Food Picture"] {
   color: white;
   height: 50px;
 }
-/* line 214, ../sass/partials/_base.sass */
+/* line 220, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -418,41 +424,41 @@ img[alt="Food Picture"] {
   top: 15px;
 }
 
-/* line 219, ../sass/partials/_base.sass */
+/* line 225, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 224, ../sass/partials/_base.sass */
+/* line 230, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 227, ../sass/partials/_base.sass */
+/* line 233, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 232, ../sass/partials/_base.sass */
+/* line 238, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 236, ../sass/partials/_base.sass */
+/* line 242, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 241, ../sass/partials/_base.sass */
+/* line 247, ../sass/partials/_base.sass */
 #dashboard h1 {
   text-align: center;
 }
 
-/* line 245, ../sass/partials/_base.sass */
+/* line 251, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;
