@@ -5,7 +5,8 @@ app.factory('userFactory',['$window', '$http', 'HerokuUrl', function($window, $h
   var defineCurrentUser = function(users) {
 
     var token = getToken();
-    return users.filter(function(user) { return user.token === token})[0];
+    return $http.post(HerokuUrl + 'current_user', {token: token});
+    // return users.filter(function(user) { return user.token === token})[0];
   };
 
 
