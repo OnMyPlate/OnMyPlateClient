@@ -10,8 +10,8 @@ app.controller('AccountCtrl', ['dataFactory',
                                function(dataFactory, userFactory, $scope, $http, HerokuUrl, $location, $window) {
 
 
-  dataFactory.fetchUsers().then(function(response) {
-      $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+  userFactory.defineCurrentUser().then(function(response) {
+    $scope.currentUser = response.data;
   });
 
   $scope.deleteAccount = function(user) {

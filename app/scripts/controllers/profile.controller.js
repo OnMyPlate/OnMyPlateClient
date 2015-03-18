@@ -21,8 +21,8 @@ app.controller('ProfileCtrl',['$http',
         $scope.foods[$scope.foods.length-1].posts[0].food_image = newVal;
       }
     });
-    dataFactory.fetchUsers().then(function(response) {
-      $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+    userFactory.defineCurrentUser().then(function(response) {
+      $scope.currentUser = response.data;
     });
   });
 

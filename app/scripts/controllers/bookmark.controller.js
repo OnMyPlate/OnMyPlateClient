@@ -12,8 +12,8 @@ app.controller('BookmarkCtrl', ['dataFactory',
 
   var users = [];
 
-  dataFactory.fetchUsers().then(function(response) {
-    $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+  userFactory.defineCurrentUser().then(function(response) {
+    $scope.currentUser = response.data;
     $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
       $scope.bookmarks = response[1].data.bookmarks;
       $scope.foods = response[0].data.foods;

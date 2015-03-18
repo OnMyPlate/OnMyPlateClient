@@ -42,8 +42,8 @@ app.controller('AddCtrl', ['$scope',
       $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
         console.log('food updated!');
         upsertPost(post, image, response).then(function(response) {
-          dataFactory.fetchUsers().then(function(response) {
-            $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+          userFactory.defineCurrentUser().then(function(response) {
+            $scope.currentUser = response.data;
             $location.path('/profile/' + $scope.currentUser.id);
           });
         });
@@ -52,11 +52,10 @@ app.controller('AddCtrl', ['$scope',
       $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
         upsertPost(post, image, response).then(function(response) {
-          dataFactory.fetchUsers().then(function(response) {
-            $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+          userFactory.defineCurrentUser().then(function(response) {
+            $scope.currentUser = response.data;
             $location.path('/profile/' + $scope.currentUser.id);
           });
-          
         });
       });
     }

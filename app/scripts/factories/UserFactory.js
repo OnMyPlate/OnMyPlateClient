@@ -3,10 +3,8 @@
 app.factory('userFactory',['$window', '$http', 'HerokuUrl', function($window, $http, HerokuUrl) {
 
   var defineCurrentUser = function(users) {
-
     var token = getToken();
     return $http.post(HerokuUrl + 'current_user', {token: token});
-    // return users.filter(function(user) { return user.token === token})[0];
   };
 
 
