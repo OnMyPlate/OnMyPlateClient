@@ -383,7 +383,7 @@ img[alt="Food Picture"] {
 
 /* line 196, ../sass/partials/_base.sass */
 .custom-error {
-  color: rgba(7, 7, 7, 0.74);
+  color: rgba(255, 255, 255, 0.9);
   background-color: #c94a4a;
   height: 34px;
   position: relative;
