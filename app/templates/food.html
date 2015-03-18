@@ -12,19 +12,9 @@
   </div>
   <br>
 
-  <form name="addNewPostForm" enctype="multipart/form-data" ng-submit="postNewPost(post, image, currentFood)" autocomplete="on" hidden novalidate>
+  <form name="addNewPostForm" enctype="multipart/form-data" ng-submit="postNewPost(post, currentFood)" autocomplete="on" hidden novalidate>
 
-    <div class="form-group">
-      <label for="post-image">Food Image</label>
-      <p class="help-block">From your computer</p>
-      <input type="hidden" name="key" value="key" />
-      <input type="hidden" name="AWSAccessKeyId" value="access_key" />
-      <input type="hidden" name="acl" value="public-read" />
-      <input type="hidden" name="policy" value="policy" />
-      <input type="hidden" name="signature" value="signature" />
-      <input type="hidden" name="Content-Type" value="image/jpeg">
-      <input type="file" name="file" fileread="image" required>
-    </div>
+    <aws-uploader key="key" access-key="access_key" policy="policy" signature="signature"></aws-uploader>
 
     <div class="form-group">
       <label for="rating">Rating: </label>

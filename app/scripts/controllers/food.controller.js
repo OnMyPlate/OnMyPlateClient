@@ -9,8 +9,9 @@ app.controller('FoodCtrl',['$location',
                            '$http',
                            'HerokuUrl',
                            'imageFactory',
-                           'authFactory', 
-                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, HerokuUrl, imageFactory, authFactory) {
+                           'authFactory',
+                           '$rootScope', 
+                           function($location, $scope, dataFactory, foodFactory, userFactory, $q, $http, HerokuUrl, imageFactory, authFactory, $rootScope) {
 
 
     var users = [];
@@ -23,6 +24,11 @@ app.controller('FoodCtrl',['$location',
       $scope.posts = $scope.currentFood.posts;
       foodFactory.calcFoodRating($scope.posts);
       $scope.avgFoodRating = foodFactory.ratingsArr;
+      $rootScope.$watch('postImageResponse', function(newVal, oldVal) {
+        if(!!newVal) {
+          $scope.posts[$scope.posts.length-1].food_image = newVal;
+        }
+      });
     });
 
     dataFactory.fetchUsers().then(function(response) {
@@ -61,17 +67,20 @@ app.controller('FoodCtrl',['$location',
       $('form').hide(400);
     };
 
-    $scope.postNewPost = function(post, image, food) {
-      var postParams = {post: {
-        rating: post.rating,
-        review: post.review,
-        food_id: food.id 
-      }};
+    $scope.postNewPost = function(post, food) {
+      var image = $('input[type=file]')[0].files[0];
+      var postParams = {post: post};
+      postParams.post.food_id = food.id;
 
       $http.post(HerokuUrl + 'posts', postParams).success(function(response) {
         $scope.posts.push(response);
-        $q.all(imageFactory.signKey(image, postParams)).then(function(response) {
-          console.log('post created!');
+        console.log('post created!')
+        imageFactory.getSignKey().then(function(response) {
+          var signKeyResponse = response;
+          var imageParams = imageFactory.formImageParams(signKeyResponse);
+          $q.all([imageFactory.postImageToS3(image, signKeyResponse), imageFactory.upsertImageToAPI(image, postParams, imageParams)]).then(function(response) {
+            $rootScope.postImageResponse = response[1];
+          });
         });
       });
     };
