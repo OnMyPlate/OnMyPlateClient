@@ -29,15 +29,16 @@ app.factory('foodFactory',['$location', function($location) {
   var calcFoodRating = function(posts) {
     var ratings = [];
     var sum = 0;
-    for(var i = 0; i < posts.length; i++) {
-      sum += posts[i].rating;
-    }
+    posts.forEach(function(post) {
+      sum += post.rating;
+    });
 
     var rating = parseInt(sum / posts.length);
     
-    for(var i = 0; i < rating; i++) {
+
+    for(var i = 0; i < rating; i++)
       ratings.push(i);
-    }
+    
     angular.copy(ratings, ratingsArr)
     
   };
