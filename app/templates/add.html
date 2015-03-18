@@ -17,7 +17,7 @@
       <input type="file" name="file" fileread="image" required>
     </div>
 
-    <typeahead type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name"></typeahead>
+    <add-food-input type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.restaurantname.$dirty && upsertFoodForm.restaurantname.$invalid">
       <span ng-show="upsertFoodForm.restaurantname.$error.required">Invalid: Restaurant name is required.</span>
@@ -26,7 +26,7 @@
 
 
 
-    <typeahead type="text" items="foods" property="city" name="restaurantcity" model="food.city" prompt="Restaurant City"></typeahead>
+    <add-food-input type="text" items="foods" property="city" name="restaurantcity" model="food.city" prompt="Restaurant City"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.restaurantcity.$dirty && upsertFoodForm.restaurantcity.$invalid">
       <span ng-show="upsertFoodForm.restaurantcity.$error.required">Invalid: Restaurant city is required.</span>
@@ -35,7 +35,7 @@
 
 
 
-    <typeahead type="text" items="foods" property="state" name="restaurantstate" model="food.state" prompt="Restaurant State"></typeahead>
+    <add-food-input type="text" items="foods" property="state" name="restaurantstate" model="food.state" prompt="Restaurant State"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.restaurantstate.$dirty && upsertFoodForm.restaurantstate.$invalid">
       <span ng-show="upsertFoodForm.restaurantstate.$error.required">Invalid: Restaurant state is required.</span>
@@ -44,7 +44,7 @@
 
 
 
-    <typeahead type="text" items="foods" property="name" name="foodname" model="food.name" prompt="Food Name"></typeahead>
+    <add-food-input type="text" items="foods" property="name" name="foodname" model="food.name" prompt="Food Name"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.foodname.$dirty && upsertFoodForm.foodname.$invalid">
       <span ng-show="upsertFoodForm.foodname.$error.required">Invalid: Food name is required.</span>

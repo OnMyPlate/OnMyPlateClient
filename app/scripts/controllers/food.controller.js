@@ -77,7 +77,6 @@ app.controller('FoodCtrl',['$location',
     };
 
     $scope.removePost = function(post, food) {
-      debugger
       if(food.posts.length === 1) {
         $http.delete(HerokuUrl + '/foods/' + food.id + '.json').success(function(response) {
           $location.path('/');
