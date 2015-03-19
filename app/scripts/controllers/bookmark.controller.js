@@ -33,12 +33,8 @@ app.controller('BookmarkCtrl', ['dataFactory',
 
     var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
                             .filter(function(bookmark) { return bookmark.food_id === food.id})
-                            .filter(function(bookmark) { return bookmark.bookmarked === true});
-    if(bookmark[0] !== undefined) {
-      return bookmark[0].bookmarked;
-    } else {
-      return false;
-    }
+                            .filter(function(bookmark) { return bookmark.bookmarked === true})[0];
+    return !!bookmark ? bookmark.bookmarked : false;
   };
 
   $scope.getAvgRating = function(food) {
