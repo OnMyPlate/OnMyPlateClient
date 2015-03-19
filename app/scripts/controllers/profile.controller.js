@@ -22,7 +22,7 @@ app.controller('ProfileCtrl',['$http',
       }
     });
     userFactory.defineCurrentUser().then(function(response) {
-      $scope.currentUser = response.data;
+      $scope.currentUser = response.data.current_user;
     });
   });
 

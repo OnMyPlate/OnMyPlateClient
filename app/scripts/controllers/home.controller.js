@@ -14,7 +14,7 @@ app.controller('HomeCtrl', ['dataFactory',
   var users = [];
 
   userFactory.defineCurrentUser().then(function(response) {
-    $scope.currentUser = response.data;
+    $scope.currentUser = response.data.current_user;
   });
 
   $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {

@@ -42,7 +42,7 @@ app.controller('AddCtrl', ['$scope',
         console.log('food updated!');
         upsertPost(post, image, response).then(function(response) {
           userFactory.defineCurrentUser().then(function(response) {
-            $scope.currentUser = response.data;
+            $scope.currentUser = response.data.current_user;
             $location.path('/profile/' + $scope.currentUser.id);
           });
         });
@@ -52,7 +52,7 @@ app.controller('AddCtrl', ['$scope',
         console.log('food created!');
         upsertPost(post, image, response).then(function(response) {
           userFactory.defineCurrentUser().then(function(response) {
-            $scope.currentUser = response.data;
+            $scope.currentUser = response.data.current_user;
             $location.path('/profile/' + $scope.currentUser.id);
           });
         });
