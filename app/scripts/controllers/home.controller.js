@@ -32,9 +32,7 @@ app.controller('HomeCtrl', ['dataFactory',
   };
 
   $scope.getAvgRating = function(food) {
-    var posts = food.posts;
-
-    foodFactory.calcFoodRating(posts);
+    foodFactory.calcFoodRating(food.posts);
     return foodFactory.ratingsArr;
   };
 
@@ -46,9 +44,9 @@ app.controller('HomeCtrl', ['dataFactory',
     }};
 
     var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
-                            .filter(function(bookmark) { return bookmark.food_id === food.id});
-    if(bookmark[0] !== undefined) {
-      $http.delete(HerokuUrl + 'bookmarks/' + bookmark[0].id + '.json').success(function(response) {
+                            .filter(function(bookmark) { return bookmark.food_id === food.id})[0];
+    if(!!bookmark) {
+      $http.delete(HerokuUrl + 'bookmarks/' + bookmark.id + '.json').success(function(response) {
         console.log('food unbookmarked!');
         $scope.bookmarks.splice($scope.bookmarks.indexOf(bookmark), 1);
       });
@@ -63,12 +61,9 @@ app.controller('HomeCtrl', ['dataFactory',
   $scope.isBookmarked = function(food, user, bookmarks) {
       var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
                                      .filter(function(bookmark) { return bookmark.food_id === food.id})
-                                     .filter(function(bookmark) { return bookmark.bookmarked === true});
-      if(bookmark[0] !== undefined) {
-        return bookmark[0].bookmarked;
-      } else {
-        return false;
-      }
+                                     .filter(function(bookmark) { return bookmark.bookmarked === true})[0];
+
+      return !!bookmark ? bookmark.bookmarked : false;
   };
 
   $scope.isLoggedIn = function() {
