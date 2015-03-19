@@ -31,8 +31,8 @@ app.controller('FoodCtrl',['$location',
       });
     });
 
-    dataFactory.fetchUsers().then(function(response) {
-      $scope.currentUser = userFactory.defineCurrentUser(response.data.users);
+    userFactory.defineCurrentUser().then(function(response) {
+      $scope.currentUser = response.data;
       isLikedByCurrentUser($scope.posts, $scope.currentUser);
     });
 
@@ -44,9 +44,9 @@ app.controller('FoodCtrl',['$location',
           .filter(function(element) {
             return post.id === element.post_id});
         if (postLikes.length > 0) {
-          post.liked = '196baacd.glyphicons-13-heart.png';
+          post.liked = 'glyphicons-13-heart.png';
         } else {
-          post.liked = '4e59b096.glyphicons-20-heart-empty.png';
+          post.liked = 'glyphicons-20-heart-empty.png';
         }
       });
     };
@@ -100,31 +100,31 @@ app.controller('FoodCtrl',['$location',
       } 
     };
 
-    $scope.likePost = function(post) {
+    $scope.likePost = function(post, user) {
       var params = {like:{
         post_id: post.id
       }};
-      var likedByUser = $scope.currentUser.likes.filter(function(like) {
-        return like.user_id === $scope.currentUser.id
+      var likedByUser = $scope.user.likes.filter(function(like) {
+        return like.user_id === user.id
       }).filter(function(like) {return post.id === like.post_id});
 
 
 
-      if(likedByUser.length === 0 || (post.liked === '4e59b096.glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
+      if(likedByUser.length === 0 || (post.liked === 'glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
         $http.post(HerokuUrl + 'likes.json', params).success(function(response) {
           console.log('you like the post!!!');
-          $scope.currentUser.likes.push(response);
+          user.likes.push(response);
           $scope.posts.filter(function(element) {return element.id === response.post_id })[0].likes += 1;
-          $scope.posts.filter(function(post) {return response.post_id === post.id})[0].liked = '196baacd.glyphicons-13-heart.png';
+          $scope.posts.filter(function(post) {return response.post_id === post.id})[0].liked = 'glyphicons-13-heart.png';
         });
-      } else if(post.liked === '196baacd.glyphicons-13-heart.png') {
-        var likeId = $scope.currentUser.likes.filter(function(element) {return element.post_id === post.id})[0].id;
-        var deletedLike = $scope.currentUser.likes.filter(function(element) {return element.post_id === post.id})[0];
+      } else if(post.liked === 'glyphicons-13-heart.png') {
+        var likeId = user.likes.filter(function(element) {return element.post_id === post.id})[0].id;
+        var deletedLike = user.likes.filter(function(element) {return element.post_id === post.id})[0];
         $http.delete(HerokuUrl + 'likes/' + likeId + '.json').success(function(response) {
           console.log('you unliked the post!!!');
-          $scope.currentUser.likes.splice($scope.currentUser.likes.length-1, 1);
+          user.likes.splice(user.likes.length-1, 1);
           $scope.posts.filter(function(element) {return element.id === deletedLike.post_id })[0].likes -= 1;
-          $scope.posts.filter(function(post) {return post.id === deletedLike.post_id})[0].liked = '4e59b096.glyphicons-20-heart-empty.png';
+          $scope.posts.filter(function(post) {return post.id === deletedLike.post_id})[0].liked = 'glyphicons-20-heart-empty.png';
         });
       }
 

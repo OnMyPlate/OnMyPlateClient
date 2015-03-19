@@ -3,12 +3,7 @@
 app.factory('authFactory',['$http', '$window', 'HerokuUrl', '$location', function($http, $window, HerokuUrl, $location) {
 
   var login = function(params) {
-    return $http.post(HerokuUrl + 'login', params).success(function(response) {
-      // sessionStorage.setItem('key', 'value'), sets session in the browser
-      // Sets the headers for the request, and token for the authorization
-    }).error(function(response) {
-      $location.path('/login');
-    }); 
+    return $http.post(HerokuUrl + 'login', params);
   };
 
   var logout = function() {

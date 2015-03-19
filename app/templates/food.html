@@ -51,7 +51,7 @@
    
       <div class="media-body" id="media-body-post">
         <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removePost(post, currentFood)" ng-show="currentUser.id === post.user_id" id="food-post-remove"></span>
-        <img ng-src="images/{{post.liked}}" id="unliked" alt="unliked" ng-click="likePost(post)" ng-show="isLoggedIn() && currentUser.id !== post.user_id"> <span ng-show="isLoggedIn()">{{post.likes}} Likes</span>
+        <img ng-src="images/{{post.liked}}" id="unliked" alt="unliked" ng-click="likePost(post, currentUser)" ng-show="isLoggedIn() && currentUser.id !== post.user_id"> <span ng-show="isLoggedIn()">{{post.likes}} Likes</span>
   
         <div>
           <span class="rating-text"><strong>Rating: </strong></span>
