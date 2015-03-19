@@ -10,6 +10,7 @@ app.controller('NavbarCtrl',['$scope',
 
   userFactory.defineCurrentUser().then(function(response) {
     $scope.currentUser = response.data.current_user;
+    $scope.encodedUserId = window.btoa($scope.currentUser.id);
   });
 
   
