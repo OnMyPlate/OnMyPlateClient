@@ -17,9 +17,8 @@
     <aws-uploader key="key" access-key="access_key" policy="policy" signature="signature"></aws-uploader>
 
     <div class="form-group">
-      <label for="rating">Rating: </label>
       <select name="rating" class="form-control" ng-model="post.rating" ng-options="rating for rating in ratingVals" required>
-        <option value="">Select One</option>
+        <option value="">Rating</option>
       </select>
     </div>
 
@@ -29,8 +28,7 @@
     <br>
 
     <div class="form-group">
-      <label for="review">Review</label>
-      <textarea name="review" class="form-control" rows="5" ng-model="post.review" ng-minlength="100" required></textarea>
+      <textarea name="review" class="form-control" rows="5" ng-model="post.review" ng-minlength="100" placeholder="Review" required></textarea>
     </div>
 
     <div class="custom-error" ng-show="addNewPostForm.review.$dirty && addNewPostForm.review.$invalid">

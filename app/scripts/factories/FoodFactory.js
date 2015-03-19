@@ -14,14 +14,6 @@ app.factory('foodFactory',['$location', function($location) {
     return arr.filter(function(element) { return element.id === foodId})[0];
   };
 
-  var searchDuplicate = function(arr, model) {
-    for(var i = 0; i < arr.length; i++) {
-      if(arr[i].name === model.name) {
-        return arr[i];
-      }
-    }
-  };
-
   var storeFood = function(food) {
     angular.copy(food, params);
   };
@@ -45,7 +37,6 @@ app.factory('foodFactory',['$location', function($location) {
 
   return {
     findCurrentFood: findCurrentFood,
-    searchDuplicate: searchDuplicate,
     storeFood: storeFood,
     params: params,
     calcFoodRating: calcFoodRating,

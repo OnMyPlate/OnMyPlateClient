@@ -116,17 +116,16 @@ app.controller('FoodCtrl',['$location',
       } else {
         var likedByUser = [];
       }
-        debugger
       if(likedByUser.length === 0 || (post.liked === 'glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
         $http.post(HerokuUrl + 'likes.json', params).success(function(response) {
           console.log('you like the post!!!');
           userLikes.push(response);
-          $scope.posts.filter(function(element) {return element.id === response.post_id })[0].likes += 1;
+          $scope.posts.filter(function(post) {return post.id === response.post_id })[0].likes += 1;
           $scope.posts.filter(function(post) {return response.post_id === post.id})[0].liked = 'glyphicons-13-heart.png';
         });
       } else if(post.liked === 'glyphicons-13-heart.png') {
-        var likeId = userLikes.filter(function(element) {return element.post_id === post.id})[0].id;
-        var deletedLike = userLikes.filter(function(element) {return element.post_id === post.id})[0];
+        var likeId = userLikes.filter(function(like) {return like.post_id === post.id})[0].id;
+        var deletedLike = userLikes.filter(function(like) {return like.post_id === post.id})[0];
         $http.delete(HerokuUrl + 'likes/' + likeId + '.json').success(function(response) {
           console.log('you unliked the post!!!');
           userLikes.splice(userLikes.length-1, 1);
