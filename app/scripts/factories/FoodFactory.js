@@ -2,16 +2,15 @@
 
 app.factory('foodFactory',['$location', function($location) {
 
-  var params = {};
-  var ratingsArr = [];
+  var params = {}, ratingsArr = [];
 
   var getFoodId = function(path) {
     return parseInt(path.match(/\d+$/)[0]);
   };
 
-  var findCurrentFood = function(arr, path) {
+  var findCurrentFood = function(foods, path) {
     var foodId = getFoodId(path);
-    return arr.filter(function(element) { return element.id === foodId})[0];
+    return foods.filter(function(food) { return food.id === foodId})[0];
   };
 
   var storeFood = function(food) {
@@ -19,16 +18,16 @@ app.factory('foodFactory',['$location', function($location) {
   };
 
   var calcFoodRating = function(posts) {
-    var ratings = [];
-    var sum = 0;
+    var ratings = [], sum = 0, i, rating;
+
     posts.forEach(function(post) {
       sum += post.rating;
     });
 
-    var rating = parseInt(sum / posts.length);
+    rating = parseInt(sum / posts.length);
     
 
-    for(var i = 0; i < rating; i++)
+    for(i = 0; i < rating; i++)
       ratings.push(i);
     
     angular.copy(ratings, ratingsArr)
