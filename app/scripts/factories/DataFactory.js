@@ -5,9 +5,7 @@ app.factory('dataFactory',['$http', 'HerokuUrl', function($http, HerokuUrl) {
   var params = {};
 
   var fetchFoods = function() {
-    return $http.get(HerokuUrl + 'foods.json').success(function(response) {
-      return response.foods;
-    });
+    return $http.get(HerokuUrl + 'foods.json');
   };
 
   var fetchUsers = function() {

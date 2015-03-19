@@ -24,6 +24,10 @@ app.controller('FoodCtrl',['$location',
       $scope.posts = $scope.currentFood.posts;
       foodFactory.calcFoodRating($scope.posts);
       $scope.avgFoodRating = foodFactory.ratingsArr;
+      userFactory.defineCurrentUser().then(function(response) {
+        $scope.currentUser = response.data;
+        isLikedByCurrentUser($scope.posts, $scope.currentUser);
+      });
       $rootScope.$watch('postImageResponse', function(newVal, oldVal) {
         if(!!newVal) {
           $scope.posts[$scope.posts.length-1].food_image = newVal;
@@ -31,24 +35,21 @@ app.controller('FoodCtrl',['$location',
       });
     });
 
-    userFactory.defineCurrentUser().then(function(response) {
-      $scope.currentUser = response.data;
-      isLikedByCurrentUser($scope.posts, $scope.currentUser);
-    });
-
     var isLikedByCurrentUser = function(posts, user) {
-      posts.forEach(function(post) {
-        var postLikes = user.likes
-          .filter(function(like) {
-            return like.user_id === user.id })
-          .filter(function(element) {
-            return post.id === element.post_id});
-        if (postLikes.length > 0) {
-          post.liked = 'glyphicons-13-heart.png';
-        } else {
-          post.liked = 'glyphicons-20-heart-empty.png';
-        }
-      });
+      if(!!user.likes) {
+        posts.forEach(function(post) {
+          var postLikes = user.likes
+            .filter(function(like) {
+              return like.user_id === user.id })
+            .filter(function(element) {
+              return post.id === element.post_id});
+          if (postLikes.length > 0) {
+            post.liked = 'glyphicons-13-heart.png';
+          } else {
+            post.liked = 'glyphicons-20-heart-empty.png';
+          }
+        });
+      }
     };
 
     $scope.getRating = function(post) {
