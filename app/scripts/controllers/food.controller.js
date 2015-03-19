@@ -102,14 +102,15 @@ app.controller('FoodCtrl',['$location',
     };
 
     $scope.likePost = function(post, user) {
-      var params = {like:{
-        post_id: post.id
-      }};
-      var likedByUser = $scope.user.likes.filter(function(like) {
-        return like.user_id === user.id
-      }).filter(function(like) {return post.id === like.post_id});
+      var params = {like: {post_id: post.id, user_id: user.id}};
 
-
+      if(!!user.likes) {
+        var likedByUser = user.likes.filter(function(like) {
+          return like.user_id === user.id
+        }).filter(function(like) {return post.id === like.post_id});
+      } else {
+        var likedByUser = [];
+      }
 
       if(likedByUser.length === 0 || (post.liked === 'glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
         $http.post(HerokuUrl + 'likes.json', params).success(function(response) {
