@@ -16,6 +16,7 @@ app.controller('NavbarCtrl',['$scope',
   
   $scope.logout = function() {
     authFactory.logout().success(function(response) {
+      $('body').addClass('bg-login');
       $location.path('/login')
     });
   };

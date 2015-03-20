@@ -20,7 +20,7 @@ app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function(
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
   $rootScope.$on('$routeChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
-      $('body').removeClass('bg.login');
+      $('body').removeClass('bg-login');
       $('body').removeClass('bg-reg');
       $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
 

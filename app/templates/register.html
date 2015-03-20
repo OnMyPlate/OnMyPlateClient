@@ -11,9 +11,8 @@
   </div>
   
   <form role="form" name="registerUserForm" ng-submit="registerUser(user)" novalidate>
-  
+    <h1>Register</h1>
     <div class="form-group register-form">
-      <label for="username">Username</label>
       <input type="username" class="form-control" name="username" ng-model="user.username" placeholder="Enter username" required>
     </div>
 
@@ -23,7 +22,6 @@
     <br>
   
     <div class="form-group register-form">
-      <label for="email">Email address</label>
       <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="Enter email" required>
     </div>
 
@@ -33,7 +31,6 @@
     <br>
   
     <div class="form-group register-form">
-      <label for="password">Password</label>
       <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password" required>
     </div>
 
@@ -43,7 +40,6 @@
     <br>
   
     <div class="form-group register-form">
-      <label for="password-confirmation">Password Confirmation</label>
       <input type="password" class="form-control" name="passconf" ng-model="user.password_confirmation" placeholder="Re-enter password" required>
     </div>
 
