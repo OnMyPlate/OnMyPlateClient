@@ -1,8 +1,8 @@
 *
   box-size: border-box
-
+// =================================
 // Background Images
-// ============================================
+// =================================
 .bg-login
   +background("../images/dessert.jpg")
 
@@ -11,7 +11,7 @@
 
 .bg-about
   +background("../images/asparagus.jpg")
-// ============================================
+// =================================
 
 
 
@@ -54,20 +54,22 @@ button.btn.btn-default.submit
   p.about
     font-size: 2.0em
     color: rgb(8, 8, 8)
+    font-style: italic
 
 p,
 h6,
 .review
   line-height: 1.5em
 
+// =================================
 // Navigation Bar
+// =================================
 
 #navbar
   width: 100%
   height: 66px
   border-bottom: 1px solid rgba(156, 57, 57, 0.91)
   background-color: rgba(156, 57, 57, 0.91)
-  // box-shadow: inset 3px 2px 10px 0px rgba(211, 139, 62, 0.53)
   #menu
     display: none
 
@@ -118,8 +120,11 @@ div#header
     background-color: rgba(255, 255, 255, 0.88)
     margin: 4px 0px
     border-radius: 2px
+// =================================
 
+// =================================
 // Sidebar
+// =================================
 
 .sidebar
   border: 1px solid #C2C2C2
@@ -138,9 +143,12 @@ div#header
 
 .sidebaractive
   background-color: rgba(190, 119, 124, 0.26)
+// =================================
+
 
 hr
   margin: 0px
+
 
 .glyphicon.glyphicon-bookmark.home
   float: right
@@ -190,8 +198,11 @@ hr
 .rating-text 
   font-size: 1.2em
 
-// Images on the posts and foods
 
+
+// =================================
+// Images on the posts and foods
+// =================================
 .thumbnail a > img
   height: 200px
   width: 200px
@@ -208,15 +219,16 @@ img
     margin-top: 16px
     margin-bottom: 10px
     width: 150px
-  &[alt="Food Picture"]
-    // margin: 18px
 
 .img-rounded
   height: 200px
   width: 200px
+// =================================
 
+
+// =================================
 //Errors
-
+// =================================
 .custom-error
   color: rgba(255, 255, 255, 0.9)
   background-color: rgb(201, 74, 74)
@@ -252,8 +264,12 @@ img
 #confirm-email
   @extend #login-error
   background-color: green
-// Account Settings Page
+// =================================
 
+
+// =================================
+// Account Settings Page
+// =================================
 #account
   text-align: center
   margin-bottom: 55px
@@ -268,8 +284,11 @@ img
     background-color: #EDDBDC
   p
     margin: 26px 0px
+// =================================
 
+// =================================
 //loading animation
+// =================================
 #loader
   position: relative
   height: 20px
