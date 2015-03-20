@@ -16,34 +16,24 @@ app.constant('HerokuUrl', 'http://localhost:3000/')
 // app.constant('HerokuUrl', 'http://onmyplate.herokuapp.com/')
    .constant('AmazonS3', 'https://ompimages.s3.amazonaws.com/');
 
-app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function($rootScope, $location, $http, $window, authFactory) {
+app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', 'backgroundImageService', function($rootScope, $location, $http, $window, authFactory, backgroundImageService) {
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
   $rootScope.$on('$routeChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
-      $('body').removeClass('bg-login');
-      $('body').removeClass('bg-reg');
-      $('body').removeClass('bg-about');
+      backgroundImageService('removeAll');
       $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
 
     } else if($location.path() ===  '/') {
-      $('body').removeClass('bg-login');
-      $('body').removeClass('bg-reg');
-      $('body').removeClass('bg-about');
+      backgroundImageService('removeAll');
       $location.path('/');
     } else if($location.path() === '/register') {
-      $('body').removeClass('bg-login');
-      $('body').removeClass('bg-about');
-      $('body').addClass('bg-reg');
+      backgroundImageService('register');
       $location.path('/register');
     } else if($location.path() === '/about') {
-      $('body').removeClass('bg-login');
-      $('body').removeClass('bg-reg');
-      $('body').addClass('bg-about');
+      backgroundImageService('about');
       $location.path('/about');
     } else {
-      $('body').removeClass('bg-about');
-      $('body').removeClass('bg-reg');
-      $('body').addClass('bg-login');
+      backgroundImageService('login');
       $location.path('/login');
     }
   });
