@@ -364,48 +364,47 @@ hr {
 
 /* line 175, ../sass/partials/_base.sass */
 .delete-account {
-  left: -1%;
   width: 150px;
   color: rgba(255, 255, 255, 0.88);
   background-color: rgba(156, 57, 57, 0.91);
 }
 
-/* line 181, ../sass/partials/_base.sass */
+/* line 180, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 186, ../sass/partials/_base.sass */
+/* line 185, ../sass/partials/_base.sass */
 .thumbnail a > img {
   height: 200px;
   width: 200px;
 }
 
-/* line 190, ../sass/partials/_base.sass */
+/* line 189, ../sass/partials/_base.sass */
 .thumbnail {
   box-shadow: 1px 3px 8px -2px #555959;
   background-color: rgba(246, 232, 217, 0.35);
 }
 
-/* line 195, ../sass/partials/_base.sass */
+/* line 194, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: #edeb97;
 }
-/* line 198, ../sass/partials/_base.sass */
+/* line 197, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
   width: 150px;
 }
 
-/* line 205, ../sass/partials/_base.sass */
+/* line 204, ../sass/partials/_base.sass */
 .img-rounded {
   height: 200px;
   width: 200px;
 }
 
-/* line 211, ../sass/partials/_base.sass */
+/* line 210, ../sass/partials/_base.sass */
 .custom-error {
   color: rgba(255, 255, 255, 0.9);
   background-color: #c94a4a;
@@ -415,23 +414,23 @@ img[alt="Food Pictures"] {
   top: -15px;
   border-radius: 3px;
 }
-/* line 219, ../sass/partials/_base.sass */
+/* line 218, ../sass/partials/_base.sass */
 .custom-error span {
   position: relative;
   top: 5px;
 }
 
-/* line 223, ../sass/partials/_base.sass */
+/* line 222, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 226, ../sass/partials/_base.sass */
+/* line 225, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 229, ../sass/partials/_base.sass */
+/* line 228, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -442,7 +441,7 @@ img[alt="Food Pictures"] {
   color: white;
   height: 50px;
 }
-/* line 238, ../sass/partials/_base.sass */
+/* line 237, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -453,36 +452,36 @@ img[alt="Food Pictures"] {
   top: 15px;
 }
 
-/* line 243, ../sass/partials/_base.sass */
+/* line 242, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 248, ../sass/partials/_base.sass */
+/* line 247, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 251, ../sass/partials/_base.sass */
+/* line 250, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 256, ../sass/partials/_base.sass */
+/* line 255, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 260, ../sass/partials/_base.sass */
+/* line 259, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 264, ../sass/partials/_base.sass */
+/* line 263, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;
@@ -614,9 +613,8 @@ input#search {
   /* line 62, ../sass/partials/_media.sass */
   .container.media-container {
     padding-top: 20px;
-    overflow: scroll;
   }
-  /* line 65, ../sass/partials/_media.sass */
+  /* line 64, ../sass/partials/_media.sass */
   .container.media-container .media.food {
     margin: 10px 0px;
     border: 1px solid #cccccc;
@@ -625,12 +623,12 @@ input#search {
     box-shadow: 1px 3px 8px -2px #555948;
     background-color: rgba(246, 232, 217, 0.35);
   }
-  /* line 72, ../sass/partials/_media.sass */
+  /* line 71, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-left.food {
     float: left;
     width: 20%;
   }
-  /* line 75, ../sass/partials/_media.sass */
+  /* line 74, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-body.food {
     display: inline-block;
     width: 73%;
@@ -640,13 +638,13 @@ input#search {
     padding-left: 10%;
   }
 
-  /* line 86, ../sass/partials/_media.sass */
+  /* line 85, ../sass/partials/_media.sass */
   span.glyphicon.glyphicon-edit {
     font-size: 1.2em;
     margin: 10px 0px;
   }
 
-  /* line 90, ../sass/partials/_media.sass */
+  /* line 89, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove {
     float: right;
     position: relative;
@@ -655,37 +653,35 @@ input#search {
     transition: font-size 0.2s ease;
     font-size: 1em;
   }
-  /* line 95, ../sass/partials/_media.sass */
+  /* line 94, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove:hover {
     cursor: pointer;
     font-size: 1.4em;
   }
 
-  /* line 99, ../sass/partials/_media.sass */
+  /* line 98, ../sass/partials/_media.sass */
   #media-body-post {
     float: right;
     width: 75%;
   }
 
-  /* line 103, ../sass/partials/_media.sass */
+  /* line 102, ../sass/partials/_media.sass */
   #media-left-post {
     float: left;
   }
 
-  /* line 106, ../sass/partials/_media.sass */
+  /* line 105, ../sass/partials/_media.sass */
   .edit-button,
   .remove-button {
     display: none;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 112, ../sass/partials/_media.sass */
+  /* line 111, ../sass/partials/_media.sass */
   .container.media-container {
     padding-top: 20px;
-    overflow: scroll;
-    white-space: nowrap;
   }
-  /* line 116, ../sass/partials/_media.sass */
+  /* line 113, ../sass/partials/_media.sass */
   .container.media-container .media.food {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
@@ -693,43 +689,43 @@ input#search {
     box-shadow: 1px 3px 8px -2px #555948;
     background-color: rgba(246, 232, 217, 0.35);
   }
-  /* line 122, ../sass/partials/_media.sass */
+  /* line 119, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-left.food {
     width: 20%;
   }
-  /* line 124, ../sass/partials/_media.sass */
+  /* line 121, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-body.food {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* line 132, ../sass/partials/_media.sass */
+  /* line 129, ../sass/partials/_media.sass */
   .container.post-container {
     padding-top: 20px;
   }
-  /* line 134, ../sass/partials/_media.sass */
+  /* line 131, ../sass/partials/_media.sass */
   .container.post-container .media.post {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
-  /* line 138, ../sass/partials/_media.sass */
+  /* line 135, ../sass/partials/_media.sass */
   .container.post-container .media.post #media-left-post {
     width: 20%;
   }
-  /* line 140, ../sass/partials/_media.sass */
+  /* line 137, ../sass/partials/_media.sass */
   .container.post-container .media.post #media-body-post {
     display: block;
   }
 
-  /* line 143, ../sass/partials/_media.sass */
+  /* line 140, ../sass/partials/_media.sass */
   .glyphicon.glyphicon-remove,
   .glyphicon.glyphicon-edit {
     display: none;
   }
 
-  /* line 147, ../sass/partials/_media.sass */
+  /* line 144, ../sass/partials/_media.sass */
   .edit-button,
   .remove-button {
     position: relative;
@@ -836,31 +832,19 @@ input#search {
   /* line 69, ../sass/partials/_smartphones.sass */
   .container.media-container {
     padding-top: 20px;
-    overflow: scroll;
-    white-space: nowrap;
   }
-  /* line 73, ../sass/partials/_smartphones.sass */
+  /* line 71, ../sass/partials/_smartphones.sass */
   .container.media-container .media.food {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     padding: 16px;
   }
-  /* line 77, ../sass/partials/_smartphones.sass */
+  /* line 75, ../sass/partials/_smartphones.sass */
   .container.media-container .media.food .media-left.food {
     width: 20%;
   }
-  /* line 79, ../sass/partials/_smartphones.sass */
-  .container.media-container .media.food .media-body.food {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  /* line 82, ../sass/partials/_smartphones.sass */
-  .container.media-container .media.food .media-body.food h6 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
-  /* line 86, ../sass/partials/_smartphones.sass */
+  /* line 78, ../sass/partials/_smartphones.sass */
   .edit-button,
   .remove-button {
     position: relative;
