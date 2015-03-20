@@ -91,6 +91,31 @@
 }
 
 /* line 4, ../sass/partials/_base.sass */
+.bg-login {
+  background: url(../images/dessert.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 7, ../sass/partials/_base.sass */
+.bg-reg {
+  background: url(../images/mango.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 10, ../sass/partials/_base.sass */
+button.btn.btn-default.login,
+button.btn.btn-default.register,
+button.btn.btn-default.submit {
+  width: 100%;
+}
+
+/* line 16, ../sass/partials/_base.sass */
 .line1 {
   -webkit-transform: rotateX(0) rotateY(0) rotateZ(45deg);
   -moz-transform: rotateX(0) rotateY(0) rotateZ(45deg);
@@ -100,12 +125,12 @@
   top: 4px;
 }
 
-/* line 9, ../sass/partials/_base.sass */
+/* line 21, ../sass/partials/_base.sass */
 .line2 {
   display: none;
 }
 
-/* line 11, ../sass/partials/_base.sass */
+/* line 23, ../sass/partials/_base.sass */
 .line3 {
   -webkit-transform: rotateX(0) rotateY(0) rotateZ(-45deg);
   -moz-transform: rotateX(0) rotateY(0) rotateZ(-45deg);
@@ -115,7 +140,7 @@
   bottom: 4px;
 }
 
-/* line 17, ../sass/partials/_base.sass */
+/* line 29, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-edit:hover,
 .glyphicon.glyphicon-cutlery:hover,
 .glyphicon.glyphicon-remove:hover,
@@ -125,52 +150,52 @@
   cursor: pointer;
 }
 
-/* line 25, ../sass/partials/_base.sass */
+/* line 37, ../sass/partials/_base.sass */
 .page-header {
   text-align: center;
 }
 
-/* line 28, ../sass/partials/_base.sass */
+/* line 40, ../sass/partials/_base.sass */
 #about {
   margin-top: 122px;
   text-align: center;
   line-height: 1.7em;
 }
-/* line 32, ../sass/partials/_base.sass */
+/* line 44, ../sass/partials/_base.sass */
 #about p.about {
   font-size: 2em;
 }
 
-/* line 35, ../sass/partials/_base.sass */
+/* line 47, ../sass/partials/_base.sass */
 p,
 h6,
 .review {
   line-height: 1.5em;
 }
 
-/* line 42, ../sass/partials/_base.sass */
+/* line 54, ../sass/partials/_base.sass */
 #navbar {
   width: 100%;
   height: 66px;
   border-bottom: 1px solid rgba(156, 57, 57, 0.91);
   background-color: rgba(156, 57, 57, 0.91);
 }
-/* line 48, ../sass/partials/_base.sass */
+/* line 60, ../sass/partials/_base.sass */
 #navbar #menu {
   display: none;
 }
 
-/* line 51, ../sass/partials/_base.sass */
+/* line 63, ../sass/partials/_base.sass */
 #collapse {
   border: 1px solid rgba(156, 57, 57, 0.91);
   background-color: rgba(156, 57, 57, 0.91);
 }
-/* line 54, ../sass/partials/_base.sass */
+/* line 66, ../sass/partials/_base.sass */
 #collapse ul {
   list-style: none;
   padding: 0px;
 }
-/* line 57, ../sass/partials/_base.sass */
+/* line 69, ../sass/partials/_base.sass */
 #collapse ul li {
   text-align: center;
   margin: 27px 0px;
@@ -179,17 +204,17 @@ h6,
   transition: font-size 0.2s ease;
   font-size: 1.3em;
 }
-/* line 62, ../sass/partials/_base.sass */
+/* line 74, ../sass/partials/_base.sass */
 #collapse ul li:hover {
   font-size: 1.7em;
 }
-/* line 64, ../sass/partials/_base.sass */
+/* line 76, ../sass/partials/_base.sass */
 #collapse ul li a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 68, ../sass/partials/_base.sass */
+/* line 80, ../sass/partials/_base.sass */
 div#header {
   display: inline-block;
   position: relative;
@@ -200,36 +225,36 @@ div#header {
   font-size: 2.2em;
   left: 43.5%;
 }
-/* line 75, ../sass/partials/_base.sass */
+/* line 87, ../sass/partials/_base.sass */
 div#header:hover {
   font-size: 2.3em;
 }
-/* line 77, ../sass/partials/_base.sass */
+/* line 89, ../sass/partials/_base.sass */
 div#header strong {
   text-align: center;
 }
-/* line 79, ../sass/partials/_base.sass */
+/* line 91, ../sass/partials/_base.sass */
 div#header strong a {
   color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
 }
-/* line 82, ../sass/partials/_base.sass */
+/* line 94, ../sass/partials/_base.sass */
 div#header strong a:hover {
   text-decoration: none;
 }
 
-/* line 85, ../sass/partials/_base.sass */
+/* line 97, ../sass/partials/_base.sass */
 #hamburger {
   float: right;
   position: relative;
   right: 30px;
   top: 14px;
 }
-/* line 90, ../sass/partials/_base.sass */
+/* line 102, ../sass/partials/_base.sass */
 #hamburger:hover {
   cursor: pointer;
 }
-/* line 92, ../sass/partials/_base.sass */
+/* line 104, ../sass/partials/_base.sass */
 #hamburger .line {
   width: 31px;
   height: 5px;
@@ -238,77 +263,77 @@ div#header strong a:hover {
   border-radius: 2px;
 }
 
-/* line 101, ../sass/partials/_base.sass */
+/* line 113, ../sass/partials/_base.sass */
 .sidebar {
   border: 1px solid #C2C2C2;
   margin-bottom: 20px;
 }
-/* line 104, ../sass/partials/_base.sass */
+/* line 116, ../sass/partials/_base.sass */
 .sidebar ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 108, ../sass/partials/_base.sass */
+/* line 120, ../sass/partials/_base.sass */
 .sidebar ul li {
   text-align: center;
   padding: 14px;
 }
-/* line 111, ../sass/partials/_base.sass */
+/* line 123, ../sass/partials/_base.sass */
 .sidebar ul li a {
   color: black;
 }
-/* line 113, ../sass/partials/_base.sass */
+/* line 125, ../sass/partials/_base.sass */
 .sidebar ul li a:hover {
   text-decoration: none;
 }
 
-/* line 116, ../sass/partials/_base.sass */
+/* line 128, ../sass/partials/_base.sass */
 .sidebaractive {
   background-color: rgba(190, 119, 124, 0.26);
 }
 
-/* line 119, ../sass/partials/_base.sass */
+/* line 131, ../sass/partials/_base.sass */
 hr {
   margin: 0px;
 }
 
-/* line 122, ../sass/partials/_base.sass */
+/* line 134, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-bookmark.home, #bookmarked {
   float: right;
   font-size: 1.3em;
 }
 
-/* line 126, ../sass/partials/_base.sass */
+/* line 138, ../sass/partials/_base.sass */
 #bookmarked {
   -webkit-transition: font-size 0.2s ease;
   -moz-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
 }
-/* line 129, ../sass/partials/_base.sass */
+/* line 141, ../sass/partials/_base.sass */
 #bookmarked:hover {
   font-size: 1.6em;
 }
 
-/* line 132, ../sass/partials/_base.sass */
+/* line 144, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery {
   -webkit-transition: font-size 0.2s ease;
   -moz-transition: font-size 0.2s ease;
   transition: font-size 0.2s ease;
   font-size: 1.34em;
 }
-/* line 135, ../sass/partials/_base.sass */
+/* line 147, ../sass/partials/_base.sass */
 .glyphicon.glyphicon-cutlery:hover {
   font-size: 1.6em;
 }
 
-/* line 139, ../sass/partials/_base.sass */
+/* line 151, ../sass/partials/_base.sass */
 .label.label-info {
   font-size: 0.9em;
   background-color: #CB7519;
 }
 
-/* line 143, ../sass/partials/_base.sass */
+/* line 155, ../sass/partials/_base.sass */
 .btn-default {
   background-color: #E1E9E9;
   -webkit-transition: background-color 0.2s linear;
@@ -317,18 +342,18 @@ hr {
   position: relative;
   margin-bottom: 12px;
 }
-/* line 148, ../sass/partials/_base.sass */
+/* line 160, ../sass/partials/_base.sass */
 .btn-default:hover {
   background-color: rgba(156, 57, 57, 0.91);
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 152, ../sass/partials/_base.sass */
+/* line 164, ../sass/partials/_base.sass */
 .btn.btn-default.read {
   left: 35%;
 }
 
-/* line 156, ../sass/partials/_base.sass */
+/* line 168, ../sass/partials/_base.sass */
 .login,
 .register {
   width: 100px;
@@ -336,7 +361,7 @@ hr {
   margin-top: 25px;
 }
 
-/* line 162, ../sass/partials/_base.sass */
+/* line 174, ../sass/partials/_base.sass */
 .delete-account {
   left: -1%;
   width: 150px;
@@ -344,44 +369,44 @@ hr {
   background-color: rgba(156, 57, 57, 0.91);
 }
 
-/* line 168, ../sass/partials/_base.sass */
+/* line 180, ../sass/partials/_base.sass */
 .rating-text {
   font-size: 1.2em;
 }
 
-/* line 173, ../sass/partials/_base.sass */
+/* line 185, ../sass/partials/_base.sass */
 .thumbnail a > img {
   height: 150px;
 }
 
-/* line 176, ../sass/partials/_base.sass */
+/* line 188, ../sass/partials/_base.sass */
 .thumbnail {
   box-shadow: 1px 3px 8px -2px #555959;
 }
 
-/* line 180, ../sass/partials/_base.sass */
+/* line 192, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: palegoldenrod;
 }
-/* line 183, ../sass/partials/_base.sass */
+/* line 195, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
   width: 150px;
 }
-/* line 187, ../sass/partials/_base.sass */
+/* line 199, ../sass/partials/_base.sass */
 img[alt="Food Picture"] {
   margin-bottom: 26px;
 }
 
-/* line 190, ../sass/partials/_base.sass */
+/* line 202, ../sass/partials/_base.sass */
 .img-rounded {
   height: 150px;
   width: 150px;
 }
 
-/* line 196, ../sass/partials/_base.sass */
+/* line 208, ../sass/partials/_base.sass */
 .custom-error {
   color: rgba(255, 255, 255, 0.9);
   background-color: #c94a4a;
@@ -392,17 +417,17 @@ img[alt="Food Picture"] {
   border-radius: 3px;
 }
 
-/* line 205, ../sass/partials/_base.sass */
+/* line 217, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 208, ../sass/partials/_base.sass */
+/* line 220, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 211, ../sass/partials/_base.sass */
+/* line 223, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -413,7 +438,7 @@ img[alt="Food Picture"] {
   color: white;
   height: 50px;
 }
-/* line 220, ../sass/partials/_base.sass */
+/* line 232, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -424,41 +449,41 @@ img[alt="Food Picture"] {
   top: 15px;
 }
 
-/* line 225, ../sass/partials/_base.sass */
+/* line 237, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 230, ../sass/partials/_base.sass */
+/* line 242, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 233, ../sass/partials/_base.sass */
+/* line 245, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 238, ../sass/partials/_base.sass */
+/* line 250, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 242, ../sass/partials/_base.sass */
+/* line 254, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 247, ../sass/partials/_base.sass */
+/* line 259, ../sass/partials/_base.sass */
 #dashboard h1 {
   text-align: center;
 }
 
-/* line 251, ../sass/partials/_base.sass */
+/* line 263, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;
@@ -475,14 +500,19 @@ img[alt="Food Picture"] {
 
 /* line 2, ../sass/partials/_forms.sass */
 form[name="loginUser"] {
-  margin-top: 93px;
+  margin-top: 119px;
 }
 /* line 4, ../sass/partials/_forms.sass */
+form[name="loginUser"] h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+/* line 7, ../sass/partials/_forms.sass */
 form[name="registerUserForm"] {
   margin-top: 93px;
 }
 
-/* line 7, ../sass/partials/_forms.sass */
+/* line 10, ../sass/partials/_forms.sass */
 .btn.btn-default.filter-button {
   background-color: #E1E9E9;
   position: relative;
@@ -490,35 +520,11 @@ form[name="registerUserForm"] {
   margin: 30px 0px;
 }
 
-/* line 13, ../sass/partials/_forms.sass */
+/* line 16, ../sass/partials/_forms.sass */
 input#search {
   margin: 30px 0px;
 }
 
-@media only screen and (min-width: 1204px) {
-  /* line 18, ../sass/partials/_forms.sass */
-  button.btn.btn-default.login,
-  button.btn.btn-default.register,
-  button.btn.btn-default.submit {
-    left: 44%;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1204px) {
-  /* line 25, ../sass/partials/_forms.sass */
-  button.btn.btn-default.login,
-  button.btn.btn-default.register,
-  button.btn.btn-default.submit {
-    left: 44%;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 32, ../sass/partials/_forms.sass */
-  button.btn.btn-default.login,
-  button.btn.btn-default.register,
-  button.btn.btn-default.submit {
-    left: 44%;
-  }
-}
 @media only screen and (min-width: 1204px) {
   /* line 3, ../sass/partials/_media.sass */
   #edit-button,

@@ -20,16 +20,25 @@ app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function(
   // Every application has a single root scope. All other scopes are descendant scopes of the root scope
   $rootScope.$on('$routeChangeStart', function(event, next) {
     if(authFactory.isAuthenticated()) {
-      
+      $('body').removeClass('bg.login');
+      $('body').removeClass('bg-reg');
       $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
 
     } else if($location.path() ===  '/') {
+      $('body').removeClass('bg-login');
+      $('body').removeClass('bg-reg');
       $location.path('/');
     } else if($location.path() === '/register') {
+      $('body').removeClass('bg-login');
+      $('body').addClass('bg-reg');
       $location.path('/register');
     } else if($location.path() === '/about') {
+      $('body').removeClass('bg-login');
+      $('body').removeClass('bg-reg');
       $location.path('/about');
     } else {
+      $('body').removeClass('bg-reg');
+      $('body').addClass('bg-login');
       $location.path('/login');
     }
   });
