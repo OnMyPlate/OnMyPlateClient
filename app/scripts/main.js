@@ -22,21 +22,26 @@ app.run(['$rootScope', '$location', '$http', '$window', 'authFactory', function(
     if(authFactory.isAuthenticated()) {
       $('body').removeClass('bg-login');
       $('body').removeClass('bg-reg');
+      $('body').removeClass('bg-about');
       $http.defaults.headers.common['Authorization'] = 'Token token=' + $window.sessionStorage.getItem('OnMyPlate.user');
 
     } else if($location.path() ===  '/') {
       $('body').removeClass('bg-login');
       $('body').removeClass('bg-reg');
+      $('body').removeClass('bg-about');
       $location.path('/');
     } else if($location.path() === '/register') {
       $('body').removeClass('bg-login');
+      $('body').removeClass('bg-about');
       $('body').addClass('bg-reg');
       $location.path('/register');
     } else if($location.path() === '/about') {
       $('body').removeClass('bg-login');
       $('body').removeClass('bg-reg');
+      $('body').addClass('bg-about');
       $location.path('/about');
     } else {
+      $('body').removeClass('bg-about');
       $('body').removeClass('bg-reg');
       $('body').addClass('bg-login');
       $location.path('/login');
