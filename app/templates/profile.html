@@ -3,7 +3,6 @@
 
 <div class="container media-container" ng-controller="ProfileCtrl">
 
-
   <div class="media food" ng-repeat="food in foods" id="{{food.id}}" ng-show="currentUser.id === food.user_id">
 
     <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
