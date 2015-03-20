@@ -416,18 +416,23 @@ img[alt="Food Picture"] {
   top: -15px;
   border-radius: 3px;
 }
+/* line 216, ../sass/partials/_base.sass */
+.custom-error span {
+  position: relative;
+  top: 5px;
+}
 
-/* line 217, ../sass/partials/_base.sass */
+/* line 220, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 220, ../sass/partials/_base.sass */
+/* line 223, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 223, ../sass/partials/_base.sass */
+/* line 226, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -438,7 +443,7 @@ img[alt="Food Picture"] {
   color: white;
   height: 50px;
 }
-/* line 232, ../sass/partials/_base.sass */
+/* line 235, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -449,41 +454,41 @@ img[alt="Food Picture"] {
   top: 15px;
 }
 
-/* line 237, ../sass/partials/_base.sass */
+/* line 240, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 242, ../sass/partials/_base.sass */
+/* line 245, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 245, ../sass/partials/_base.sass */
+/* line 248, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 250, ../sass/partials/_base.sass */
+/* line 253, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 254, ../sass/partials/_base.sass */
+/* line 257, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 259, ../sass/partials/_base.sass */
+/* line 262, ../sass/partials/_base.sass */
 #dashboard h1 {
   text-align: center;
 }
 
-/* line 263, ../sass/partials/_base.sass */
+/* line 266, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;
@@ -508,11 +513,15 @@ form[name="loginUser"] h1 {
   margin-bottom: 25px;
 }
 /* line 7, ../sass/partials/_forms.sass */
+form[name="loginUser"] input {
+  opacity: 0.85;
+}
+/* line 9, ../sass/partials/_forms.sass */
 form[name="registerUserForm"] {
   margin-top: 93px;
 }
 
-/* line 10, ../sass/partials/_forms.sass */
+/* line 12, ../sass/partials/_forms.sass */
 .btn.btn-default.filter-button {
   background-color: #E1E9E9;
   position: relative;
@@ -520,7 +529,7 @@ form[name="registerUserForm"] {
   margin: 30px 0px;
 }
 
-/* line 16, ../sass/partials/_forms.sass */
+/* line 18, ../sass/partials/_forms.sass */
 input#search {
   margin: 30px 0px;
 }
