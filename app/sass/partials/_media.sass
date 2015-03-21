@@ -18,13 +18,6 @@
     &:hover
       cursor: pointer
       font-size: 1.4em
-     
-  #media-body-post
-    float: right
-    width: 77%
-
-  #media-left-post
-    float: left
 
   .btn.btn-default.submit
     position: relative
@@ -32,22 +25,24 @@
 
   .container.media-container
     padding-top: 20px
-    text-overflow: hidden 
     .media.food
-      margin: 10px 0px
+      margin: auto
       padding: 10px
       border: 1px solid rgb(204, 204, 204)
       border-radius: 3px
       box-shadow: 1px 3px 8px -2px #555948
       background-color: rgba(246, 232, 217, 0.35)
+      min-height: 227px
       .media-left.food
         width: 20%
         float: left
       .media-body.food
         display: inline-block
         width: 77%
-        overflow: hidden
-        text-overflow: ellipsis
+        float: left
+
+
+
 
   .edit-button,
   .remove-button
@@ -89,13 +84,6 @@
       cursor: pointer
       font-size: 1.4em
 
-  #media-body-post
-    float: right
-    width: 75%
-
-  #media-left-post
-    float: left
-
   .edit-button,
   .remove-button
     display: none
@@ -113,19 +101,6 @@
       .media-left.food
         width: 20%
       .media-body.food
-        display: block
-        overflow: hidden
-        text-overflow: ellipsis
-
-  .container.post-container
-    padding-top: 20px
-    .media.post
-      border: 1px solid #E5E5E5
-      border-radius: 3px
-      padding: 16px
-      #media-left-post
-        width: 20%
-      #media-body-post
         display: block
 
   .glyphicon.glyphicon-remove,

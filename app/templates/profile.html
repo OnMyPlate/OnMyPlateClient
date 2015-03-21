@@ -18,7 +18,9 @@
          <span ng-repeat="i in getRating(food.posts[0])" aria-hidden="true"><img src="images/glyphicons-49-star-empty.png" alt="star"></spa>
       </div>
       <span class="restaurant-name">{{food.restaurant_name}} </span><span class="label label-info">{{food.city}}</span> <span class="label label-info">{{food.state}}</span><br>
-      <h6>{{food.posts[0].review}}</h6>
+      <div class="review-wrapper">
+        <h6>{{food.posts[0].review}}</h6>
+      </div>
     </div>
   
     <button type="button" class="btn btn-default edit-button" ng-click="goToEdit(food)">Edit</button>
