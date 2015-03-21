@@ -40,7 +40,7 @@ app.controller('ProfileCtrl',['$http',
   };  
 
   $scope.removeFood = function(food) {
-    $http.delete(HerokuUrl + 'foods/' + food.id).success(function(response) {
+    $http.delete(HerokuUrl + 'foods/' + food.id).success(function() {
       console.log('food is deleted!')
       $('#' + food.id).fadeOut(300, function() {
         $scope.foods.splice($scope.foods.indexOf(food), 1);
