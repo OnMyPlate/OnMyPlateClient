@@ -15,7 +15,7 @@ app.controller('AccountCtrl', ['dataFactory',
   });
 
   $scope.deleteAccount = function(user) {
-    $http.delete(HerokuUrl + 'users/' + user.id + '.json').success(function(response) {
+    $http.delete(HerokuUrl + 'users/' + user.id + '.json').success(function() {
       console.log('user account deleted');
       $window.sessionStorage.removeItem('OnMyPlate.user');
       $location.path('/register');

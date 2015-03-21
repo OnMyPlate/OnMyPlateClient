@@ -736,6 +736,12 @@ input#search {
   .glyphicon.glyphicon-edit {
     display: none;
   }
+
+  /* line 135, ../sass/partials/_media.sass */
+  .edit-button,
+  .remove-button {
+    width: 100%;
+  }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   /* line 3, ../sass/partials/_smartphones.sass */

@@ -13,7 +13,6 @@ app.controller('AddCtrl', ['$scope',
                            function($scope, $http, HerokuUrl, $location, $q, imageFactory, dataFactory, foodFactory, userFactory, $rootScope) {
 
   $scope.ratingVals = [1, 2, 3, 4, 5];
-  var users = [];
 
   dataFactory.fetchFoods().then(function(response) {
     $scope.foods = response.data.foods;
@@ -40,7 +39,7 @@ app.controller('AddCtrl', ['$scope',
     if(food.id) {
       $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
         console.log('food updated!');
-        upsertPost(post, image, response).then(function(response) {
+        upsertPost(post, image, response).then(function() {
           userFactory.defineCurrentUser().then(function(response) {
             $scope.currentUser = response.data.current_user;
             $location.path('/profile/' + $scope.currentUser.id);
@@ -50,7 +49,7 @@ app.controller('AddCtrl', ['$scope',
     } else {
       $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
-        upsertPost(post, image, response).then(function(response) {
+        upsertPost(post, image, response).then(function() {
           userFactory.defineCurrentUser().then(function(response) {
             $scope.currentUser = response.data.current_user;
             $location.path('/profile/' + $scope.currentUser.id);
@@ -64,7 +63,7 @@ app.controller('AddCtrl', ['$scope',
     var postParams = {post: post};
     postParams.post.food_id = food.id;
     if(post.id) {
-      return $http.put(HerokuUrl + 'posts/' + post.id, postParams).success(function(response) {
+      return $http.put(HerokuUrl + 'posts/' + post.id, postParams).success(function() {
         console.log('post updated!');
         imageFactory.getSignKey().then(function(response) {
           var signKeyResponse = response;

@@ -9,9 +9,6 @@ app.controller('BookmarkCtrl', ['dataFactory',
                                 'userFactory',
                                 function(dataFactory, $scope, $http, HerokuUrl ,foodFactory, $q, userFactory) {
 
-
-  var users = [];
-
   userFactory.defineCurrentUser().then(function(response) {
     $scope.currentUser = response.data.current_user;
     $q.all([dataFactory.fetchFoods(), dataFactory.fetchBookmarks()]).then(function(response) {
@@ -23,7 +20,7 @@ app.controller('BookmarkCtrl', ['dataFactory',
   $scope.unBookmarkFood = function(food, user, bookmarks) {
     var bookmark = bookmarks.filter(function(bookmark) { return bookmark.user_id === user.id})
                             .filter(function(bookmark) { return bookmark.food_id === food.id});
-    $http.delete(HerokuUrl + 'bookmarks/' + bookmark[0].id + '.json').success(function(response) {
+    $http.delete(HerokuUrl + 'bookmarks/' + bookmark[0].id + '.json').success(function() {
       console.log('food unbookmarked!');
       $scope.bookmarks.splice($scope.bookmarks.indexOf(bookmark), 1);
     });
