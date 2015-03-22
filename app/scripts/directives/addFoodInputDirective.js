@@ -10,7 +10,8 @@ app.directive('addFoodInput',[function() {
       name: '@',
       items: '=',
       property: '@',
-      value: '@'
+      value: '@',
+      length: '='
     },
     templateUrl: 'templates/add-food-input.html'
   };

@@ -427,22 +427,23 @@ img[alt="Food Pictures"] {
   border-radius: 3px;
 }
 /* line 244, ../sass/partials/_base.sass */
-.custom-error span {
+.custom-error span,
+.custom-error p {
   position: relative;
   top: 5px;
 }
 
-/* line 248, ../sass/partials/_base.sass */
+/* line 249, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 251, ../sass/partials/_base.sass */
+/* line 252, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 254, ../sass/partials/_base.sass */
+/* line 255, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -453,7 +454,7 @@ img[alt="Food Pictures"] {
   color: white;
   height: 50px;
 }
-/* line 263, ../sass/partials/_base.sass */
+/* line 264, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -464,36 +465,36 @@ img[alt="Food Pictures"] {
   top: 15px;
 }
 
-/* line 268, ../sass/partials/_base.sass */
+/* line 269, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 277, ../sass/partials/_base.sass */
+/* line 278, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 280, ../sass/partials/_base.sass */
+/* line 281, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 285, ../sass/partials/_base.sass */
+/* line 286, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 289, ../sass/partials/_base.sass */
+/* line 290, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 296, ../sass/partials/_base.sass */
+/* line 297, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;
@@ -583,7 +584,7 @@ input#search {
   }
   /* line 28, ../sass/partials/_media.sass */
   .container.media-container .media.food {
-    margin: auto;
+    margin: 10px auto;
     padding: 10px;
     border: 1px solid #cccccc;
     border-radius: 3px;

@@ -7,34 +7,38 @@
 
     <aws-uploader key="key" access-key="access_key" policy="policy" signature="signature"></aws-uploader>
 
-    <add-food-input type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name"></add-food-input>
+    <add-food-input type="text" items="foods" property="restaurant_name" name="restaurantname" model="food.restaurant_name" prompt="Restaurant Name" length="40"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.restaurantname.$dirty && upsertFoodForm.restaurantname.$invalid">
-      <span ng-show="upsertFoodForm.restaurantname.$error.required">Invalid: Restaurant name is required.</span>
+      <span ng-show="upsertFoodForm.restaurantname.$error.required">Invalid: Restaurant name is required</span>
+      <p ng-show="upsertFoodForm.restaurantname.$error.maxlength">The restaurant name exceeded 50 characters</p>
     </div>
 
 
 
-    <add-food-input type="text" items="foods" property="city" name="restaurantcity" model="food.city" prompt="Restaurant City"></add-food-input>
+    <add-food-input type="text" items="foods" property="city" name="restaurantcity" model="food.city" prompt="Restaurant City" length="40"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.restaurantcity.$dirty && upsertFoodForm.restaurantcity.$invalid">
-      <span ng-show="upsertFoodForm.restaurantcity.$error.required">Invalid: Restaurant city is required.</span>
+      <span ng-show="upsertFoodForm.restaurantcity.$error.required">Invalid: Restaurant city is required</span>
+      <p ng-show="upsertFoodForm.restaurantcity.$error.maxlength">The restaurant city exceeded 50 characters</p>
     </div>
 
 
 
-    <add-food-input type="text" items="foods" property="state" name="restaurantstate" model="food.state" prompt="Restaurant State"></add-food-input>
+    <add-food-input type="text" items="foods" property="state" name="restaurantstate" model="food.state" prompt="Restaurant State" length="2"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.restaurantstate.$dirty && upsertFoodForm.restaurantstate.$invalid">
-      <span ng-show="upsertFoodForm.restaurantstate.$error.required">Invalid: Restaurant state is required.</span>
+      <span ng-show="upsertFoodForm.restaurantstate.$error.required">Invalid: Restaurant state is required</span>
+      <p ng-show="upsertFoodForm.restaurantstate.$error.maxlength">Please use the abbreviations of states</p>
     </div>
 
 
 
-    <add-food-input type="text" items="foods" property="name" name="foodname" model="food.name" prompt="Food Name"></add-food-input>
+    <add-food-input type="text" items="foods" property="name" name="foodname" model="food.name" prompt="Food Name" length="40"></add-food-input>
 
     <div class="custom-error" ng-show="upsertFoodForm.foodname.$dirty && upsertFoodForm.foodname.$invalid">
-      <span ng-show="upsertFoodForm.foodname.$error.required">Invalid: Food name is required.</span>
+      <span ng-show="upsertFoodForm.foodname.$error.required">Invalid: Food name is required</span>
+      <p ng-show="upsertFoodForm.foodname.$error.maxlength">The food name exceeded 50 characters</p>
     </div>
 
 
@@ -46,7 +50,7 @@
     </div>
 
     <div class="custom-error" ng-show="upsertFoodForm.rating.$dirty && upsertFoodForm.rating.$invalid">
-      <span ng-show="upsertFoodForm.rating.$error.required">Invalid: Rating is required.</span>
+      <span ng-show="upsertFoodForm.rating.$error.required">Invalid: Rating is required</span>
     </div>
 
 
@@ -56,8 +60,8 @@
     </div>
 
     <div class="custom-error" ng-show="upsertFoodForm.review.$dirty && upsertFoodForm.review.$invalid">
-      <span ng-show="upsertFoodForm.review.$error.required">Invalid: Review is required.</span>
-      <p ng-show="upsertFoodForm.review.$error.minlength">Review is too short.</p>
+      <span ng-show="upsertFoodForm.review.$error.required">Invalid: Review is required</span>
+      <p ng-show="upsertFoodForm.review.$error.minlength">Review requires at least 100 charcters</p>
     </div>
 
     <button type="submit" class="btn btn-default submit" name="submit" ng-disabled="upsertFoodForm.$invalid">Submit</button>
