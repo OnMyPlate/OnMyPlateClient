@@ -398,29 +398,31 @@ hr {
   background-color: rgba(246, 232, 217, 0.35);
 }
 /* line 217, ../sass/partials/_base.sass */
+.thumbnail h3,
+.thumbnail h4,
 .thumbnail .review {
   word-break: break-word;
 }
 
-/* line 221, ../sass/partials/_base.sass */
+/* line 223, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: #edeb97;
 }
-/* line 224, ../sass/partials/_base.sass */
+/* line 226, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
   width: 150px;
 }
 
-/* line 229, ../sass/partials/_base.sass */
+/* line 231, ../sass/partials/_base.sass */
 .img-rounded {
   height: 200px;
   width: 200px;
 }
 
-/* line 238, ../sass/partials/_base.sass */
+/* line 240, ../sass/partials/_base.sass */
 .custom-error {
   color: rgba(255, 255, 255, 0.9);
   background-color: #c94a4a;
@@ -430,24 +432,24 @@ img[alt="Food Pictures"] {
   top: -15px;
   border-radius: 3px;
 }
-/* line 246, ../sass/partials/_base.sass */
+/* line 248, ../sass/partials/_base.sass */
 .custom-error span,
 .custom-error p {
   position: relative;
   top: 5px;
 }
 
-/* line 251, ../sass/partials/_base.sass */
+/* line 253, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 254, ../sass/partials/_base.sass */
+/* line 256, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 257, ../sass/partials/_base.sass */
+/* line 259, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -458,7 +460,7 @@ img[alt="Food Pictures"] {
   color: white;
   height: 50px;
 }
-/* line 266, ../sass/partials/_base.sass */
+/* line 268, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -469,36 +471,36 @@ img[alt="Food Pictures"] {
   top: 15px;
 }
 
-/* line 271, ../sass/partials/_base.sass */
+/* line 273, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 280, ../sass/partials/_base.sass */
+/* line 282, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 283, ../sass/partials/_base.sass */
+/* line 285, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 288, ../sass/partials/_base.sass */
+/* line 290, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 292, ../sass/partials/_base.sass */
+/* line 294, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 299, ../sass/partials/_base.sass */
+/* line 301, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;
