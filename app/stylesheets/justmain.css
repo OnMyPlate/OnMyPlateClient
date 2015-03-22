@@ -164,6 +164,9 @@ button.btn.btn-default.submit {
 .page-header {
   text-align: center;
   word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
 /* line 54, ../sass/partials/_base.sass */
@@ -614,6 +617,9 @@ input#search {
   /* line 44, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-body.food h6 {
     word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
   }
 
   /* line 50, ../sass/partials/_media.sass */
@@ -653,6 +659,9 @@ input#search {
   /* line 76, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-body.food h6 {
     word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
   }
 
   /* line 79, ../sass/partials/_media.sass */
@@ -706,6 +715,9 @@ input#search {
   /* line 110, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-body.food h6 {
     word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
   }
 
   /* line 113, ../sass/partials/_media.sass */
