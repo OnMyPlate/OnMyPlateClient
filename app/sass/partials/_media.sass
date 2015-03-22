@@ -57,22 +57,24 @@
   .container.media-container
     padding-top: 20px
     .media.food
-      margin: 10px 0px
+      margin: 10px auto
       border: 1px solid rgb(204, 204, 204)
       border-radius: 3px
       padding: 10px
       box-shadow: 1px 3px 8px -2px #555948
       background-color: rgba(246, 232, 217, 0.35)
+      min-height: 227px
+      display: table
       .media-left.food
         float: left
         width: 20%
       .media-body.food
         display: inline-block
         width: 73%
-        overflow: hidden
-        text-overflow: ellipsis
         margin: 0px
         padding-left: 10%
+        h6
+          word-break: break-word
 
   span.glyphicon.glyphicon-edit
     font-size: 1.2em
@@ -105,6 +107,8 @@
         width: 20%
       .media-body.food
         display: block
+        h6
+          word-break: break-word
 
   .glyphicon.glyphicon-remove,
   .glyphicon.glyphicon-edit
