@@ -399,7 +399,7 @@ hr {
 /* line 215, ../sass/partials/_base.sass */
 .thumbnail {
   box-shadow: 1px 3px 8px -2px #555959;
-  background-color: rgba(246, 232, 217, 0.35);
+  background-color: rgba(246, 232, 217, 0.19);
 }
 /* line 218, ../sass/partials/_base.sass */
 .thumbnail h3,
@@ -599,7 +599,7 @@ input#search {
     border: 1px solid #cccccc;
     border-radius: 3px;
     box-shadow: 1px 3px 8px -2px #555948;
-    background-color: rgba(246, 232, 217, 0.35);
+    background-color: rgba(246, 232, 217, 0.19);
     min-height: 227px;
     display: table;
   }
@@ -640,7 +640,7 @@ input#search {
     border-radius: 3px;
     padding: 10px;
     box-shadow: 1px 3px 8px -2px #555948;
-    background-color: rgba(246, 232, 217, 0.35);
+    background-color: rgba(246, 232, 217, 0.19);
     min-height: 227px;
     display: table;
   }
@@ -702,7 +702,7 @@ input#search {
     border-radius: 3px;
     padding: 16px;
     box-shadow: 1px 3px 8px -2px #555948;
-    background-color: rgba(246, 232, 217, 0.35);
+    background-color: rgba(246, 232, 217, 0.19);
   }
   /* line 106, ../sass/partials/_media.sass */
   .container.media-container .media.food .media-left.food {

@@ -18,26 +18,40 @@ app.controller('AddCtrl', ['$scope',
     $scope.foods = response.data.foods;
   });
 
+
+  var clearForm = function() {
+    $scope.food = {};
+    $scope.post = {};
+  };
+
   // Checks if passed object contains any property, 
   // if it is than it sets the scope.foods with that params in the form so the user can update the food
-  (function() {
-    var params = foodFactory.params;
-    if(params.name) {
-      $scope.food = params;
-      $scope.post = params.posts[0];
+  $scope.params = foodFactory.params;
+  $scope.$watch('params', function(oldVal, newVal) {
+    debugger
+    if(!!newVal.name) {
+      $scope.food = newVal;
+      $scope.post = newVal.posts[0];
+    } else {
+      $scope.food = {};
+      $scope.post = {};
     }
-  })();
+  });
 
   $scope.upsertReview = function(post, food) {
     var image = $('input[type=file]')[0].files[0];
-    upsertFood(food, post, image);
+    upsertFood(food, post, image).then(function(){
+      console.log('review successfully processed!')
+      $scope.food = {};
+      $scope.post = {};
+    });
   };
 
   var upsertFood = function(food, post, image) {
     var foodParams = {food: food};
 
     if(food.id) {
-      $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
+      return $http.put(HerokuUrl + 'foods/' + food.id, foodParams).success(function(response) {
         console.log('food updated!');
         upsertPost(post, image, response).then(function() {
           userFactory.defineCurrentUser().then(function(response) {
@@ -47,7 +61,7 @@ app.controller('AddCtrl', ['$scope',
         });
       });
     } else {
-      $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
+      return $http.post(HerokuUrl + 'foods', foodParams).success(function(response) {
         console.log('food created!');
         upsertPost(post, image, response).then(function() {
           userFactory.defineCurrentUser().then(function(response) {

@@ -36,7 +36,8 @@ app.controller('ProfileCtrl',['$http',
 
   $scope.goToEdit = function(food) {
     foodFactory.storeFood(food);
-    $location.path('/profile/food.user_id/add');
+    var encodedUserId = window.btoa(food.user_id);
+    $location.path('/profile/' + encodedUserId + '/add');
   };  
 
   $scope.removeFood = function(food) {
