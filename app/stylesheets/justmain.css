@@ -536,17 +536,19 @@ form[name="loginUser"] input, form[name="registerUserForm"] input {
 
 /* line 11, ../sass/partials/_forms.sass */
 .btn.btn-default.filter-button {
-  background-color: rgba(124, 213, 213, 0.34);
+  background-color: rgba(124, 213, 213, 0.1);
   position: relative;
   left: 0%;
+  border: 0px;
   margin: 30px 0px;
+  box-shadow: 1px 2px 8px 1px rgba(0, 0, 0, 0.13);
 }
-/* line 16, ../sass/partials/_forms.sass */
+/* line 18, ../sass/partials/_forms.sass */
 .btn.btn-default.filter-button:hover {
   background-color: rgba(156, 57, 57, 0.91);
 }
 
-/* line 19, ../sass/partials/_forms.sass */
+/* line 21, ../sass/partials/_forms.sass */
 input#search {
   margin: 30px 0px;
 }
