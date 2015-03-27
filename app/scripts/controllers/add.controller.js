@@ -18,23 +18,13 @@ app.controller('AddCtrl', ['$scope',
     $scope.foods = response.data.foods;
   });
 
-
-  var clearForm = function() {
-    $scope.food = {};
-    $scope.post = {};
-  };
-
   // Checks if passed object contains any property, 
   // if it is than it sets the scope.foods with that params in the form so the user can update the food
   $scope.params = foodFactory.params;
   $scope.$watch('params', function(oldVal, newVal) {
-    debugger
     if(!!newVal.name) {
       $scope.food = newVal;
       $scope.post = newVal.posts[0];
-    } else {
-      $scope.food = {};
-      $scope.post = {};
     }
   });
 
@@ -42,8 +32,6 @@ app.controller('AddCtrl', ['$scope',
     var image = $('input[type=file]')[0].files[0];
     upsertFood(food, post, image).then(function(){
       console.log('review successfully processed!')
-      $scope.food = {};
-      $scope.post = {};
     });
   };
 
@@ -56,7 +44,8 @@ app.controller('AddCtrl', ['$scope',
         upsertPost(post, image, response).then(function() {
           userFactory.defineCurrentUser().then(function(response) {
             $scope.currentUser = response.data.current_user;
-            $location.path('/profile/' + $scope.currentUser.id);
+            var encodedUserId = window.btoa($scope.currentUser.id);
+            $location.path('/profile/' + encodedUserId);
           });
         });
       });
@@ -66,7 +55,8 @@ app.controller('AddCtrl', ['$scope',
         upsertPost(post, image, response).then(function() {
           userFactory.defineCurrentUser().then(function(response) {
             $scope.currentUser = response.data.current_user;
-            $location.path('/profile/' + $scope.currentUser.id);
+            var encodedUserId = window.btoa($scope.currentUser.id);
+            $location.path('/profile/' + encodedUserId);
           });
         });
       });

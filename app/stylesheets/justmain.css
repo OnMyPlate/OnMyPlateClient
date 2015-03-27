@@ -400,33 +400,34 @@ hr {
 .thumbnail {
   box-shadow: 1px 3px 8px -2px #555959;
   background-color: rgba(246, 232, 217, 0.19);
+  height: 550px;
 }
-/* line 218, ../sass/partials/_base.sass */
+/* line 219, ../sass/partials/_base.sass */
 .thumbnail h3,
 .thumbnail h4,
 .thumbnail .review {
   word-break: break-word;
 }
 
-/* line 224, ../sass/partials/_base.sass */
+/* line 225, ../sass/partials/_base.sass */
 img[alt="star"] {
   margin: 10px 2px;
   background: #edeb97;
 }
-/* line 227, ../sass/partials/_base.sass */
+/* line 228, ../sass/partials/_base.sass */
 img[alt="Food Pictures"] {
   margin-top: 16px;
   margin-bottom: 10px;
   width: 150px;
 }
 
-/* line 232, ../sass/partials/_base.sass */
+/* line 233, ../sass/partials/_base.sass */
 .img-rounded {
   height: 200px;
   width: 200px;
 }
 
-/* line 241, ../sass/partials/_base.sass */
+/* line 242, ../sass/partials/_base.sass */
 .custom-error {
   color: rgba(255, 255, 255, 0.9);
   background-color: #c94a4a;
@@ -436,24 +437,24 @@ img[alt="Food Pictures"] {
   top: -15px;
   border-radius: 3px;
 }
-/* line 249, ../sass/partials/_base.sass */
+/* line 250, ../sass/partials/_base.sass */
 .custom-error span,
 .custom-error p {
   position: relative;
   top: 5px;
 }
 
-/* line 254, ../sass/partials/_base.sass */
+/* line 255, ../sass/partials/_base.sass */
 .form-group .ng-dirty.ng-invalid {
   border: 1px solid #CC0000;
 }
 
-/* line 257, ../sass/partials/_base.sass */
+/* line 258, ../sass/partials/_base.sass */
 .form-group .ng-valid {
   border: 1px solid green;
 }
 
-/* line 260, ../sass/partials/_base.sass */
+/* line 261, ../sass/partials/_base.sass */
 #login-error, #confirm-email,
 #confirmation-error,
 #password-error,
@@ -464,7 +465,7 @@ img[alt="Food Pictures"] {
   color: white;
   height: 50px;
 }
-/* line 269, ../sass/partials/_base.sass */
+/* line 270, ../sass/partials/_base.sass */
 #login-error p, #confirm-email p,
 #confirmation-error p,
 #password-error p,
@@ -475,36 +476,36 @@ img[alt="Food Pictures"] {
   top: 15px;
 }
 
-/* line 274, ../sass/partials/_base.sass */
+/* line 275, ../sass/partials/_base.sass */
 #confirm-email {
   background-color: green;
 }
 
-/* line 283, ../sass/partials/_base.sass */
+/* line 284, ../sass/partials/_base.sass */
 #account {
   text-align: center;
   margin-bottom: 55px;
 }
 
-/* line 286, ../sass/partials/_base.sass */
+/* line 287, ../sass/partials/_base.sass */
 #user-info {
   text-align: center;
   width: 100%;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
 }
-/* line 291, ../sass/partials/_base.sass */
+/* line 292, ../sass/partials/_base.sass */
 #user-info h3 {
   margin: 0px;
   padding: 19px 0px;
   background-color: #EDDBDC;
 }
-/* line 295, ../sass/partials/_base.sass */
+/* line 296, ../sass/partials/_base.sass */
 #user-info p {
   margin: 26px 0px;
 }
 
-/* line 302, ../sass/partials/_base.sass */
+/* line 303, ../sass/partials/_base.sass */
 #loader {
   position: relative;
   height: 20px;

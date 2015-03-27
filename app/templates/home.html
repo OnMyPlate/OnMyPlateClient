@@ -32,8 +32,8 @@
         <span class="glyphicon glyphicon-bookmark home" ng-show="isLoggedIn() && isBookmarked(food, currentUser, bookmarks)" aria-hidden="true"></span>
         <a ng-href="#/foods/{{food.id}}"><img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Pictures"></a>
         <div class="caption">
-          <h3>{{food.name}}</h3>
-          <h4>{{food.restaurant_name}}</h4>
+          <h3>{{food.name | fellipsis}}</h3>
+          <h4>{{food.restaurant_name | fellipsis}}</h4>
           <div>
             <span class="rating-text"><strong>Rating: </strong></span>
             <span ng-repeat="i in getAvgRating(food)" aria-hidden="true"><img src="images/glyphicons-49-star-empty.png" alt="star"></span>
