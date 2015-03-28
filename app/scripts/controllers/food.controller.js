@@ -45,14 +45,14 @@ app.controller('FoodCtrl',['$location',
             .filter(function(like) {
               return post.id === like.post_id});
           if (postLikes.length > 0) {
-            post.liked = 'glyphicons-13-heart.png';
+            post.liked = '196baacd.196baacd.glyphicons-13-heart.png';
           } else {
-            post.liked = 'glyphicons-20-heart-empty.png';
+            post.liked = '4e59b096.glyphicons-20-heart-empty.png';
           }
         });
       } else {
         posts.forEach(function(post) {
-          post.liked = 'glyphicons-20-heart-empty.png';
+          post.liked = '4e59b096.glyphicons-20-heart-empty.png';
         });
       }
     };
@@ -116,21 +116,21 @@ app.controller('FoodCtrl',['$location',
       } else {
         var likedByUser = [];
       }
-      if(likedByUser.length === 0 || (post.liked === 'glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
+      if(likedByUser.length === 0 || (post.liked === '4e59b096.glyphicons-20-heart-empty.png' && likedByUser.length > 0)) {
         $http.post(HerokuUrl + 'likes.json', params).success(function(response) {
           console.log('you like the post!!!');
           userLikes.push(response);
           $scope.posts.filter(function(post) {return post.id === response.post_id })[0].likes += 1;
-          $scope.posts.filter(function(post) {return response.post_id === post.id})[0].liked = 'glyphicons-13-heart.png';
+          $scope.posts.filter(function(post) {return response.post_id === post.id})[0].liked = '196baacd.glyphicons-13-heart.png';
         });
-      } else if(post.liked === 'glyphicons-13-heart.png') {
+      } else if(post.liked === '196baacd.glyphicons-13-heart.png') {
         var likeId = userLikes.filter(function(like) {return like.post_id === post.id})[0].id;
         var deletedLike = userLikes.filter(function(like) {return like.post_id === post.id})[0];
         $http.delete(HerokuUrl + 'likes/' + likeId + '.json').success(function(response) {
           console.log('you unliked the post!!!');
           userLikes.splice(userLikes.length-1, 1);
           $scope.posts.filter(function(post) {return post.id === deletedLike.post_id })[0].likes -= 1;
-          $scope.posts.filter(function(post) {return post.id === deletedLike.post_id})[0].liked = 'glyphicons-20-heart-empty.png';
+          $scope.posts.filter(function(post) {return post.id === deletedLike.post_id})[0].liked = '4e59b096.glyphicons-20-heart-empty.png';
         });
       }
 
