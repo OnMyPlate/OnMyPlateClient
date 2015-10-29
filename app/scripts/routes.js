@@ -1,6 +1,14 @@
 'use strict';
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+
+  // This eliminated the # on the urls
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+
 
   $routeProvider
   .when('/', {

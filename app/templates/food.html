@@ -1,3 +1,4 @@
+
 <ng-include src="'templates/navbar.html'"></ng-include>
 
 <div class="container" ng-controller="FoodCtrl">
@@ -43,7 +44,7 @@
   <div class="container media-container">
     <div class="media food" ng-repeat="post in posts" id="{{post.id}}">
    
-      <a class="media-left food" href="#/" class="profile-food-image">
+      <a class="media-left food" href="/" class="profile-food-image">
         <img class="img-rounded" ng-src="{{post.food_image.image_url}}" alt="Food Picture">
       </a>
    

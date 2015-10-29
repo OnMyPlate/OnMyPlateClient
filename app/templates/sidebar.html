@@ -1,7 +1,7 @@
 <div class="sidebar" ng-controller="SidebarCtrl">
   <ul>
-    <li ng-class="{ sidebaractive: isActive('/add')}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><a href="#/profile/{{encodedUserId}}/add" title="add"> Add Food</a></li>
-    <li ng-class="{ sidebaractive: isActive('/bookmark')}"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a href="#/profile/{{encodedUserId}}/bookmark" title="bookmark"> Bookmarks</a></li>
-    <li ng-class="{ sidebaractive: isActive('/account')}"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><a href="#/profile/{{encodedUserId}}/account" title="account"> Account</a></li>
+    <li ng-class="{ sidebaractive: isActive('/add')}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><a href="/profile/{{encodedUserId}}/add" title="add"> Add Food</a></li>
+    <li ng-class="{ sidebaractive: isActive('/bookmark')}"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><a href="/profile/{{encodedUserId}}/bookmark" title="bookmark"> Bookmarks</a></li>
+    <li ng-class="{ sidebaractive: isActive('/account')}"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><a href="/profile/{{encodedUserId}}/account" title="account"> Account</a></li>
   </ul>
 </div>

@@ -12,6 +12,7 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+  var modRewrite = require('connect-modrewrite');
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -77,6 +78,7 @@ module.exports = function (grunt) {
         options: {
           middleware: function(connect) {
             return [
+              modRewrite(['!/api|/assets|\\..+$ /index.html']),
               connect.static('.tmp'),
               connect().use('/bower_components', connect.static('./bower_components')),
               connect.static(config.app)

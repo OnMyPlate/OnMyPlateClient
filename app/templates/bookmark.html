@@ -5,7 +5,7 @@
 
   <div class="media food" ng-repeat="food in foods" ng-show="isBookmarked(food, currentUser, bookmarks)">
 
-    <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
+    <a class="media-left food" href="/foods/{{food.id}}" class="profile-food-image">
       <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
     </a>
 

@@ -5,7 +5,7 @@
 
   <div class="media food" ng-repeat="food in foods" id="{{food.id}}" ng-show="currentUser.id === food.user_id">
 
-    <a class="media-left food" href="#/foods/{{food.id}}" class="profile-food-image">
+    <a class="media-left food" href="/foods/{{food.id}}" class="profile-food-image">
       <img class="img-rounded" ng-src="{{food.posts[0].food_image.image_url}}" alt="Food Picture">
     </a>
 
